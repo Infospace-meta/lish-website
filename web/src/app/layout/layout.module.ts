@@ -11,6 +11,9 @@ import { ContactComponent } from './components/pages/contact/contact.component';
 import { BlogComponent } from './components/pages/blog/blog.component';
 import { TrainingComponent } from './components/pages/training/training.component';
 import { PartnershipComponent } from './components/pages/partnership/partnership.component';
+import { SharedModule } from '../shared/shared.module';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -24,6 +27,6 @@ import { PartnershipComponent } from './components/pages/partnership/partnership
     TrainingComponent,
     PartnershipComponent,
   ],
-  imports: [CommonModule, RouterModule, LayoutRoutingModule],
+  imports: [CommonModule, RouterModule, LayoutRoutingModule, SharedModule, FormsModule],
 })
 export class CustomLayoutModule {}

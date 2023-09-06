@@ -1,0 +1,75 @@
+<div class="modal">
+    <!-- Page 1 -->
+    <div *ngIf="currentPage === 1">
+        <input type="text" [(ngModel)]="formData.jobHubCentreName" placeholder="Job Hub Centre Name">
+        <select [(ngModel)]="formData.county">
+        <option value="" disabled selected>Select County</option>
+        <!-- Add all 47 counties here -->
+      </select>
+        <input type="text" [(ngModel)]="formData.fullName" placeholder="Full Name">
+        <select [(ngModel)]="formData.gender">
+        <option value="" disabled selected>Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="ratherNotSay">Rather Not Say</option>
+      </select>
+        <input type="date" [(ngModel)]="formData.dateOfBirth">
+    </div>
+
+    <!-- Page 2 -->
+    <div *ngIf="currentPage === 2">
+        <input type="text" [(ngModel)]="formData.mobileNumber" placeholder="Mobile Number">
+        <input type="text" [(ngModel)]="formData.idNumber" placeholder="ID Number or Waiting Number">
+        <input type="email" [(ngModel)]="formData.emailAddress" placeholder="Email Address">
+        <input type="text" [(ngModel)]="formData.parentGuardianName" placeholder="Parent or Guardian Name">
+        <input type="text" [(ngModel)]="formData.parentGuardianMobileNumber" placeholder="Parent or Guardian Mobile Number">
+    </div>
+
+    <!-- Page 3 -->
+    <div *ngIf="currentPage === 3">
+        <select [(ngModel)]="formData.maritalStatus">
+        <!-- Add marital status options here -->
+      </select>
+        <select [(ngModel)]="formData.highestLevelOfEducation">
+        <!-- Add education level options here -->
+      </select>
+        <select [(ngModel)]="formData.currentlyInSchool">
+        <!-- Add 'currently in school' options here -->
+      </select>
+        <select [(ngModel)]="formData.usedComputer">
+        <!-- Add 'used computer' options here -->
+      </select>
+        <select [(ngModel)]="formData.currentlyEmployed">
+        <!-- Add 'currently employed' options here -->
+      </select>
+    </div>
+
+    <!-- Page 4 -->
+    <div *ngIf="currentPage === 4">
+        <select [(ngModel)]="formData.willingToLearn">
+        <!-- Add 'willing to learn' options here -->
+      </select>
+        <textarea [(ngModel)]="formData.additionalInfo" placeholder="If yes, Kindly state here"></textarea>
+        <select [(ngModel)]="formData.commitToTraining">
+        <!-- Add 'commit to training' options here -->
+      </select>
+        <select [(ngModel)]="formData.commitToWorkHours">
+        <!-- Add 'commit to work hours' options here -->
+      </select>
+    </div>
+
+    <!-- Page 5 -->
+    <div *ngIf="currentPage === 5">
+        <textarea [(ngModel)]="formData.motivation" placeholder="What motivates you to work?"></textarea>
+        <textarea [(ngModel)]="formData.reasonToJoin" placeholder="What made you decide to join us?"></textarea>
+        <select [(ngModel)]="formData.source">
+        <!-- Add 'source' options here -->
+      </select>
+    </div>
+
+    <div class="pagination-controls">
+        <button (click)="prevPage()" *ngIf="currentPage > 1">Previous</button>
+        <button (click)="nextPage()" *ngIf="currentPage < totalPages">Next</button>
+        <button (click)="submitForm()" *ngIf="currentPage === totalPages">Submit</button>
+    </div>
+</div>
