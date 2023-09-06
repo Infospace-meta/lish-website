@@ -1,75 +1,163 @@
-<div class="modal">
-    <!-- Page 1 -->
-    <div *ngIf="currentPage === 1">
-        <input type="text" [(ngModel)]="formData.jobHubCentreName" placeholder="Job Hub Centre Name">
-        <select [(ngModel)]="formData.county">
-        <option value="" disabled selected>Select County</option>
-        <!-- Add all 47 counties here -->
-      </select>
-        <input type="text" [(ngModel)]="formData.fullName" placeholder="Full Name">
-        <select [(ngModel)]="formData.gender">
-        <option value="" disabled selected>Select Gender</option>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="ratherNotSay">Rather Not Say</option>
-      </select>
-        <input type="date" [(ngModel)]="formData.dateOfBirth">
-    </div>
+<div class="container my-5">
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h5>Application Form - Step {{currentPage}} of 5</h5>
+        </div>
+        <div class="card-body">
 
-    <!-- Page 2 -->
-    <div *ngIf="currentPage === 2">
-        <input type="text" [(ngModel)]="formData.mobileNumber" placeholder="Mobile Number">
-        <input type="text" [(ngModel)]="formData.idNumber" placeholder="ID Number or Waiting Number">
-        <input type="email" [(ngModel)]="formData.emailAddress" placeholder="Email Address">
-        <input type="text" [(ngModel)]="formData.parentGuardianName" placeholder="Parent or Guardian Name">
-        <input type="text" [(ngModel)]="formData.parentGuardianMobileNumber" placeholder="Parent or Guardian Mobile Number">
-    </div>
+            <!-- Page 1 -->
+            <div *ngIf="currentPage === 1">
+                <div class="form-group">
+                    <label for="jobHubCentreName">Job Hub Centre Name</label>
+                    <input type="text" class="form-control" [(ngModel)]="formData.jobHubCentreName" id="jobHubCentreName" placeholder="Enter Job Hub Centre Name">
+                </div>
+                <div class="form-group">
+                    <label for="county">County</label>
+                    <select class="form-control" [(ngModel)]="formData.county" id="county">
+                      <!-- Add all 47 counties here -->
+                  </select>
+                </div>
+                <!-- ... Other fields for page 1 ... -->
+            </div>
 
-    <!-- Page 3 -->
-    <div *ngIf="currentPage === 3">
-        <select [(ngModel)]="formData.maritalStatus">
-        <!-- Add marital status options here -->
-      </select>
-        <select [(ngModel)]="formData.highestLevelOfEducation">
-        <!-- Add education level options here -->
-      </select>
-        <select [(ngModel)]="formData.currentlyInSchool">
-        <!-- Add 'currently in school' options here -->
-      </select>
-        <select [(ngModel)]="formData.usedComputer">
-        <!-- Add 'used computer' options here -->
-      </select>
-        <select [(ngModel)]="formData.currentlyEmployed">
-        <!-- Add 'currently employed' options here -->
-      </select>
-    </div>
+            <!-- Page 2 -->
+            <div *ngIf="currentPage === 2">
+                <div class="form-group">
+                    <label for="mobileNumber">Mobile Number</label>
+                    <input type="text" class="form-control" [(ngModel)]="formData.mobileNumber" id="mobileNumber" placeholder="Enter Mobile Number">
+                </div>
+                <div class="form-group">
+                    <label for="idNumber">ID Number or Waiting Number</label>
+                    <input type="text" class="form-control" [(ngModel)]="formData.idNumber" id="idNumber" placeholder="Enter ID Number or Waiting Number">
+                </div>
+                <div class="form-group">
+                    <label for="emailAddress">Email Address</label>
+                    <input type="email" class="form-control" [(ngModel)]="formData.emailAddress" id="emailAddress" placeholder="Enter Email Address">
+                </div>
+                <div class="form-group">
+                    <label for="parentGuardianName">Parent or Guardian Name</label>
+                    <input type="text" class="form-control" [(ngModel)]="formData.parentGuardianName" id="parentGuardianName" placeholder="Enter Parent or Guardian Name">
+                </div>
+                <div class="form-group">
+                    <label for="parentGuardianMobileNumber">Parent or Guardian Mobile Number</label>
+                    <input type="text" class="form-control" [(ngModel)]="formData.parentGuardianMobileNumber" id="parentGuardianMobileNumber" placeholder="Enter Parent or Guardian Mobile Number">
+                </div>
+            </div>
 
-    <!-- Page 4 -->
-    <div *ngIf="currentPage === 4">
-        <select [(ngModel)]="formData.willingToLearn">
-        <!-- Add 'willing to learn' options here -->
-      </select>
-        <textarea [(ngModel)]="formData.additionalInfo" placeholder="If yes, Kindly state here"></textarea>
-        <select [(ngModel)]="formData.commitToTraining">
-        <!-- Add 'commit to training' options here -->
-      </select>
-        <select [(ngModel)]="formData.commitToWorkHours">
-        <!-- Add 'commit to work hours' options here -->
-      </select>
-    </div>
 
-    <!-- Page 5 -->
-    <div *ngIf="currentPage === 5">
-        <textarea [(ngModel)]="formData.motivation" placeholder="What motivates you to work?"></textarea>
-        <textarea [(ngModel)]="formData.reasonToJoin" placeholder="What made you decide to join us?"></textarea>
-        <select [(ngModel)]="formData.source">
-        <!-- Add 'source' options here -->
-      </select>
-    </div>
+            <!-- Page 3 -->
+            <div *ngIf="currentPage === 3">
+                <div class="form-group">
+                    <label for="maritalStatus">Marital Status</label>
+                    <select class="form-control" [(ngModel)]="formData.maritalStatus" id="maritalStatus">
+                      <option value="" disabled selected>Select Marital Status</option>
+                      <option value="single">Single</option>
+                      <option value="married">Married</option>
+                      <option value="divorced">Divorced</option>
+                      <option value="widowed">Widowed</option>
+                    </select>
+                </div>
 
-    <div class="pagination-controls">
-        <button (click)="prevPage()" *ngIf="currentPage > 1">Previous</button>
-        <button (click)="nextPage()" *ngIf="currentPage < totalPages">Next</button>
-        <button (click)="submitForm()" *ngIf="currentPage === totalPages">Submit</button>
+                <div class="form-group">
+                    <label for="highestLevelOfEducation">Highest Level of Education</label>
+                    <select class="form-control" [(ngModel)]="formData.highestLevelOfEducation" id="highestLevelOfEducation">
+                      <option value="" disabled selected>Select Education Level</option>
+                      <option value="highSchool">High School</option>
+                      <option value="associate">Associate's Degree</option>
+                      <option value="bachelor">Bachelor's Degree</option>
+                      <option value="master">Master's Degree</option>
+                      <option value="phd">PhD</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="currentlyInSchool">Currently in School</label>
+                    <select class="form-control" [(ngModel)]="formData.currentlyInSchool" id="currentlyInSchool">
+                      <option value="" disabled selected>Are you currently in school?</option>
+                      <option value="yes">Yes</option>
+                      <option value="no">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="usedComputer">Used Computer Before</label>
+                    <select class="form-control" [(ngModel)]="formData.usedComputer" id="usedComputer">
+                      <option value="" disabled selected>Have you used a computer before?</option>
+                      <option value="yes">Yes</option>
+                      <option value="no">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="currentlyEmployed">Currently Employed</label>
+                    <select class="form-control" [(ngModel)]="formData.currentlyEmployed" id="currentlyEmployed">
+                      <option value="" disabled selected>Are you currently employed?</option>
+                      <option value="yes">Yes</option>
+                      <option value="no">No</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <!-- Page 4 -->
+            <div *ngIf="currentPage === 4">
+                <div class="form-group">
+                    <label for="willingToLearn">Willingness to Learn</label>
+                    <select class="form-control" [(ngModel)]="formData.willingToLearn" id="willingToLearn">
+                      <option value="" disabled selected>Are you willing to learn?</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="additionalInfo">Additional Information</label>
+                    <textarea class="form-control" [(ngModel)]="formData.additionalInfo" id="additionalInfo" rows="3" placeholder="If yes, kindly state here"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="commitToTraining">Commitment to Training</label>
+                    <select class="form-control" [(ngModel)]="formData.commitToTraining" id="commitToTraining">
+                      <option value="" disabled selected>Can you commit to the training?</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="commitToWorkHours">Commitment to Work Hours</label>
+                    <select class="form-control" [(ngModel)]="formData.commitToWorkHours" id="commitToWorkHours">
+                      <option value="" disabled selected>Can you commit to work hours?</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <!-- Page 5 -->
+            <div *ngIf="currentPage === 5">
+                <div class="form-group">
+                    <label for="motivation">What motivates you to work?</label>
+                    <textarea class="form-control" [(ngModel)]="formData.motivation" id="motivation" rows="3" placeholder="What motivates you to work?"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="reasonToJoin">What made you decide to join us?</label>
+                    <textarea class="form-control" [(ngModel)]="formData.reasonToJoin" id="reasonToJoin" rows="3" placeholder="What made you decide to join us?"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="source">How did you hear about us?</label>
+                    <select class="form-control" [(ngModel)]="formData.source" id="source">
+                      <option value="" disabled selected>Select Source</option>
+                      <option value="Internet">Internet</option>
+                      <option value="Friend">Friend</option>
+                      <option value="Newspaper">Newspaper</option>
+                      <option value="Social Media">Social Media</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+            <button class="btn btn-secondary" (click)="prevPage()" *ngIf="currentPage > 1">Previous</button>
+            <button class="btn btn-primary" (click)="nextPage()" *ngIf="currentPage < 5">Next</button>
+            <button class="btn btn-success" (click)="submitForm()" *ngIf="currentPage === 5">Submit</button>
+        </div>
     </div>
 </div>
