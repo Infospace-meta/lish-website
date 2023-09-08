@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';  // Make sure to import this
-import { FormsModule } from '@angular/forms';  // FormsModule for ngModel
-import { ApplicationFormComponent } from '../layout/components/application-form/application-form.component';
+import { CommonModule } from '@angular/common';  
+import { FormsModule } from '@angular/forms';  
+import { ApplicationFormComponent } from '../layout/components/pages/application-form/application-form.component';
 
 @NgModule({
   declarations: [
-    ApplicationFormComponent,  // Keep this line
+    ApplicationFormComponent,  
   ],
   exports: [
     ApplicationFormComponent,
   ],
   imports: [
-    CommonModule,  // Import CommonModule here
-    FormsModule,  // Import FormsModule
+    CommonModule, 
+    FormsModule,  
   ],
 })
 export class SharedModule { }

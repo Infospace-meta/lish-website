@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LayoutRoutingModule } from './layout-routing.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
-import { SharedModule } from '../shared/shared.module';  // Import SharedModule
+import { SharedModule } from '../shared/shared.module';  
 
 // Components
 import { WrapperComponent } from './components/wrapper/wrapper.component';
@@ -32,7 +32,7 @@ import { PartnershipComponent } from './components/pages/partnership/partnership
     CommonModule,
     RouterModule,
     LayoutRoutingModule,
-    SharedModule,  // SharedModule already contains ApplicationFormComponent
+    SharedModule,  
     FormsModule,
     ReactiveFormsModule  
   ]

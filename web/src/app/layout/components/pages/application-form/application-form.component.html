@@ -1,6 +1,6 @@
 <div class="container my-5">
-    <div class="card">
-        <div class="card-header bg-primary text-white">
+    <div class="card modal">
+        <div class="card-header bg-primary text-blue-700">
             <h5>Application Form - Step {{currentPage}} of 5</h5>
         </div>
         <div class="card-body">
@@ -14,8 +14,9 @@
                 <div class="form-group">
                     <label for="county">County</label>
                     <select class="form-control" [(ngModel)]="formData.county" id="county">
-                      <!-- Add all 47 counties here -->
-                  </select>
+                      <option value="" disabled selected>Select County</option>
+                      <option *ngFor="let county of counties" [value]="county">{{ county }}</option>
+                    </select>
                 </div>
                 <!-- ... Other fields for page 1 ... -->
             </div>
