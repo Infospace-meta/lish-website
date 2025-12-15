@@ -6,6 +6,6 @@ import { FooterComponent } from '../components/footer/footer.component';
 @Component({
   selector: 'app-wrapper',
   imports: [HeaderComponent, RouterOutlet, FooterComponent],
-  templateUrl: './wrapper.component.html', 
+  templateUrl: './wrapper.component.html',
 })
 export class WrapperComponent {}
