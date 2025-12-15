@@ -6,7 +6,7 @@ import { ContactComponent } from './components/pages/contact/contact.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { PartnershipComponent } from './components/pages/partnership/partnership.component';
 import { TrainingComponent } from './components/pages/training/training.component';
-import { WrapperComponent } from './components/wrapper/wrapper.component';
+import { WrapperComponent } from '../wrapper/wrapper.component';
 import { December2022Component } from './components/pages/blogpages/december2022/december2022.component';
 import { August2023Component } from './components/pages/blogpages/august2023/august2023.component';
 import { September2023Component } from './components/pages/blogpages/september2023/september2023.component';

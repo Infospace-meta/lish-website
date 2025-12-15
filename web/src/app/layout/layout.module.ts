@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LayoutRoutingModule } from './layout-routing.module';
 import { RouterModule } from '@angular/router';
-import { WrapperComponent } from './components/wrapper/wrapper.component';
+import { WrapperComponent } from '../wrapper/wrapper.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -15,8 +15,8 @@ import { December2022Component } from './components/pages/blogpages/december2022
 import { August2023Component } from './components/pages/blogpages/august2023/august2023.component';
 import { September2023Component } from './components/pages/blogpages/september2023/september2023.component';
 import { HeroComponent } from './components/hero/hero.component';
-import { ServicesComponent } from './components/services/services.component';
-import { PartnersComponent } from './components/partners/partners.component';
+import { ServicesComponent } from '../components/services/services.component';
+import { PartnersComponent } from '../components/partners/partners.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 
 @NgModule({
