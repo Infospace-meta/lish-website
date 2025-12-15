@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-services',
-  templateUrl: './services.component.html',  
+  imports: [RouterModule],
+  templateUrl: './services.component.html',
 })
-export class ServicesComponent {
-
-}
+export class ServicesComponent {}
