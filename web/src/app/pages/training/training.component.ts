@@ -3,8 +3,7 @@ import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-training',
-  templateUrl: './training.component.html',
-  styleUrls: ['./training.component.scss'],
+  templateUrl: './training.component.html',  
 })
 export class TrainingComponent implements OnInit {
   constructor(private router: Router) {}

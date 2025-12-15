@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { ScrollService } from 'src/app/services/scroll.service';
+// import { ScrollService } from 'src/app/services/scroll.service';
 
 @Component({
   selector: 'app-about-us',
-  templateUrl: './about-us.component.html',
-  styleUrls: ['./about-us.component.scss'],
+  templateUrl: './about-us.component.html', 
 })
 export class AboutUsComponent implements OnInit {
   constructor(private router: Router) {}

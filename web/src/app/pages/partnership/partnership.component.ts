@@ -3,8 +3,7 @@ import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-partnership',
-  templateUrl: './partnership.component.html',
-  styleUrls: ['./partnership.component.scss'],
+  templateUrl: './partnership.component.html',  
 })
 export class PartnershipComponent implements OnInit {
   constructor(private router: Router) {}
