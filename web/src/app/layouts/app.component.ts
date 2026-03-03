@@ -4,8 +4,12 @@ import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from '../components/footer/footer.component';
 
 @Component({
-  selector: 'app-wrapper',
+  selector: 'app-layout',
   imports: [HeaderComponent, RouterOutlet, FooterComponent],
-  templateUrl: './wrapper.component.html',
+  template: `
+    <app-header></app-header>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+  `,
 })
-export class WrapperComponent {}
+export class AppLayoutComponent {}
