@@ -37,4 +37,8 @@ export class AboutUsComponent implements OnInit {
       }
     });
   }
+
+  handleImageError(event: any) {
+    console.error('Lish AI Labs - Image failed to load:', event.target.src);
+  }
 }
