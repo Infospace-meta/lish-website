@@ -1,10 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
-// import { ScrollService } from 'src/app/services/scroll.service';
+import { CommonModule } from '@angular/common';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
+import { TeamSectionComponent } from '../../components/team-section/team-section.component';
+import { RoadmapSectionComponent } from '../../components/roadmap-section/roadmap-section.component';
+import { FrameworkSectionComponent } from '../../components/framework-section/framework-section.component';
 
 @Component({
   selector: 'app-about-us',
-  templateUrl: './about-us.component.html', 
+  standalone: true,
+  imports: [
+    CommonModule, 
+    RouterModule, 
+    TeamSectionComponent, 
+    RoadmapSectionComponent,
+    FrameworkSectionComponent
+  ],
+  templateUrl: './about-us.component.html',
 })
 export class AboutUsComponent implements OnInit {
   constructor(private router: Router) {}
