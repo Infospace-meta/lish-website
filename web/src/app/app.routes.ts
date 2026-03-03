@@ -10,6 +10,7 @@ import { PartnershipComponent } from './pages/partnership/partnership.component'
 import { TrainingComponent } from './pages/training/training.component';
 import { AppLayoutComponent } from './layouts/app.component';
 import { TechLayoutComponent } from './layouts/tech-layout.component';
+import { TechLandingPage } from './pages/tech/tech-landing-page/tech-landing-page';
 
 // export const routes: Routes = [
 //   {
@@ -90,6 +91,7 @@ export const routes: Routes = [
     path: 'tech',
     component: TechLayoutComponent,
     children: [
+      { path: '', component: TechLandingPage },
       { path: 'home', component: HomeComponent },
       { path: 'about_us', component: AboutUsComponent },
       { path: 'contact', component: ContactComponent },
