@@ -9,15 +9,25 @@ import { FrameworkSectionComponent } from '../../components/framework-section/fr
   selector: 'app-about-us',
   standalone: true,
   imports: [
-    CommonModule,
-    RouterModule,
-    TeamSectionComponent,
+    CommonModule, 
+    RouterModule, 
+    TeamSectionComponent, 
     RoadmapSectionComponent,
     FrameworkSectionComponent
   ],
   templateUrl: './about-us.component.html',
 })
 export class AboutUsComponent implements OnInit {
+  partners = [
+    { name: 'Acts', src: 'assets/images/partners/acts.png' },
+    { name: 'Daraja', src: 'assets/images/partners/Daraja.png' },
+    { name: 'DCA', src: 'assets/images/partners/dca-logo.svg' },
+    { name: 'Innovation Hubs', src: 'assets/images/partners/Innovation-Hubs-1.png' },
+    { name: 'TCDM', src: 'assets/images/partners/TCDM.jpeg' },
+    { name: 'Thunderbird', src: 'assets/images/partners/Thunderbird-Logo.png' },
+    { name: 'UNDP', src: 'assets/images/partners/UNDP-Logo-Blue-Large-Transparent-1-edited.png' }
+  ];
+
   constructor(private router: Router) {}
 
   ngOnInit(): void {

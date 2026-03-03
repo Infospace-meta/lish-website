@@ -80,9 +80,9 @@
           </div>
           <div class="absolute flex flex-col items-center">
             <div
-              class="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mb-4 shadow-xl"
+              class="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mb-4 shadow-xl text-white font-bold text-2xl"
             >
-              <span class="text-white font-bold text-2xl">L</span>
+              L
             </div>
             <p
               class="text-[10px] font-bold uppercase tracking-[0.3em] text-primary/40"
@@ -193,12 +193,14 @@
           </p>
         </div>
         <div
-          class="md:w-2/3 grid grid-cols-2 md:grid-cols-4 gap-12 items-center opacity-40"
+          class="md:w-2/3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-12 items-center opacity-60"
         >
-          <div class="flex justify-center h-8 bg-black/10 rounded"></div>
-          <div class="flex justify-center h-8 bg-black/10 rounded"></div>
-          <div class="flex justify-center h-8 bg-black/10 rounded"></div>
-          <div class="flex justify-center h-8 bg-black/10 rounded"></div>
+          <img
+            *ngFor="let partner of partners"
+            [src]="partner.src"
+            [alt]="partner.name"
+            class="h-10 w-auto object-contain hover:opacity-100 transition-opacity"
+          />
         </div>
       </div>
     </div>
