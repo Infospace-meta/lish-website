@@ -6,10 +6,6 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './roadmap-section.component.html',
-  styles: [`
-    .no-scrollbar::-webkit-scrollbar { display: none; }
-    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-  `]
 })
 export class RoadmapSectionComponent {
   phases = [
