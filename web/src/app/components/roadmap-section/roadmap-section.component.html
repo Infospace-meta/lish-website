@@ -5,7 +5,6 @@
       Our trajectory towards a more equitable digital landscape.
     </p>
   </div>
-
   <div
     class="flex overflow-x-auto no-scrollbar gap-0 pl-8 md:pl-[calc((100vw-1280px)/2+32px)]"
   >
@@ -16,7 +15,7 @@
       <div>
         <div
           class="w-2.5 h-2.5 rounded-full mb-8"
-          [ngClass]="phase.active ? 'bg-accent' : 'bg-white/20'"
+          [ngClass]="phase.highlight ? 'bg-accent' : 'bg-white/20'"
         ></div>
         <span
           class="text-xs font-bold uppercase tracking-widest text-white/40 mb-4 block"

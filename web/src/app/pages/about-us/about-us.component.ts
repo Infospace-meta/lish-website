@@ -9,9 +9,9 @@ import { FrameworkSectionComponent } from '../../components/framework-section/fr
   selector: 'app-about-us',
   standalone: true,
   imports: [
-    CommonModule, 
-    RouterModule, 
-    TeamSectionComponent, 
+    CommonModule,
+    RouterModule,
+    TeamSectionComponent,
     RoadmapSectionComponent,
     FrameworkSectionComponent
   ],
@@ -23,7 +23,7 @@ export class AboutUsComponent implements OnInit {
   ngOnInit(): void {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        window.scrollTo(0, 0);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     });
   }
