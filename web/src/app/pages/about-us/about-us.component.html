@@ -1,120 +1,216 @@
 <main class="pt-48 bg-warm-bg">
   <section class="px-8 pb-32">
     <div class="max-w-7xl mx-auto">
-      <div class="flex flex-col md:flex-row gap-16 items-end">
-        <div class="flex-1">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
           <span
             class="inline-block text-[11px] font-semibold uppercase tracking-[0.25em] text-accent mb-8"
             >Pioneering Progress</span
           >
+
           <h1
-            class="text-6xl md:text-8xl font-medium mb-12 leading-[0.95] max-w-2xl"
+            class="text-6xl md:text-7xl font-medium mb-12 leading-[1.1] tracking-tight text-primary"
           >
-            Bridging the edge of AI and humanity.
+            We develop innovative, <br />
+            <span class="text-accent italic font-serif">data-driven</span>
+            solutions.
           </h1>
+
+          <div class="space-y-6 mb-12">
+            <div class="flex items-center gap-4">
+              <div
+                class="flex-shrink-0 w-6 h-6 rounded-full border border-accent flex items-center justify-center"
+              >
+                <span class="material-symbols-outlined text-accent text-[14px]"
+                  >check</span
+                >
+              </div>
+              <p class="text-lg text-text-muted font-light">
+                Partnering with over 80 growing companies
+              </p>
+            </div>
+            <div class="flex items-center gap-4">
+              <div
+                class="flex-shrink-0 w-6 h-6 rounded-full border border-accent flex items-center justify-center"
+              >
+                <span class="material-symbols-outlined text-accent text-[14px]"
+                  >check</span
+                >
+              </div>
+              <p class="text-lg text-text-muted font-light">
+                A team of 20+ data experts
+              </p>
+            </div>
+            <div class="flex items-center gap-4">
+              <div
+                class="flex-shrink-0 w-6 h-6 rounded-full border border-accent flex items-center justify-center"
+              >
+                <span class="material-symbols-outlined text-accent text-[14px]"
+                  >check</span
+                >
+              </div>
+              <p class="text-lg text-text-muted font-light">
+                Business Intelligence & Artificial Intelligence
+              </p>
+            </div>
+          </div>
+
+          <div class="pt-8 border-t border-black/5">
+            <p
+              class="text-[11px] font-bold uppercase tracking-widest text-accent mb-6"
+            >
+              Trusted by 80+ partners
+            </p>
+            <div
+              class="flex flex-wrap gap-8 items-center opacity-70 grayscale contrast-125"
+            >
+              <img
+                *ngFor="let partner of partners.slice(0, 4)"
+                [src]="partner.src"
+                [alt]="partner.name"
+                class="h-6 w-auto object-contain"
+                (error)="handleImageError($event)"
+              />
+            </div>
+          </div>
         </div>
-        <div class="flex-1 pb-4">
-          <p
-            class="text-xl md:text-2xl text-text-muted leading-relaxed font-light max-w-lg"
+
+        <div
+          class="relative bg-soft-grey rounded-5xl p-8 aspect-square flex items-center justify-center overflow-hidden"
+        >
+          <div
+            class="dashboard-mockup w-full h-full bg-white rounded-2xl shadow-2xl border border-black/5 flex flex-col overflow-hidden transform rotate-2 translate-x-4"
           >
-            Lish AI Labs is a high-concept innovation hub dedicated to creating
-            the nexus between emerging technology, industry standards, and the
-            next generation of global talent.
-          </p>
+            <div class="flex flex-1">
+              <div
+                class="w-24 border-r border-black/5 p-4 space-y-4 bg-warm-bg/50"
+              >
+                <div class="w-8 h-8 rounded-lg bg-primary/10"></div>
+                <div class="space-y-2">
+                  <div class="w-full h-1 bg-primary/20 rounded"></div>
+                  <div class="w-2/3 h-1 bg-primary/10 rounded"></div>
+                </div>
+              </div>
+              <div class="flex-1 p-6 space-y-6">
+                <div class="flex justify-between items-center">
+                  <div class="w-32 h-2 bg-primary/10 rounded"></div>
+                  <div
+                    class="w-8 h-8 rounded-full border border-dashed border-primary/20"
+                  ></div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                  <div
+                    class="aspect-square border border-dashed border-primary/20 rounded-xl flex items-center justify-center text-primary/20 font-light"
+                  >
+                    +
+                  </div>
+                  <div
+                    class="aspect-square border border-dashed border-primary/20 rounded-xl flex items-center justify-center text-primary/20 font-light"
+                  >
+                    +
+                  </div>
+                </div>
+                <div
+                  class="h-32 border border-dashed border-primary/20 rounded-xl flex items-center justify-center text-primary/20 font-light"
+                >
+                  <span class="material-symbols-outlined opacity-20">add</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="absolute inset-0 pointer-events-none">
+            <div
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border border-black/[0.03] rounded-full"
+            ></div>
+            <div
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] border border-black/[0.05] rounded-full animate-pulse"
+            ></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="px-8 py-32">
+  <section class="px-8 py-32 bg-white">
     <div class="max-w-7xl mx-auto">
       <div
-        class="bg-soft-grey rounded-5xl p-12 md:p-24 relative overflow-hidden min-h-[600px] flex items-center justify-center"
+        class="bg-primary rounded-5xl p-12 md:p-24 relative overflow-hidden min-h-[600px] flex items-center justify-center"
       >
+        <div
+          class="absolute inset-0 opacity-10"
+          style="
+            background-image: radial-gradient(
+              circle,
+              #fff 1px,
+              transparent 1px
+            );
+            background-size: 40px 40px;
+          "
+        ></div>
+
         <div
           class="relative w-full max-w-4xl h-[400px] flex items-center justify-center"
         >
-          <div class="absolute inset-0 flex items-center justify-center">
+          <div class="absolute flex flex-col items-center z-20">
             <div
-              class="w-[300px] h-[300px] border border-black/5 rounded-full animate-pulse"
-            ></div>
-            <div
-              class="absolute w-[500px] h-[500px] border border-black/[0.03] rounded-full"
-            ></div>
-          </div>
-          <div
-            class="relative z-10 flex flex-wrap gap-4 justify-center items-center"
-          >
-            <div
-              class="bg-white px-6 py-2.5 rounded-full shadow-sm border border-black/5 flex items-center gap-3"
+              class="w-24 h-24 bg-accent rounded-3xl flex items-center justify-center mb-4 shadow-2xl shadow-accent/20"
             >
-              <div class="w-1.5 h-1.5 rounded-full bg-accent"></div>
-              <span class="text-[13px] font-medium tracking-wide"
-                >Youth Talent</span
-              >
-            </div>
-            <div
-              class="bg-white px-6 py-2.5 rounded-full shadow-sm border border-black/5 flex items-center gap-3"
-            >
-              <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
-              <span class="text-[13px] font-medium tracking-wide"
-                >Generative AI</span
-              >
-            </div>
-            <div
-              class="bg-white px-6 py-2.5 rounded-full shadow-sm border border-black/5 flex items-center gap-3"
-            >
-              <div class="w-1.5 h-1.5 rounded-full bg-accent"></div>
-              <span class="text-[13px] font-medium tracking-wide"
-                >Global Industry</span
-              >
-            </div>
-            <div
-              class="bg-white px-6 py-2.5 rounded-full shadow-sm border border-black/5 flex items-center gap-3"
-            >
-              <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
-              <span class="text-[13px] font-medium tracking-wide"
-                >Infrastructure</span
-              >
-            </div>
-          </div>
-          <div class="absolute flex flex-col items-center">
-            <div
-              class="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mb-4 shadow-xl text-white font-bold text-2xl"
-            >
-              L
+              <span class="text-white font-bold text-3xl">L</span>
             </div>
             <p
-              class="text-[10px] font-bold uppercase tracking-[0.3em] text-primary/40"
+              class="text-[10px] font-bold uppercase tracking-[0.4em] text-white/60"
             >
-              Core Engine
+              Intelligence Core
             </p>
           </div>
+
+          <div
+            class="relative z-10 flex flex-wrap gap-6 justify-center items-center"
+          >
+            <div
+              class="bg-white/10 backdrop-blur-md px-8 py-4 rounded-full border border-white/10 text-white flex items-center gap-3"
+            >
+              <div class="w-2 h-2 rounded-full bg-accent animate-ping"></div>
+              <span class="text-sm font-medium tracking-wide"
+                >Real-time Analytics</span
+              >
+            </div>
+            <div
+              class="bg-white/10 backdrop-blur-md px-8 py-4 rounded-full border border-white/10 text-white flex items-center gap-3"
+            >
+              <span class="text-sm font-medium tracking-wide"
+                >Neural Networks</span
+              >
+            </div>
+          </div>
+
           <svg
-            class="absolute inset-0 w-full h-full pointer-events-none opacity-20"
-            preserveAspectRatio="none"
+            class="absolute inset-0 w-full h-full pointer-events-none opacity-30"
             viewBox="0 0 800 400"
           >
-            <path
-              d="M100,200 Q400,10 700,200"
+            <circle
+              cx="400"
+              cy="200"
+              r="180"
               fill="none"
-              stroke="currentColor"
+              stroke="white"
+              stroke-dasharray="8 8"
               stroke-width="0.5"
-            ></path>
+            />
             <path
-              d="M100,200 Q400,390 700,200"
-              fill="none"
-              stroke="currentColor"
+              d="M100,200 L700,200"
+              stroke="white"
               stroke-width="0.5"
-            ></path>
+              stroke-dasharray="4 4"
+            />
           </svg>
         </div>
       </div>
       <div class="mt-12 flex justify-between items-start">
-        <h2 class="text-2xl font-medium">The Lish Ecosystem</h2>
-        <p class="text-text-muted max-w-md text-sm leading-relaxed">
-          Our infrastructure connects disparate nodes of talent and technology
-          into a singular, cohesive ecosystem for growth and deployment.
+        <h2 class="text-3xl font-medium text-primary">The Lish Ecosystem</h2>
+        <p class="text-text-muted max-w-lg text-lg leading-relaxed font-light">
+          An integrated framework where data science meets deployment, creating
+          scalable impact across industries.
         </p>
       </div>
     </div>
@@ -129,7 +225,7 @@
           <div
             class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center"
           >
-            <span class="material-symbols-outlined text-accent text-2xl"
+            <span class="material-symbols-outlined text-accent text-3xl"
               >school</span
             >
           </div>
@@ -146,7 +242,7 @@
           <div
             class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center"
           >
-            <span class="material-symbols-outlined text-accent text-2xl"
+            <span class="material-symbols-outlined text-accent text-3xl"
               >code</span
             >
           </div>
@@ -163,7 +259,7 @@
           <div
             class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center"
           >
-            <span class="material-symbols-outlined text-accent text-2xl"
+            <span class="material-symbols-outlined text-accent text-3xl"
               >public</span
             >
           </div>
@@ -180,8 +276,6 @@
     </div>
   </section>
 
-  <app-framework-section></app-framework-section>
-
   <section class="px-8 py-32 border-t border-black/5 bg-warm-bg">
     <div class="max-w-7xl mx-auto">
       <div class="flex flex-col md:flex-row gap-20 items-center">
@@ -192,7 +286,6 @@
             grounded in ethics and excellence.
           </p>
         </div>
-
         <div
           class="md:w-2/3 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-12 items-center"
         >
@@ -203,7 +296,7 @@
             <img
               [src]="partner.src"
               [alt]="partner.name"
-              class="max-h-12 w-auto object-contain block opacity-100 transition-opacity duration-300"
+              class="max-h-12 w-auto object-contain block opacity-100"
               (error)="handleImageError($event)"
             />
           </div>
@@ -212,6 +305,7 @@
     </div>
   </section>
 
+  <app-framework-section></app-framework-section>
   <app-team-section></app-team-section>
   <app-roadmap-section></app-roadmap-section>
 
