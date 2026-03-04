@@ -9,6 +9,8 @@
 
   --radius-4xl: 2.5rem;
   --radius-5xl: 3.5rem;
+  
+  --font-serif: "Playfair Display", "Times New Roman", serif;
 }
 
 @layer base {
@@ -19,7 +21,7 @@
 
 /* Material Symbols Global Config */
 .material-symbols-outlined {
-  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 20;
   display: inline-block;
   line-height: 1;
   text-transform: none;
@@ -27,6 +29,7 @@
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
+  vertical-align: middle;
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -35,4 +38,15 @@
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Animation for the Dashboard Mockup */
+@keyframes float {
+  0% { transform: rotate(2deg) translateY(0px); }
+  50% { transform: rotate(2.5deg) translateY(-10px); }
+  100% { transform: rotate(2deg) translateY(0px); }
+}
+
+.dashboard-mockup {
+  animation: float 6s ease-in-out infinite;
 }
