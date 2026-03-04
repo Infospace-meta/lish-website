@@ -1,0 +1,38 @@
+<section class="px-8 py-40">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-24 items-center">
+      <div
+        class="rounded-5xl overflow-hidden aspect-[4/5] relative bg-[#EFEBE6]"
+      >
+        <img
+          alt="Abstract AI Visualization"
+          class="w-full h-full object-cover opacity-80"
+          src="https://res.cloudinary.com/dpfcle0os/image/upload/v1706975520/samples/Lish-website/aboutlish_mc39qx.jpg"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
+        ></div>
+      </div>
+      <div>
+        <span
+          class="inline-block text-[11px] font-semibold uppercase tracking-[0.25em] text-accent mb-8"
+          >Our Framework</span
+        >
+        <h2 class="text-4xl md:text-5xl font-medium mb-16 leading-tight">
+          Strategic methodology for sustainable innovation.
+        </h2>
+        <div class="space-y-10">
+          <div
+            *ngFor="let step of frameworkSteps"
+            class="pb-10 border-b border-black/10"
+          >
+            <h3 class="font-bold text-xs uppercase tracking-widest mb-4">
+              {{ step.id }}. {{ step.title }}
+            </h3>
+            <p class="text-text-muted leading-relaxed">{{ step.desc }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
