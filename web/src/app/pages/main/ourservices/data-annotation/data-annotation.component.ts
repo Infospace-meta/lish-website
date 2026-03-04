@@ -1,0 +1,18 @@
+import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+
+@Component({
+  selector: 'app-data-annotation',
+  templateUrl: './data-annotation.component.html',
+})
+export class DataAnnotationComponent implements OnInit {
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        window.scrollTo(0, 0);
+      }
+    });
+  }
+}
