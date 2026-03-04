@@ -11,6 +11,9 @@ import { TrainingComponent } from './pages/training/training.component';
 import { AppLayoutComponent } from './layouts/app.component';
 import { TechLayoutComponent } from './layouts/tech-layout.component';
 import { TechLandingPage } from './pages/tech/tech-landing-page/tech-landing-page';
+import { TeamPage } from './pages/tech/team/team-page';
+import { UsersPage } from './pages/tech/users/users-page';
+import { UserProfile } from './components/tech/user-profile/user-profile.component';
 
 // export const routes: Routes = [
 //   {
@@ -92,9 +95,15 @@ export const routes: Routes = [
     component: TechLayoutComponent,
     children: [
       { path: '', component: TechLandingPage },
+      { path: 'team', component: TeamPage },
       { path: 'home', component: HomeComponent },
       { path: 'about_us', component: AboutUsComponent },
       { path: 'contact', component: ContactComponent },
+      { path: 'users', component: UsersPage
+      //   ,children: [
+      //   { path: 'profile', component: UserProfile }
+      // ]
+    },
     ],
   },
 
