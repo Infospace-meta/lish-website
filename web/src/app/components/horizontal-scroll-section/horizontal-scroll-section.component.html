@@ -1,15 +1,10 @@
-<!-- Tall wrapper — stores the extra vertical scroll distance -->
 <div #pinWrapper [style.height.px]="wrapperHeight" class="relative bg-white">
-
-  <!-- Sticky panel — pins to top of viewport during the horizontal scroll phase -->
   <div class="sticky top-0 h-screen overflow-hidden flex flex-col justify-center">
 
-    <!-- Heading slot — max-width constrained, centered -->
     <div class="max-w-7xl mx-auto px-8 mb-12 w-full">
       <ng-content select="[slot=heading]"></ng-content>
     </div>
 
-    <!-- Cards track — translated horizontally by scroll listener -->
     <div #cardsTrack class="flex gap-6 pl-8 pr-24 will-change-transform">
       <ng-content select="[slot=cards]"></ng-content>
     </div>

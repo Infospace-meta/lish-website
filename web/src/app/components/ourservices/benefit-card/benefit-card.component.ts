@@ -40,11 +40,11 @@ export class BenefitCardComponent implements AfterViewInit, OnDestroy {
           } else {
             target.classList.remove('benefit-card--visible');
             if (entry.boundingClientRect.top > 0) {
-              // Card is below viewport — scrolling DOWN → enter from left, move right
+              /** Card is below viewport — scrolling DOWN → enter from left, move right */
               target.classList.add('benefit-card--left');
               target.classList.remove('benefit-card--right');
             } else {
-              // Card is above viewport — scrolling UP → enter from right, move left
+              /** Card is above viewport — scrolling UP → enter from right, move left */
               target.classList.add('benefit-card--right');
               target.classList.remove('benefit-card--left');
             }

@@ -27,7 +27,7 @@ export class HorizontalScrollSectionComponent implements AfterViewInit, OnDestro
   constructor(private cdr: ChangeDetectorRef, private ngZone: NgZone) {}
 
   ngAfterViewInit(): void {
-    // Defer one frame so cards have rendered and have their widths
+    /** Defer one frame so cards have rendered and have their widths */
     requestAnimationFrame(() => {
       this.calculate();
     });
@@ -40,7 +40,7 @@ export class HorizontalScrollSectionComponent implements AfterViewInit, OnDestro
         this.calculate();
       });
 
-      // Observe when available
+      /** Observe when available */
       requestAnimationFrame(() => {
         if (this.cardsTrack?.nativeElement) {
           this.resizeObserver.observe(this.cardsTrack.nativeElement);
@@ -65,9 +65,7 @@ export class HorizontalScrollSectionComponent implements AfterViewInit, OnDestro
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
 
-    // Amount of overflow (how much the track extends beyond the viewport)
     this.overflowWidth = Math.max(0, track.scrollWidth - viewportWidth);
-    // Wrapper height = one full viewport (visible section) + all remaining horizontal scroll
     this.wrapperHeight = viewportHeight + this.overflowWidth;
 
     this.ngZone.run(() => this.cdr.detectChanges());
@@ -80,7 +78,7 @@ export class HorizontalScrollSectionComponent implements AfterViewInit, OnDestro
     if (!wrapper || !track || this.overflowWidth === 0) return;
 
     const rect = wrapper.getBoundingClientRect();
-    // relativeScroll: 0 when wrapper top hits viewport top, increases as we scroll
+    /** relativeScroll: 0 when wrapper top hits viewport top, increases as we scroll */
     const relativeScroll = -rect.top;
     const pinDistance = this.wrapperHeight - window.innerHeight;
 
