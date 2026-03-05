@@ -83,26 +83,16 @@
 .partner-logo-bold:nth-child(3) { animation-delay: 0.4s; }
 .partner-logo-bold:nth-child(4) { animation-delay: 0.55s; }
 
-/* Fixed Solitaire Stack Carousel Transitions (Downward Stack) */
+/* Solitaire Stack Carousel Transitions - Top-Right Stack */
 .transition-all {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 700ms;
 }
-
-/* Background cards offset downwards and to the right */
-.translate-x-10.translate-y-10 {
-  transform: translateX(2.5rem) translateY(2.5rem) rotate(3deg);
+/* Solitaire Base Transition */
+.transition-all {
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.translate-x-20.translate-y-20 {
-  transform: translateX(5rem) translateY(5rem) rotate(6deg);
-}
-
-/* Increased section padding to contain the downward stack */
-section.pb-48 {
-  padding-bottom: 12rem; 
-}
-
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
