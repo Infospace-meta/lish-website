@@ -109,6 +109,115 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
 
     <!-- FIXED SUB-NAV PANEL -->
     @if (activeMenu) {
+<<<<<<< HEAD
+      <div class="fixed inset-0 z-30" (click)="closeMenu()"></div>
+      <div
+        class="hidden lg:block absolute top-[130px] left-[25%] right-[25%] bg-white border-b border-gray-100  rounded-[1rem] shadow-2xl animate-in slide-in-from-top-2 duration-200 z-40"
+      >
+        <div class="max-w-screen-xl mx-auto px-10 py-10">
+          <!-- Content for Impact -->
+          @if (activeMenu === 'impact') {
+            <div class="grid grid-cols-3 gap-10">
+              <div class="col-span-1">
+                <h3 class="text-xl font-bold text-blue-800 mb-2">Our Impact</h3>
+                <p class="text-sm text-neutral-500">
+                  Discover how we are changing lives through sustainable
+                  development and innovation.
+                </p>
+              </div>
+              <div class="flex flex-col space-y-3">
+                <a
+                  routerLink="/impact/education"
+                  class="font-semibold hover:text-accent"
+                  >Education Support</a
+                >
+                <a
+                  routerLink="/impact/health"
+                  class="font-semibold hover:text-accent"
+                  >Health Initiatives</a
+                >
+              </div>
+              <div class="flex flex-col space-y-3">
+                <a
+                  routerLink="/impact/sustainability"
+                  class="font-semibold hover:text-accent"
+                  >Sustainability</a
+                >
+                <a
+                  routerLink="/impact/reports"
+                  class="font-semibold hover:text-accent"
+                  >Annual Reports</a
+                >
+              </div>
+            </div>
+          }
+
+          <!-- Content for Services -->
+          @if (activeMenu === 'services') {
+            <div class="grid grid-cols-4 gap-6">
+              <div
+                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
+              >
+                <a routerLink="services/ai-and-machine-learning" class="block">
+                  <h4 class="font-bold group-hover:text-accent">
+                    Ai-and-Machine-Learning
+                  </h4>
+                  <p class="text-xs text-neutral-500">
+                    Unlock the power of artificial intelligence
+                  </p>
+                </a>
+              </div>
+              <div
+                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
+              >
+                <a routerLink="services/data-annotation" class="block">
+                  <h4 class="font-bold group-hover:text-accent">
+                    Data Annotation
+                  </h4>
+                  <p class="text-xs text-neutral-500">
+                    From raw data processing to precision annotation
+                  </p>
+                </a>
+              </div>
+              <div
+                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
+              >
+                <a routerLink="services/design-and-development" class="block">
+                  <h4 class="font-bold group-hover:text-accent">
+                    Design-and-Development
+                  </h4>
+                  <p class="text-xs text-neutral-500">
+                    End-to-end solutions for digital transformation
+                  </p>
+                </a>
+              </div>
+              <div
+                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
+              >
+                <a routerLink="services/employment-placement" class="block">
+                  <h4 class="font-bold group-hover:text-accent">
+                    Employment Placement
+                  </h4>
+                  <p class="text-xs text-neutral-500">
+                    Career support and job placement services.
+                  </p>
+                </a>
+              </div>
+              <div
+                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
+              >
+                <a routerLink="services/skill-building-programs" class="block">
+                  <h4 class="font-bold group-hover:text-accent">
+                    Skill Building Programs
+                  </h4>
+                  <p class="text-xs text-neutral-500">
+                    Comprehensive training and development opportunities.
+                  </p>
+                </a>
+              </div>
+            </div>
+          }
+=======
     <!-- <div class="fixed inset-0 z-30" (click)="closeMenu()"></div>Backdrop -->
     <div
       class="hidden lg:block absolute top-[130px] left-[25%] right-[25%] bg-white border-b border-gray-100  rounded-[1rem] shadow-2xl animate-in slide-in-from-top-2 duration-200 z-40"
@@ -148,6 +257,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
               >Annual Reports</a
             >
           </div>
+>>>>>>> d0c907d209811048e7af60f1006d274cb5a1bcbc
         </div>
         }
 
