@@ -109,7 +109,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
 
     <!-- FIXED SUB-NAV PANEL -->
     @if (activeMenu) {
-      <!-- <div class="fixed inset-0 z-30" (click)="closeMenu()"></div>Backdrop -->
+      <div class="fixed inset-0 z-30" (click)="closeMenu()"></div>
       <div
         class="hidden lg:block absolute top-[130px] left-[25%] right-[25%] bg-white border-b border-gray-100  rounded-[1rem] shadow-2xl animate-in slide-in-from-top-2 duration-200 z-40"
       >
@@ -157,36 +157,60 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
               <div
                 class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
               >
-                <a routerLink="/services/tech" class="block">
+                <a routerLink="services/ai-and-machine-learning" class="block">
                   <h4 class="font-bold group-hover:text-accent">
-                    Technology
+                    Ai-and-Machine-Learning
                   </h4>
                   <p class="text-xs text-neutral-500">
-                    Custom software and infrastructure.
+                    Unlock the power of artificial intelligence
                   </p>
                 </a>
               </div>
               <div
                 class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
               >
-                <a routerLink="/services/consulting" class="block">
+                <a routerLink="services/data-annotation" class="block">
                   <h4 class="font-bold group-hover:text-accent">
-                    Consulting
+                    Data Annotation
                   </h4>
                   <p class="text-xs text-neutral-500">
-                    Strategy and business growth.
+                    From raw data processing to precision annotation
                   </p>
                 </a>
               </div>
               <div
                 class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
               >
-                <a routerLink="/services/design" class="block">
+                <a routerLink="services/design-and-development" class="block">
                   <h4 class="font-bold group-hover:text-accent">
-                    UI/UX Design
+                    Design-and-Development
                   </h4>
                   <p class="text-xs text-neutral-500">
-                    Creative and user-centric design.
+                    End-to-end solutions for digital transformation
+                  </p>
+                </a>
+              </div>
+              <div
+                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
+              >
+                <a routerLink="services/employment-placement" class="block">
+                  <h4 class="font-bold group-hover:text-accent">
+                    Employment Placement
+                  </h4>
+                  <p class="text-xs text-neutral-500">
+                    Career support and job placement services.
+                  </p>
+                </a>
+              </div>
+              <div
+                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
+              >
+                <a routerLink="services/skill-building-programs" class="block">
+                  <h4 class="font-bold group-hover:text-accent">
+                    Skill Building Programs
+                  </h4>
+                  <p class="text-xs text-neutral-500">
+                    Comprehensive training and development opportunities.
                   </p>
                 </a>
               </div>
