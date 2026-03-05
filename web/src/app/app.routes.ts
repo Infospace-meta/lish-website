@@ -11,6 +11,14 @@ import { TrainingComponent } from './pages/training/training.component';
 import { AppLayoutComponent } from './layouts/app.component';
 import { TechLayoutComponent } from './layouts/tech-layout.component';
 import { TechLandingPage } from './pages/tech/tech-landing-page/tech-landing-page';
+import { TeamPage } from './pages/tech/team/team-page';
+import { UsersPage } from './pages/tech/users/users-page';
+import { UserProfile } from './components/tech/user-profile/user-profile.component';
+import { AiAndMachineLearningComponent } from './pages/main/ourservices/ai-and-machine-learning/ai-and-machine-learning.component';
+import { DataAnnotationComponent } from './pages/main/ourservices/data-annotation/data-annotation.component';
+import { DesignAndDevelopmentComponent } from './pages/main/ourservices/design-and-development/design-and-development.component';
+import { EmploymentPlacementComponent } from './pages/main/ourservices/employment-placement/employment-placement.component';
+import { SkillBuildingProgramsComponent } from './pages/main/ourservices/skill-building-programs/skill-building-programs.component';
 
 // export const routes: Routes = [
 //   {
@@ -82,6 +90,11 @@ export const routes: Routes = [
       { path: 'blog/december2022', component: December2022Component },
       { path: 'partnership', component: PartnershipComponent },
       { path: 'training', component: TrainingComponent },
+      { path: 'services/ai-and-machine-learning', component: AiAndMachineLearningComponent },
+      { path: 'services/data-annotation', component: DataAnnotationComponent },
+      { path: 'services/design-and-development', component: DesignAndDevelopmentComponent },
+      { path: 'services/employment-placement', component: EmploymentPlacementComponent },
+      { path: 'services/skill-building-programs', component: SkillBuildingProgramsComponent },
       { path: '', redirectTo: 'home', pathMatch: 'full' },
     ],
   },
@@ -92,9 +105,15 @@ export const routes: Routes = [
     component: TechLayoutComponent,
     children: [
       { path: '', component: TechLandingPage },
+      { path: 'team', component: TeamPage },
       { path: 'home', component: HomeComponent },
       { path: 'about_us', component: AboutUsComponent },
       { path: 'contact', component: ContactComponent },
+      { path: 'users', component: UsersPage
+      //   ,children: [
+      //   { path: 'profile', component: UserProfile }
+      // ]
+    },
     ],
   },
 

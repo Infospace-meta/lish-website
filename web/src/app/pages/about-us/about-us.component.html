@@ -1,475 +1,403 @@
-<!--hero section-->
-<section class="bg-gray-900">
-  <div class="max-w-full mx-auto px-4 md:px-8">
-    <div
-      class="w-full h-[50vh] md:h-[75vh] relative bg-[url('https://res.cloudinary.com/dpfcle0os/image/upload/v1706975520/samples/Lish-website/aboutlish_mc39qx.jpg')] bg-no-repeat bg-cover bg-center rounded-2xl"
-    >
-      <div class="absolute inset-0 bg-gray-900 bg-opacity-70 rounded-2xl">
-        <div class="absolute top-20  sm:top-1/2 p-6 md:p-8 lg:p-12">
-          <h1 class="text-3xl md:text-5xl font-semibold text-white max-w-3xl">
-            Who We Are
+<main class="pt-14 bg-warm-bg">
+  <!-- Hero section -->
+  <section class="font-poppins px-8 pb-32 pt-12">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <span
+            class="inline-block text-[11px] font-semibold uppercase tracking-[0.25em] text-accent mb-8"
+            >About us</span
+          >
+          <h1
+            class="text-5xl md:text-6xl mb-12 leading-[1.1] tracking-tight text-primary"
+          >
+            Bridging the edge of
+            <span class="text-accent">AI and humanity.</span>
           </h1>
-          <p
-            class="text-gray-300 py-3 text-lg md:text-2xl max-w-3xl"
+
+          <div class="space-y-4 mb-12">
+            <div class="flex items-center gap-4">
+              <div
+                class="flex-shrink-0 w-6 h-6 rounded-full border border-accent flex items-center justify-center"
+              >
+                <span class="material-symbols-outlined text-accent text-[14px]"
+                  >check</span
+                >
+              </div>
+              <p class="text-lg text-text-muted font-light">
+                Empowering youth through AI & Machine Learning
+              </p>
+            </div>
+            <div class="flex items-center gap-4">
+              <div
+                class="flex-shrink-0 w-6 h-6 rounded-full border border-accent flex items-center justify-center"
+              >
+                <span class="material-symbols-outlined text-accent text-[14px]"
+                  >check</span
+                >
+              </div>
+              <p class="text-lg text-text-muted font-light">
+                Providing sustainable digital employment opportunities
+              </p>
+            </div>
+            <div class="flex items-center gap-4">
+              <div
+                class="flex-shrink-0 w-6 h-6 rounded-full border border-accent flex items-center justify-center"
+              >
+                <span class="material-symbols-outlined text-accent text-[14px]"
+                  >check</span
+                >
+              </div>
+              <p class="text-lg text-text-muted font-light">
+                Cultivating a solution-oriented mindset for development
+              </p>
+            </div>
+          </div>
+
+          <div class="pt-8 border-t border-black/5">
+            <p
+              class="text-[11px] font-bold uppercase tracking-widest text-accent mb-6"
+            >
+              Trusted by 80+ partners
+            </p>
+            <div class="partner-scroll-container">
+              <div class="partner-scroll-wrapper">
+                <div class="partner-batch">
+                  <img
+                    *ngFor="let p of partners.slice(0, 4)"
+                    [src]="p.src"
+                    [alt]="p.name"
+                    class="partner-logo-bold"
+                    (error)="handleImageError($event)"
+                  />
+                </div>
+                <div class="partner-batch">
+                  <img
+                    *ngFor="let p of partners.slice(4, 8)"
+                    [src]="p.src"
+                    [alt]="p.name"
+                    class="partner-logo-bold"
+                    (error)="handleImageError($event)"
+                  />
+                </div>
+                <div class="partner-batch">
+                  <img
+                    *ngFor="let p of partners.slice(8, 12)"
+                    [src]="p.src"
+                    [alt]="p.name"
+                    class="partner-logo-bold"
+                    (error)="handleImageError($event)"
+                  />
+                </div>
+                <div class="partner-batch">
+                  <img
+                    *ngFor="let p of partners.slice(0, 4)"
+                    [src]="p.src"
+                    [alt]="p.name"
+                    class="partner-logo-bold"
+                    (error)="handleImageError($event)"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carousel Card -->
+
+        <div
+          class="relative aspect-square flex flex-col items-center justify-center z-0"
+        >
+          <div
+            class="relative mb-6 w-full h-[80%] flex items-center justify-center"
           >
-            Welcome to Lish AI Labs, where innovation meets impact. Founded on
-            the principles of integrity, collaboration, and social
-            responsibility.
-          </p>
+            <div
+              *ngFor="let img of carouselImages; let i = index"
+              class="absolute w-[85%] h-[85%] transition-all duration-700 ease-in-out rounded-3xl overflow-hidden border border-black/10 shadow-2xl"
+              [ngClass]="{
+                'z-30 opacity-100 scale-100 translate-x-0 translate-y-0 rotate-0':
+                  i === currentIndex,
+                'z-20 opacity-70 scale-95 translate-x-6 translate-y-6 rotate-2':
+                  i === (currentIndex + 1) % carouselImages.length,
+                'z-10 opacity-40 scale-90 translate-x-12 translate-y-12 rotate-6':
+                  i === (currentIndex + 2) % carouselImages.length,
+                'z-0 opacity-0 scale-75':
+                  i !== currentIndex &&
+                  i !== (currentIndex + 1) % carouselImages.length &&
+                  i !== (currentIndex + 2) % carouselImages.length,
+              }"
+            >
+              <img
+                [src]="img"
+                alt="Lish AI Hub"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          <div class="mt-16 flex items-center justify-center">
+            <div class="flex gap-3">
+              <div
+                *ngFor="let img of carouselImages; let i = index"
+                (click)="goToSlide(i); resetTimer()"
+                class="h-1.5 transition-all duration-500 rounded-full cursor-pointer hover:bg-accent/50"
+                [ngClass]="
+                  i === currentIndex ? 'w-10 bg-accent' : 'w-2 bg-black/10'
+                "
+              ></div>
+            </div>
+          </div>
+
+          <div class="absolute inset-0 -z-10 pointer-events-none">
+            <div
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[115%] h-[115%] border border-black/[0.04] rounded-full"
+            ></div>
+            <div
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] h-[95%] border border-black/[0.06] rounded-full animate-pulse"
+            ></div>
+          </div>
+        </div>
+        <!-- End carousel card -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Intelligent core -->
+  <section class="px-8 py-32 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div
+        class="bg-primary rounded-5xl p-12 md:p-24 relative overflow-hidden min-h-[600px] flex items-center justify-center"
+      >
+        <div
+          class="absolute inset-0 opacity-10"
+          style="
+            background-image: radial-gradient(
+              circle,
+              #fff 1px,
+              transparent 1px
+            );
+            background-size: 40px 40px;
+          "
+        ></div>
+
+        <div
+          class="relative w-full max-w-4xl h-[400px] flex items-center justify-center"
+        >
+          <div class="absolute flex flex-col items-center z-20">
+            <div
+              class="w-24 h-24 bg-accent rounded-3xl flex items-center justify-center mb-4 shadow-2xl shadow-accent/20"
+            >
+              <span class="text-white font-bold text-3xl">L</span>
+            </div>
+            <p
+              class="text-[10px] font-bold uppercase tracking-[0.4em] text-white/60"
+            >
+              Intelligence Core
+            </p>
+          </div>
+
+          <div
+            class="relative z-10 flex flex-wrap gap-6 justify-center items-center"
+          >
+            <div
+              class="bg-white/10 backdrop-blur-md px-8 py-4 rounded-full border border-white/10 text-white flex items-center gap-3"
+            >
+              <div class="w-2 h-2 rounded-full bg-accent animate-ping"></div>
+              <span class="text-sm font-medium tracking-wide"
+                >Real-time Analytics</span
+              >
+            </div>
+            <div
+              class="bg-white/10 backdrop-blur-md px-8 py-4 rounded-full border border-white/10 text-white flex items-center gap-3"
+            >
+              <span class="text-sm font-medium tracking-wide"
+                >Neural Networks</span
+              >
+            </div>
+          </div>
+
+          <svg
+            class="absolute inset-0 w-full h-full pointer-events-none opacity-30"
+            viewBox="0 0 800 400"
+          >
+            <circle
+              cx="400"
+              cy="200"
+              r="180"
+              fill="none"
+              stroke="white"
+              stroke-dasharray="8 8"
+              stroke-width="0.5"
+            />
+            <path
+              d="M100,200 L700,200"
+              stroke="white"
+              stroke-width="0.5"
+              stroke-dasharray="4 4"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="mt-12 flex justify-between items-start">
+        <h2 class="text-3xl font-medium text-primary">The Lish Ecosystem</h2>
+        <p class="text-text-muted max-w-lg text-lg leading-relaxed font-light">
+          An integrated framework where data science meets deployment, creating
+          scalable impact across industries.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Value Creation section -->
+  <section class="px-8 py-32 bg-warm-bg">
+    <div class="max-w-7xl mx-auto">
+      <h2
+        class="text-4xl md:text-5xl font-medium text-primary mb-20 tracking-tight"
+      >
+        We create lasting value.
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-24">
+        <div class="flex flex-col gap-8 group">
+          <div
+            class="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center shadow-lg transition-transform duration-500 group-hover:-translate-y-2"
+          >
+            <div
+              class="w-10 h-10 rounded-full border-2 border-accent/30 flex items-center justify-center"
+            >
+              <span
+                class="material-symbols-outlined text-accent text-2xl font-light"
+                >school</span
+              >
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <h3
+              class="text-xl font-semibold text-primary flex items-center gap-3"
+            >
+              <span class="text-accent/50 font-mono text-sm">01.</span>
+              Youth Training
+            </h3>
+            <p class="text-text-muted leading-relaxed font-light">
+              Proven data experts delivering high-impact skills to over
+              <span class="text-primary font-medium">500+ youth</span>, ensuring
+              success for partners of every size.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-8 group">
+          <div
+            class="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center shadow-lg transition-transform duration-500 group-hover:-translate-y-2"
+          >
+            <div class="flex items-end gap-1">
+              <div class="w-2 h-4 bg-soft-grey/40 rounded-sm"></div>
+              <div class="w-2 h-7 bg-accent rounded-sm"></div>
+              <div class="w-2 h-5 bg-accent/60 rounded-sm"></div>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <h3
+              class="text-xl font-semibold text-primary flex items-center gap-3"
+            >
+              <span class="text-accent/50 font-mono text-sm">02.</span>
+              AI Solutions
+            </h3>
+            <p class="text-text-muted leading-relaxed font-light">
+              Automating manual work with
+              <span class="text-primary font-medium">24 active AI models</span>,
+              streamlining complex data flows with clear, transparent
+              integration.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-8 group">
+          <div
+            class="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center shadow-lg transition-transform duration-500 group-hover:-translate-y-2"
+          >
+            <div class="relative">
+              <span class="material-symbols-outlined text-accent text-3xl"
+                >auto_awesome</span
+              >
+              <span
+                class="material-symbols-outlined text-white text-xl absolute -bottom-1 -right-1"
+                >public</span
+              >
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <h3
+              class="text-xl font-semibold text-primary flex items-center gap-3"
+            >
+              <span class="text-accent/50 font-mono text-sm">03.</span>
+              Global Network
+            </h3>
+            <p class="text-text-muted leading-relaxed font-light">
+              Integrating insights across
+              <span class="text-primary font-medium">12 partner countries</span
+              >, delivering visualization tools that provide the right data at
+              the right time.
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!--summary section-->
-<div class="overflow-hidden bg-gray-900 py-20">
-  <div class="mx-auto max-w-7xl px-6 lg:px-8">
-    <div
-      class="mx-auto grid max-w-2xl grid-cols-1 gap-y-16 gap-x-8 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2"
-    >
-      <div class="lg:pr-8 lg:pt-4">
-        <div class="lg:max-w-lg">
-          <h2
-            class="text-lg font-semibold leading-8 tracking-tight text-indigo-100"
-          >
-            Where we want to be . . .
-          </h2>
-          <p
-            class="mt-2 text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl"
-          >
-            Vision
+  <section class="px-8 py-32 border-t border-black/5 bg-warm-bg">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row gap-20 items-center">
+        <div class="md:w-1/3">
+          <h2 class="text-3xl font-medium mb-6 text-primary">Our Network</h2>
+          <p class="text-text-muted text-lg font-light leading-relaxed">
+            We collaborate with global institutions to ensure our solutions are
+            grounded in ethics and excellence.
           </p>
-          <p class="mt-6 text-lg leading-8 text-gray-100">
-            To be the leading digital center for youth skill development in AI &
-            Machine learning, empowering young people to take advantage of the
-            available digital opportunities, leading to a prosperous &
-            sustainable future.
-          </p>
-          <dl
-            class="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none"
-          >
-            <div class="">
-              <div
-                class="relative flex flex-col gap-6 sm:flex-row md:flex-col lg:flex-row"
-              >
-                <div
-                  class="flex h-12 w-12 items-center justify-center rounded-xl text-white sm:shrink-0"
-                >
-                  <!-- Heroicon name: outline/bolt -->
-                  <img
-                    src="data:image/png;base64,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"
-                  />
-                </div>
-                <div class="sm:min-w-0 sm:flex-1">
-                  <dt class="inline font-semibold text-gray-100">
-                    <!-- Heroicon name: mini/lock-closed -->
-                    Youth empowerment :
-                  </dt>
-                  <dd class="inline text-gray-400">
-                    Equipping the youth with digital skills they need to excel
-                    in the field of AI and Machine learning
-                  </dd>
-                </div>
-              </div>
-            </div>
-
-            <div class="">
-              <div
-                class="relative flex flex-col gap-6 sm:flex-row md:flex-col lg:flex-row"
-              >
-                <div
-                  class="flex h-12 w-12 items-center justify-center rounded-xl text-white sm:shrink-0"
-                >
-                  <!-- Heroicon name: outline/bolt -->
-                  <img
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAADuklEQVR4nO2bS2sUQRDHW9DEg17FxzcQv4D4PBvFU0SmOwYi5CDuTY3Z6mVAiSYmF9HvoWeJJijoyYCodwWjxIt5GNjqRVtqZo1knUfvq7t3M3+Ywyyz21W/qap+LmOFCm1TUK5e5ICLXOJPIZX25arb85FLfMgnq0dZN8QBp107agQD8BcHfDQc6oGOvnlBDQCiAHXrcrh5mFnWaKj3csBn5lGhvlBkcMAfHPA1r6hr4+N6T0uNc8DF+g9PdNwzUxskPo5tQAMAyc9wUEu8rA813bgA3KAfcPHmo/Yn8RiFdmdSRC2VSnqwOQNk/GXmSFTcOlorKuq61wDGbur9lG5C4hshcbULvYaK0kHiXaOoFhYBBKBOc8AVaz0H4FogMfACQFBRJzhgtV7FrXadmRCEBQBRN1dWn6y9+f/TYj01HYQFAALwqu03nxAJ084AcKmeunL8HwD1wSWA984BSKy6BPDONQAa6jOmd7kBAOrJDk8BHHMPAO85A1Aq6UEO6rPD8F8bDfVBZwBIIxV1nNOU2zoA/M0lXmJpEpYAkHhFneKA36yFvcT1TOdtAyANh3qfAHWDJkO0oNGlJbS3NBkSoT6Qa5CwDKBdG5KebcsHUQBQRQSIIgWUrar8XQA+OBPq3d2uAbRKTG0JiV/p4hJnE1eOhfV+OQIx064NuVAi5xu+BzjnBQDRgasVHygC+xIAl/jKCADgSl8CSBKlWUIEzKZujIgeu1iOqNDGe55bRXAmpQjiQj8CMJYoVy+Y78v1IQCSkDjl2iGnAEiBrJ0XgC96pSYwHyVSjOuk0QUAWUSALlJAelIDhkM9EI+4aLBhWMBALdMApdWDTl6lAG/rdBne73kAAtRyywBALbfT5giok533qEm56MspcrqdZl4DIKciCEbR11qaGct0Hp78lvAl65IoPdpJs76QV8WypwAEHp0aj23ABZqyNzWp27bGgQsjsnauD06N41Su/VIB7QYnfJc+m8x988LxqfFGkQ3RqdL6tjov14bSnuVQO5sHkQ5qen1qPE3x0dooJZ6nPkNrGfk9z3x6IxAvhPw9ct5YRFze0+mOOoD1NPuNahbgRhZl7YvDJvdp9uddxgB8UwFAWo4A0eK9qQH+pQBs/+uMTwCulDePxPe4mmd/ThFcSwcgt0ZP3nWDHNTtvG7MZIcrqxtlWztE8aBjwseBUNaQNnuHK/4sayDl/w4R4B2Woyz76dgcMxEv14YoVGjQ4drpyAbAeePJTOMOF+BG5Evemy/Edp7+ACaOEJjdgvS6AAAAAElFTkSuQmCC"
-                  />
-                </div>
-                <div class="sm:min-w-0 sm:flex-1">
-                  <dt class="inline font-semibold text-gray-100">
-                    <!-- Heroicon name: mini/lock-closed -->
-                    Technological advancement :
-                  </dt>
-                  <dd class="inline text-gray-400">
-                    Leveraging technology to come up with innovative ways of
-                    earning money online
-                  </dd>
-                </div>
-              </div>
-            </div>
-
-            <div class="">
-              <div
-                class="relative flex flex-col gap-6 sm:flex-row md:flex-col lg:flex-row"
-              >
-                <div
-                  class="flex h-12 w-12 items-center justify-center rounded-xl text-white sm:shrink-0"
-                >
-                  <!-- Heroicon name: outline/bolt -->
-                  <img
-                    src="data:image/png;base64,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"
-                  />
-                </div>
-                <div class="sm:min-w-0 sm:flex-1">
-                  <dt class="inline font-semibold text-gray-100">
-                    <!-- Heroicon name: mini/lock-closed -->
-                    Community :
-                  </dt>
-                  <dd class="inline text-gray-400">
-                    Strengthening local communities by offering them job
-                    opportunities to improve their social status
-                  </dd>
-                </div>
-              </div>
-            </div>
-
-            <div class="">
-              <div
-                class="relative flex flex-col gap-6 sm:flex-row md:flex-col lg:flex-row"
-              >
-                <div
-                  class="flex h-12 w-12 items-center justify-center rounded-xl text-white sm:shrink-0"
-                >
-                  <!-- Heroicon name: outline/bolt -->
-                  <img
-                    src="data:image/png;base64,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"
-                  />
-                </div>
-                <div class="sm:min-w-0 sm:flex-1">
-                  <dt class="inline font-semibold text-gray-100">
-                    <!-- Heroicon name: mini/lock-closed -->
-                    Partnership :
-                  </dt>
-                  <dd class="inline text-gray-400">
-                    Creating a network with different organizations for sharing
-                    knowledge and expertise to help us achieve our mission
-                  </dd>
-                </div>
-              </div>
-            </div>
-          </dl>
         </div>
-      </div>
-      <!-- <img
-        src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"
-        alt="Product screenshot"
-        class="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
-        width="2432"
-        height="1442"
-      /> -->
-      <div class="lg:pr-8 lg:pt-4">
-        <div class="lg:max-w-lg">
-          <h2
-            class="text-lg font-semibold leading-8 tracking-tight text-indigo-100"
+        <div
+          class="md:w-2/3 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-12 items-center"
+        >
+          <div
+            *ngFor="let partner of partners"
+            class="flex justify-center items-center h-16 w-full"
           >
-            What we do . . .
-          </h2>
-          <p
-            class="mt-2 text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl"
-          >
-            Mission
-          </p>
-          <p class="mt-6 text-lg leading-8 text-gray-100">
-            To provide youth with necessary skills in AI and Machine learning,
-            employment opportunities in the digital space while fostering a
-            solution-oriented mindset for sustainable development.
-          </p>
-          <dl
-            class="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none"
-          >
-            <div class="">
-              <div
-                class="relative flex flex-col gap-6 sm:flex-row md:flex-col lg:flex-row"
-              >
-                <div
-                  class="flex h-12 w-12 items-center justify-center rounded-xl text-white sm:shrink-0"
-                >
-                  <!-- Heroicon name: outline/bolt -->
-                  <img
-                    src="data:image/png;base64,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"
-                  />
-                </div>
-                <div class="sm:min-w-0 sm:flex-1">
-                  <dt class="inline font-semibold text-gray-100">
-                    <!-- Heroicon name: mini/lock-closed -->
-                    Changing Lives :
-                  </dt>
-                  <dd class="inline text-gray-400">
-                    We are committed to transforming the lives of young people
-                    by giving them a platform to participate in the digital
-                    economy
-                  </dd>
-                </div>
-              </div>
-            </div>
-
-            <div class="">
-              <div
-                class="relative flex flex-col gap-6 sm:flex-row md:flex-col lg:flex-row"
-              >
-                <div
-                  class="flex h-12 w-12 items-center justify-center rounded-xl text-white sm:shrink-0"
-                >
-                  <!-- Heroicon name: outline/bolt -->
-                  <img
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADUAAAA1CAYAAADh5qNwAAAACXBIWXMAAAsTAAALEwEAmpwYAAAF1UlEQVR4nO1aaYgcVRDuVYwnaryi+EM88CS6Kibg8UMxEMUIGkez/d7smo3sDyHE4JGdrhpbQcGo0YCKB6Iggppg/KX+0MQLJeIPERNixBPJSmJUMMd21USfVB+zPZ3umZ5ke3YHpqB+THe/1++beq/qq6q2rJ70pKmoKl+jkd/UyL8opB0KaKNGXlFyzTFW94npU0hPaKT/NLLZT4F/VOidZ3WTaOAHAgC0TwE9M+DwnIGKd75GGhSryT0F/HNphTnO6gYpj5oTFdJuf+FIw8n7yjXHauTNIbAHramWkmtm2Eiz7SpfnqUKeDSyROYzyBBuxS3N5rLlWcecVhggXeW5Cmh76hkpXOmFQkAppM/CF4zJQe+UKiRP3lsGvnryQQH97oNyx8+xOig6CAlGAy0uDNQgjJ896ZM3fS+/keV0JmHyHqjutlTJNTO04y3UVR6pK9LgkGtObTafrtbmxccopOHyqHfutAClkdeluWF5fsg1x6cCQnZTxyB5gxW6OM1RFAqqDLXrG14KROGi1inkNYHSDv9atTYvdS6kr8KFro/GaODvQ154X+K9GwsHpYE2LF1qDq+Dikjrvebo2LWP/D8AazemzaWRvw4BXFm/BrQ6/HMq0TUbazdF8xcLKljMdwpppaQR0UuXVMwsDYyq4l0YgVLIrwTPJJXG5L5d4auUw/doqF0XgVJI7ytgJ9h2tC+2NYsDpZB2pp2HskPDIZDXI1CtVFVIh2O+jVkqfi7/VUB/Fw5KUogyUEkjPayAHqsvwjWnCFFNWGqNPJOi2+uWQl5mV2vX1i0F9LH/DPIyybk64v1sd/ys+PUiz5TI1IAq3Ptx50Ep4Lcz0oWxrDglyWFWnLKRZk85qJERc1gao1hUMbPaYRQaaMmUMYokqKJF9UC1KT1LdXr7aaRLJHhGqh1vgZBUiRkjrjkqc3LkrWFwfCqd+hSmm33v6HgLUxdWKplDo5pchkvdYTu1GzJAVYurFrVQ4G1Z4cEacs0RMQAfxFVIasjCd5WRLhUv5+uomRmMNn020B0K6VkF/GLnlB4adPacnrn14qBc1xzSeNf0aaAPsyyogN+R7SqZrjWdZKgpqBj/AvrTr7shjUV1t0Rx/zara0AhPb0/qTR9wrwV8v0K+YcYDfpEkjg5p1Y3gFLATtp4nxIhL9dIf8W25j+SDUselXYmJEVJ8rlWUlpujgw8cm2+NBQOClTorjNB1V/qmhOkeKKQf8qVDCJ5yvFuaQkEvVv9uAS0K5Yojqsq333woJDByik27D1DoXezBMcGglovffFrkbMRSzeMHTUzFdLtfuoOE0BC3aKRvqz/drwFuUEliiir2gWVr6sYnEU/VDjUL2dWA32qgWoNFgXeJGlJGb0Lkg08hfxNLlCBA6DdGui5OCgpoEwWJOkWRnUN//wlahBijagMYKWIWDN6Nm137QdqEOmiwOxB/0cDPZkHlIwV958M4GkqbCBxvnZq4LcU0l2tqrgi0lqNwoyVd/vFg2nQfPZNXbWaiP/vJbZOU0cBvEl4nHQGU//tJt19NRFGXsoNqmGSCFSOXqwsME6Ms1RV+Yp2Y5mu8lwN9F7caUgv+YBAaaDH84IqQgYcnqOA3o0F+L1yJJp28fOCkhhkdUh8hxWEhPUJMKtzNbFzbL+VnQIlTEFKzgnqtTc3mLZB+aRVanHiDWnRZH3EIe+UaqwCfrXBvQNvE7e+uGJObnvS1owivYbn0xzklzWMn3kgYCSYaqRHFfCviTi1UQENJJnGAYPSwGsnKqp+VfXzEAD7lEc+uQF6RAF9UW+nAI3LtYnEMV3E28knAqHltzT+SdLxoFXCLNpbfYb46TzQnux4IvfozuQ4CdJxKwoLCRn4ImkY+Bmy0B+gJT7XA/ojYendfjcEavMLSVVsh/rT4onkRgOuOanp2KA7sSFX0AX+TQE9L00C2SHWdBfboX6pHUiDbOLLFN4q1pRvk5RDlwmRnep19sSaBvI/Z3DQojdXC78AAAAASUVORK5CYII="
-                  />
-                </div>
-                <div class="sm:min-w-0 sm:flex-1">
-                  <dt class="inline font-semibold text-gray-100">
-                    <!-- Heroicon name: mini/lock-closed -->
-                    Employment Opportunities :
-                  </dt>
-                  <dd class="inline text-gray-400">
-                    Not only do we offer train the youth, but also provide them
-                    with online working opportunities where they get paid for
-                    the work they do.
-                  </dd>
-                </div>
-              </div>
-            </div>
-
-            <div class="">
-              <div
-                class="relative flex flex-col gap-6 sm:flex-row md:flex-col lg:flex-row"
-              >
-                <div
-                  class="flex h-12 w-12 items-center justify-center rounded-xl text-white sm:shrink-0"
-                >
-                  <!-- Heroicon name: outline/bolt -->
-                  <img
-                    src="data:image/png;base64,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"
-                  />
-                </div>
-                <div class="sm:min-w-0 sm:flex-1">
-                  <dt class="inline font-semibold text-gray-100">
-                    <!-- Heroicon name: mini/lock-closed -->
-                    Cultivating a Solution-Oriented Mindset :
-                  </dt>
-                  <dd class="inline text-gray-400">
-                    We nurture the youth to become innovative thinkers to solve
-                    real-world problems using technology.
-                  </dd>
-                </div>
-              </div>
-            </div>
-          </dl>
+            <img
+              [src]="partner.src"
+              [alt]="partner.name"
+              class="max-h-12 w-auto object-contain block opacity-100"
+              (error)="handleImageError($event)"
+            />
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<!--comapny mission statement-->
-<div class="bg-white py-24 sm:py-32 lg:py-40">
-  <div class="mx-auto max-w-7xl px-6 lg:px-8">
-    <div class="p-4 text-gray-600">
-      <h1 class="mb-8 text-center text-3xl font-bold text-indigo-900">
-        This is - what we do :
-      </h1>
-      <div class="mt-20 max-w-lg sm:mx-auto md:max-w-none">
-        <ul class="grid place-content-center sm:grid-cols-2 gap-8">
-          <li class="flex">
-            <div class="px-4 text-5xl font-extralight text-indigo-700">01.</div>
-            <div>
-              <div class="text-xl font-bold text-indigo-800">Training</div>
-              <p class="max-w-xs py-2 text-sm text-indigo-900">
-                Knowledge and expertise are paramount in the world of AI. We
-                conduct comprehensive training programs for cloud workers, data
-                collectors, and software developers, equipping them with the
-                skills needed to excel in data collection, analysis, labeling,
-                and the creation of machine learning models.
-              </p>
-            </div>
-          </li>
-          <li class="flex">
-            <div class="px-4 text-5xl font-extralight text-indigo-700">02.</div>
-            <div>
-              <div class="text-xl font-bold text-indigo-800">
-                Software Development
-              </div>
-              <p class="max-w-xs py-2 text-sm text-indigo-900">
-                We provide end-to-end software development services, leveraging
-                our AI models to create tailored solutions for businesses. Our
-                AI-powered applications optimize processes, enhance
-                decision-making, and drive growth for our clients.
-              </p>
-            </div>
-          </li>
-          <li class="flex">
-            <div class="px-4 text-5xl font-extralight text-indigo-700">03.</div>
-            <div>
-              <div class="text-xl font-bold text-indigo-800">
-                Analyze and Label Data
-              </div>
-              <p class="max-w-xs py-2 text-sm text-indigo-900">
-                Our expertise extends to data analysis and data labeling
-                services. We offer both automated and manual approaches,
-                utilizing secure and customized labs to assist our cloud workers
-                in precisely labeling and analyzing data, ensuring high-quality
-                inputs for our AI models.
-              </p>
-            </div>
-          </li>
-          <li class="flex">
-            <div class="px-4 text-5xl font-extralight text-indigo-700">04.</div>
-            <div>
-              <div class="text-xl font-bold text-indigo-800">
-                Create AI Models
-              </div>
-              <p class="max-w-xs py-2 text-sm text-indigo-900">
-                Our team of skilled experts specializes in crafting advanced AI
-                models. From natural language processing to computer vision and
-                beyond, we develop AI solutions that deliver meaningful insights
-                and drive innovation for our clients.
-              </p>
-            </div>
-          </li>
-          <li class="flex">
-            <div class="px-4 text-5xl font-extralight text-indigo-700">05.</div>
-            <div>
-              <div class="text-xl font-bold text-indigo-800">Collect data</div>
-              <p class="max-w-xs py-2 text-sm text-indigo-900">
-                Data is the lifeblood of AI, and we excel in collecting diverse
-                data types, including structured and unstructured data,
-                time-series data, geospatial data, and more. This robust data
-                collection empowers our AI models to tackle a wide range of
-                challenges.
-              </p>
-            </div>
-          </li>
-        </ul>
+  <app-framework-section></app-framework-section>
+  <app-team-section></app-team-section>
+  <app-roadmap-section></app-roadmap-section>
+
+  <section class="px-8 py-40">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-5xl md:text-8xl font-medium mb-16 tracking-tight">
+        Let's create the next.
+      </h2>
+      <div class="flex flex-col sm:flex-row gap-8 justify-center items-center">
+        <a
+          class="bg-primary text-white px-12 py-5 rounded-full font-medium hover:bg-opacity-90 transition-all text-lg"
+          href="#"
+          >Start a Collaboration</a
+        >
+        <a
+          class="text-primary px-12 py-5 rounded-full font-medium border border-black/10 hover:bg-black/5 transition-all text-lg"
+          href="#"
+          >Our Programs</a
+        >
       </div>
     </div>
-  </div>
-</div>
-
-<!--fags sec-->
-<div class="max-w-screen-xl mx-auto px-5 bg-white min-h-sceen mb-16">
-  <div class="flex flex-col items-center">
-    <h2 class="font-bold text-5xl mt-5 tracking-tight">FAQ</h2>
-    <p class="text-neutral-500 text-xl mt-3">Frequenty asked questions</p>
-  </div>
-  <div class="grid divide-y divide-neutral-200 max-w-xl mx-auto mt-8">
-    <div class="py-5">
-      <details class="group">
-        <summary
-          class="flex justify-between items-center font-medium cursor-pointer list-none"
-        >
-          <span>What types of data do you provide labeling services for?</span>
-          <span class="transition group-open:rotate-180">
-            <svg
-              fill="none"
-              height="24"
-              shape-rendering="geometricPrecision"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1.5"
-              viewBox="0 0 24 24"
-              width="24"
-            >
-              <path d="M6 9l6 6 6-6"></path>
-            </svg>
-          </span>
-        </summary>
-        <p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
-          We offer data labeling services for various types of data, including
-          text, images, videos, audio, and sensor data. Our team is equipped to
-          handle diverse data formats and projects of different scales.
-        </p>
-      </details>
-    </div>
-    <div class="py-5">
-      <details class="group">
-        <summary
-          class="flex justify-between items-center font-medium cursor-pointer list-none"
-        >
-          <span>
-            How does Lish AI Labs ensure the quality and accuracy of labeled
-            data?</span
-          >
-          <span class="transition group-open:rotate-180">
-            <svg
-              fill="none"
-              height="24"
-              shape-rendering="geometricPrecision"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1.5"
-              viewBox="0 0 24 24"
-              width="24"
-            >
-              <path d="M6 9l6 6 6-6"></path>
-            </svg>
-          </span>
-        </summary>
-        <p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
-          Lish AI Labs ensures labeled data quality through rigorous checks by
-          skilled trainers, advanced tools, and adherence to industry best
-          practices, providing clients with reliable and accurate data.
-        </p>
-      </details>
-    </div>
-    <div class="py-5">
-      <details class="group">
-        <summary
-          class="flex justify-between items-center font-medium cursor-pointer list-none"
-        >
-          <span> How can I apply for a job at Lish AI Labs?</span>
-          <span class="transition group-open:rotate-180">
-            <svg
-              fill="none"
-              height="24"
-              shape-rendering="geometricPrecision"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1.5"
-              viewBox="0 0 24 24"
-              width="24"
-            >
-              <path d="M6 9l6 6 6-6"></path>
-            </svg>
-          </span>
-        </summary>
-        <p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
-          You can apply online by accessing the application form at our website
-          through the "apply here" button and forward your cv at
-          info@lishailabs.com
-        </p>
-      </details>
-    </div>
-    <div class="py-5">
-      <details class="group">
-        <summary
-          class="flex justify-between items-center font-medium cursor-pointer list-none"
-        >
-          <span> How will this benefit me as a Cloudworker?</span>
-          <span class="transition group-open:rotate-180">
-            <svg
-              fill="none"
-              height="24"
-              shape-rendering="geometricPrecision"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1.5"
-              viewBox="0 0 24 24"
-              width="24"
-            >
-              <path d="M6 9l6 6 6-6"></path>
-            </svg>
-          </span>
-        </summary>
-        <p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
-          As a cloud worker, Lish AI Labs not only equips you with skills in AI
-          and machine learning but also offers you an opportunity to earn,
-          improving your living standards
-        </p>
-      </details>
-    </div>
-  </div>
-</div>
+  </section>
+</main>

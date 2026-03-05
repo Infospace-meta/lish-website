@@ -1,0 +1,21 @@
+:host {
+  display: block;
+  transition:
+    transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    opacity 0.65s ease;
+}
+
+:host(.benefit-card--left) {
+  transform: translateX(-120px);
+  opacity: 0;
+}
+
+:host(.benefit-card--right) {
+  transform: translateX(120px);
+  opacity: 0;
+}
+
+:host(.benefit-card--visible) {
+  transform: translateX(0);
+  opacity: 1;
+}
