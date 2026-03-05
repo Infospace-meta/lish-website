@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
     <!-- (mouseleave) ensures the sub-nav closes when moving the mouse away from the header area -->
     <div
       (mouseleave)="closeMenu()"
-      class="relative flex xl:px-30 xl:py-14 justify-between items-center h-16 bg-white text-neutral-700 px-4 top-0 left-0 right-0 z-50 sticky shadow-sm"
+      class="relative  flex xl:px-30 xl:py-14 justify-between items-center h-16 bg-transparent text-neutral-700 px-4 top-0 left-0 right-0 z-50"
     >
       <!-- Logo -->
       <div>
@@ -25,11 +25,11 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
       </div>
 
       <!-- Main Navigation Pill -->
-      <nav class="space-x-1 rounded-full p-1 bg-neutral-200 relative lg:flex hidden">
+      <nav class="space-x-3  rounded-full p-1 bg-neutral-200/60 px-6  relative lg:flex hidden">
         <a
           routerLink="/home"
           (mouseenter)="closeMenu()"
-          class="px-4 py-1 text-neutral-600 rounded-full hover:text-blue-700 font-semibold transition-colors"
+          class="px-4 py-1 text-neutral-600 rounded-full hover:text-accent font-semibold transition-colors"
         >
           Home
         </a>
@@ -37,8 +37,8 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
         <!-- Impact Trigger -->
         <div
           (mouseenter)="openMenu('impact')"
-          [class.text-blue-700]="activeMenu === 'impact'"
-          class="px-4 py-1 cursor-pointer text-neutral-600 rounded-full hover:text-blue-700 font-semibold transition-colors"
+          [class.text-accent]="activeMenu === 'impact'"
+          class="px-4 py-1 cursor-pointer text-neutral-600 rounded-full hover:text-accent font-semibold transition-colors"
         >
           Impact
         </div>
@@ -46,8 +46,8 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
         <!-- Services Trigger -->
         <div
           (mouseenter)="openMenu('services')"
-          [class.text-blue-700]="activeMenu === 'services'"
-          class="px-4 py-1 cursor-pointer text-neutral-600 rounded-full hover:text-blue-700 font-semibold transition-colors"
+          [class.text-accent]="activeMenu === 'services'"
+          class="px-4 py-1 cursor-pointer text-neutral-600 rounded-full hover:text-accent font-semibold transition-colors"
         >
           Services
         </div>
@@ -58,7 +58,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
         <a
           routerLink="/contact"
           (mouseenter)="closeMenu()"
-          class="px-4 py-2 bg-blue-800 text-neutral-100 rounded-full hover:bg-blue-900 transition-colors font-semibold"
+          class="px-4 py-2 bg-accent text-neutral-100 rounded-full hover:bg-blue-900 transition-colors font-semibold"
         >
           Contact Us
         </a>
@@ -106,24 +106,24 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
                 <div class="flex flex-col space-y-3">
                   <a
                     routerLink="/impact/education"
-                    class="font-semibold hover:text-blue-700"
+                    class="font-semibold hover:text-accent"
                     >Education Support</a
                   >
                   <a
                     routerLink="/impact/health"
-                    class="font-semibold hover:text-blue-700"
+                    class="font-semibold hover:text-accent"
                     >Health Initiatives</a
                   >
                 </div>
                 <div class="flex flex-col space-y-3">
                   <a
                     routerLink="/impact/sustainability"
-                    class="font-semibold hover:text-blue-700"
+                    class="font-semibold hover:text-accent"
                     >Sustainability</a
                   >
                   <a
                     routerLink="/impact/reports"
-                    class="font-semibold hover:text-blue-700"
+                    class="font-semibold hover:text-accent"
                     >Annual Reports</a
                   >
                 </div>
@@ -137,7 +137,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
                   class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
                 >
                   <a routerLink="/services/tech" class="block">
-                    <h4 class="font-bold group-hover:text-blue-700">
+                    <h4 class="font-bold group-hover:text-accent">
                       Technology
                     </h4>
                     <p class="text-xs text-neutral-500">
@@ -149,7 +149,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
                   class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
                 >
                   <a routerLink="/services/consulting" class="block">
-                    <h4 class="font-bold group-hover:text-blue-700">
+                    <h4 class="font-bold group-hover:text-accent">
                       Consulting
                     </h4>
                     <p class="text-xs text-neutral-500">
@@ -161,7 +161,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
                   class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
                 >
                   <a routerLink="/services/design" class="block">
-                    <h4 class="font-bold group-hover:text-blue-700">
+                    <h4 class="font-bold group-hover:text-accent">
                       UI/UX Design
                     </h4>
                     <p class="text-xs text-neutral-500">
