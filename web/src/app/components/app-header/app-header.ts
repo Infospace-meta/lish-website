@@ -10,12 +10,11 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
     <!-- Main Header Wrapper -->
     <!-- (mouseleave) ensures the sub-nav closes when moving the mouse away from the header area -->
     <div
-      (mouseleave)="closeMenu()"
       class="relative flex xl:px-30 xl:py-14 justify-between items-center h-16 bg-white text-neutral-700 px-4 top-0 left-0 right-0 z-50 sticky shadow-sm"
     >
       <!-- Logo -->
       <div>
-        <a routerLink="/home" (mouseenter)="closeMenu()">
+        <a routerLink="/home" (click)="closeMenu()">
           <img
             src="https://res.cloudinary.com/dpfcle0os/image/upload/v1706977858/samples/Lish-website/lish-logo_jhm8ac.png"
             class="h-auto lg:w-20 w-16 rounded-sm"
@@ -28,7 +27,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
       <nav class="flex space-x-1 rounded-full p-1 bg-neutral-200 relative">
         <a
           routerLink="/home"
-          (mouseenter)="closeMenu()"
+          (click)="closeMenu()"
           class="px-4 py-1 text-neutral-600 rounded-full hover:text-blue-700 font-semibold transition-colors"
         >
           Home
@@ -36,8 +35,12 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
 
         <!-- Impact Trigger -->
         <div
-          (mouseenter)="openMenu('impact')"
-          [class.text-blue-700]="activeMenu === 'impact'"
+          (click)="toggleMenu('impact')"
+          [ngClass]="
+            activeMenu === 'impact'
+              ? 'bg-white text-blue-700 shadow-sm'
+              : 'text-neutral-600 hover:text-blue-700'
+          "
           class="px-4 py-1 cursor-pointer text-neutral-600 rounded-full hover:text-blue-700 font-semibold transition-colors"
         >
           Impact
@@ -45,8 +48,12 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
 
         <!-- Services Trigger -->
         <div
-          (mouseenter)="openMenu('services')"
-          [class.text-blue-700]="activeMenu === 'services'"
+          (click)="toggleMenu('services')"
+          [ngClass]="
+            activeMenu === 'services'
+              ? 'bg-white text-blue-700 shadow-sm'
+              : 'text-neutral-600 hover:text-blue-700'
+          "
           class="px-4 py-1 cursor-pointer text-neutral-600 rounded-full hover:text-blue-700 font-semibold transition-colors"
         >
           Services
@@ -57,7 +64,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
       <div class="flex items-center space-x-4 p-1">
         <a
           routerLink="/contact"
-          (mouseenter)="closeMenu()"
+          (click)="closeMenu()"
           class="px-4 py-2 bg-blue-800 text-neutral-100 rounded-full hover:bg-blue-900 transition-colors font-semibold"
         >
           Contact Us
@@ -179,6 +186,11 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
 })
 export class AppHeader {
   activeMenu: string | null = null;
+
+  toggleMenu(menuName: string) {
+    // If the clicked menu is already open, close it. Otherwise, open the new one.
+    this.activeMenu = this.activeMenu === menuName ? null : menuName;
+  }
 
   toggleHeader() {
     // Note: You can also use a boolean variable for mobile menu instead of direct DOM manipulation
