@@ -25,7 +25,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
       </div>
 
       <!-- Main Navigation Pill -->
-      <nav class="flex space-x-1 rounded-full p-1 bg-neutral-200 relative">
+      <nav class="space-x-1 rounded-full p-1 bg-neutral-200 relative lg:flex hidden">
         <a
           routerLink="/home"
           (mouseenter)="closeMenu()"
