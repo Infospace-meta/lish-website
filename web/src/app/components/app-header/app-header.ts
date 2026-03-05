@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
   template: `
     <!-- Main Header Wrapper -->
     <div
-      class="relative max-w-7xl mx-auto flex w-full xl:py-14 justify-between items-center h-16 bg-transparent text-neutral-700 px-4 top-0 left-0 right-0 z-50"
+      class="relative max-w-7xl mx-auto flex w-full xl:py-14 justify-between items-center h-16 bg-transparent text-neutral-700 px-4 top-0 left-0 right-0 z-50 max-md:sticky max-md:bg-white"
     >
       <!-- Logo -->
       <div>
