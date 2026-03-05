@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
   template: `
     <!-- Main Header Wrapper -->
     <div
-      class="relative max-w-7xl mx-auto flex w-full xl:py-14  justify-between items-center h-16 bg-transparent text-neutral-700 px-4 top-0 left-0 right-0 z-50"
+      class="relative max-w-7xl mx-auto flex w-full xl:py-14 justify-between items-center h-16 bg-transparent text-neutral-700 px-4 top-0 left-0 right-0 z-50"
     >
       <!-- Logo -->
       <div>
@@ -193,90 +193,93 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
     <!-- MOBILE MENU OVERLAY -->
     @if (isMobileMenuOpen) {
     <div
-      class="lg:hidden fixed inset-0 top-16 bg-white z-40 p-6 overflow-y-auto animate-in slide-in-from-right duration-300"
+      class="lg:hidden  fixed inset-0 top-16 bg-white z-40 p-6 overflow-y-auto animate-in slide-in-from-right duration-300"
     >
-      <nav class="flex flex-col space-y-4">
-        <a
-          routerLink="/home"
-          (click)="closeEverything()"
-          class="text-2xl font-bold py-2 border-b border-neutral-100"
-          >Home</a
-        >
+      <nav class="flex flex-col justify-between h-full">
+        <div class="flex flex-col space-y-4">
+          <a
+            routerLink="/home"
+            (click)="closeEverything()"
+            class="text-lg font-semibold py-2 border-b border-neutral-100"
+            >Home</a
+          >
 
-        <!-- Impact Accordion -->
-        <div>
-          <button
-            (click)="toggleMobileSub('impact')"
-            class="w-full flex justify-between items-center text-2xl font-bold py-2 border-b border-neutral-100"
-          >
-            Impact <span>{{ mobileSub === 'impact' ? '−' : '+' }}</span>
-          </button>
-          @if (mobileSub === 'impact') {
-          <div
-            class="pl-4 py-4 flex flex-col space-y-4 animate-in slide-in-from-top-2"
-          >
-            <a
-              routerLink="/impact/education"
-              (click)="closeEverything()"
-              class="text-lg text-neutral-600"
-              >Education Support</a
+          <!-- Impact Accordion -->
+          <div>
+            <button
+              (click)="toggleMobileSub('impact')"
+              class="w-full flex justify-between items-center text-lg font-semibold py-2 border-b border-neutral-100"
             >
-            <a
-              routerLink="/impact/health"
-              (click)="closeEverything()"
-              class="text-lg text-neutral-600"
-              >Health Initiatives</a
+              Impact <span>{{ mobileSub === 'impact' ? '−' : '+' }}</span>
+            </button>
+            @if (mobileSub === 'impact') {
+            <div
+              class="pl-4 py-4 flex flex-col space-y-4 animate-in slide-in-from-top-2"
             >
-            <a
-              routerLink="/impact/sustainability"
-              (click)="closeEverything()"
-              class="text-lg text-neutral-600"
-              >Sustainability</a
-            >
+              <a
+                routerLink="/impact/education"
+                (click)="closeEverything()"
+                class="text-lg text-neutral-600"
+                >Education Support</a
+              >
+              <a
+                routerLink="/impact/health"
+                (click)="closeEverything()"
+                class="text-lg text-neutral-600"
+                >Health Initiatives</a
+              >
+              <a
+                routerLink="/impact/sustainability"
+                (click)="closeEverything()"
+                class="text-lg text-neutral-600"
+                >Sustainability</a
+              >
+            </div>
+            }
           </div>
-          }
-        </div>
 
-        <!-- Services Accordion -->
-        <div>
-          <button
-            (click)="toggleMobileSub('services')"
-            class="w-full flex justify-between items-center text-2xl font-bold py-2 border-b border-neutral-100"
-          >
-            Services <span>{{ mobileSub === 'services' ? '−' : '+' }}</span>
-          </button>
-          @if (mobileSub === 'services') {
-          <div
-            class="pl-4 py-4 flex flex-col space-y-4 animate-in slide-in-from-top-2"
-          >
-            <a
-              routerLink="/services/tech"
-              (click)="closeEverything()"
-              class="text-lg text-neutral-600"
-              >Technology</a
+          <!-- Services Accordion -->
+          <div>
+            <button
+              (click)="toggleMobileSub('services')"
+              class="w-full flex justify-between items-center text-lg font-semibold py-2 border-b border-neutral-100"
             >
-            <a
-              routerLink="/services/consulting"
-              (click)="closeEverything()"
-              class="text-lg text-neutral-600"
-              >Consulting</a
+              Services <span>{{ mobileSub === 'services' ? '−' : '+' }}</span>
+            </button>
+            @if (mobileSub === 'services') {
+            <div
+              class="pl-4 py-4 flex flex-col space-y-4 animate-in slide-in-from-top-2"
             >
-            <a
-              routerLink="/services/design"
-              (click)="closeEverything()"
-              class="text-lg text-neutral-600"
-              >UI/UX Design</a
-            >
+              <a
+                routerLink="/services/tech"
+                (click)="closeEverything()"
+                class="text-lg text-neutral-600"
+                >Technology</a
+              >
+              <a
+                routerLink="/services/consulting"
+                (click)="closeEverything()"
+                class="text-lg text-neutral-600"
+                >Consulting</a
+              >
+              <a
+                routerLink="/services/design"
+                (click)="closeEverything()"
+                class="text-lg text-neutral-600"
+                >UI/UX Design</a
+              >
+            </div>
+            }
           </div>
-          }
         </div>
-
-        <a
-          routerLink="/contact"
-          (click)="closeEverything()"
-          class="text-2xl font-bold py-2 border-b border-neutral-100 text-accent"
-          >Contact Us</a
-        >
+        <div class="flex flex-end justify-end mt-6">
+          <a
+            routerLink="/contact"
+            (click)="closeEverything()"
+            class=" bg-blue-800 w-full text-center text-neutral-100 rounded-full font-bold py-2 border-b border-neutral-100 text-accent"
+            >Contact Us</a
+          >
+        </div>
       </nav>
     </div>
     }
