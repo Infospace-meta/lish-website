@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
     <!-- (mouseleave) ensures the sub-nav closes when moving the mouse away from the header area -->
     <div
       (mouseleave)="closeMenu()"
-      class="relative flex xl:px-30 xl:py-14 justify-between items-center h-16 bg-white text-neutral-700 px-4 top-0 left-0 right-0 z-50 sticky shadow-sm"
+      class="relative  flex xl:px-30 xl:py-14 justify-between items-center h-16 bg-transparent text-neutral-700 px-4 top-0 left-0 right-0 z-50"
     >
       <!-- Logo -->
       <div>
@@ -25,7 +25,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
       </div>
 
       <!-- Main Navigation Pill -->
-      <nav class="space-x-1 rounded-full p-1 bg-neutral-200 relative lg:flex hidden">
+      <nav class="space-x-3  rounded-full p-1 bg-neutral-200/60 px-6  relative lg:flex hidden">
         <a
           routerLink="/home"
           (mouseenter)="closeMenu()"
@@ -58,7 +58,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
         <a
           routerLink="/contact"
           (mouseenter)="closeMenu()"
-          class="px-4 py-2 bg-blue-800 text-neutral-100 rounded-full hover:bg-blue-900 transition-colors font-semibold"
+          class="px-4 py-2 bg-accent text-neutral-100 rounded-full hover:bg-blue-900 transition-colors font-semibold"
         >
           Contact Us
         </a>
