@@ -9,11 +9,11 @@ import { FrameworkSectionComponent } from '../../components/framework-section/fr
   selector: 'app-about-us',
   standalone: true,
   imports: [
-    CommonModule, 
-    RouterModule, 
-    TeamSectionComponent, 
+    CommonModule,
+    RouterModule,
+    TeamSectionComponent,
     RoadmapSectionComponent,
-    FrameworkSectionComponent
+    FrameworkSectionComponent,
   ],
   templateUrl: './about-us.component.html',
 })
@@ -22,15 +22,24 @@ export class AboutUsComponent implements OnInit, OnDestroy {
     { name: 'Acts', src: 'assets/images/partners/acts.png' },
     { name: 'Daraja', src: 'assets/images/partners/Daraja.png' },
     { name: 'DCA', src: 'assets/images/partners/dca-logo.svg' },
-    { name: 'Innovation Hubs', src: 'assets/images/partners/Innovation-Hubs-1.png' },
+    {
+      name: 'Innovation Hubs',
+      src: 'assets/images/partners/Innovation-Hubs-1.png',
+    },
     { name: 'TCDM', src: 'assets/images/partners/TCDM.jpeg' },
     { name: 'Thunderbird', src: 'assets/images/partners/Thunderbird-Logo.png' },
-    { name: 'UNDP', src: 'assets/images/partners/UNDP-Logo-Blue-Large-Transparent-1-edited.png' },
+    {
+      name: 'UNDP',
+      src: 'assets/images/partners/UNDP-Logo-Blue-Large-Transparent-1-edited.png',
+    },
     { name: 'DCA', src: 'assets/images/partners/dca-logo.svg' },
     { name: 'Thunderbird', src: 'assets/images/partners/Thunderbird-Logo.png' },
     { name: 'Daraja', src: 'assets/images/partners/Daraja.png' },
     { name: 'TCDM', src: 'assets/images/partners/TCDM.jpeg' },
-    { name: 'UNDP', src: 'assets/images/partners/UNDP-Logo-Blue-Large-Transparent-1-edited.png' },
+    {
+      name: 'UNDP',
+      src: 'assets/images/partners/UNDP-Logo-Blue-Large-Transparent-1-edited.png',
+    },
   ];
 
   carouselImages = [
@@ -38,13 +47,16 @@ export class AboutUsComponent implements OnInit, OnDestroy {
     'https://res.cloudinary.com/dpfcle0os/image/upload/v1772716340/samples/Lish-website/IMG_5050_qkexrb.jpg',
     'https://res.cloudinary.com/dpfcle0os/image/upload/v1772716046/samples/Lish-website/IMG_4945_mizqkg.jpg',
     'https://res.cloudinary.com/dpfcle0os/image/upload/v1706975520/samples/Lish-website/aboutlish_mc39qx.jpg',
-    'https://res.cloudinary.com/dpfcle0os/image/upload/v1772716374/samples/Lish-website/IMG_5217_jy2b5d.jpg'
+    'https://res.cloudinary.com/dpfcle0os/image/upload/v1772716374/samples/Lish-website/IMG_5217_jy2b5d.jpg',
   ];
-  
+
   currentIndex = 0;
   private carouselInterval: any;
 
-  constructor(private router: Router, private cdr: ChangeDetectorRef) {}
+  constructor(
+    private router: Router,
+    private cdr: ChangeDetectorRef,
+  ) {}
 
   ngOnInit(): void {
     this.router.events.subscribe((event) => {
@@ -52,13 +64,11 @@ export class AboutUsComponent implements OnInit, OnDestroy {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     });
-    
-    // Explicitly start carousel on page load
+
     this.startCarousel();
   }
 
   startCarousel() {
-    // interval set to 5 seconds
     this.carouselInterval = setInterval(() => {
       this.nextSlide();
     }, 5000);
@@ -66,7 +76,6 @@ export class AboutUsComponent implements OnInit, OnDestroy {
 
   nextSlide() {
     this.currentIndex = (this.currentIndex + 1) % this.carouselImages.length;
-    // Force Angular to check for changes to ensure animation triggers
     this.cdr.detectChanges();
   }
 
@@ -83,7 +92,7 @@ export class AboutUsComponent implements OnInit, OnDestroy {
 
   handleImageError(event: any) {
     const img = event.target;
-    img.style.display = 'none'; 
+    img.style.display = 'none';
   }
 
   ngOnDestroy(): void {

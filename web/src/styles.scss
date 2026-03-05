@@ -83,16 +83,11 @@
 .partner-logo-bold:nth-child(3) { animation-delay: 0.4s; }
 .partner-logo-bold:nth-child(4) { animation-delay: 0.55s; }
 
-/* Solitaire Stack Carousel Transitions - Top-Right Stack */
-.transition-all {
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 700ms;
-}
-/* Solitaire Base Transition */
+/* Solitaire Carousel & General Transitions */
 .transition-all {
   transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
@@ -108,6 +103,21 @@
   }
 }
 
+.reveal-text {
+  opacity: 0;
+  animation: fadeInUp 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+
+/* Delay steps for staggered reveal */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.25s; }
+.delay-3 { animation-delay: 0.4s; }
+.delay-4 { animation-delay: 0.55s; }
+.delay-5 { animation-delay: 0.7s; }
+.delay-6 { animation-delay: 0.85s; }
+.delay-7 { animation-delay: 1s; }
+
+/* Core Engine Subtle Pulse */
 @keyframes pulseSubtle {
   0% { transform: scale(1); opacity: 0.03; }
   50% { transform: scale(1.05); opacity: 0.06; }
@@ -117,17 +127,3 @@
 .animate-pulse {
   animation: pulseSubtle 4s ease-in-out infinite;
 }
-
-.reveal-text {
-  opacity: 0; /* Hidden by default until animation starts */
-  animation: fadeInUp 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
-}
-
-/* Specific delays for each line to create the "time interval" effect */
-.delay-1 { animation-delay: 0.1s; }
-.delay-2 { animation-delay: 0.25s; }
-.delay-3 { animation-delay: 0.4s; }
-.delay-4 { animation-delay: 0.55s; }
-.delay-5 { animation-delay: 0.7s; }
-.delay-6 { animation-delay: 0.85s; }
-.delay-7 { animation-delay: 1s; }
