@@ -24,7 +24,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
       </div>
 
       <!-- Main Navigation Pill -->
-      <nav class="flex space-x-1 rounded-full p-1 bg-neutral-200 relative">
+      <nav class="space-x-1 rounded-full p-1 bg-neutral-200 relative lg:flex hidden">
         <a
           routerLink="/home"
           (click)="closeMenu()"
@@ -74,19 +74,19 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
         <button
           (click)="toggleHeader()"
           type="button"
-          class="inline-flex items-center p-2 text-sm rounded-lg md:hidden ring-2 ring-gray-700 focus:outline-none"
+          class="inline-flex items-center text-gray-700 rounded-lg lg:hidden"
+          aria-expanded="false"
         >
-          <span class="sr-only">Open main menu</span>
           <svg
-            class="w-6 h-6 fill-gray-300"
-            viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
+            height="32px"
+            viewBox="0 -960 960 960"
+            width="32px"
+            fill="#434343"
           >
             <path
-              fill-rule="evenodd"
-              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-              clip-rule="evenodd"
-            ></path>
+              d="M120-693.33V-760h720v66.67H120ZM120-200v-66.67h720V-200H120Zm0-246.67v-66.66h720v66.66H120Z"
+            />
           </svg>
         </button>
       </div>
