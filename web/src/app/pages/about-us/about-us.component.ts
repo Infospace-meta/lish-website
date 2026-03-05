@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { TeamSectionComponent } from '../../components/team-section/team-section.component';
@@ -17,7 +17,8 @@ import { FrameworkSectionComponent } from '../../components/framework-section/fr
   ],
   templateUrl: './about-us.component.html',
 })
-export class AboutUsComponent implements OnInit {
+export class AboutUsComponent implements OnInit, OnDestroy {
+  // Logic for Partner Logo Scrolling
   partners = [
     { name: 'Acts', src: 'assets/images/partners/acts.png' },
     { name: 'Daraja', src: 'assets/images/partners/Daraja.png' },
@@ -33,6 +34,17 @@ export class AboutUsComponent implements OnInit {
     { name: 'UNDP', src: 'assets/images/partners/UNDP-Logo-Blue-Large-Transparent-1-edited.png' },
   ];
 
+  // Logic for Solitaire Photo Carousel
+  carouselImages = [
+    'https://res.cloudinary.com/dpfcle0os/image/upload/v1706975520/samples/Lish-website/aboutlish_mc39qx.jpg',
+    'https://res.cloudinary.com/dpfcle0os/image/upload/v1706975520/samples/Lish-website/aboutlish_mc39qx.jpg',
+    'https://res.cloudinary.com/dpfcle0os/image/upload/v1706975520/samples/Lish-website/aboutlish_mc39qx.jpg',
+    'https://res.cloudinary.com/dpfcle0os/image/upload/v1706975520/samples/Lish-website/aboutlish_mc39qx.jpg'
+  ];
+  
+  currentIndex = 0;
+  private carouselInterval: any;
+
   constructor(private router: Router) {}
 
   ngOnInit(): void {
@@ -41,11 +53,40 @@ export class AboutUsComponent implements OnInit {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     });
+
+    this.startCarousel();
+  }
+
+  startCarousel() {
+    this.carouselInterval = setInterval(() => {
+      this.nextSlide();
+    }, 5000);
+  }
+
+  nextSlide() {
+    this.currentIndex = (this.currentIndex + 1) % this.carouselImages.length;
+  }
+
+  goToSlide(index: number) {
+    this.currentIndex = index;
+  }
+
+  resetTimer() {
+    if (this.carouselInterval) {
+      clearInterval(this.carouselInterval);
+      this.startCarousel();
+    }
   }
 
   handleImageError(event: any) {
-  const img = event.target;
-  img.style.display = 'none'; 
-  console.error('LISH AI LABS: Partner logo missing ->', img.src);
-}
+    const img = event.target;
+    img.style.display = 'none'; 
+    console.error('LISH AI LABS: Partner logo missing ->', img.src);
+  }
+
+  ngOnDestroy(): void {
+    if (this.carouselInterval) {
+      clearInterval(this.carouselInterval);
+    }
+  }
 }

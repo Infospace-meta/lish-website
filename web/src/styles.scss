@@ -5,18 +5,18 @@
   --color-soft-grey: #f2f2f2;
   --color-warm-bg: #f9f8f6;
   --color-accent: #0047AB;
-  // --color-accent: #e27d60;
   --color-text-muted: #737373;
 
   --radius-4xl: 2.5rem;
   --radius-5xl: 3.5rem;
   
   --font-serif: "Playfair Display", "Times New Roman", serif;
+  --font-poppins: "Poppins", "Inter", sans-serif;
 }
 
 @layer base {
   body {
-    @apply bg-warm-bg text-primary antialiased;
+    @apply bg-warm-bg text-primary antialiased font-poppins;
   }
 }
 
@@ -27,27 +27,8 @@
   vertical-align: middle;
 }
 
-@keyframes float {
-  0% { transform: rotate(2deg) translateY(0px); }
-  50% { transform: rotate(2.5deg) translateY(-10px); }
-  100% { transform: rotate(2deg) translateY(0px); }
-}
-
-.dashboard-mockup {
-  animation: float 6s ease-in-out infinite;
-}
-
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-/* Snappy Cube-like Vertical Scroll */
+/* Snappy Cube-like Vertical Scroll for Partners */
 @keyframes snappyVerticalScroll {
-  /* 0-20% Batch 1 | 20-25% Flip | 25-45% Batch 2 | 45-50% Flip | 50-70% Batch 3 | 70-75% Flip | 75-100% Loop Reset */
   0%, 20% { transform: translateY(0); }
   25%, 45% { transform: translateY(-60px); } 
   50%, 70% { transform: translateY(-120px); }
@@ -67,7 +48,7 @@
 
 .partner-scroll-container {
   position: relative;
-  height: 60px; /* Viewport height - Only shows one batch at a time */
+  height: 60px; 
   overflow: hidden;
   mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
   -webkit-mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
@@ -76,7 +57,6 @@
 .partner-scroll-wrapper {
   display: flex;
   flex-direction: column;
-  /* We move by fixed pixel amounts (60px) to ensure perfect alignment */
   animation: snappyVerticalScroll 12s cubic-bezier(0.85, 0, 0.15, 1) infinite;
 }
 
@@ -85,7 +65,7 @@
   align-items: center;
   justify-content: flex-start;
   gap: 4rem; 
-  height: 60px; /* Height of each "cube face" */
+  height: 60px;
   flex-shrink: 0;
 }
 
@@ -98,8 +78,31 @@
   animation: logoPopIn 0.6s ease forwards;
 }
 
-/* Staggered entry for each logo in the active batch */
 .partner-logo-bold:nth-child(1) { animation-delay: 0.1s; }
 .partner-logo-bold:nth-child(2) { animation-delay: 0.25s; }
 .partner-logo-bold:nth-child(3) { animation-delay: 0.4s; }
 .partner-logo-bold:nth-child(4) { animation-delay: 0.55s; }
+
+/* Fixed Solitaire Stack Carousel Transitions (Downward Stack) */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 700ms;
+}
+
+/* Background cards offset downwards and to the right */
+.translate-x-10.translate-y-10 {
+  transform: translateX(2.5rem) translateY(2.5rem) rotate(3deg);
+}
+
+.translate-x-20.translate-y-20 {
+  transform: translateX(5rem) translateY(5rem) rotate(6deg);
+}
+
+/* Increased section padding to contain the downward stack */
+section.pb-48 {
+  padding-bottom: 12rem; 
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
