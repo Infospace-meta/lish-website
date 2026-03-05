@@ -45,38 +45,61 @@
   scrollbar-width: none;
 }
 
-/* Partner Vertical Scroll Animation */
-@keyframes verticalBatchScroll {
-  0%, 20% { transform: translateY(0); opacity: 1; }
-  25%, 45% { transform: translateY(-100%); opacity: 1; }
-  50%, 70% { transform: translateY(-200%); opacity: 1; }
-  75%, 95% { transform: translateY(-300%); opacity: 1; }
-  100% { transform: translateY(0); opacity: 1; }
+/* Snappy Cube-like Vertical Scroll */
+@keyframes snappyVerticalScroll {
+  /* 0-20% Batch 1 | 20-25% Flip | 25-45% Batch 2 | 45-50% Flip | 50-70% Batch 3 | 70-75% Flip | 75-100% Loop Reset */
+  0%, 20% { transform: translateY(0); }
+  25%, 45% { transform: translateY(-60px); } 
+  50%, 70% { transform: translateY(-120px); }
+  75%, 100% { transform: translateY(-180px); }
+}
+
+@keyframes logoPopIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
 .partner-scroll-container {
+  position: relative;
+  height: 60px; /* Viewport height - Only shows one batch at a time */
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+}
+
+.partner-scroll-wrapper {
   display: flex;
   flex-direction: column;
-  height: 60px; /* Match the height of your bold logos */
-  overflow: hidden;
+  /* We move by fixed pixel amounts (60px) to ensure perfect alignment */
+  animation: snappyVerticalScroll 12s cubic-bezier(0.85, 0, 0.15, 1) infinite;
 }
 
 .partner-batch {
   display: flex;
   align-items: center;
-  gap: 2.5rem; /* Bold spacing */
-  height: 60px;
+  justify-content: flex-start;
+  gap: 4rem; 
+  height: 60px; /* Height of each "cube face" */
   flex-shrink: 0;
-  animation: verticalBatchScroll 12s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
 }
 
 .partner-logo-bold {
-  height: 40px; /* Increased from h-6 (24px) for high visibility */
+  height: 38px; 
   width: auto;
+  max-width: 140px;
   object-fit: contain;
-  transition: transform 0.3s ease;
+  opacity: 0;
+  animation: logoPopIn 0.6s ease forwards;
 }
 
-.partner-logo-bold:hover {
-  transform: scale(1.1);
-}
+/* Staggered entry for each logo in the active batch */
+.partner-logo-bold:nth-child(1) { animation-delay: 0.1s; }
+.partner-logo-bold:nth-child(2) { animation-delay: 0.25s; }
+.partner-logo-bold:nth-child(3) { animation-delay: 0.4s; }
+.partner-logo-bold:nth-child(4) { animation-delay: 0.55s; }

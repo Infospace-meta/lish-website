@@ -44,6 +44,8 @@ export class AboutUsComponent implements OnInit {
   }
 
   handleImageError(event: any) {
-    console.error('Lish AI Labs - Image failed to load:', event.target.src);
-  }
+  const img = event.target;
+  img.style.display = 'none'; 
+  console.error('LISH AI LABS: Partner logo missing ->', img.src);
+}
 }

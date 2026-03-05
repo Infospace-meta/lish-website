@@ -64,44 +64,46 @@
             </p>
 
             <div class="partner-scroll-container">
-              <div class="partner-batch">
-                <img
-                  *ngFor="let partner of partners.slice(0, 4)"
-                  [src]="partner.src"
-                  [alt]="partner.name"
-                  class="partner-logo-bold"
-                  (error)="handleImageError($event)"
-                />
-              </div>
+              <div class="partner-scroll-wrapper">
+                <div class="partner-batch">
+                  <img
+                    *ngFor="let p of partners.slice(0, 4)"
+                    [src]="p.src"
+                    [alt]="p.name"
+                    class="partner-logo-bold"
+                    (error)="handleImageError($event)"
+                  />
+                </div>
 
-              <div class="partner-batch">
-                <img
-                  *ngFor="let partner of partners.slice(4, 8)"
-                  [src]="partner.src"
-                  [alt]="partner.name"
-                  class="partner-logo-bold"
-                  (error)="handleImageError($event)"
-                />
-              </div>
+                <div class="partner-batch">
+                  <img
+                    *ngFor="let p of partners.slice(4, 8)"
+                    [src]="p.src"
+                    [alt]="p.name"
+                    class="partner-logo-bold"
+                    (error)="handleImageError($event)"
+                  />
+                </div>
 
-              <div class="partner-batch">
-                <img
-                  *ngFor="let partner of partners.slice(8, 12)"
-                  [src]="partner.src"
-                  [alt]="partner.name"
-                  class="partner-logo-bold"
-                  (error)="handleImageError($event)"
-                />
-              </div>
+                <div class="partner-batch">
+                  <img
+                    *ngFor="let p of partners.slice(8, 12)"
+                    [src]="p.src"
+                    [alt]="p.name"
+                    class="partner-logo-bold"
+                    (error)="handleImageError($event)"
+                  />
+                </div>
 
-              <div class="partner-batch">
-                <img
-                  *ngFor="let partner of partners.slice(0, 4)"
-                  [src]="partner.src"
-                  [alt]="partner.name"
-                  class="partner-logo-bold"
-                  (error)="handleImageError($event)"
-                />
+                <div class="partner-batch">
+                  <img
+                    *ngFor="let p of partners.slice(0, 4)"
+                    [src]="p.src"
+                    [alt]="p.name"
+                    class="partner-logo-bold"
+                    (error)="handleImageError($event)"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -145,7 +147,7 @@
                 <div
                   class="h-32 border border-dashed border-primary/20 rounded-xl flex items-center justify-center text-primary/20 font-light"
                 >
-                  <span class="material-symbols-outlined opacity-20">add</span>
+                  +
                 </div>
               </div>
             </div>
