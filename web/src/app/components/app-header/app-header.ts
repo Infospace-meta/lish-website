@@ -111,7 +111,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
     @if (activeMenu) {
     <!-- <div class="fixed inset-0 z-30" (click)="closeMenu()"></div>Backdrop -->
     <div
-      class="hidden lg:block absolute top-[130px] left-[25%] right-[25%] bg-white border-b border-gray-100  rounded-[1rem] shadow-2xl animate-in slide-in-from-top-2 duration-200 z-40"
+      class="hidden lg:block absolute left-[25%] right-[25%] bg-white border-b border-gray-100  rounded-[1rem] shadow-2xl animate-in slide-in-from-top-2 duration-200 z-40"
     >
       <div class="max-w-screen-xl mx-auto px-10 py-10">
         <!-- Content for Impact -->
