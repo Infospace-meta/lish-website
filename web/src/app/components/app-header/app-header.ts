@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
   template: `
     <!-- Main Header Wrapper -->
     <div
-      class="relative flex xl:px-30 xl:py-14  justify-between items-center h-16 bg-transparent text-neutral-700 px-4 top-0 left-0 right-0 z-50"
+      class="relative max-w-7xl mx-auto flex w-full xl:py-14  justify-between items-center h-16 bg-transparent text-neutral-700 px-4 top-0 left-0 right-0 z-50"
     >
       <!-- Logo -->
       <div>
@@ -79,29 +79,29 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
           class="lg:hidden p-2 text-neutral-700 focus:outline-none"
         >
           @if (!isMobileMenuOpen) {
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="32"
-              viewBox="0 -960 960 960"
-              width="32"
-              fill="currentColor"
-            >
-              <path
-                d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
-              />
-            </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="32"
+            viewBox="0 -960 960 960"
+            width="32"
+            fill="currentColor"
+          >
+            <path
+              d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+            />
+          </svg>
           } @else {
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="32"
-              viewBox="0 -960 960 960"
-              width="32"
-              fill="currentColor"
-            >
-              <path
-                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
-              />
-            </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="32"
+            viewBox="0 -960 960 960"
+            width="32"
+            fill="currentColor"
+          >
+            <path
+              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+            />
+          </svg>
           }
         </button>
       </div>
@@ -109,182 +109,176 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
 
     <!-- FIXED SUB-NAV PANEL -->
     @if (activeMenu) {
-      <!-- <div class="fixed inset-0 z-30" (click)="closeMenu()"></div>Backdrop -->
-      <div
-        class="hidden lg:block absolute top-[130px] left-[25%] right-[25%] bg-white border-b border-gray-100  rounded-[1rem] shadow-2xl animate-in slide-in-from-top-2 duration-200 z-40"
-      >
-        <div class="max-w-screen-xl mx-auto px-10 py-10">
-          <!-- Content for Impact -->
-          @if (activeMenu === 'impact') {
-            <div class="grid grid-cols-3 gap-10">
-              <div class="col-span-1">
-                <h3 class="text-xl font-bold text-blue-800 mb-2">Our Impact</h3>
-                <p class="text-sm text-neutral-500">
-                  Discover how we are changing lives through sustainable
-                  development and innovation.
-                </p>
-              </div>
-              <div class="flex flex-col space-y-3">
-                <a
-                  routerLink="/impact/education"
-                  class="font-semibold hover:text-accent"
-                  >Education Support</a
-                >
-                <a
-                  routerLink="/impact/health"
-                  class="font-semibold hover:text-accent"
-                  >Health Initiatives</a
-                >
-              </div>
-              <div class="flex flex-col space-y-3">
-                <a
-                  routerLink="/impact/sustainability"
-                  class="font-semibold hover:text-accent"
-                  >Sustainability</a
-                >
-                <a
-                  routerLink="/impact/reports"
-                  class="font-semibold hover:text-accent"
-                  >Annual Reports</a
-                >
-              </div>
-            </div>
-          }
-
-          <!-- Content for Services -->
-          @if (activeMenu === 'services') {
-            <div class="grid grid-cols-4 gap-6">
-              <div
-                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
-              >
-                <a routerLink="/services/tech" class="block">
-                  <h4 class="font-bold group-hover:text-accent">
-                    Technology
-                  </h4>
-                  <p class="text-xs text-neutral-500">
-                    Custom software and infrastructure.
-                  </p>
-                </a>
-              </div>
-              <div
-                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
-              >
-                <a routerLink="/services/consulting" class="block">
-                  <h4 class="font-bold group-hover:text-accent">
-                    Consulting
-                  </h4>
-                  <p class="text-xs text-neutral-500">
-                    Strategy and business growth.
-                  </p>
-                </a>
-              </div>
-              <div
-                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
-              >
-                <a routerLink="/services/design" class="block">
-                  <h4 class="font-bold group-hover:text-accent">
-                    UI/UX Design
-                  </h4>
-                  <p class="text-xs text-neutral-500">
-                    Creative and user-centric design.
-                  </p>
-                </a>
-              </div>
-            </div>
-          }
+    <!-- <div class="fixed inset-0 z-30" (click)="closeMenu()"></div>Backdrop -->
+    <div
+      class="hidden lg:block absolute top-[130px] left-[25%] right-[25%] bg-white border-b border-gray-100  rounded-[1rem] shadow-2xl animate-in slide-in-from-top-2 duration-200 z-40"
+    >
+      <div class="max-w-screen-xl mx-auto px-10 py-10">
+        <!-- Content for Impact -->
+        @if (activeMenu === 'impact') {
+        <div class="grid grid-cols-3 gap-10">
+          <div class="col-span-1">
+            <h3 class="text-xl font-bold text-blue-800 mb-2">Our Impact</h3>
+            <p class="text-sm text-neutral-500">
+              Discover how we are changing lives through sustainable development
+              and innovation.
+            </p>
+          </div>
+          <div class="flex flex-col space-y-3">
+            <a
+              routerLink="/impact/education"
+              class="font-semibold hover:text-accent"
+              >Education Support</a
+            >
+            <a
+              routerLink="/impact/health"
+              class="font-semibold hover:text-accent"
+              >Health Initiatives</a
+            >
+          </div>
+          <div class="flex flex-col space-y-3">
+            <a
+              routerLink="/impact/sustainability"
+              class="font-semibold hover:text-accent"
+              >Sustainability</a
+            >
+            <a
+              routerLink="/impact/reports"
+              class="font-semibold hover:text-accent"
+              >Annual Reports</a
+            >
+          </div>
         </div>
+        }
+
+        <!-- Content for Services -->
+        @if (activeMenu === 'services') {
+        <div class="grid grid-cols-4 gap-6">
+          <div
+            class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
+          >
+            <a routerLink="/services/tech" class="block">
+              <h4 class="font-bold group-hover:text-accent">Technology</h4>
+              <p class="text-xs text-neutral-500">
+                Custom software and infrastructure.
+              </p>
+            </a>
+          </div>
+          <div
+            class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
+          >
+            <a routerLink="/services/consulting" class="block">
+              <h4 class="font-bold group-hover:text-accent">Consulting</h4>
+              <p class="text-xs text-neutral-500">
+                Strategy and business growth.
+              </p>
+            </a>
+          </div>
+          <div
+            class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
+          >
+            <a routerLink="/services/design" class="block">
+              <h4 class="font-bold group-hover:text-accent">UI/UX Design</h4>
+              <p class="text-xs text-neutral-500">
+                Creative and user-centric design.
+              </p>
+            </a>
+          </div>
+        </div>
+        }
       </div>
+    </div>
     }
 
     <!-- MOBILE MENU OVERLAY -->
     @if (isMobileMenuOpen) {
-      <div
-        class="lg:hidden fixed inset-0 top-16 bg-white z-40 p-6 overflow-y-auto animate-in slide-in-from-right duration-300"
-      >
-        <nav class="flex flex-col space-y-4">
-          <a
-            routerLink="/home"
-            (click)="closeEverything()"
-            class="text-2xl font-bold py-2 border-b border-neutral-100"
-            >Home</a
+    <div
+      class="lg:hidden fixed inset-0 top-16 bg-white z-40 p-6 overflow-y-auto animate-in slide-in-from-right duration-300"
+    >
+      <nav class="flex flex-col space-y-4">
+        <a
+          routerLink="/home"
+          (click)="closeEverything()"
+          class="text-2xl font-bold py-2 border-b border-neutral-100"
+          >Home</a
+        >
+
+        <!-- Impact Accordion -->
+        <div>
+          <button
+            (click)="toggleMobileSub('impact')"
+            class="w-full flex justify-between items-center text-2xl font-bold py-2 border-b border-neutral-100"
           >
-
-          <!-- Impact Accordion -->
-          <div>
-            <button
-              (click)="toggleMobileSub('impact')"
-              class="w-full flex justify-between items-center text-2xl font-bold py-2 border-b border-neutral-100"
-            >
-              Impact <span>{{ mobileSub === 'impact' ? '−' : '+' }}</span>
-            </button>
-            @if (mobileSub === 'impact') {
-              <div
-                class="pl-4 py-4 flex flex-col space-y-4 animate-in slide-in-from-top-2"
-              >
-                <a
-                  routerLink="/impact/education"
-                  (click)="closeEverything()"
-                  class="text-lg text-neutral-600"
-                  >Education Support</a
-                >
-                <a
-                  routerLink="/impact/health"
-                  (click)="closeEverything()"
-                  class="text-lg text-neutral-600"
-                  >Health Initiatives</a
-                >
-                <a
-                  routerLink="/impact/sustainability"
-                  (click)="closeEverything()"
-                  class="text-lg text-neutral-600"
-                  >Sustainability</a
-                >
-              </div>
-            }
-          </div>
-
-          <!-- Services Accordion -->
-          <div>
-            <button
-              (click)="toggleMobileSub('services')"
-              class="w-full flex justify-between items-center text-2xl font-bold py-2 border-b border-neutral-100"
-            >
-              Services <span>{{ mobileSub === 'services' ? '−' : '+' }}</span>
-            </button>
-            @if (mobileSub === 'services') {
-              <div
-                class="pl-4 py-4 flex flex-col space-y-4 animate-in slide-in-from-top-2"
-              >
-                <a
-                  routerLink="/services/tech"
-                  (click)="closeEverything()"
-                  class="text-lg text-neutral-600"
-                  >Technology</a
-                >
-                <a
-                  routerLink="/services/consulting"
-                  (click)="closeEverything()"
-                  class="text-lg text-neutral-600"
-                  >Consulting</a
-                >
-                <a
-                  routerLink="/services/design"
-                  (click)="closeEverything()"
-                  class="text-lg text-neutral-600"
-                  >UI/UX Design</a
-                >
-              </div>
-            }
-          </div>
-
-          <a
-            routerLink="/contact"
-            (click)="closeEverything()"
-            class="text-2xl font-bold py-2 border-b border-neutral-100 text-accent"
-            >Contact Us</a
+            Impact <span>{{ mobileSub === 'impact' ? '−' : '+' }}</span>
+          </button>
+          @if (mobileSub === 'impact') {
+          <div
+            class="pl-4 py-4 flex flex-col space-y-4 animate-in slide-in-from-top-2"
           >
-        </nav>
-      </div>
+            <a
+              routerLink="/impact/education"
+              (click)="closeEverything()"
+              class="text-lg text-neutral-600"
+              >Education Support</a
+            >
+            <a
+              routerLink="/impact/health"
+              (click)="closeEverything()"
+              class="text-lg text-neutral-600"
+              >Health Initiatives</a
+            >
+            <a
+              routerLink="/impact/sustainability"
+              (click)="closeEverything()"
+              class="text-lg text-neutral-600"
+              >Sustainability</a
+            >
+          </div>
+          }
+        </div>
+
+        <!-- Services Accordion -->
+        <div>
+          <button
+            (click)="toggleMobileSub('services')"
+            class="w-full flex justify-between items-center text-2xl font-bold py-2 border-b border-neutral-100"
+          >
+            Services <span>{{ mobileSub === 'services' ? '−' : '+' }}</span>
+          </button>
+          @if (mobileSub === 'services') {
+          <div
+            class="pl-4 py-4 flex flex-col space-y-4 animate-in slide-in-from-top-2"
+          >
+            <a
+              routerLink="/services/tech"
+              (click)="closeEverything()"
+              class="text-lg text-neutral-600"
+              >Technology</a
+            >
+            <a
+              routerLink="/services/consulting"
+              (click)="closeEverything()"
+              class="text-lg text-neutral-600"
+              >Consulting</a
+            >
+            <a
+              routerLink="/services/design"
+              (click)="closeEverything()"
+              class="text-lg text-neutral-600"
+              >UI/UX Design</a
+            >
+          </div>
+          }
+        </div>
+
+        <a
+          routerLink="/contact"
+          (click)="closeEverything()"
+          class="text-2xl font-bold py-2 border-b border-neutral-100 text-accent"
+          >Contact Us</a
+        >
+      </nav>
+    </div>
     }
   `,
 })
