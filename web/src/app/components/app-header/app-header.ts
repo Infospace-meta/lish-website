@@ -56,10 +56,20 @@ import { RouterModule } from '@angular/router';
         <button
           (click)="toggleHeader()"
           type="button"
-          class="inline-flex items-center text-gray-700 rounded-lg lg:hidden p-2"
+          class="inline-flex items-center text-gray-700 rounded-lg lg:hidden"
           aria-expanded="false"
         >
-          <span class="material-symbols-sharp"> menu </span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="32px"
+            viewBox="0 -960 960 960"
+            width="32px"
+            fill="#434343"
+          >
+            <path
+              d="M120-693.33V-760h720v66.67H120ZM120-200v-66.67h720V-200H120Zm0-246.67v-66.66h720v66.66H120Z"
+            />
+          </svg>
         </button>
       </div>
     </div>
