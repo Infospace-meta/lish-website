@@ -18,7 +18,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
         <a routerLink="/home" (mouseenter)="closeMenu()">
           <img
             src="https://res.cloudinary.com/dpfcle0os/image/upload/v1706977858/samples/Lish-website/lish-logo_jhm8ac.png"
-            class="h-auto w-20 rounded-sm"
+            class="h-auto lg:w-20 w-16 rounded-sm"
             alt="Lish Logo"
           />
         </a>
