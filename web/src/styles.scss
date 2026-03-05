@@ -44,3 +44,39 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Partner Vertical Scroll Animation */
+@keyframes verticalBatchScroll {
+  0%, 20% { transform: translateY(0); opacity: 1; }
+  25%, 45% { transform: translateY(-100%); opacity: 1; }
+  50%, 70% { transform: translateY(-200%); opacity: 1; }
+  75%, 95% { transform: translateY(-300%); opacity: 1; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.partner-scroll-container {
+  display: flex;
+  flex-direction: column;
+  height: 60px; /* Match the height of your bold logos */
+  overflow: hidden;
+}
+
+.partner-batch {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem; /* Bold spacing */
+  height: 60px;
+  flex-shrink: 0;
+  animation: verticalBatchScroll 12s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+}
+
+.partner-logo-bold {
+  height: 40px; /* Increased from h-6 (24px) for high visibility */
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.partner-logo-bold:hover {
+  transform: scale(1.1);
+}

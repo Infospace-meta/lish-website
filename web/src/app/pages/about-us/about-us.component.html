@@ -62,16 +62,47 @@
             >
               Trusted by 80+ partners
             </p>
-            <div
-              class="flex flex-wrap gap-8 items-center opacity-70 grayscale contrast-125"
-            >
-              <img
-                *ngFor="let partner of partners.slice(0, 4)"
-                [src]="partner.src"
-                [alt]="partner.name"
-                class="h-6 w-auto object-contain"
-                (error)="handleImageError($event)"
-              />
+
+            <div class="partner-scroll-container">
+              <div class="partner-batch">
+                <img
+                  *ngFor="let partner of partners.slice(0, 4)"
+                  [src]="partner.src"
+                  [alt]="partner.name"
+                  class="partner-logo-bold"
+                  (error)="handleImageError($event)"
+                />
+              </div>
+
+              <div class="partner-batch">
+                <img
+                  *ngFor="let partner of partners.slice(4, 8)"
+                  [src]="partner.src"
+                  [alt]="partner.name"
+                  class="partner-logo-bold"
+                  (error)="handleImageError($event)"
+                />
+              </div>
+
+              <div class="partner-batch">
+                <img
+                  *ngFor="let partner of partners.slice(8, 12)"
+                  [src]="partner.src"
+                  [alt]="partner.name"
+                  class="partner-logo-bold"
+                  (error)="handleImageError($event)"
+                />
+              </div>
+
+              <div class="partner-batch">
+                <img
+                  *ngFor="let partner of partners.slice(0, 4)"
+                  [src]="partner.src"
+                  [alt]="partner.name"
+                  class="partner-logo-bold"
+                  (error)="handleImageError($event)"
+                />
+              </div>
             </div>
           </div>
         </div>

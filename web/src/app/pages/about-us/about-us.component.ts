@@ -25,7 +25,12 @@ export class AboutUsComponent implements OnInit {
     { name: 'Innovation Hubs', src: 'assets/images/partners/Innovation-Hubs-1.png' },
     { name: 'TCDM', src: 'assets/images/partners/TCDM.jpeg' },
     { name: 'Thunderbird', src: 'assets/images/partners/Thunderbird-Logo.png' },
-    { name: 'UNDP', src: 'assets/images/partners/UNDP-Logo-Blue-Large-Transparent-1-edited.png' }
+    { name: 'UNDP', src: 'assets/images/partners/UNDP-Logo-Blue-Large-Transparent-1-edited.png' },
+    { name: 'DCA', src: 'assets/images/partners/dca-logo.svg' },
+    { name: 'Thunderbird', src: 'assets/images/partners/Thunderbird-Logo.png' },
+    { name: 'Daraja', src: 'assets/images/partners/Daraja.png' },
+    { name: 'TCDM', src: 'assets/images/partners/TCDM.jpeg' },
+    { name: 'UNDP', src: 'assets/images/partners/UNDP-Logo-Blue-Large-Transparent-1-edited.png' },
   ];
 
   constructor(private router: Router) {}
