@@ -1,9 +1,15 @@
-<section appScrollReveal class="px-8 font-poppins py-40 bg-white">
+<section
+  appScrollReveal
+  class="px-5 sm:px-8 lg:px-12 font-poppins py-20 sm:py-28 lg:py-36 bg-white"
+>
   <div class="max-w-7xl mx-auto">
-    <div class="grid md:grid-cols-2 gap-24 items-center">
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-16 lg:gap-24 items-center"
+    >
+      <!-- IMAGE SIDE -->
       <div class="relative reveal-text delay-1">
         <div
-          class="rounded-3xl overflow-hidden aspect-[4/5] relative bg-soft-grey shadow-2xl"
+          class="rounded-2xl sm:rounded-3xl overflow-hidden aspect-[4/5] relative bg-soft-grey shadow-xl sm:shadow-2xl"
         >
           <img
             alt="Abstract AI Visualization"
@@ -15,51 +21,58 @@
           ></div>
         </div>
 
+        <!-- FLOATING CARD -->
         <div
-          class="absolute -bottom-6 -right-6 bg-primary text-white p-8 rounded-2xl shadow-2xl hidden lg:block reveal-text delay-3"
+          class="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 bg-primary text-white px-6 py-5 sm:p-8 rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl reveal-text delay-3"
         >
           <p
-            class="text-[10px] font-bold uppercase tracking-[0.3em] opacity-60 mb-2"
+            class="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.25em] opacity-60 mb-1 sm:mb-2"
           >
             Methodology
           </p>
-          <p class="text-xl font-medium">Lish Labs Sprint</p>
+          <p class="text-base sm:text-lg lg:text-xl font-medium">
+            Lish Labs Sprint
+          </p>
         </div>
       </div>
 
+      <!-- TEXT SIDE -->
       <div>
         <span
-          class="inline-block text-[11px] font-semibold uppercase tracking-[0.25em] text-accent mb-8 reveal-text delay-1"
+          class="inline-block text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.25em] text-accent mb-6 sm:mb-8 reveal-text delay-1"
         >
           Our Framework
         </span>
+
         <h2
-          class="text-5xl md:text-6xl font-medium mb-16 leading-[1.1] text-primary tracking-tight reveal-text delay-2"
+          class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-10 sm:mb-14 lg:mb-16 leading-[1.15] text-primary tracking-tight reveal-text delay-2"
         >
           Strategic methodology for
           <span class="text-accent">sustainable innovation.</span>
         </h2>
 
-        <div class="space-y-2">
+        <div class="space-y-1 sm:space-y-2">
           <div
             *ngFor="let step of frameworkSteps; let i = index"
-            class="group pb-10 border-b border-black/5 reveal-text"
+            class="group pb-8 sm:pb-10 border-b border-black/5 reveal-text"
             [style.animation-delay]="0.3 + i * 0.15 + 's'"
           >
-            <div class="flex items-start gap-6 pt-8">
+            <div class="flex items-start gap-4 sm:gap-6 pt-6 sm:pt-8">
               <span
-                class="text-accent font-mono text-lg opacity-40 group-hover:opacity-100 transition-opacity duration-500"
+                class="text-accent font-mono text-base sm:text-lg opacity-40 group-hover:opacity-100 transition-opacity duration-500"
               >
                 {{ step.id }}
               </span>
-              <div class="space-y-4">
+
+              <div class="space-y-2 sm:space-y-4">
                 <h3
-                  class="font-bold text-sm uppercase tracking-widest text-primary group-hover:text-accent transition-colors duration-500"
+                  class="font-bold text-xs sm:text-sm uppercase tracking-widest text-primary group-hover:text-accent transition-colors duration-500"
                 >
                   {{ step.title }}
                 </h3>
+
                 <p
-                  class="text-text-muted text-lg leading-relaxed font-light max-w-md"
+                  class="text-text-muted text-base sm:text-lg leading-relaxed font-light max-w-md"
                 >
                   {{ step.desc }}
                 </p>
