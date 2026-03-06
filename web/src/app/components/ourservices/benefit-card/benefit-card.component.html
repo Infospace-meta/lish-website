@@ -1,18 +1,37 @@
-<div class="group bg-white rounded-4xl overflow-hidden border border-black/5 flex flex-col h-full
-            transition-shadow duration-300 hover:shadow-[0_20px_60px_-12px_rgba(0,0,0,0.12)]">
-  <div class="relative w-full aspect-square overflow-hidden bg-soft-grey">
-    <img [src]="imageUrl" [alt]="imageAlt"
-      class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
-    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-  </div>
-  <div class="p-7 flex flex-col flex-1">
+<div
+  class="group bg-white rounded-4xl overflow-hidden border border-black/5 flex flex-col transition-shadow duration-300 hover:shadow-[0_20px_60px_-12px_rgba(0,0,0,0.12)]"
+>
+  @if (imageUrl) {
+    <div class="relative w-full h-40 overflow-hidden bg-soft-grey">
+      <img
+        [src]="imageUrl"
+        [alt]="imageAlt"
+        class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
+      ></div>
+    </div>
+  }
+  <div class="p-7 pb-2 flex flex-col flex-1">
     <div class="flex items-center justify-between mb-5">
-      <span class="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent">{{ index }}</span>
-      <div class="w-10 h-10 rounded-xl bg-soft-grey flex items-center justify-center">
-        <span class="material-symbols-outlined text-primary text-xl">{{ icon }}</span>
+      <span
+        class="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent"
+        >{{ index }}</span
+      >
+      <div
+        class="w-10 h-10 rounded-xl bg-soft-grey flex items-center justify-center"
+      >
+        <span class="material-symbols-outlined text-primary text-xl">{{
+          icon
+        }}</span>
       </div>
     </div>
-    <h3 class="text-xl font-medium text-primary mb-3 leading-snug">{{ title }}</h3>
-    <p class="text-text-muted font-light leading-relaxed text-sm flex-1">{{ description }}</p>
+    <h3 class="text-xl font-medium text-primary mb-3 leading-snug">
+      {{ title }}
+    </h3>
+    <p class="text-text-muted font-light leading-relaxed text-sm flex-1">
+      {{ description }}
+    </p>
   </div>
 </div>

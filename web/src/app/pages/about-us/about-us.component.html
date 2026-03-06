@@ -165,86 +165,108 @@
   </section>
 
   <!-- Intelligent core -->
-  <section class="px-8 py-32 bg-white">
-    <div class="max-w-7xl mx-auto">
+  <section class="pt-16 bg-accent">
+    <div class="pt-16 mx-auto">
       <div
-        class="bg-primary rounded-5xl p-12 md:p-24 relative overflow-hidden min-h-[600px] flex items-center justify-center"
+        class="bg-soft-grey md:p-24 relative overflow-hidden min-h-[600px] flex items-center justify-center"
       >
         <div
-          class="absolute inset-0 opacity-10"
-          style="
-            background-image: radial-gradient(
-              circle,
-              #fff 1px,
-              transparent 1px
-            );
-            background-size: 40px 40px;
-          "
-        ></div>
+          class="absolute inset-0 flex items-center justify-center pointer-events-none"
+        >
+          <div
+            class="w-[300px] h-[300px] border border-black/5 rounded-full animate-pulse"
+          ></div>
+          <div
+            class="absolute w-[500px] h-[500px] border border-black/[0.03] rounded-full"
+          ></div>
+        </div>
 
         <div
           class="relative w-full max-w-4xl h-[400px] flex items-center justify-center"
         >
-          <div class="absolute flex flex-col items-center z-20">
+          <div
+            class="relative z-10 flex flex-wrap gap-4 justify-center items-center"
+          >
             <div
-              class="w-24 h-24 bg-accent rounded-3xl flex items-center justify-center mb-4 shadow-2xl shadow-accent/20"
+              class="bg-white px-6 py-2.5 rounded-full shadow-sm border border-black/5 flex items-center gap-3 transition-transform hover:scale-105"
             >
-              <span class="text-white font-bold text-3xl">L</span>
+              <div class="w-1.5 h-1.5 rounded-full bg-accent"></div>
+              <span class="text-[13px] font-poppins font-medium tracking-wide"
+                >Youth Talent</span
+              >
+            </div>
+            <div
+              class="bg-white px-6 py-2.5 rounded-full shadow-sm border border-black/5 flex items-center gap-3 transition-transform hover:scale-105"
+            >
+              <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+              <span class="text-[13px] font-poppins font-medium tracking-wide"
+                >Generative AI</span
+              >
+            </div>
+            <div
+              class="bg-white px-6 py-2.5 rounded-full shadow-sm border border-black/5 flex items-center gap-3 transition-transform hover:scale-105"
+            >
+              <div class="w-1.5 h-1.5 rounded-full bg-accent"></div>
+              <span class="text-[13px] font-poppins font-medium tracking-wide"
+                >Global Industry</span
+              >
+            </div>
+            <div
+              class="bg-white px-6 py-2.5 rounded-full shadow-sm border border-black/5 flex items-center gap-3 transition-transform hover:scale-105"
+            >
+              <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+              <span class="text-[13px] font-poppins font-medium tracking-wide"
+                >Infrastructure</span
+              >
+            </div>
+          </div>
+
+          <div class="absolute flex flex-col items-center">
+            <div
+              class="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mb-4 shadow-xl"
+            >
+              <span class="text-white font-bold text-2xl">L</span>
             </div>
             <p
-              class="text-[10px] font-bold uppercase tracking-[0.4em] text-white/60"
+              class="text-[10px] font-bold font-poppins uppercase tracking-[0.3em] text-primary/40"
             >
-              Intelligence Core
+              Core Engine
             </p>
           </div>
 
-          <div
-            class="relative z-10 flex flex-wrap gap-6 justify-center items-center"
-          >
-            <div
-              class="bg-white/10 backdrop-blur-md px-8 py-4 rounded-full border border-white/10 text-white flex items-center gap-3"
-            >
-              <div class="w-2 h-2 rounded-full bg-accent animate-ping"></div>
-              <span class="text-sm font-medium tracking-wide"
-                >Real-time Analytics</span
-              >
-            </div>
-            <div
-              class="bg-white/10 backdrop-blur-md px-8 py-4 rounded-full border border-white/10 text-white flex items-center gap-3"
-            >
-              <span class="text-sm font-medium tracking-wide"
-                >Neural Networks</span
-              >
-            </div>
-          </div>
-
           <svg
-            class="absolute inset-0 w-full h-full pointer-events-none opacity-30"
+            class="absolute inset-0 w-full h-full pointer-events-none opacity-20"
+            preserveAspectRatio="none"
             viewBox="0 0 800 400"
           >
-            <circle
-              cx="400"
-              cy="200"
-              r="180"
-              fill="none"
-              stroke="white"
-              stroke-dasharray="8 8"
-              stroke-width="0.5"
-            />
             <path
-              d="M100,200 L700,200"
-              stroke="white"
+              d="M100,200 Q400,10 700,200"
+              fill="none"
+              stroke="currentColor"
               stroke-width="0.5"
-              stroke-dasharray="4 4"
-            />
+            ></path>
+            <path
+              d="M100,200 Q400,390 700,200"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="0.5"
+            ></path>
           </svg>
         </div>
       </div>
-      <div class="mt-12 flex justify-between items-start">
-        <h2 class="text-3xl font-medium text-primary">The Lish Ecosystem</h2>
-        <p class="text-text-muted max-w-lg text-lg leading-relaxed font-light">
-          An integrated framework where data science meets deployment, creating
-          scalable impact across industries.
+      <div
+        class="flex bg-warm-bg p-8 flex-col md:flex-row justify-between items-start gap-8"
+      >
+        <h2
+          class="text-3xl font-poppins font-medium text-primary reveal-text delay-1"
+        >
+          The Lish Ecosystem
+        </h2>
+        <p
+          class="text-text-muted font-poppins max-w-md text-xl leading-relaxed font-light reveal-text delay-2"
+        >
+          Our infrastructure connects disparate nodes of talent and technology
+          into a singular, cohesive ecosystem for growth and deployment.
         </p>
       </div>
     </div>
@@ -254,7 +276,7 @@
   <section class="px-8 py-32 bg-warm-bg">
     <div class="max-w-7xl mx-auto">
       <h2
-        class="text-4xl md:text-5xl font-medium text-primary mb-20 tracking-tight"
+        class="text-4xl md:text-5xl font-poppins font-medium text-primary mb-20 tracking-tight reveal-text delay-1"
       >
         We create lasting value.
       </h2>
@@ -262,7 +284,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-24">
         <div class="flex flex-col gap-8 group">
           <div
-            class="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center shadow-lg transition-transform duration-500 group-hover:-translate-y-2"
+            class="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center shadow-lg transition-transform duration-500 group-hover:-translate-y-2 reveal-text delay-2"
           >
             <div
               class="w-10 h-10 rounded-full border-2 border-accent/30 flex items-center justify-center"
@@ -276,12 +298,14 @@
 
           <div class="space-y-4">
             <h3
-              class="text-xl font-semibold text-primary flex items-center gap-3"
+              class="text-2xl font-semibold text-primary flex items-center gap-3 reveal-text delay-3"
             >
-              <span class="text-accent/50 font-mono text-sm">01.</span>
+              <span class="text-accent/50 font-poppins text-lg">01.</span>
               Youth Training
             </h3>
-            <p class="text-text-muted leading-relaxed font-light">
+            <p
+              class="text-text-muted text-lg leading-relaxed font-light reveal-text delay-4"
+            >
               Proven data experts delivering high-impact skills to over
               <span class="text-primary font-medium">500+ youth</span>, ensuring
               success for partners of every size.
@@ -291,7 +315,7 @@
 
         <div class="flex flex-col gap-8 group">
           <div
-            class="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center shadow-lg transition-transform duration-500 group-hover:-translate-y-2"
+            class="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center shadow-lg transition-transform duration-500 group-hover:-translate-y-2 reveal-text delay-3"
           >
             <div class="flex items-end gap-1">
               <div class="w-2 h-4 bg-soft-grey/40 rounded-sm"></div>
@@ -302,12 +326,14 @@
 
           <div class="space-y-4">
             <h3
-              class="text-xl font-semibold text-primary flex items-center gap-3"
+              class="text-2xl font-semibold text-primary flex items-center gap-3 reveal-text delay-4"
             >
-              <span class="text-accent/50 font-mono text-sm">02.</span>
+              <span class="text-accent/50 font-poppins text-lg">02.</span>
               AI Solutions
             </h3>
-            <p class="text-text-muted leading-relaxed font-light">
+            <p
+              class="text-text-muted text-lg leading-relaxed font-light reveal-text delay-5"
+            >
               Automating manual work with
               <span class="text-primary font-medium">24 active AI models</span>,
               streamlining complex data flows with clear, transparent
@@ -318,7 +344,7 @@
 
         <div class="flex flex-col gap-8 group">
           <div
-            class="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center shadow-lg transition-transform duration-500 group-hover:-translate-y-2"
+            class="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center shadow-lg transition-transform duration-500 group-hover:-translate-y-2 reveal-text delay-4"
           >
             <div class="relative">
               <span class="material-symbols-outlined text-accent text-3xl"
@@ -333,16 +359,17 @@
 
           <div class="space-y-4">
             <h3
-              class="text-xl font-semibold text-primary flex items-center gap-3"
+              class="text-2xl font-semibold text-primary flex items-center gap-3 reveal-text delay-5"
             >
-              <span class="text-accent/50 font-mono text-sm">03.</span>
+              <span class="text-accent/50 font-poppins text-lg">03.</span>
               Global Network
             </h3>
-            <p class="text-text-muted leading-relaxed font-light">
+            <p
+              class="text-text-muted text-lg leading-relaxed font-light reveal-text delay-6"
+            >
               Integrating insights across
               <span class="text-primary font-medium">12 partner countries</span
-              >, delivering visualization tools that provide the right data at
-              the right time.
+              >, delivering visualization tools that provide the right data.
             </p>
           </div>
         </div>
@@ -350,7 +377,7 @@
     </div>
   </section>
 
-  <section class="px-8 py-32 border-t border-black/5 bg-warm-bg">
+  <section class="px-8 py-32 border-t font-poppins border-black/5 bg-warm-bg">
     <div class="max-w-7xl mx-auto">
       <div class="flex flex-col md:flex-row gap-20 items-center">
         <div class="md:w-1/3">
@@ -383,7 +410,7 @@
   <app-team-section></app-team-section>
   <app-roadmap-section></app-roadmap-section>
 
-  <section class="px-8 py-30">
+  <section class="px-8 font-poppins py-30">
     <div class="max-w-7xl mx-auto text-center">
       <h2 class="text-3xl md:text-4xl font-medium mb-14 tracking-tight">
         Let's create the next.

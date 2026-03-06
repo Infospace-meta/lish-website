@@ -1,14 +1,14 @@
 <div #pinWrapper [style.height.px]="wrapperHeight" class="relative bg-white">
-  <div class="sticky top-0 h-screen overflow-hidden flex flex-col justify-center">
-
-    <div class="max-w-7xl mx-auto px-8 mb-12 w-full">
+  <div
+    class="sticky top-0 h-screen overflow-hidden flex flex-col justify-start pt-16"
+  >
+    <div class="max-w-7xl mx-auto px-8 mb-10 w-full">
       <ng-content select="[slot=heading]"></ng-content>
     </div>
 
-    <div #cardsTrack class="flex gap-6 pl-8 pr-24 will-change-transform">
+    <div #cardsTrack class="flex gap-6 pl-8 pb-12 will-change-transform">
       <ng-content select="[slot=cards]"></ng-content>
+      <div class="flex-none w-8 shrink-0"></div>
     </div>
-
   </div>
-
 </div>

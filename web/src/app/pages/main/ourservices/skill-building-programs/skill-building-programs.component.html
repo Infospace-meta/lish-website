@@ -1,14 +1,15 @@
-<main class="pt-8 bg-warm-bg">
+<main class="pt-16 bg-warm-bg">
   <!-- Hero -->
-  <section class="px-8 pb-32">
+  <section class="font-poppins px-8 pb-32 pt-8">
     <div class="max-w-7xl mx-auto">
       <div class="flex flex-col md:flex-row gap-16 items-end">
         <div class="flex-1">
           <span class="inline-block text-[11px] font-semibold uppercase tracking-[0.25em] text-accent mb-8">
             Youth Programs
           </span>
-          <h1 class="text-6xl md:text-8xl font-medium mb-12 leading-[0.95] max-w-2xl">
-            Youth Skill Building Programs.
+          <h1 class="text-5xl md:text-6xl mb-12 leading-[1.1] tracking-tight text-primary reveal-text delay-2">
+            Youth Skill
+            <span class="text-accent">Building Programs.</span>
           </h1>
         </div>
         <div class="flex-1 pb-4">
@@ -42,20 +43,19 @@
 
         <!-- RIGHT — Scrollable Cards -->
         <div class="md:w-7/12 flex flex-col gap-6">
-          <app-offer-card
-            index="01" icon="code" title="Coding Workshops" imageUrl="" imageAlt="Coding Workshops"
+          <app-offer-card index="01" icon="code" title="Coding Workshops" imageUrl="" imageAlt="Coding Workshops"
             description="Our coding workshops introduce participants to the fundamentals of computer programming — teaching them how to code, debug, and problem-solve using languages like Python, Java, and JavaScript.">
           </app-offer-card>
-          <app-offer-card
-            index="02" icon="bar_chart" title="Data Analysis Training" imageUrl="" imageAlt="Data Analysis Training"
+          <app-offer-card index="02" icon="bar_chart" title="Data Analysis Training" imageUrl=""
+            imageAlt="Data Analysis Training"
             description="Participants learn how to collect, analyze, and interpret data using tools commonly used in the industry — including Excel, SQL, and data visualization software.">
           </app-offer-card>
-          <app-offer-card
-            index="03" icon="neurology" title="Artificial Intelligence Education" imageUrl="" imageAlt="Artificial Intelligence Education"
+          <app-offer-card index="03" icon="neurology" title="Artificial Intelligence Education" imageUrl=""
+            imageAlt="Artificial Intelligence Education"
             description="Our AI education initiatives introduce participants to the basics of AI and machine learning — exploring neural networks, computer vision, and natural language processing.">
           </app-offer-card>
-          <app-offer-card
-            index="04" icon="supervisor_account" title="Mentorship &amp; Support" imageUrl="" imageAlt="Mentorship and Support"
+          <app-offer-card index="04" icon="supervisor_account" title="Mentorship &amp; Support" imageUrl=""
+            imageAlt="Mentorship and Support"
             description="We provide participants with mentorship from experienced professionals — helping them navigate their educational and career paths with guidance and encouragement along the way.">
           </app-offer-card>
         </div>
@@ -78,20 +78,20 @@
     </div>
 
     <div slot="cards" class="contents">
-      <app-benefit-card class="flex-none w-[420px]"
-        index="01" icon="school" title="High School Students" imageUrl="" imageAlt="High School Students" [delay]="0"
+      <app-benefit-card class="flex-none w-[420px]" index="01" icon="school" title="High School Students" imageUrl=""
+        imageAlt="High School Students" [delay]="0"
         description="Young learners exploring career options in technology who want a head start with real coding skills and hands-on AI exposure.">
       </app-benefit-card>
-      <app-benefit-card class="flex-none w-[420px]"
-        index="02" icon="workspace_premium" title="College Graduates" imageUrl="" imageAlt="College Graduates" [delay]="0"
+      <app-benefit-card class="flex-none w-[420px]" index="02" icon="workspace_premium" title="College Graduates"
+        imageUrl="" imageAlt="College Graduates" [delay]="0"
         description="Recent graduates seeking to enhance their technical skills and advance their careers in AI, data science, and software development.">
       </app-benefit-card>
-      <app-benefit-card class="flex-none w-[420px]"
-        index="03" icon="diversity_3" title="Underserved Youth" imageUrl="" imageAlt="Underserved Youth" [delay]="0"
+      <app-benefit-card class="flex-none w-[420px]" index="03" icon="diversity_3" title="Underserved Youth" imageUrl=""
+        imageAlt="Underserved Youth" [delay]="0"
         description="Participants from underrepresented communities who deserve equal access to quality tech education and the opportunities it creates.">
       </app-benefit-card>
-      <app-benefit-card class="flex-none w-[420px]"
-        index="04" icon="family_restroom" title="Educators &amp; Parents" imageUrl="" imageAlt="Educators and Parents" [delay]="0"
+      <app-benefit-card class="flex-none w-[420px]" index="04" icon="family_restroom" title="Educators &amp; Parents"
+        imageUrl="" imageAlt="Educators and Parents" [delay]="0"
         description="Teachers and community leaders who want to support the next generation of digital leaders by enrolling young people in our programs.">
       </app-benefit-card>
     </div>
@@ -105,11 +105,11 @@
       </h2>
       <div class="flex flex-col sm:flex-row gap-8 justify-center items-center">
         <a routerLink="/contact"
-           class="bg-primary text-white px-12 py-5 rounded-full font-medium hover:bg-opacity-90 transition-all text-lg">
+          class="bg-primary text-white px-12 py-5 rounded-full font-medium hover:bg-opacity-90 transition-all text-lg">
           Get in Touch
         </a>
         <a routerLink="/training"
-           class="text-primary px-12 py-5 rounded-full font-medium border border-black/10 hover:bg-black/5 transition-all text-lg">
+          class="text-primary px-12 py-5 rounded-full font-medium border border-black/10 hover:bg-black/5 transition-all text-lg">
           All Programs
         </a>
       </div>
