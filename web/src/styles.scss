@@ -4,12 +4,14 @@
   --color-primary: #1a1a1a;
   --color-soft-grey: #f2f2f2;
   --color-warm-bg: #f9f8f6;
-  --color-accent: #0047AB;
+  // --color-accent: #0047AB;
+  --color-accent: #002583;
+  --color-complement: #ffb800;
   --color-text-muted: #737373;
 
   --radius-4xl: 2.5rem;
   --radius-5xl: 3.5rem;
-  
+
   --font-serif: "Playfair Display", "Times New Roman", serif;
   --font-poppins: "Poppins", "Inter", sans-serif;
 }
@@ -22,7 +24,7 @@
 
 /* Material Icons Optimization */
 .material-symbols-outlined {
-  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 20;
   display: inline-block;
   line-height: 1;
   vertical-align: middle;
@@ -32,7 +34,7 @@
 .reveal-text {
   opacity: 0;
   transform: translateY(30px);
-  transition: none; 
+  transition: none;
 }
 
 /* Animations trigger via the appScrollReveal Directive */
@@ -43,38 +45,88 @@
 }
 
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Staggered Delay Intervals */
-.delay-1 { animation-delay: 0.1s !important; }
-.delay-2 { animation-delay: 0.2s !important; }
-.delay-3 { animation-delay: 0.3s !important; }
-.delay-4 { animation-delay: 0.4s !important; }
-.delay-5 { animation-delay: 0.5s !important; }
-.delay-6 { animation-delay: 0.6s !important; }
-.delay-7 { animation-delay: 1s !important; }
+.delay-1 {
+  animation-delay: 0.1s !important;
+}
+.delay-2 {
+  animation-delay: 0.2s !important;
+}
+.delay-3 {
+  animation-delay: 0.3s !important;
+}
+.delay-4 {
+  animation-delay: 0.4s !important;
+}
+.delay-5 {
+  animation-delay: 0.5s !important;
+}
+.delay-6 {
+  animation-delay: 0.6s !important;
+}
+.delay-7 {
+  animation-delay: 1s !important;
+}
 
 /* --- Continuous Never-Ending Partner Scroll --- */
 @keyframes snappyVerticalScroll {
-  0% { transform: translateY(0); }
-  20% { transform: translateY(0); }
-  25% { transform: translateY(-60px); }
-  45% { transform: translateY(-60px); }
-  50% { transform: translateY(-120px); }
-  70% { transform: translateY(-120px); }
-  75% { transform: translateY(-180px); }
-  95% { transform: translateY(-180px); }
-  100% { transform: translateY(-240px); } 
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-60px);
+  }
+  45% {
+    transform: translateY(-60px);
+  }
+  50% {
+    transform: translateY(-120px);
+  }
+  70% {
+    transform: translateY(-120px);
+  }
+  75% {
+    transform: translateY(-180px);
+  }
+  95% {
+    transform: translateY(-180px);
+  }
+  100% {
+    transform: translateY(-240px);
+  }
 }
 
 .partner-scroll-container {
   position: relative;
-  height: 60px; 
+  height: 60px;
   overflow: hidden;
-  mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
-  -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
 }
 
 .partner-scroll-wrapper {
@@ -87,13 +139,13 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 4rem; 
+  gap: 4rem;
   height: 60px;
   flex-shrink: 0;
 }
 
 .partner-logo-bold {
-  height: 38px; 
+  height: 38px;
   width: auto;
   max-width: 140px;
   object-fit: contain;
@@ -102,28 +154,56 @@
 }
 
 @keyframes logoPopIn {
-  from { opacity: 0; transform: scale(0.9) translateY(10px); }
-  to { opacity: 1; transform: scale(1) translateY(0); }
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
-.partner-logo-bold:nth-child(1) { animation-delay: 0.1s; }
-.partner-logo-bold:nth-child(2) { animation-delay: 0.25s; }
-.partner-logo-bold:nth-child(3) { animation-delay: 0.4s; }
-.partner-logo-bold:nth-child(4) { animation-delay: 0.55s; }
+.partner-logo-bold:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.partner-logo-bold:nth-child(2) {
+  animation-delay: 0.25s;
+}
+.partner-logo-bold:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.partner-logo-bold:nth-child(4) {
+  animation-delay: 0.55s;
+}
 
 /* --- Motion & Transitions --- */
 .transition-all {
   transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.no-scrollbar::-webkit-scrollbar { display: none; }
-.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 
 /* --- Core Engine Pulse Effects --- */
 @keyframes pulseSubtle {
-  0% { transform: scale(1); opacity: 0.03; }
-  50% { transform: scale(1.05); opacity: 0.06; }
-  100% { transform: scale(1); opacity: 0.03; }
+  0% {
+    transform: scale(1);
+    opacity: 0.03;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.06;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.03;
+  }
 }
 
 .animate-pulse {
@@ -151,7 +231,36 @@
 }
 
 /* --- Restored Typography (Original Proportionate Sizes) --- */
-h1 { @apply text-5xl md:text-6xl font-medium tracking-tight leading-[1.1]; }
-h2 { @apply text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight; }
-h3 { @apply text-xl md:text-2xl font-semibold; }
-p { @apply text-lg text-text-muted font-light leading-relaxed; }
+h1 {
+  @apply text-5xl md:text-6xl font-medium tracking-tight leading-[1.1];
+}
+h2 {
+  @apply text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight;
+}
+h3 {
+  @apply text-xl md:text-2xl font-semibold;
+}
+p {
+  @apply text-lg text-text-muted leading-relaxed;
+}
+small {
+  @apply text-sm text-text-muted uppercase tracking-wide;
+}
+em {
+  @apply italic text-primary;
+}
+i {
+  @apply text-primary;
+}
+b {
+  @apply font-bold text-primary;
+}
+strong {
+  @apply font-bold text-primary;
+}
+sub {
+  @apply text-sm text-primary;
+}
+sup {
+  @apply text-sm text-primary;
+}

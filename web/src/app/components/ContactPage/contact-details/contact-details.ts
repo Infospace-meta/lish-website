@@ -4,19 +4,26 @@ import { Component } from '@angular/core';
   selector: 'contact-details',
   imports: [],
   template: `
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-20 mx-auto max-w-7xl px-5 md:py-14 py-8">
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 gap-20 mx-auto max-w-7xl px-5 md:py-14 py-8"
+    >
       <div>
-        <p class="md:text-[16px] text-sm font-semibold text-accent mb-5">Contact</p>
-        <p class="md:text-[48px] text-[36px] md:leading-12 leading-9 tracking-tight font-semibold md:mb-10 mb-6">
-          Let’s develop your business intelligence <span class="text-accent">together</span>
-        </p>
+        <small class="md:text-[16px] text-sm font-semibold text-accent mb-5">
+          Contact
+        </small>
+        <h2
+          class="md:text-[48px] text-[36px] md:leading-12 leading-9 tracking-tight font-semibold md:mb-10 mb-6"
+        >
+          Let’s develop your business intelligence
+          <span class="text-accent">together</span>
+        </h2>
 
         <p class="md:mb-10 mb-4 font-semibold text-[17px]">
-         Kenyatta Avenue, Nakuru
+          Kenyatta Avenue, Nakuru
         </p>
-        <p class="mb-2 underline font-semibold"> (123) 456-7890</p>
-        <p class="mb-2 underline font-semibold"> info@example.com</p>
-        <p class="mb-2 underline font-semibold"> Linkein</p>
+        <p class="mb-2 underline font-semibold">(123) 456-7890</p>
+        <p class="mb-2 underline font-semibold">info@example.com</p>
+        <p class="mb-2 underline font-semibold">Linkein</p>
         <ul class="md:my-10 mt-7">
           <li class="mb-1 flex items-center gap-1">
             <div
@@ -66,9 +73,7 @@ import { Component } from '@angular/core';
           </li>
         </ul>
       </div>
-      <div class="bg-accent p-10 rounded-lg">
-        contact-details works!
-      </div>
+      <div class="bg-accent p-10 rounded-lg">contact-details works!</div>
     </div>
   `,
 })
