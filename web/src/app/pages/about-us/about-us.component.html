@@ -1,15 +1,12 @@
 <main class="pt-16 font-poppins bg-warm-bg">
-  <!-- Hero section -->
-  <section class="font-poppins px-8 pb-32 pt-8">
+  <section appScrollReveal class="font-poppins px-8 pb-32 pt-8">
     <div class="max-w-7xl mx-auto">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
         <div>
           <span
             class="inline-block text-[11px] font-semibold uppercase tracking-[0.25em] text-accent mb-8 reveal-text delay-1"
+            >About us</span
           >
-            About us
-          </span>
-
           <h1
             class="text-5xl md:text-6xl mb-12 leading-[1.1] tracking-tight text-primary reveal-text delay-2"
           >
@@ -30,7 +27,6 @@
                 Empowering youth through AI & Machine Learning
               </p>
             </div>
-
             <div class="flex items-center gap-4 reveal-text delay-4">
               <div
                 class="flex-shrink-0 w-6 h-6 rounded-full border border-accent flex items-center justify-center"
@@ -43,7 +39,6 @@
                 Providing sustainable digital employment opportunities
               </p>
             </div>
-
             <div class="flex items-center gap-4 reveal-text delay-5">
               <div
                 class="flex-shrink-0 w-6 h-6 rounded-full border border-accent flex items-center justify-center"
@@ -64,7 +59,6 @@
             >
               Trusted by 80+ partners
             </p>
-
             <div class="partner-scroll-container reveal-text delay-7">
               <div class="partner-scroll-wrapper">
                 <div class="partner-batch">
@@ -164,8 +158,7 @@
     </div>
   </section>
 
-  <!-- Intelligent core -->
-  <section class="pt-16 font-poppins bg-accent">
+  <section appScrollReveal class="pt-16 font-poppins bg-accent">
     <div class="pt-16 mx-auto">
       <div
         class="bg-soft-grey md:p-24 relative overflow-hidden min-h-[600px] flex items-center justify-center"
@@ -272,15 +265,13 @@
     </div>
   </section>
 
-  <!-- Value Creation section -->
-  <section class="px-8 font-poppins py-32 bg-warm-bg">
+  <section appScrollReveal class="px-8 font-poppins py-32 bg-warm-bg">
     <div class="max-w-7xl mx-auto">
       <h2
         class="text-4xl md:text-5xl font-poppins font-medium text-primary mb-20 tracking-tight reveal-text delay-1"
       >
         We create lasting value
       </h2>
-
       <div class="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-24">
         <div class="flex flex-col gap-8 group">
           <div
@@ -295,20 +286,19 @@
               >
             </div>
           </div>
-
           <div class="space-y-4">
             <h3
               class="text-2xl font-semibold text-primary flex items-center gap-3 reveal-text delay-3"
             >
-              <span class="text-accent/50 font-poppins text-lg">01.</span>
-              Youth Training
+              <span class="text-accent/50 font-poppins text-lg">01.</span> Youth
+              Training
             </h3>
             <p
               class="text-text-muted text-lg leading-relaxed font-light reveal-text delay-4"
             >
               Proven data experts delivering high-impact skills to over
               <span class="text-primary font-medium">500+ youth</span>, ensuring
-              success for partners of every size.
+              success for partners.
             </p>
           </div>
         </div>
@@ -323,21 +313,19 @@
               <div class="w-2 h-5 bg-accent/60 rounded-sm"></div>
             </div>
           </div>
-
           <div class="space-y-4">
             <h3
               class="text-2xl font-semibold text-primary flex items-center gap-3 reveal-text delay-4"
             >
-              <span class="text-accent/50 font-poppins text-lg">02.</span>
-              AI Solutions
+              <span class="text-accent/50 font-poppins text-lg">02.</span> AI
+              Solutions
             </h3>
             <p
               class="text-text-muted text-lg leading-relaxed font-light reveal-text delay-5"
             >
               Automating manual work with
               <span class="text-primary font-medium">24 active AI models</span>,
-              streamlining complex data flows with clear, transparent
-              integration.
+              streamlining complex data flows.
             </p>
           </div>
         </div>
@@ -356,7 +344,6 @@
               >
             </div>
           </div>
-
           <div class="space-y-4">
             <h3
               class="text-2xl font-semibold text-primary flex items-center gap-3 reveal-text delay-5"
@@ -369,7 +356,7 @@
             >
               Integrating insights across
               <span class="text-primary font-medium">12 partner countries</span
-              >, delivering visualization tools that provide the right data.
+              >, delivering visualization tools.
             </p>
           </div>
         </div>
@@ -377,16 +364,17 @@
     </div>
   </section>
 
-  <!-- partners and logos -->
-  <section class="px-8 py-32 border-t font-poppins border-black/5 bg-[#F9F8F6]">
+  <section
+    appScrollReveal
+    class="px-8 py-32 border-t font-poppins border-black/5 bg-[#F9F8F6]"
+  >
     <div class="max-w-7xl mx-auto">
       <div class="flex flex-col lg:flex-row gap-16 lg:gap-32">
         <div class="lg:w-1/3">
           <span
             class="inline-block text-[11px] font-semibold uppercase tracking-[0.25em] text-accent mb-8 reveal-text delay-1"
+            >Trusted by our valued partners</span
           >
-            Trusted by our valued partners
-          </span>
           <h2
             class="text-6xl font-medium mb-8 text-primary reveal-text delay-2"
           >
@@ -396,8 +384,7 @@
             class="text-text-muted text-lg font-light leading-relaxed reveal-text delay-3 max-w-sm"
           >
             We collaborate with global institutions to ensure our solutions are
-            grounded in secure storage technologies and transparent data
-            engineering.
+            grounded in excellence.
           </p>
         </div>
 
@@ -405,18 +392,17 @@
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div
               *ngFor="let partner of partners; let i = index"
-              class="bg-[#F2F2F2] aspect-[4/3] rounded-sm flex items-center justify-center p-8 group transition-all duration-500 hover:bg-white hover:shadow-xl reveal-text"
+              class="partner-card-grid-item reveal-text"
               [style.animation-delay]="0.1 * i + 's'"
             >
               <img
                 [src]="partner.src"
                 [alt]="partner.name"
-                class="max-h-full w-auto object-contain block opacity-80 mix-blend-multiply group-hover:opacity-100 transition-opacity"
+                class="max-h-full w-auto object-contain block opacity-80 mix-blend-multiply"
                 (error)="handleImageError($event)"
               />
             </div>
           </div>
-
           <div class="mt-8 flex justify-end reveal-text delay-7">
             <button
               class="group flex items-center gap-3 text-sm font-medium tracking-wide"
@@ -438,18 +424,21 @@
       </div>
     </div>
   </section>
-  <!-- partners and logos -->
 
   <app-framework-section></app-framework-section>
   <app-team-section></app-team-section>
   <app-roadmap-section></app-roadmap-section>
 
-  <section class="px-8 font-poppins py-30">
+  <section appScrollReveal class="px-8 font-poppins py-30">
     <div class="max-w-7xl mx-auto text-center">
-      <h2 class="text-3xl md:text-4xl font-medium mb-14 tracking-tight">
+      <h2
+        class="text-3xl md:text-4xl font-medium mb-14 tracking-tight reveal-text"
+      >
         Let's create the next.
       </h2>
-      <div class="flex flex-col sm:flex-row gap-8 justify-center items-center">
+      <div
+        class="flex flex-col sm:flex-row gap-8 justify-center items-center reveal-text delay-2"
+      >
         <a
           class="bg-primary text-white px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition-all text-lg"
           href="#"

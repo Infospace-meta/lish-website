@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal';
 
 @Component({
   selector: 'app-team-section',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ScrollRevealDirective],
   templateUrl: './team-section.component.html',
 })
 export class TeamSectionComponent {
@@ -14,7 +15,7 @@ export class TeamSectionComponent {
       role: 'Founding Director',
       image:
         'https://lh3.googleusercontent.com/aida-public/AB6AXuDdhaepjlv4RUCD3FF83gmWaRaRAEF8pnsY5Vqd6CqooYO1sSKwQg84AeEBTT_Pr10rHEkKE2aW7Phr615-bN6O-baHr4wUPxFJAf_Ib491uLj3GeVjeeIm4Dv7Du9ITkJLDGPSC9VGmNZD9HHji-F4UaaciAsQwPVin8Bwy8uzRtOyWW0GG7nilMQy1szyc8R8yDzWowiwy0mG9LmkhdoUJFK00_PrhDbv9ibn2hNofctjxLpqap22t2pdj550vhePNi7cRL3nhkzP',
-      featured: true, 
+      featured: true,
     },
     {
       name: 'David Chen',
