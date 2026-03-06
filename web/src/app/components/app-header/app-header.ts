@@ -165,7 +165,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
                   <h4 class="font-bold group-hover:text-accent">
                     Data Processing & Annotation
                   </h4>
-                  <p class="text-xs text-neutral-500">
+                  <p class="text-xs text-neutral-500 font-small">
                     From raw data processing to precision annotation
                   </p>
                 </a>

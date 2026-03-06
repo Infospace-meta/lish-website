@@ -1,22 +1,28 @@
 <main class="pt-16 bg-warm-bg">
   <!-- Hero -->
-  <section class="font-poppins px-8 pb-32 pt-8">
+  <section appScrollReveal class="font-poppins px-8 pb-32 pt-8">
     <div class="max-w-7xl mx-auto">
       <div class="flex flex-col md:flex-row gap-16 items-end">
         <div class="flex-1">
-          <span class="inline-block text-[11px] font-semibold uppercase tracking-[0.25em] text-accent mb-8">
+          <span
+            class="inline-block text-[11px] font-semibold uppercase tracking-[0.25em] text-accent mb-8"
+          >
             Career Services
           </span>
-          <h1 class="text-5xl md:text-6xl mb-12 leading-[1.1] tracking-tight text-primary reveal-text delay-2">
+          <h1
+            class="text-5xl md:text-6xl mb-12 leading-[1.1] tracking-tight text-primary reveal-text delay-2"
+          >
             Employment Placement
             <span class="text-accent">Services.</span>
           </h1>
         </div>
         <div class="flex-1 pb-4">
-          <p class="text-xl md:text-2xl text-text-muted leading-relaxed font-light max-w-lg">
-            Lish AI Labs connects skilled professionals with top-tier companies in the field of AI
-            and machine learning — bridging the gap between training and employment to help individuals
-            advance their careers.
+          <p
+            class="text-xl md:text-2xl text-text-muted leading-relaxed font-light max-w-lg"
+          >
+            Lish AI Labs connects skilled professionals with top-tier companies
+            in the field of AI and machine learning — bridging the gap between
+            training and employment to help individuals advance their careers.
           </p>
         </div>
       </div>
@@ -27,37 +33,71 @@
   <section class="px-8 py-32 bg-warm-bg">
     <div class="max-w-7xl mx-auto">
       <div class="flex flex-col md:flex-row gap-20 items-start">
-
         <!-- LEFT — Sticky Panel -->
         <div class="md:w-5/12 md:sticky md:top-32 md:self-start">
-          <span class="inline-block text-[11px] font-semibold uppercase tracking-[0.25em] text-accent mb-6">
+          <span
+            class="inline-block text-[11px] font-semibold uppercase tracking-[0.25em] text-accent mb-6"
+          >
             How We Help
           </span>
-          <h2 class="text-4xl md:text-5xl font-medium text-primary leading-tight mb-8">How We Can Help</h2>
+          <h2
+            class="text-4xl md:text-5xl font-medium text-primary leading-tight mb-8"
+          >
+            How We Can Help
+          </h2>
           <p class="text-text-muted text-lg font-light leading-relaxed">
-            Our mission is to bridge the gap between talent and opportunity — with deep industry
-            connections and personalized support at every step of your career journey.
+            Our mission is to bridge the gap between talent and opportunity —
+            with deep industry connections and personalized support at every
+            step of your career journey.
           </p>
         </div>
 
         <!-- RIGHT — Scrollable Cards -->
         <div class="md:w-7/12 flex flex-col gap-6">
-          <app-offer-card index="01" icon="person_search" title="Candidate Matching" imageUrl=""
+          <app-offer-card
+            index="01"
+            icon="person_search"
+            title="Candidate Matching"
+            imageUrl=""
             imageAlt="Candidate Matching"
-            description="Our team works closely with candidates to understand their skills, interests, and career goals — matching them with positions that align with their expertise and aspirations.">
+            description="Our team works closely with candidates to understand their skills, interests, and career goals — matching them with positions that align with their expertise and aspirations."
+          >
           </app-offer-card>
-          <app-offer-card index="02" icon="hub" title="Industry Connections" imageUrl="" imageAlt="Industry Connections"
-            description="With our extensive network of industry contacts and partnerships, we have access to a wide range of employment opportunities across various sectors and industries.">
+          <app-offer-card
+            index="02"
+            icon="hub"
+            title="Industry Connections"
+            imageUrl=""
+            imageAlt="Industry Connections"
+            description="With our extensive network of industry contacts and partnerships, we have access to a wide range of employment opportunities across various sectors and industries."
+          >
           </app-offer-card>
-          <app-offer-card index="03" icon="map" title="Career Guidance" imageUrl="" imageAlt="Career Guidance"
-            description="We provide personalized career guidance — from resume writing and interview preparation to negotiating offers — helping candidates navigate the job search process with confidence.">
+          <app-offer-card
+            index="03"
+            icon="map"
+            title="Career Guidance"
+            imageUrl=""
+            imageAlt="Career Guidance"
+            description="We provide personalized career guidance — from resume writing and interview preparation to negotiating offers — helping candidates navigate the job search process with confidence."
+          >
           </app-offer-card>
-          <app-offer-card index="04" icon="groups" title="Client Collaboration" imageUrl=""
+          <app-offer-card
+            index="04"
+            icon="groups"
+            title="Client Collaboration"
+            imageUrl=""
             imageAlt="Client Collaboration"
-            description="We partner with companies and organizations to understand their hiring needs and requirements, sourcing and screening candidates to find the best fit for their teams.">
+            description="We partner with companies and organizations to understand their hiring needs and requirements, sourcing and screening candidates to find the best fit for their teams."
+          >
           </app-offer-card>
-          <app-offer-card index="05" icon="support_agent" title="Ongoing Support" imageUrl="" imageAlt="Ongoing Support"
-            description="Our commitment doesn't end once you've secured a job. We provide ongoing support and guidance to help you thrive in your new role and advance your career over time.">
+          <app-offer-card
+            index="05"
+            icon="support_agent"
+            title="Ongoing Support"
+            imageUrl=""
+            imageAlt="Ongoing Support"
+            description="Our commitment doesn't end once you've secured a job. We provide ongoing support and guidance to help you thrive in your new role and advance your career over time."
+          >
           </app-offer-card>
         </div>
       </div>
@@ -66,36 +106,71 @@
 
   <!-- Who We Serve -->
   <app-horizontal-scroll-section>
-
     <div slot="heading" class="text-center">
-      <span class="inline-block text-[11px] font-semibold uppercase tracking-[0.25em] text-accent mb-6">
+      <span
+        class="inline-block text-[11px] font-semibold uppercase tracking-[0.25em] text-accent mb-6"
+      >
         Who It's For
       </span>
-      <h2 class="text-4xl md:text-5xl font-medium text-primary leading-tight mb-6">Who We Serve</h2>
-      <p class="text-text-muted text-lg font-light leading-relaxed max-w-xl mx-auto">
-        Our employment placement services are designed to serve a wide range of individuals and organizations.
+      <h2
+        class="text-4xl md:text-5xl font-medium text-primary leading-tight mb-6"
+      >
+        Who We Serve
+      </h2>
+      <p
+        class="text-text-muted text-lg font-light leading-relaxed max-w-xl mx-auto"
+      >
+        Our employment placement services are designed to serve a wide range of
+        individuals and organizations.
       </p>
     </div>
 
     <div slot="cards" class="contents">
-      <app-benefit-card class="flex-none w-[420px]" index="01" icon="person" title="Job Seekers" imageUrl=""
-        imageAlt="Job Seekers" [delay]="0"
-        description="Whether a recent graduate or an experienced professional, we help you find the perfect position to match your skills and career goals in AI and machine learning.">
+      <app-benefit-card
+        class="flex-none w-[420px]"
+        index="01"
+        icon="person"
+        title="Job Seekers"
+        imageUrl=""
+        imageAlt="Job Seekers"
+        [delay]="0"
+        description="Whether a recent graduate or an experienced professional, we help you find the perfect position to match your skills and career goals in AI and machine learning."
+      >
       </app-benefit-card>
-      <app-benefit-card class="flex-none w-[420px]" index="02" icon="business" title="Employers" imageUrl=""
-        imageAlt="Employers" [delay]="0"
-        description="Companies looking to hire skilled AI professionals quickly and efficiently — saving time and resources while finding the right talent for their teams.">
+      <app-benefit-card
+        class="flex-none w-[420px]"
+        index="02"
+        icon="business"
+        title="Employers"
+        imageUrl=""
+        imageAlt="Employers"
+        [delay]="0"
+        description="Companies looking to hire skilled AI professionals quickly and efficiently — saving time and resources while finding the right talent for their teams."
+      >
       </app-benefit-card>
-      <app-benefit-card class="flex-none w-[420px]" index="03" icon="diversity_3" title="Community Organizations"
-        imageUrl="" imageAlt="Community Organizations" [delay]="0"
-        description="We work with community organizations and educational institutions to provide employment opportunities to individuals from underserved communities.">
+      <app-benefit-card
+        class="flex-none w-[420px]"
+        index="03"
+        icon="diversity_3"
+        title="Community Organizations"
+        imageUrl=""
+        imageAlt="Community Organizations"
+        [delay]="0"
+        description="We work with community organizations and educational institutions to provide employment opportunities to individuals from underserved communities."
+      >
       </app-benefit-card>
-      <app-benefit-card class="flex-none w-[420px]" index="04" icon="swap_horiz" title="Career Changers" imageUrl=""
-        imageAlt="Career Changers" [delay]="0"
-        description="Professionals transitioning into AI-focused roles, supported by our network, guidance, and mentorship to make the pivot successfully.">
+      <app-benefit-card
+        class="flex-none w-[420px]"
+        index="04"
+        icon="swap_horiz"
+        title="Career Changers"
+        imageUrl=""
+        imageAlt="Career Changers"
+        [delay]="0"
+        description="Professionals transitioning into AI-focused roles, supported by our network, guidance, and mentorship to make the pivot successfully."
+      >
       </app-benefit-card>
     </div>
-
   </app-horizontal-scroll-section>
 
   <section class="px-8 py-40">
@@ -104,16 +179,19 @@
         Ready to take the next step?
       </h2>
       <div class="flex flex-col sm:flex-row gap-8 justify-center items-center">
-        <a routerLink="/contact"
-          class="bg-primary text-white px-12 py-5 rounded-full font-medium hover:bg-opacity-90 transition-all text-lg">
+        <a
+          routerLink="/contact"
+          class="bg-primary text-white px-12 py-5 rounded-full font-medium hover:bg-opacity-90 transition-all text-lg"
+        >
           Get in Touch
         </a>
-        <a routerLink="/training"
-          class="text-primary px-12 py-5 rounded-full font-medium border border-black/10 hover:bg-black/5 transition-all text-lg">
+        <a
+          routerLink="/training"
+          class="text-primary px-12 py-5 rounded-full font-medium border border-black/10 hover:bg-black/5 transition-all text-lg"
+        >
           View Training Programs
         </a>
       </div>
     </div>
   </section>
-
 </main>
