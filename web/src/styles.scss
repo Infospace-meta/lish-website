@@ -2,11 +2,14 @@
 
 @theme {
   --color-primary: #1a1a1a;
+  --color-secondary: #e5e5e5;
+  --color-accent: #002583;
+  --color-complement: #ffa311;
+  --color-background: #f9f8f6;
   --color-soft-grey: #f2f2f2;
   --color-warm-bg: #f9f8f6;
   // --color-accent: #0047AB;
-  --color-accent: #002583;
-  --color-complement: #ffa311;
+
   --color-text-muted: #737373;
 
   --radius-4xl: 2.5rem;
@@ -231,36 +234,22 @@
 }
 
 /* --- Restored Typography (Original Proportionate Sizes) --- */
+p {
+  @apply md:text-lg text-text-muted leading-relaxed;
+}
 h1 {
   @apply text-5xl md:text-6xl font-medium tracking-tight leading-[1.1];
 }
 h2 {
-  @apply text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight;
+  @apply text-4xl md:text-4xl lg:text-5xl font-semibold tracking-tight;
 }
 h3 {
-  @apply text-xl md:text-2xl font-semibold;
+  @apply text-3xl md:text-[32px] font-semibold md:leading-[1.1];
 }
-p {
-  @apply text-lg text-text-muted leading-relaxed;
+h4 {
+  @apply text-[18px] tracking-wide text-neutral-700;
 }
-small {
-  @apply text-sm text-text-muted uppercase tracking-wide;
-}
-em {
-  @apply italic text-primary;
-}
-i {
-  @apply text-primary;
-}
-b {
-  @apply font-bold text-primary;
-}
-strong {
-  @apply font-bold text-primary;
-}
-sub {
-  @apply text-sm text-primary;
-}
-sup {
-  @apply text-sm text-primary;
+
+h5 {
+  @apply text-[14px];
 }
