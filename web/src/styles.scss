@@ -35,7 +35,7 @@
   transition: none; 
 }
 
-/* Animations only trigger when the parent section gets the .active class */
+/* Animations trigger via the appScrollReveal Directive */
 .active {
   .reveal-text {
     animation: fadeInUp 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
@@ -54,27 +54,27 @@
 .delay-4 { animation-delay: 0.4s !important; }
 .delay-5 { animation-delay: 0.5s !important; }
 .delay-6 { animation-delay: 0.6s !important; }
-.delay-7 { animation-delay: 0.7s !important; }
+.delay-7 { animation-delay: 1s !important; }
 
-/* --- Partner Logo Vertical Scroll (Hero Header) --- */
+/* --- Continuous Never-Ending Partner Scroll --- */
 @keyframes snappyVerticalScroll {
-  0%, 20% { transform: translateY(0); }
-  25%, 45% { transform: translateY(-60px); } 
-  50%, 70% { transform: translateY(-120px); }
-  75%, 100% { transform: translateY(-180px); }
-}
-
-@keyframes logoPopIn {
-  from { opacity: 0; transform: scale(0.9) translateY(10px); }
-  to { opacity: 1; transform: scale(1) translateY(0); }
+  0% { transform: translateY(0); }
+  20% { transform: translateY(0); }
+  25% { transform: translateY(-60px); }
+  45% { transform: translateY(-60px); }
+  50% { transform: translateY(-120px); }
+  70% { transform: translateY(-120px); }
+  75% { transform: translateY(-180px); }
+  95% { transform: translateY(-180px); }
+  100% { transform: translateY(-240px); } 
 }
 
 .partner-scroll-container {
   position: relative;
   height: 60px; 
   overflow: hidden;
-  mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
-  -webkit-mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
 }
 
 .partner-scroll-wrapper {
@@ -101,12 +101,17 @@
   animation: logoPopIn 0.6s ease forwards;
 }
 
+@keyframes logoPopIn {
+  from { opacity: 0; transform: scale(0.9) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
 .partner-logo-bold:nth-child(1) { animation-delay: 0.1s; }
 .partner-logo-bold:nth-child(2) { animation-delay: 0.25s; }
 .partner-logo-bold:nth-child(3) { animation-delay: 0.4s; }
 .partner-logo-bold:nth-child(4) { animation-delay: 0.55s; }
 
-/* --- Motion & Transitions (Carousel & Global) --- */
+/* --- Motion & Transitions --- */
 .transition-all {
   transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -125,7 +130,7 @@
   animation: pulseSubtle 4s ease-in-out infinite;
 }
 
-/* --- Client/Network Grid Design (Matching Ventriloc Image) --- */
+/* --- Client Grid Design --- */
 .partner-card-grid-item {
   @apply bg-soft-grey aspect-[4/3] rounded-sm flex items-center justify-center p-8 transition-all duration-500;
   mix-blend-mode: multiply;
@@ -144,3 +149,9 @@
   mix-blend-mode: luminosity;
   @apply grayscale hover:grayscale-0 transition-all duration-700;
 }
+
+/* --- Restored Typography (Original Proportionate Sizes) --- */
+h1 { @apply text-5xl md:text-6xl font-medium tracking-tight leading-[1.1]; }
+h2 { @apply text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight; }
+h3 { @apply text-xl md:text-2xl font-semibold; }
+p { @apply text-lg text-text-muted font-light leading-relaxed; }
