@@ -1,53 +1,65 @@
 <main class="pt-16 font-poppins bg-warm-bg">
-  <section appScrollReveal class="font-poppins px-8 pb-32 pt-8">
+  <section
+    appScrollReveal
+    class="font-poppins px-6 sm:px-8 pb-20 sm:pb-32 pt-4 sm:pt-8"
+  >
     <div class="max-w-7xl mx-auto">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <div>
+      <div
+        class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
+      >
+        <div class="order-2 lg:order-1">
           <span
-            class="inline-block text-[11px] font-semibold uppercase tracking-[0.25em] text-accent mb-8 reveal-text delay-1"
-            >About us</span
+            class="inline-block text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.25em] text-accent mb-6 sm:mb-8 reveal-text delay-1"
           >
+            About us
+          </span>
+
           <h1
-            class="text-5xl md:text-6xl mb-12 leading-[1.1] tracking-tight text-primary reveal-text delay-2"
+            class="mb-8 sm:mb-12 leading-[1.1] text-primary reveal-text delay-2"
           >
             Bridging the edge of
             <span class="text-accent">AI and humanity</span>
           </h1>
 
-          <div class="space-y-4 mb-12">
-            <div class="flex items-center gap-4 reveal-text delay-3">
+          <div class="space-y-4 sm:space-y-6 mb-8 sm:mb-12">
+            <div class="flex items-start gap-4 reveal-text delay-3">
               <div
-                class="flex-shrink-0 w-6 h-6 rounded-full border border-accent flex items-center justify-center"
+                class="flex-shrink-0 mt-1 w-5 h-5 sm:w-6 sm:h-6 rounded-full border border-accent flex items-center justify-center"
               >
-                <span class="material-symbols-outlined text-accent text-[14px]"
+                <span
+                  class="material-symbols-outlined text-accent text-[12px] sm:text-[14px]"
                   >check</span
                 >
               </div>
-              <p class="text-lg text-text-muted font-light">
+              <p class="text-text-muted font-light">
                 Empowering youth through AI & Machine Learning
               </p>
             </div>
-            <div class="flex items-center gap-4 reveal-text delay-4">
+
+            <div class="flex items-start gap-4 reveal-text delay-4">
               <div
-                class="flex-shrink-0 w-6 h-6 rounded-full border border-accent flex items-center justify-center"
+                class="flex-shrink-0 mt-1 w-5 h-5 sm:w-6 sm:h-6 rounded-full border border-accent flex items-center justify-center"
               >
-                <span class="material-symbols-outlined text-accent text-[14px]"
+                <span
+                  class="material-symbols-outlined text-accent text-[12px] sm:text-[14px]"
                   >check</span
                 >
               </div>
-              <p class="text-lg text-text-muted font-light">
+              <p class="text-text-muted font-light">
                 Providing sustainable digital employment opportunities
               </p>
             </div>
-            <div class="flex items-center gap-4 reveal-text delay-5">
+
+            <div class="flex items-start gap-4 reveal-text delay-5">
               <div
-                class="flex-shrink-0 w-6 h-6 rounded-full border border-accent flex items-center justify-center"
+                class="flex-shrink-0 mt-1 w-5 h-5 sm:w-6 sm:h-6 rounded-full border border-accent flex items-center justify-center"
               >
-                <span class="material-symbols-outlined text-accent text-[14px]"
+                <span
+                  class="material-symbols-outlined text-accent text-[12px] sm:text-[14px]"
                   >check</span
                 >
               </div>
-              <p class="text-lg text-text-muted font-light">
+              <p class="text-text-muted font-light">
                 Cultivating a solution-oriented mindset for development
               </p>
             </div>
@@ -55,7 +67,7 @@
 
           <div class="pt-8 border-t border-black/5 reveal-text delay-6">
             <p
-              class="text-[11px] font-bold uppercase tracking-widest text-accent mb-6"
+              class="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-accent mb-6"
             >
               Trusted by 80+ partners
             </p>
@@ -103,20 +115,20 @@
         </div>
 
         <div
-          class="relative aspect-square flex flex-col items-center justify-center z-0"
+          class="order-1 lg:order-2 relative aspect-square w-full max-w-[500px] lg:max-w-none mx-auto flex flex-col items-center justify-center z-0"
         >
           <div
-            class="relative mb-6 w-full h-[80%] flex items-center justify-center"
+            class="relative mb-6 w-full h-[75%] sm:h-[80%] flex items-center justify-center"
           >
             <div
               *ngFor="let img of carouselImages; let i = index"
-              class="absolute w-[85%] h-[85%] transition-all duration-700 ease-in-out rounded-3xl overflow-hidden border border-black/10 shadow-2xl"
+              class="absolute w-[80%] sm:w-[85%] h-[80%] sm:h-[85%] transition-all duration-700 ease-in-out rounded-2xl sm:rounded-3xl overflow-hidden border border-black/10 shadow-2xl"
               [ngClass]="{
                 'z-30 opacity-100 scale-100 translate-x-0 translate-y-0 rotate-0':
                   i === currentIndex,
-                'z-20 opacity-70 scale-95 translate-x-6 translate-y-6 rotate-2':
+                'z-20 opacity-70 scale-95 translate-x-4 sm:translate-x-6 translate-y-4 sm:translate-y-6 rotate-2':
                   i === (currentIndex + 1) % carouselImages.length,
-                'z-10 opacity-40 scale-90 translate-x-12 translate-y-12 rotate-6':
+                'z-10 opacity-40 scale-90 translate-x-8 sm:translate-x-12 translate-y-8 sm:translate-y-12 rotate-6':
                   i === (currentIndex + 2) % carouselImages.length,
                 'z-0 opacity-0 scale-75':
                   i !== currentIndex &&
@@ -132,14 +144,16 @@
             </div>
           </div>
 
-          <div class="mt-16 flex items-center justify-center">
-            <div class="flex gap-3">
+          <div class="mt-8 sm:mt-16 flex items-center justify-center">
+            <div class="flex gap-2 sm:gap-3">
               <div
                 *ngFor="let img of carouselImages; let i = index"
                 (click)="goToSlide(i); resetTimer()"
-                class="h-1.5 transition-all duration-500 rounded-full cursor-pointer hover:bg-accent/50"
+                class="h-1 sm:h-1.5 transition-all duration-500 rounded-full cursor-pointer hover:bg-accent/50"
                 [ngClass]="
-                  i === currentIndex ? 'w-10 bg-accent' : 'w-2 bg-black/10'
+                  i === currentIndex
+                    ? 'w-8 sm:w-10 bg-accent'
+                    : 'w-1.5 sm:w-2 bg-black/10'
                 "
               ></div>
             </div>
@@ -147,10 +161,10 @@
 
           <div class="absolute inset-0 -z-10 pointer-events-none">
             <div
-              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[115%] h-[115%] border border-black/[0.04] rounded-full"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] sm:w-[115%] h-[110%] sm:h-[115%] border border-black/[0.04] rounded-full"
             ></div>
             <div
-              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] h-[95%] border border-black/[0.06] rounded-full animate-pulse"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] sm:w-[95%] h-[90%] sm:h-[95%] border border-black/[0.06] rounded-full animate-pulse"
             ></div>
           </div>
         </div>
@@ -158,77 +172,115 @@
     </div>
   </section>
 
-  <section appScrollReveal class="pt-16 font-poppins bg-accent">
-    <div class="pt-16 mx-auto">
+  <section appScrollReveal class="py-8 font-poppins bg-accent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      <!-- TEXT HEADER -->
       <div
-        class="bg-soft-grey md:p-24 relative overflow-hidden min-h-[600px] flex items-center justify-center"
+        class="flex bg-warm-bg px-6 py-12 sm:px-12 sm:py-20 flex-col md:flex-row md:items-start md:justify-between gap-8 md:gap-10"
       >
+        <div class="reveal-text delay-1 flex-shrink-0">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-primary">
+            The Lish ecosystem
+          </h2>
+          <div class="w-12 h-1 bg-accent mt-4 sm:mt-6 rounded-full"></div>
+        </div>
+
+        <p
+          class="text-text-muted max-w-xl text-base sm:text-lg md:text-xl leading-relaxed font-light reveal-text delay-2"
+        >
+          Our infrastructure connects disparate nodes of talent and technology
+          into a singular, cohesive ecosystem for growth and deployment.
+        </p>
+      </div>
+
+      <!-- ECOSYSTEM VISUAL -->
+      <div
+        class="bg-soft-grey md:rounded-xl my-4 relative overflow-hidden flex items-center justify-center py-16 sm:py-24 md:min-h-[600px]"
+      >
+        <!-- background circles -->
         <div
           class="absolute inset-0 flex items-center justify-center pointer-events-none"
         >
           <div
-            class="w-[300px] h-[300px] border border-black/5 rounded-full animate-pulse"
+            class="w-[180px] h-[180px] sm:w-[300px] sm:h-[300px] border border-black/5 rounded-full animate-pulse"
           ></div>
           <div
-            class="absolute w-[500px] h-[500px] border border-black/[0.03] rounded-full"
+            class="absolute w-[280px] h-[280px] sm:w-[520px] sm:h-[520px] border border-black/[0.03] rounded-full"
           ></div>
         </div>
 
+        <!-- CONTENT WRAPPER -->
         <div
-          class="relative w-full max-w-4xl h-[400px] flex items-center justify-center"
+          class="relative w-full max-w-4xl px-4 sm:px-6 flex flex-col items-center justify-center gap-8 sm:gap-10"
         >
+          <!-- CORE ENGINE -->
           <div
-            class="relative z-10 flex flex-wrap gap-4 justify-center items-center"
+            class="flex flex-col items-center pointer-events-none order-1 sm:order-2"
           >
             <div
-              class="bg-white px-6 py-2.5 rounded-full shadow-sm border border-black/5 flex items-center gap-3 transition-transform hover:scale-105"
+              class="w-14 h-14 sm:w-20 sm:h-20 bg-primary rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4 shadow-xl"
             >
-              <div class="w-1.5 h-1.5 rounded-full bg-accent"></div>
-              <span class="text-[13px] font-poppins font-medium tracking-wide"
-                >Youth Talent</span
-              >
-            </div>
-            <div
-              class="bg-white px-6 py-2.5 rounded-full shadow-sm border border-black/5 flex items-center gap-3 transition-transform hover:scale-105"
-            >
-              <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
-              <span class="text-[13px] font-poppins font-medium tracking-wide"
-                >Generative AI</span
-              >
-            </div>
-            <div
-              class="bg-white px-6 py-2.5 rounded-full shadow-sm border border-black/5 flex items-center gap-3 transition-transform hover:scale-105"
-            >
-              <div class="w-1.5 h-1.5 rounded-full bg-accent"></div>
-              <span class="text-[13px] font-poppins font-medium tracking-wide"
-                >Global Industry</span
-              >
-            </div>
-            <div
-              class="bg-white px-6 py-2.5 rounded-full shadow-sm border border-black/5 flex items-center gap-3 transition-transform hover:scale-105"
-            >
-              <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
-              <span class="text-[13px] font-poppins font-medium tracking-wide"
-                >Infrastructure</span
-              >
-            </div>
-          </div>
-
-          <div class="absolute flex flex-col items-center">
-            <div
-              class="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mb-4 shadow-xl"
-            >
-              <span class="text-white font-bold text-2xl">L</span>
+              <span class="text-white font-bold text-xl sm:text-2xl">L</span>
             </div>
             <p
-              class="text-[10px] font-bold font-poppins uppercase tracking-[0.3em] text-primary/40"
+              class="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.3em] text-primary/40"
             >
               Core Engine
             </p>
           </div>
 
+          <!-- ECOSYSTEM TAGS -->
+          <div
+            class="relative z-10 flex flex-wrap gap-3 sm:gap-6 justify-center items-center w-full max-w-2xl order-2 sm:order-1"
+          >
+            <div
+              class="bg-white px-4 sm:px-5 py-2 rounded-full shadow-sm border border-black/5 flex items-center gap-2 sm:gap-3 transition-all hover:scale-105"
+            >
+              <div class="w-1.5 h-1.5 rounded-full bg-accent"></div>
+              <span
+                class="text-[12px] sm:text-[13px] font-medium tracking-wide"
+              >
+                Youth Talent
+              </span>
+            </div>
+
+            <div
+              class="bg-white px-4 sm:px-5 py-2 rounded-full shadow-sm border border-black/5 flex items-center gap-2 sm:gap-3 transition-all hover:scale-105"
+            >
+              <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+              <span
+                class="text-[12px] sm:text-[13px] font-medium tracking-wide"
+              >
+                Generative AI
+              </span>
+            </div>
+
+            <div
+              class="bg-white px-4 sm:px-5 py-2 rounded-full shadow-sm border border-black/5 flex items-center gap-2 sm:gap-3 transition-all hover:scale-105"
+            >
+              <div class="w-1.5 h-1.5 rounded-full bg-accent"></div>
+              <span
+                class="text-[12px] sm:text-[13px] font-medium tracking-wide"
+              >
+                Global Industry
+              </span>
+            </div>
+
+            <div
+              class="bg-white px-4 sm:px-5 py-2 rounded-full shadow-sm border border-black/5 flex items-center gap-2 sm:gap-3 transition-all hover:scale-105"
+            >
+              <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+              <span
+                class="text-[12px] sm:text-[13px] font-medium tracking-wide"
+              >
+                Infrastructure
+              </span>
+            </div>
+          </div>
+
+          <!-- CONNECTING CURVES -->
           <svg
-            class="absolute inset-0 w-full h-full pointer-events-none opacity-20"
+            class="absolute inset-0 w-full h-full pointer-events-none opacity-10 sm:opacity-20 hidden md:block"
             preserveAspectRatio="none"
             viewBox="0 0 800 400"
           >
@@ -238,6 +290,7 @@
               stroke="currentColor"
               stroke-width="0.5"
             ></path>
+
             <path
               d="M100,200 Q400,390 700,200"
               fill="none"
@@ -247,54 +300,52 @@
           </svg>
         </div>
       </div>
-      <div
-        class="flex bg-warm-bg p-8 flex-col md:flex-row justify-between items-start gap-8"
-      >
-        <h2
-          class="text-3xl font-poppins font-medium text-primary reveal-text delay-1"
-        >
-          The Lish Ecosystem
-        </h2>
-        <p
-          class="text-text-muted font-poppins max-w-md text-xl leading-relaxed font-light reveal-text delay-2"
-        >
-          Our infrastructure connects disparate nodes of talent and technology
-          into a singular, cohesive ecosystem for growth and deployment.
-        </p>
-      </div>
     </div>
   </section>
 
-  <section appScrollReveal class="px-8 font-poppins py-32 bg-warm-bg">
+  <section
+    appScrollReveal
+    class="px-5 sm:px-8 lg:px-12 py-20 sm:py-24 lg:py-32 bg-warm-bg overflow-hidden"
+  >
     <div class="max-w-7xl mx-auto">
       <h2
-        class="text-4xl md:text-5xl font-poppins font-medium text-primary mb-20 tracking-tight reveal-text delay-1"
+        class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-poppins font-medium text-primary mb-14 sm:mb-16 lg:mb-20 tracking-tight reveal-text delay-1"
       >
         We create lasting value
       </h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-24">
-        <div class="flex flex-col gap-8 group">
+
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-12 lg:gap-20"
+      >
+        <!-- CARD 1 -->
+        <div class="flex flex-col gap-5 sm:gap-6 lg:gap-8 group">
           <div
-            class="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center shadow-lg transition-transform duration-500 group-hover:-translate-y-2 reveal-text delay-2"
+            class="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-xl lg:rounded-2xl bg-primary flex items-center justify-center shadow-lg transition-transform duration-500 group-hover:-translate-y-2 reveal-text delay-2"
           >
             <div
-              class="w-10 h-10 rounded-full border-2 border-accent/30 flex items-center justify-center"
+              class="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 rounded-full border-2 border-accent/30 flex items-center justify-center"
             >
               <span
-                class="material-symbols-outlined text-accent text-2xl font-light"
+                class="material-symbols-outlined text-accent text-lg sm:text-xl lg:text-2xl font-light"
                 >school</span
               >
             </div>
           </div>
-          <div class="space-y-4">
+
+          <div class="space-y-2 sm:space-y-3 lg:space-y-4">
             <h3
-              class="text-2xl font-semibold text-primary flex items-center gap-3 reveal-text delay-3"
+              class="text-lg sm:text-xl lg:text-2xl font-semibold text-primary flex items-center gap-2 sm:gap-3 reveal-text delay-3"
             >
-              <span class="text-accent/50 font-poppins text-lg">01.</span> Youth
-              Training
+              <span
+                class="text-accent/50 font-poppins text-sm sm:text-base lg:text-lg"
+              >
+                01.
+              </span>
+              Youth Training
             </h3>
+
             <p
-              class="text-text-muted text-lg leading-relaxed font-light reveal-text delay-4"
+              class="text-text-muted text-base sm:text-lg leading-relaxed font-light reveal-text delay-4"
             >
               Proven data experts delivering high-impact skills to over
               <span class="text-primary font-medium">500+ youth</span>, ensuring
@@ -303,25 +354,36 @@
           </div>
         </div>
 
-        <div class="flex flex-col gap-8 group">
+        <!-- CARD 2 -->
+        <div class="flex flex-col gap-5 sm:gap-6 lg:gap-8 group">
           <div
-            class="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center shadow-lg transition-transform duration-500 group-hover:-translate-y-2 reveal-text delay-3"
+            class="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-xl lg:rounded-2xl bg-primary flex items-center justify-center shadow-lg transition-transform duration-500 group-hover:-translate-y-2 reveal-text delay-3"
           >
             <div class="flex items-end gap-1">
-              <div class="w-2 h-4 bg-soft-grey/40 rounded-sm"></div>
-              <div class="w-2 h-7 bg-accent rounded-sm"></div>
-              <div class="w-2 h-5 bg-accent/60 rounded-sm"></div>
+              <div
+                class="w-1.5 h-3 sm:w-2 sm:h-4 bg-soft-grey/40 rounded-sm"
+              ></div>
+              <div class="w-1.5 h-6 sm:w-2 sm:h-7 bg-accent rounded-sm"></div>
+              <div
+                class="w-1.5 h-4 sm:w-2 sm:h-5 bg-accent/60 rounded-sm"
+              ></div>
             </div>
           </div>
-          <div class="space-y-4">
+
+          <div class="space-y-2 sm:space-y-3 lg:space-y-4">
             <h3
-              class="text-2xl font-semibold text-primary flex items-center gap-3 reveal-text delay-4"
+              class="text-lg sm:text-xl lg:text-2xl font-semibold text-primary flex items-center gap-2 sm:gap-3 reveal-text delay-4"
             >
-              <span class="text-accent/50 font-poppins text-lg">02.</span> AI
-              Solutions
+              <span
+                class="text-accent/50 font-poppins text-sm sm:text-base lg:text-lg"
+              >
+                02.
+              </span>
+              AI Solutions
             </h3>
+
             <p
-              class="text-text-muted text-lg leading-relaxed font-light reveal-text delay-5"
+              class="text-text-muted text-base sm:text-lg leading-relaxed font-light reveal-text delay-5"
             >
               Automating manual work with
               <span class="text-primary font-medium">24 active AI models</span>,
@@ -330,29 +392,39 @@
           </div>
         </div>
 
-        <div class="flex flex-col gap-8 group">
+        <!-- CARD 3 -->
+        <div
+          class="flex flex-col gap-5 sm:gap-6 lg:gap-8 group sm:col-span-2 lg:col-span-1 max-w-md sm:max-w-none mx-auto sm:mx-0"
+        >
           <div
-            class="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center shadow-lg transition-transform duration-500 group-hover:-translate-y-2 reveal-text delay-4"
+            class="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-xl lg:rounded-2xl bg-primary flex items-center justify-center shadow-lg transition-transform duration-500 group-hover:-translate-y-2 reveal-text delay-4"
           >
             <div class="relative">
-              <span class="material-symbols-outlined text-accent text-3xl"
+              <span
+                class="material-symbols-outlined text-accent text-xl sm:text-2xl lg:text-3xl"
                 >auto_awesome</span
               >
               <span
-                class="material-symbols-outlined text-white text-xl absolute -bottom-1 -right-1"
+                class="material-symbols-outlined text-white text-sm sm:text-lg absolute -bottom-1 -right-1"
                 >public</span
               >
             </div>
           </div>
-          <div class="space-y-4">
+
+          <div class="space-y-2 sm:space-y-3 lg:space-y-4">
             <h3
-              class="text-2xl font-semibold text-primary flex items-center gap-3 reveal-text delay-5"
+              class="text-lg sm:text-xl lg:text-2xl font-semibold text-primary flex items-center gap-2 sm:gap-3 reveal-text delay-5"
             >
-              <span class="text-accent/50 font-poppins text-lg">03.</span>
+              <span
+                class="text-accent/50 font-poppins text-sm sm:text-base lg:text-lg"
+              >
+                03.
+              </span>
               Global Network
             </h3>
+
             <p
-              class="text-text-muted text-lg leading-relaxed font-light reveal-text delay-6"
+              class="text-text-muted text-base sm:text-lg leading-relaxed font-light reveal-text delay-6"
             >
               Integrating insights across
               <span class="text-primary font-medium">12 partner countries</span
@@ -366,57 +438,72 @@
 
   <section
     appScrollReveal
-    class="px-8 py-32 border-t font-poppins border-black/5 bg-[#F9F8F6]"
+    class="px-5 sm:px-8 lg:px-12 py-20 sm:py-24 lg:py-32 border-t font-poppins border-black/5 bg-[#F9F8F6] overflow-hidden"
   >
     <div class="max-w-7xl mx-auto">
-      <div class="flex flex-col lg:flex-row gap-16 lg:gap-32">
-        <div class="lg:w-1/3">
+      <div class="flex flex-col lg:flex-row gap-12 sm:gap-16 lg:gap-28">
+        <!-- LEFT CONTENT -->
+        <div class="lg:w-[32%]">
           <span
-            class="inline-block text-[11px] font-semibold uppercase tracking-[0.25em] text-accent mb-8 reveal-text delay-1"
-            >Trusted by our valued partners</span
+            class="inline-block text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.25em] text-accent mb-5 sm:mb-6 reveal-text delay-1"
           >
+            Trusted by our valued partners
+          </span>
+
           <h2
-            class="text-6xl font-medium mb-8 text-primary reveal-text delay-2"
+            class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-medium mb-5 sm:mb-6 text-primary reveal-text delay-2"
           >
             Network
           </h2>
+
           <p
-            class="text-text-muted text-lg font-light leading-relaxed reveal-text delay-3 max-w-sm"
+            class="text-text-muted text-base sm:text-lg lg:text-xl font-light leading-relaxed reveal-text delay-3 max-w-md"
           >
             We collaborate with global institutions to ensure our solutions are
             grounded in excellence.
           </p>
         </div>
 
-        <div class="lg:w-2/3">
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <!-- LOGO GRID -->
+        <div class="lg:w-[68%]">
+          <div
+            class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6"
+          >
             <div
               *ngFor="let partner of partners; let i = index"
-              class="partner-card-grid-item reveal-text"
-              [style.animation-delay]="0.1 * i + 's'"
+              class="partner-card-grid-item flex items-center justify-center reveal-text"
+              [style.animation-delay]="0.05 * i + 's'"
             >
               <img
                 [src]="partner.src"
                 [alt]="partner.name"
-                class="max-h-full w-auto object-contain block opacity-80 mix-blend-multiply"
+                class="max-h-[30px] sm:max-h-[38px] md:max-h-[42px] lg:max-h-[45px] w-auto object-contain block opacity-80 mix-blend-multiply transition-opacity duration-300 group-hover:opacity-100"
                 (error)="handleImageError($event)"
               />
             </div>
           </div>
-          <div class="mt-8 flex justify-end reveal-text delay-7">
+
+          <!-- CTA -->
+          <div
+            class="mt-8 sm:mt-10 lg:mt-12 flex justify-start sm:justify-end reveal-text delay-7"
+          >
             <button
-              class="group flex items-center gap-3 text-sm font-medium tracking-wide"
+              class="group flex items-center gap-3 text-sm font-medium tracking-wide transition-all"
             >
               <span
                 class="border-b border-transparent group-hover:border-primary transition-all"
-                >See all</span
               >
+                See all
+              </span>
+
               <div
-                class="w-8 h-8 bg-black rounded-sm flex items-center justify-center transition-transform group-hover:rotate-90"
+                class="w-7 h-7 sm:w-8 sm:h-8 bg-black rounded-sm flex items-center justify-center transition-transform duration-300 group-hover:rotate-90"
               >
-                <span class="material-symbols-outlined text-white text-[16px]"
-                  >add</span
+                <span
+                  class="material-symbols-outlined text-white text-[14px] sm:text-[16px]"
                 >
+                  add
+                </span>
               </div>
             </button>
           </div>
@@ -429,26 +516,33 @@
   <app-team-section></app-team-section>
   <app-roadmap-section></app-roadmap-section>
 
-  <section appScrollReveal class="px-8 font-poppins py-30">
-    <div class="max-w-7xl mx-auto text-center">
+  <section
+    appScrollReveal
+    class="px-5 sm:px-8 lg:px-10 py-20 sm:py-24 lg:py-28 font-poppins"
+  >
+    <div class="max-w-4xl mx-auto text-center">
       <h2
-        class="text-3xl md:text-4xl font-medium mb-14 tracking-tight reveal-text"
+        class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium mb-10 sm:mb-12 lg:mb-14 tracking-tight reveal-text leading-tight"
       >
         Let's create the next.
       </h2>
+
       <div
-        class="flex flex-col sm:flex-row gap-8 justify-center items-center reveal-text delay-2"
+        class="flex flex-col sm:flex-row gap-5 sm:gap-6 justify-center items-center reveal-text delay-2"
       >
         <a
-          class="bg-primary text-white px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition-all text-lg"
           href="#"
-          >Start a Collaboration</a
+          class="w-full sm:w-auto text-center bg-primary text-white px-7 sm:px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition-all text-base sm:text-lg"
         >
+          Start a Collaboration
+        </a>
+
         <a
-          class="text-primary px-8 py-3 rounded-full font-medium border border-black/10 hover:bg-black/5 transition-all text-lg"
           href="#"
-          >Our Programs</a
+          class="w-full sm:w-auto text-center text-primary px-7 sm:px-8 py-3 rounded-full font-medium border border-black/10 hover:bg-black/5 transition-all text-base sm:text-lg"
         >
+          Our Programs
+        </a>
       </div>
     </div>
   </section>

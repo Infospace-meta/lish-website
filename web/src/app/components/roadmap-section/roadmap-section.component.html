@@ -1,38 +1,64 @@
 <section
   appScrollReveal
-  class="py-40 bg-primary font-poppins text-white overflow-hidden"
+  class="py-20 sm:py-28 lg:py-36 bg-primary font-poppins text-white overflow-hidden"
 >
-  <div class="max-w-7xl mx-auto px-8 mb-24">
-    <h2 class="text-4xl md:text-6xl font-medium mb-6 reveal-text delay-1">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 mb-14 sm:mb-20 lg:mb-24">
+    <h2
+      class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-5 reveal-text delay-1"
+    >
       Future Roadmap
     </h2>
-    <p class="text-white/40 max-w-lg reveal-text delay-2">
+
+    <p
+      class="text-white/50 text-base sm:text-lg md:text-xl max-w-xl font-light leading-relaxed reveal-text delay-2"
+    >
       Our trajectory towards a more equitable digital landscape.
     </p>
   </div>
+
+  <!-- horizontal timeline -->
   <div
-    class="flex overflow-x-auto no-scrollbar gap-0 pl-8 md:pl-[calc((100vw-1280px)/2+32px)]"
+    class="flex overflow-x-auto no-scrollbar snap-x snap-mandatory gap-0 pl-5 sm:pl-8 md:pl-[calc((100vw-1280px)/2+32px)] cursor-grab active:cursor-grabbing"
   >
     <div
       *ngFor="let phase of phases; let i = index"
-      class="min-w-[400px] border-l border-white/10 p-12 flex flex-col justify-between h-[400px] group reveal-text"
+      class="snap-start min-w-[85%] sm:min-w-[420px] md:min-w-[460px] lg:min-w-[500px] border-l border-white/10 px-6 sm:px-10 lg:px-12 py-10 sm:py-12 flex flex-col justify-between h-[340px] sm:h-[380px] lg:h-[420px] group reveal-text"
       [style.animation-delay]="0.3 + i * 0.15 + 's'"
     >
       <div>
         <div
-          class="w-2.5 h-2.5 rounded-full mb-8"
-          [ngClass]="phase.highlight ? 'bg-accent' : 'bg-white/20'"
+          class="w-2.5 h-2.5 rounded-full mb-6 sm:mb-8 transition-transform duration-300 group-hover:scale-125"
+          [ngClass]="
+            phase.highlight
+              ? 'bg-accent shadow-[0_0_18px_rgba(0,71,171,0.6)]'
+              : 'bg-white/20'
+          "
         ></div>
+
         <span
-          class="text-xs font-bold uppercase tracking-widest text-white/40 mb-4 block"
-          >Phase {{ phase.id }}</span
+          class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white/40 mb-3 sm:mb-4 block"
         >
-        <h3 class="text-2xl font-medium mb-6">{{ phase.title }}</h3>
-        <p class="text-white/40 leading-relaxed font-light">{{ phase.desc }}</p>
+          Phase {{ phase.id }}
+        </span>
+
+        <h3
+          class="text-lg sm:text-xl md:text-2xl font-medium mb-4 sm:mb-5 group-hover:text-accent transition-colors"
+        >
+          {{ phase.title }}
+        </h3>
+
+        <p
+          class="text-white/50 text-sm sm:text-base md:text-lg leading-relaxed font-light max-w-md"
+        >
+          {{ phase.desc }}
+        </p>
       </div>
+
       <div
-        class="h-px bg-white/10 w-full group-hover:bg-accent transition-colors"
+        class="h-px bg-white/10 w-full group-hover:bg-accent group-hover:h-[2px] transition-all duration-500"
       ></div>
     </div>
+
+    <div class="min-w-[24px] sm:min-w-[80px] flex-shrink-0"></div>
   </div>
 </section>

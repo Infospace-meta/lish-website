@@ -38,6 +38,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
         >
           Services
         </div>
+
         <!-- Impact Trigger -->
         <div
           (click)="toggleMenu('impact')"
@@ -50,12 +51,12 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
         >
           Impact
         </div>
-        <!-- Home link -->
-        <!-- Impact Trigger -->
+
+        <!-- Company Trigger -->
         <div
-          (click)="toggleMenu('impact')"
+          (click)="toggleMenu('company')"
           [ngClass]="
-            activeMenu === 'impact'
+            activeMenu === 'company'
               ? 'bg-white text-accent shadow-sm'
               : 'text-neutral-600 hover:text-accent'
           "
@@ -156,25 +157,13 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
 
           <!-- Content for Services -->
           @if (activeMenu === 'services') {
-            <div class="grid grid-cols-4 gap-6">
-              <div
-                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
-              >
-                <a routerLink="services/ai-and-machine-learning" class="block">
-                  <h4 class="font-bold group-hover:text-accent">
-                    Ai-and-Machine-Learning
-                  </h4>
-                  <p class="text-xs text-neutral-500">
-                    Unlock the power of artificial intelligence
-                  </p>
-                </a>
-              </div>
+            <div class="grid grid-cols-3 gap-10">
               <div
                 class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
               >
                 <a routerLink="services/data-annotation" class="block">
                   <h4 class="font-bold group-hover:text-accent">
-                    Data Annotation
+                    Data Processing & Annotation
                   </h4>
                   <p class="text-xs text-neutral-500">
                     From raw data processing to precision annotation
@@ -186,7 +175,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
               >
                 <a routerLink="services/design-and-development" class="block">
                   <h4 class="font-bold group-hover:text-accent">
-                    Design-and-Development
+                    Software Development
                   </h4>
                   <p class="text-xs text-neutral-500">
                     End-to-end solutions for digital transformation
@@ -196,12 +185,36 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
               <div
                 class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
               >
-                <a routerLink="services/employment-placement" class="block">
+                <a routerLink="services/skill-building-programs" class="block">
                   <h4 class="font-bold group-hover:text-accent">
-                    Employment Placement
+                    Training & Upskilling Services
                   </h4>
                   <p class="text-xs text-neutral-500">
-                    Career support and job placement services.
+                    Comprehensive training and development opportunities.
+                  </p>
+                </a>
+              </div>
+            </div>
+          }
+
+          <!-- Content for Company -->
+          @if (activeMenu === 'company') {
+            <div class="grid grid-cols-4 gap-10">
+              <div
+                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
+              >
+                <a routerLink="about_us" class="block">
+                  <h4 class="font-bold group-hover:text-accent">About Us</h4>
+                  <p class="text-xs text-neutral-500">What Drives Us</p>
+                </a>
+              </div>
+              <div
+                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
+              >
+                <a routerLink="services/design-and-development" class="block">
+                  <h4 class="font-bold group-hover:text-accent">Our Team</h4>
+                  <p class="text-xs text-neutral-500">
+                    Meet The Experts Behind Our Solutions
                   </p>
                 </a>
               </div>
@@ -209,12 +222,18 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
                 class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
               >
                 <a routerLink="services/skill-building-programs" class="block">
-                  <h4 class="font-bold group-hover:text-accent">
-                    Skill Building Programs
-                  </h4>
+                  <h4 class="font-bold group-hover:text-accent">Careers</h4>
                   <p class="text-xs text-neutral-500">
-                    Comprehensive training and development opportunities.
+                    Grow Your Potential With Us
                   </p>
+                </a>
+              </div>
+              <div
+                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
+              >
+                <a routerLink="contact" class="block">
+                  <h4 class="font-bold group-hover:text-accent">Contact Us</h4>
+                  <p class="text-xs text-neutral-500">Talk To Us</p>
                 </a>
               </div>
             </div>
@@ -230,12 +249,39 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
       >
         <nav class="flex flex-col justify-between h-full">
           <div class="flex flex-col space-y-4">
-            <a
-              routerLink="/home"
-              (click)="closeEverything()"
-              class="text-lg font-semibold py-2 border-b border-neutral-100"
-              >Home</a
-            >
+            <!-- Services Accordion -->
+            <div>
+              <button
+                (click)="toggleMobileSub('services')"
+                class="w-full flex justify-between items-center text-lg font-semibold py-2 border-b border-neutral-100"
+              >
+                Services <span>{{ mobileSub === 'services' ? '−' : '+' }}</span>
+              </button>
+              @if (mobileSub === 'services') {
+                <div
+                  class="pl-4 py-4 flex flex-col space-y-4 animate-in slide-in-from-top-2"
+                >
+                  <a
+                    routerLink="services/data-annotation"
+                    (click)="closeEverything()"
+                    class="text-lg text-neutral-600"
+                    >Data Processing & Annotation</a
+                  >
+                  <a
+                    routerLink="services/design-and-development"
+                    (click)="closeEverything()"
+                    class="text-lg text-neutral-600"
+                    >Software Development</a
+                  >
+                  <a
+                    routerLink="services/skill-building-programs"
+                    (click)="closeEverything()"
+                    class="text-lg text-neutral-600"
+                    >Training & Upskilling Services</a
+                  >
+                </div>
+              }
+            </div>
 
             <!-- Impact Accordion -->
             <div>
@@ -271,35 +317,41 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
               }
             </div>
 
-            <!-- Services Accordion -->
+            <!-- Company Accordion -->
             <div>
               <button
-                (click)="toggleMobileSub('services')"
+                (click)="toggleMobileSub('company')"
                 class="w-full flex justify-between items-center text-lg font-semibold py-2 border-b border-neutral-100"
               >
-                Services <span>{{ mobileSub === 'services' ? '−' : '+' }}</span>
+                Company <span>{{ mobileSub === 'company' ? '−' : '+' }}</span>
               </button>
-              @if (mobileSub === 'services') {
+              @if (mobileSub === 'company') {
                 <div
                   class="pl-4 py-4 flex flex-col space-y-4 animate-in slide-in-from-top-2"
                 >
                   <a
-                    routerLink="/services/tech"
+                    routerLink="about_us"
                     (click)="closeEverything()"
                     class="text-lg text-neutral-600"
-                    >Technology</a
+                    >About Us</a
                   >
                   <a
-                    routerLink="/services/consulting"
+                    routerLink=""
                     (click)="closeEverything()"
                     class="text-lg text-neutral-600"
-                    >Consulting</a
+                    >Our Team</a
                   >
                   <a
-                    routerLink="/services/design"
+                    routerLink=""
                     (click)="closeEverything()"
                     class="text-lg text-neutral-600"
-                    >UI/UX Design</a
+                    >Careers</a
+                  >
+                  <a
+                    routerLink="contact"
+                    (click)="closeEverything()"
+                    class="text-lg text-neutral-600"
+                    >Contact Us</a
                   >
                 </div>
               }
