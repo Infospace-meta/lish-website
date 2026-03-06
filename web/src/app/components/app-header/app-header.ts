@@ -157,32 +157,60 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
               <div
                 class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
               >
-                <a routerLink="/services/tech" class="block">
-                  <h4 class="font-bold group-hover:text-accent">Technology</h4>
-                  <p class="text-xs text-neutral-500">
-                    Custom software and infrastructure.
-                  </p>
-                </a>
-              </div>
-              <div
-                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
-              >
-                <a routerLink="/services/consulting" class="block">
-                  <h4 class="font-bold group-hover:text-accent">Consulting</h4>
-                  <p class="text-xs text-neutral-500">
-                    Strategy and business growth.
-                  </p>
-                </a>
-              </div>
-              <div
-                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
-              >
-                <a routerLink="/services/design" class="block">
+                <a routerLink="services/ai-and-machine-learning" class="block">
                   <h4 class="font-bold group-hover:text-accent">
-                    UI/UX Design
+                    Ai-and-Machine-Learning
                   </h4>
                   <p class="text-xs text-neutral-500">
-                    Creative and user-centric design.
+                    Unlock the power of artificial intelligence
+                  </p>
+                </a>
+              </div>
+              <div
+                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
+              >
+                <a routerLink="services/data-annotation" class="block">
+                  <h4 class="font-bold group-hover:text-accent">
+                    Data Annotation
+                  </h4>
+                  <p class="text-xs text-neutral-500">
+                    From raw data processing to precision annotation
+                  </p>
+                </a>
+              </div>
+              <div
+                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
+              >
+                <a routerLink="services/design-and-development" class="block">
+                  <h4 class="font-bold group-hover:text-accent">
+                    Design-and-Development
+                  </h4>
+                  <p class="text-xs text-neutral-500">
+                    End-to-end solutions for digital transformation
+                  </p>
+                </a>
+              </div>
+              <div
+                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
+              >
+                <a routerLink="services/employment-placement" class="block">
+                  <h4 class="font-bold group-hover:text-accent">
+                    Employment Placement
+                  </h4>
+                  <p class="text-xs text-neutral-500">
+                    Career support and job placement services.
+                  </p>
+                </a>
+              </div>
+              <div
+                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
+              >
+                <a routerLink="services/skill-building-programs" class="block">
+                  <h4 class="font-bold group-hover:text-accent">
+                    Skill Building Programs
+                  </h4>
+                  <p class="text-xs text-neutral-500">
+                    Comprehensive training and development opportunities.
                   </p>
                 </a>
               </div>
