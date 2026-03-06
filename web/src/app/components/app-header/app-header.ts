@@ -26,15 +26,18 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
       <nav
         class="hidden lg:flex space-x-6 rounded-full px-4 py-2 bg-neutral-200/60 relative"
       >
-        <!-- Home link -->
-        <a
-          routerLink="/home"
-          (click)="closeMenu()"
-          class="px-4 py-1 text-neutral-600 rounded-full hover:text-accent font-semibold transition-colors"
+        <!-- Services Trigger -->
+        <div
+          (click)="toggleMenu('services')"
+          [ngClass]="
+            activeMenu === 'services'
+              ? 'bg-white text-accent shadow-sm'
+              : 'text-neutral-600 hover:text-accent'
+          "
+          class="px-4 py-1 cursor-pointer text-neutral-600 rounded-full hover:text-accent font-semibold transition-colors"
         >
-          Home
-        </a>
-
+          Services
+        </div>
         <!-- Impact Trigger -->
         <div
           (click)="toggleMenu('impact')"
@@ -47,18 +50,18 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
         >
           Impact
         </div>
-
-        <!-- Services Trigger -->
+        <!-- Home link -->
+        <!-- Impact Trigger -->
         <div
-          (click)="toggleMenu('services')"
+          (click)="toggleMenu('impact')"
           [ngClass]="
-            activeMenu === 'services'
+            activeMenu === 'impact'
               ? 'bg-white text-accent shadow-sm'
               : 'text-neutral-600 hover:text-accent'
           "
           class="px-4 py-1 cursor-pointer text-neutral-600 rounded-full hover:text-accent font-semibold transition-colors"
         >
-          Services
+          Company
         </div>
       </nav>
 

@@ -1,7 +1,12 @@
-<section class="py-40 bg-primary font-poppins text-white overflow-hidden">
+<section
+  appScrollReveal
+  class="py-40 bg-primary font-poppins text-white overflow-hidden"
+>
   <div class="max-w-7xl mx-auto px-8 mb-24">
-    <h2 class="text-4xl md:text-6xl font-medium mb-6">Future Roadmap</h2>
-    <p class="text-white/40 max-w-lg">
+    <h2 class="text-4xl md:text-6xl font-medium mb-6 reveal-text delay-1">
+      Future Roadmap
+    </h2>
+    <p class="text-white/40 max-w-lg reveal-text delay-2">
       Our trajectory towards a more equitable digital landscape.
     </p>
   </div>
@@ -9,8 +14,9 @@
     class="flex overflow-x-auto no-scrollbar gap-0 pl-8 md:pl-[calc((100vw-1280px)/2+32px)]"
   >
     <div
-      *ngFor="let phase of phases"
-      class="min-w-[400px] border-l border-white/10 p-12 flex flex-col justify-between h-[400px] group"
+      *ngFor="let phase of phases; let i = index"
+      class="min-w-[400px] border-l border-white/10 p-12 flex flex-col justify-between h-[400px] group reveal-text"
+      [style.animation-delay]="0.3 + i * 0.15 + 's'"
     >
       <div>
         <div

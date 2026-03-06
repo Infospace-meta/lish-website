@@ -4,6 +4,7 @@ import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { TeamSectionComponent } from '../../components/team-section/team-section.component';
 import { RoadmapSectionComponent } from '../../components/roadmap-section/roadmap-section.component';
 import { FrameworkSectionComponent } from '../../components/framework-section/framework-section.component';
+import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal';
 
 @Component({
   selector: 'app-about-us',
@@ -14,6 +15,7 @@ import { FrameworkSectionComponent } from '../../components/framework-section/fr
     TeamSectionComponent,
     RoadmapSectionComponent,
     FrameworkSectionComponent,
+    ScrollRevealDirective,
   ],
   templateUrl: './about-us.component.html',
 })
