@@ -172,77 +172,115 @@
     </div>
   </section>
 
-  <section appScrollReveal class="pt-16 font-poppins bg-accent">
-    <div class="pt-16 mx-auto">
+  <section appScrollReveal class="py-8 font-poppins bg-accent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      <!-- TEXT HEADER -->
       <div
-        class="bg-soft-grey md:p-24 relative overflow-hidden min-h-[600px] flex items-center justify-center"
+        class="flex bg-warm-bg px-6 py-12 sm:px-12 sm:py-20 flex-col md:flex-row md:items-start md:justify-between gap-8 md:gap-10"
       >
+        <div class="reveal-text delay-1 flex-shrink-0">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-primary">
+            The Lish Ecosystem
+          </h2>
+          <div class="w-12 h-1 bg-accent mt-4 sm:mt-6 rounded-full"></div>
+        </div>
+
+        <p
+          class="text-text-muted max-w-xl text-base sm:text-lg md:text-xl leading-relaxed font-light reveal-text delay-2"
+        >
+          Our infrastructure connects disparate nodes of talent and technology
+          into a singular, cohesive ecosystem for growth and deployment.
+        </p>
+      </div>
+
+      <!-- ECOSYSTEM VISUAL -->
+      <div
+        class="bg-soft-grey md:rounded-xl my-4 relative overflow-hidden flex items-center justify-center py-16 sm:py-24 md:min-h-[600px]"
+      >
+        <!-- background circles -->
         <div
           class="absolute inset-0 flex items-center justify-center pointer-events-none"
         >
           <div
-            class="w-[300px] h-[300px] border border-black/5 rounded-full animate-pulse"
+            class="w-[180px] h-[180px] sm:w-[300px] sm:h-[300px] border border-black/5 rounded-full animate-pulse"
           ></div>
           <div
-            class="absolute w-[500px] h-[500px] border border-black/[0.03] rounded-full"
+            class="absolute w-[280px] h-[280px] sm:w-[520px] sm:h-[520px] border border-black/[0.03] rounded-full"
           ></div>
         </div>
 
+        <!-- CONTENT WRAPPER -->
         <div
-          class="relative w-full max-w-4xl h-[400px] flex items-center justify-center"
+          class="relative w-full max-w-4xl px-4 sm:px-6 flex flex-col items-center justify-center gap-8 sm:gap-10"
         >
+          <!-- CORE ENGINE -->
           <div
-            class="relative z-10 flex flex-wrap gap-4 justify-center items-center"
+            class="flex flex-col items-center pointer-events-none order-1 sm:order-2"
           >
             <div
-              class="bg-white px-6 py-2.5 rounded-full shadow-sm border border-black/5 flex items-center gap-3 transition-transform hover:scale-105"
+              class="w-14 h-14 sm:w-20 sm:h-20 bg-primary rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4 shadow-xl"
             >
-              <div class="w-1.5 h-1.5 rounded-full bg-accent"></div>
-              <span class="text-[13px] font-poppins font-medium tracking-wide"
-                >Youth Talent</span
-              >
-            </div>
-            <div
-              class="bg-white px-6 py-2.5 rounded-full shadow-sm border border-black/5 flex items-center gap-3 transition-transform hover:scale-105"
-            >
-              <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
-              <span class="text-[13px] font-poppins font-medium tracking-wide"
-                >Generative AI</span
-              >
-            </div>
-            <div
-              class="bg-white px-6 py-2.5 rounded-full shadow-sm border border-black/5 flex items-center gap-3 transition-transform hover:scale-105"
-            >
-              <div class="w-1.5 h-1.5 rounded-full bg-accent"></div>
-              <span class="text-[13px] font-poppins font-medium tracking-wide"
-                >Global Industry</span
-              >
-            </div>
-            <div
-              class="bg-white px-6 py-2.5 rounded-full shadow-sm border border-black/5 flex items-center gap-3 transition-transform hover:scale-105"
-            >
-              <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
-              <span class="text-[13px] font-poppins font-medium tracking-wide"
-                >Infrastructure</span
-              >
-            </div>
-          </div>
-
-          <div class="absolute flex flex-col items-center">
-            <div
-              class="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mb-4 shadow-xl"
-            >
-              <span class="text-white font-bold text-2xl">L</span>
+              <span class="text-white font-bold text-xl sm:text-2xl">L</span>
             </div>
             <p
-              class="text-[10px] font-bold font-poppins uppercase tracking-[0.3em] text-primary/40"
+              class="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.3em] text-primary/40"
             >
               Core Engine
             </p>
           </div>
 
+          <!-- ECOSYSTEM TAGS -->
+          <div
+            class="relative z-10 flex flex-wrap gap-3 sm:gap-6 justify-center items-center w-full max-w-2xl order-2 sm:order-1"
+          >
+            <div
+              class="bg-white px-4 sm:px-5 py-2 rounded-full shadow-sm border border-black/5 flex items-center gap-2 sm:gap-3 transition-all hover:scale-105"
+            >
+              <div class="w-1.5 h-1.5 rounded-full bg-accent"></div>
+              <span
+                class="text-[12px] sm:text-[13px] font-medium tracking-wide"
+              >
+                Youth Talent
+              </span>
+            </div>
+
+            <div
+              class="bg-white px-4 sm:px-5 py-2 rounded-full shadow-sm border border-black/5 flex items-center gap-2 sm:gap-3 transition-all hover:scale-105"
+            >
+              <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+              <span
+                class="text-[12px] sm:text-[13px] font-medium tracking-wide"
+              >
+                Generative AI
+              </span>
+            </div>
+
+            <div
+              class="bg-white px-4 sm:px-5 py-2 rounded-full shadow-sm border border-black/5 flex items-center gap-2 sm:gap-3 transition-all hover:scale-105"
+            >
+              <div class="w-1.5 h-1.5 rounded-full bg-accent"></div>
+              <span
+                class="text-[12px] sm:text-[13px] font-medium tracking-wide"
+              >
+                Global Industry
+              </span>
+            </div>
+
+            <div
+              class="bg-white px-4 sm:px-5 py-2 rounded-full shadow-sm border border-black/5 flex items-center gap-2 sm:gap-3 transition-all hover:scale-105"
+            >
+              <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+              <span
+                class="text-[12px] sm:text-[13px] font-medium tracking-wide"
+              >
+                Infrastructure
+              </span>
+            </div>
+          </div>
+
+          <!-- CONNECTING CURVES -->
           <svg
-            class="absolute inset-0 w-full h-full pointer-events-none opacity-20"
+            class="absolute inset-0 w-full h-full pointer-events-none opacity-10 sm:opacity-20 hidden md:block"
             preserveAspectRatio="none"
             viewBox="0 0 800 400"
           >
@@ -252,6 +290,7 @@
               stroke="currentColor"
               stroke-width="0.5"
             ></path>
+
             <path
               d="M100,200 Q400,390 700,200"
               fill="none"
@@ -260,21 +299,6 @@
             ></path>
           </svg>
         </div>
-      </div>
-      <div
-        class="flex bg-warm-bg p-8 flex-col md:flex-row justify-between items-start gap-8"
-      >
-        <h2
-          class="text-3xl font-poppins font-medium text-primary reveal-text delay-1"
-        >
-          The Lish Ecosystem
-        </h2>
-        <p
-          class="text-text-muted font-poppins max-w-md text-xl leading-relaxed font-light reveal-text delay-2"
-        >
-          Our infrastructure connects disparate nodes of talent and technology
-          into a singular, cohesive ecosystem for growth and deployment.
-        </p>
       </div>
     </div>
   </section>
