@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
+import { ContactDetails } from '../../components/ContactPage/contact-details/contact-details';
 
 @Component({
   selector: 'app-contact-page',
-  imports: [],
+  imports: [ContactDetails],
   template: `
-    <p>
-      contact-page works!
-    </p>
+    <contact-details />
   `,
 })
 export class ContactPage {

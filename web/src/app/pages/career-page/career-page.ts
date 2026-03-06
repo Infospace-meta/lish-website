@@ -1,14 +1,9 @@
 import { Component } from '@angular/core';
+import { ContactDetails } from '../../components/ContactPage/contact-details/contact-details';
 
 @Component({
-  selector: 'app-career-page',
-  imports: [],
-  template: `
-    <p>
-      career-page works!
-    </p>
-  `,
+  selector: 'career-page',
+  imports: [ContactDetails],
+  template: ` <contact-details /> `,
 })
-export class CareerPage {
-
-}
+export class CareerPage {}
