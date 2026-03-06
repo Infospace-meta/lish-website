@@ -43,6 +43,7 @@ export const routes: Routes = [
       /** New Revamp Pages */
       { path: 'home', component: HomePage },
       { path: 'about', component: AboutPage },
+      { path: 'about_us', component: AboutUsComponent },
       { path: 'contact', component: ContactPage },
       { path: 'partner', component: PartnerPage },
       { path: 'career', component: CareerPage },
