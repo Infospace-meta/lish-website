@@ -123,7 +123,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
             <div class="grid grid-cols-3 gap-10">
               <div class="col-span-1">
                 <h3 class="text-xl font-bold text-blue-800 mb-2">Our Impact</h3>
-                <p class="text-sm text-neutral-500">
+                <p class="text-sm text-neutral-500" style="font-size: 0.85rem;">
                   Discover how we are changing lives through sustainable
                   development and innovation.
                 </p>
@@ -162,10 +162,16 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
                 class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
               >
                 <a routerLink="services/data-annotation" class="block">
-                  <h4 class="font-bold group-hover:text-accent">
+                  <h4
+                    class="font-bold group-hover:text-accent"
+                    style="font-size: 0.9375rem;"
+                  >
                     Data Processing & Annotation
                   </h4>
-                  <p class="text-xs text-neutral-500 font-small">
+                  <p
+                    class="text-xs text-neutral-500"
+                    style="font-size: 0.85rem;"
+                  >
                     From raw data processing to precision annotation
                   </p>
                 </a>
@@ -174,10 +180,16 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
                 class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
               >
                 <a routerLink="services/design-and-development" class="block">
-                  <h4 class="font-bold group-hover:text-accent">
+                  <h4
+                    class="font-bold group-hover:text-accent"
+                    style="font-size: 0.9375rem;"
+                  >
                     Software Development
                   </h4>
-                  <p class="text-xs text-neutral-500">
+                  <p
+                    class="text-xs text-neutral-500"
+                    style="font-size: 0.85rem;"
+                  >
                     End-to-end solutions for digital transformation
                   </p>
                 </a>
@@ -186,10 +198,16 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
                 class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
               >
                 <a routerLink="services/skill-building-programs" class="block">
-                  <h4 class="font-bold group-hover:text-accent">
+                  <h4
+                    class="font-bold group-hover:text-accent"
+                    style="font-size: 0.9375rem;"
+                  >
                     Training & Upskilling Services
                   </h4>
-                  <p class="text-xs text-neutral-500">
+                  <p
+                    class="text-xs text-neutral-500"
+                    style="font-size: 0.85rem;"
+                  >
                     Comprehensive training and development opportunities.
                   </p>
                 </a>
@@ -204,16 +222,34 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
                 class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
               >
                 <a routerLink="about_us" class="block">
-                  <h4 class="font-bold group-hover:text-accent">About Us</h4>
-                  <p class="text-xs text-neutral-500">What Drives Us</p>
+                  <h4
+                    class="font-bold group-hover:text-accent"
+                    style="font-size: 0.9375rem;"
+                  >
+                    About Us
+                  </h4>
+                  <p
+                    class="text-xs text-neutral-500"
+                    style="font-size: 0.85rem;"
+                  >
+                    What Drives Us
+                  </p>
                 </a>
               </div>
               <div
                 class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
               >
                 <a routerLink="services/design-and-development" class="block">
-                  <h4 class="font-bold group-hover:text-accent">Our Team</h4>
-                  <p class="text-xs text-neutral-500">
+                  <h4
+                    class="font-bold group-hover:text-accent"
+                    style="font-size: 0.9375rem;"
+                  >
+                    Our Team
+                  </h4>
+                  <p
+                    class="text-xs text-neutral-500"
+                    style="font-size: 0.85rem;"
+                  >
                     Meet The Experts Behind Our Solutions
                   </p>
                 </a>
@@ -222,8 +258,16 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
                 class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
               >
                 <a routerLink="services/skill-building-programs" class="block">
-                  <h4 class="font-bold group-hover:text-accent">Careers</h4>
-                  <p class="text-xs text-neutral-500">
+                  <h4
+                    class="font-bold group-hover:text-accent"
+                    style="font-size: 0.9375rem;"
+                  >
+                    Careers
+                  </h4>
+                  <p
+                    class="text-xs text-neutral-500"
+                    style="font-size: 0.85rem;"
+                  >
                     Grow Your Potential With Us
                   </p>
                 </a>
@@ -232,8 +276,18 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
                 class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
               >
                 <a routerLink="contact" class="block">
-                  <h4 class="font-bold group-hover:text-accent">Contact Us</h4>
-                  <p class="text-xs text-neutral-500">Talk To Us</p>
+                  <h4
+                    class="font-bold group-hover:text-accent"
+                    style="font-size: 0.9375rem;"
+                  >
+                    Contact Us
+                  </h4>
+                  <p
+                    class="text-xs text-neutral-500"
+                    style="font-size: 0.85rem;"
+                  >
+                    Talk To Us
+                  </p>
                 </a>
               </div>
             </div>
