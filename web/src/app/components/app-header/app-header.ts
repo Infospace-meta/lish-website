@@ -70,7 +70,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
       <div class="flex items-center space-x-4 p-1">
         <a
           routerLink="/contact"
-          (click)="closeMenu()"
+          (click)="closeEverything()"
           class="hidden md:block px-4 py-2 bg-accent text-neutral-100 rounded-full hover:bg-complement transition-colors font-semibold"
         >
           Contact Us
@@ -83,29 +83,29 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
           class="lg:hidden p-2 text-neutral-700 focus:outline-none"
         >
           @if (!isMobileMenuOpen) {
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="32"
-            viewBox="0 -960 960 960"
-            width="32"
-            fill="currentColor"
-          >
-            <path
-              d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
-            />
-          </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="32"
+              viewBox="0 -960 960 960"
+              width="32"
+              fill="currentColor"
+            >
+              <path
+                d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+              />
+            </svg>
           } @else {
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="32"
-            viewBox="0 -960 960 960"
-            width="32"
-            fill="currentColor"
-          >
-            <path
-              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
-            />
-          </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="32"
+              viewBox="0 -960 960 960"
+              width="32"
+              fill="currentColor"
+            >
+              <path
+                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+              />
+            </svg>
           }
         </button>
       </div>
@@ -131,11 +131,13 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
               <div class="flex flex-col space-y-3">
                 <a
                   routerLink="/impact/education"
+                  (click)="closeEverything()"
                   class="font-semibold hover:text-accent"
                   >Education Support</a
                 >
                 <a
                   routerLink="/impact/health"
+                  (click)="closeEverything()"
                   class="font-semibold hover:text-accent"
                   >Health Initiatives</a
                 >
@@ -143,11 +145,13 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
               <div class="flex flex-col space-y-3">
                 <a
                   routerLink="/impact/sustainability"
+                  (click)="closeEverything()"
                   class="font-semibold hover:text-accent"
                   >Sustainability</a
                 >
                 <a
                   routerLink="/impact/reports"
+                  (click)="closeEverything()"
                   class="font-semibold hover:text-accent"
                   >Annual Reports</a
                 >
@@ -161,7 +165,11 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
               <div
                 class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
               >
-                <a routerLink="services/data-annotation" class="block">
+                <a
+                  routerLink="services/data-annotation"
+                  (click)="closeEverything()"
+                  class="block"
+                >
                   <h4
                     class="font-bold group-hover:text-accent"
                     style="font-size: 0.9375rem;"
@@ -179,7 +187,11 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
               <div
                 class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
               >
-                <a routerLink="services/design-and-development" class="block">
+                <a
+                  routerLink="services/design-and-development"
+                  (click)="closeEverything()"
+                  class="block"
+                >
                   <h4
                     class="font-bold group-hover:text-accent"
                     style="font-size: 0.9375rem;"
@@ -197,7 +209,11 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
               <div
                 class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
               >
-                <a routerLink="services/skill-building-programs" class="block">
+                <a
+                  routerLink="services/skill-building-programs"
+                  (click)="closeEverything()"
+                  class="block"
+                >
                   <h4
                     class="font-bold group-hover:text-accent"
                     style="font-size: 0.9375rem;"
@@ -221,7 +237,11 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
               <div
                 class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
               >
-                <a routerLink="about_us" class="block">
+                <a
+                  routerLink="about_us"
+                  (click)="closeEverything()"
+                  class="block"
+                >
                   <h4
                     class="font-bold group-hover:text-accent"
                     style="font-size: 0.9375rem;"
@@ -239,7 +259,11 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
               <div
                 class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
               >
-                <a routerLink="services/design-and-development" class="block">
+                <a
+                  routerLink="services/design-and-development"
+                  (click)="closeEverything()"
+                  class="block"
+                >
                   <h4
                     class="font-bold group-hover:text-accent"
                     style="font-size: 0.9375rem;"
@@ -257,7 +281,11 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
               <div
                 class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
               >
-                <a routerLink="services/skill-building-programs" class="block">
+                <a
+                  routerLink="services/skill-building-programs"
+                  (click)="closeEverything()"
+                  class="block"
+                >
                   <h4
                     class="font-bold group-hover:text-accent"
                     style="font-size: 0.9375rem;"
@@ -275,7 +303,11 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
               <div
                 class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
               >
-                <a routerLink="contact" class="block">
+                <a
+                  routerLink="contact"
+                  (click)="closeEverything()"
+                  class="block"
+                >
                   <h4
                     class="font-bold group-hover:text-accent"
                     style="font-size: 0.9375rem;"
@@ -298,129 +330,129 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
 
     <!-- MOBILE MENU OVERLAY -->
     @if (isMobileMenuOpen) {
-    <div
-      class="lg:hidden  fixed inset-0 top-16 bg-white z-40 p-6 overflow-y-auto animate-in slide-in-from-right duration-300"
-    >
-      <nav class="flex flex-col justify-between h-full">
-        <div class="flex flex-col space-y-4">
-          <!-- Services Accordion -->
-          <div>
-            <button
-              (click)="toggleMobileSub('services')"
-              class="w-full flex justify-between items-center text-lg font-semibold py-2 border-b border-neutral-100"
-            >
-              Services <span>{{ mobileSub === 'services' ? '−' : '+' }}</span>
-            </button>
-            @if (mobileSub === 'services') {
-            <div
-              class="pl-4 py-4 flex flex-col space-y-4 animate-in slide-in-from-top-2"
-            >
-              <a
-                routerLink="services/data-annotation"
-                (click)="closeEverything()"
-                class="text-lg text-neutral-600"
-                >Data Processing & Annotation</a
+      <div
+        class="lg:hidden  fixed inset-0 top-16 bg-white z-40 p-6 overflow-y-auto animate-in slide-in-from-right duration-300"
+      >
+        <nav class="flex flex-col justify-between h-full">
+          <div class="flex flex-col space-y-4">
+            <!-- Services Accordion -->
+            <div>
+              <button
+                (click)="toggleMobileSub('services')"
+                class="w-full flex justify-between items-center text-lg font-semibold py-2 border-b border-neutral-100"
               >
-              <a
-                routerLink="services/design-and-development"
-                (click)="closeEverything()"
-                class="text-lg text-neutral-600"
-                >Software Development</a
-              >
-              <a
-                routerLink="services/skill-building-programs"
-                (click)="closeEverything()"
-                class="text-lg text-neutral-600"
-                >Training & Upskilling Services</a
-              >
+                Services <span>{{ mobileSub === 'services' ? '−' : '+' }}</span>
+              </button>
+              @if (mobileSub === 'services') {
+                <div
+                  class="pl-4 py-4 flex flex-col space-y-4 animate-in slide-in-from-top-2"
+                >
+                  <a
+                    routerLink="services/data-annotation"
+                    (click)="closeEverything()"
+                    class="text-lg text-neutral-600"
+                    >Data Processing & Annotation</a
+                  >
+                  <a
+                    routerLink="services/design-and-development"
+                    (click)="closeEverything()"
+                    class="text-lg text-neutral-600"
+                    >Software Development</a
+                  >
+                  <a
+                    routerLink="services/skill-building-programs"
+                    (click)="closeEverything()"
+                    class="text-lg text-neutral-600"
+                    >Training & Upskilling Services</a
+                  >
+                </div>
+              }
             </div>
-            }
-          </div>
 
-          <!-- Impact Accordion -->
-          <div>
-            <button
-              (click)="toggleMobileSub('impact')"
-              class="w-full flex justify-between items-center text-lg font-semibold py-2 border-b border-neutral-100"
-            >
-              Impact <span>{{ mobileSub === 'impact' ? '−' : '+' }}</span>
-            </button>
-            @if (mobileSub === 'impact') {
-            <div
-              class="pl-4 py-4 flex flex-col space-y-4 animate-in slide-in-from-top-2"
-            >
-              <a
-                routerLink="/impact/education"
-                (click)="closeEverything()"
-                class="text-lg text-neutral-600"
-                >Education Support</a
+            <!-- Impact Accordion -->
+            <div>
+              <button
+                (click)="toggleMobileSub('impact')"
+                class="w-full flex justify-between items-center text-lg font-semibold py-2 border-b border-neutral-100"
               >
-              <a
-                routerLink="/impact/health"
-                (click)="closeEverything()"
-                class="text-lg text-neutral-600"
-                >Health Initiatives</a
-              >
-              <a
-                routerLink="/impact/sustainability"
-                (click)="closeEverything()"
-                class="text-lg text-neutral-600"
-                >Sustainability</a
-              >
+                Impact <span>{{ mobileSub === 'impact' ? '−' : '+' }}</span>
+              </button>
+              @if (mobileSub === 'impact') {
+                <div
+                  class="pl-4 py-4 flex flex-col space-y-4 animate-in slide-in-from-top-2"
+                >
+                  <a
+                    routerLink="/impact/education"
+                    (click)="closeEverything()"
+                    class="text-lg text-neutral-600"
+                    >Education Support</a
+                  >
+                  <a
+                    routerLink="/impact/health"
+                    (click)="closeEverything()"
+                    class="text-lg text-neutral-600"
+                    >Health Initiatives</a
+                  >
+                  <a
+                    routerLink="/impact/sustainability"
+                    (click)="closeEverything()"
+                    class="text-lg text-neutral-600"
+                    >Sustainability</a
+                  >
+                </div>
+              }
             </div>
-            }
-          </div>
 
-          <!-- Company Accordion -->
-          <div>
-            <button
-              (click)="toggleMobileSub('company')"
-              class="w-full flex justify-between items-center text-lg font-semibold py-2 border-b border-neutral-100"
-            >
-              Company <span>{{ mobileSub === 'company' ? '−' : '+' }}</span>
-            </button>
-            @if (mobileSub === 'company') {
-            <div
-              class="pl-4 py-4 flex flex-col space-y-4 animate-in slide-in-from-top-2"
-            >
-              <a
-                routerLink="about_us"
-                (click)="closeEverything()"
-                class="text-lg text-neutral-600"
-                >About Us</a
+            <!-- Company Accordion -->
+            <div>
+              <button
+                (click)="toggleMobileSub('company')"
+                class="w-full flex justify-between items-center text-lg font-semibold py-2 border-b border-neutral-100"
               >
-              <a
-                routerLink=""
-                (click)="closeEverything()"
-                class="text-lg text-neutral-600"
-                >Our Team</a
-              >
-              <a
-                routerLink=""
-                (click)="closeEverything()"
-                class="text-lg text-neutral-600"
-                >Careers</a
-              >
-              <a
-                routerLink="contact"
-                (click)="closeEverything()"
-                class="text-lg text-neutral-600"
-                >Contact Us</a
-              >
+                Company <span>{{ mobileSub === 'company' ? '−' : '+' }}</span>
+              </button>
+              @if (mobileSub === 'company') {
+                <div
+                  class="pl-4 py-4 flex flex-col space-y-4 animate-in slide-in-from-top-2"
+                >
+                  <a
+                    routerLink="about_us"
+                    (click)="closeEverything()"
+                    class="text-lg text-neutral-600"
+                    >About Us</a
+                  >
+                  <a
+                    routerLink=""
+                    (click)="closeEverything()"
+                    class="text-lg text-neutral-600"
+                    >Our Team</a
+                  >
+                  <a
+                    routerLink=""
+                    (click)="closeEverything()"
+                    class="text-lg text-neutral-600"
+                    >Careers</a
+                  >
+                  <a
+                    routerLink="contact"
+                    (click)="closeEverything()"
+                    class="text-lg text-neutral-600"
+                    >Contact Us</a
+                  >
+                </div>
+              }
             </div>
-            }
           </div>
-        </div>
-        <div class="flex flex-end justify-end mt-6">
-          <a
-            routerLink="/contact"
-            (click)="closeEverything()"
-            class=" bg-accent w-full text-center text-neutral-100 rounded-full font-semibold py-2 border-b border-neutral-100 text-accent"
-            >Contact Us</a
-          >
-        </div>
-      </nav>
-    </div>
+          <div class="flex flex-end justify-end mt-6">
+            <a
+              routerLink="/contact"
+              (click)="closeEverything()"
+              class=" bg-accent w-full text-center text-neutral-100 rounded-full font-semibold py-2 border-b border-neutral-100 text-accent"
+              >Contact Us</a
+            >
+          </div>
+        </nav>
+      </div>
     }
   `,
 })
