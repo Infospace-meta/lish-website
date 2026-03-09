@@ -1,5 +1,13 @@
-import { Component } from '@angular/core';
-import { UserCard } from '../../../components/tech/user-card/user-card.component';
+import { Component, computed } from '@angular/core';
+import { httpResource } from '@angular/common/http';
+import { DevsCard } from '../../../components/tech/devs-card/devs-card.component';
+
+interface DevJson {
+  slug: string;
+  name: string;
+  role: string;
+  image: string;
+}
 
 interface TeamMember {
   name: string;
@@ -10,10 +18,10 @@ interface TeamMember {
 
 @Component({
   selector: 'app-team-page',
-  imports: [UserCard],
+  imports: [DevsCard],
   template: `
     <!-- Full-page grayscale wrapper -->
-    <div class="bg-white grayscale overflow-x-hidden">
+    <div class="bg-white text-black overflow-x-hidden">
 
       <!-- intro section -->
       <div class="p-[4%] text-black flex flex-col lg:flex-row w-full gap-8 lg:gap-12 items-center">
@@ -47,31 +55,35 @@ interface TeamMember {
         <h2 class="text-3xl font-bold text-center mb-12">Meet Our Team</h2>
         <!-- ========== TEAM GRID ========== -->
       <section class="w-full">
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4
-                 gap-x-4 sm:gap-x-5 md:gap-x-6
-                 gap-y-8 sm:gap-y-10" 
-        >
-          @for (member of teamMembers; track member.name) {
-            <app-user-card
-              [name]="member.name"
-              [role]="member.role"
-              [image]="member.image"
-              [profileUrl]="member.profileUrl"
-            />
-          }
-        </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
+                     gap-x-4 sm:gap-x-5 md:gap-x-6
+                     gap-y-8 " 
+            >
+                      @for (member of teamMembers(); track member.name) {
+                <app-user-card
+                  [name]="member.name"
+                  [role]="member.role"
+                  [image]="member.image"
+                  [profileUrl]="member.profileUrl"
+                />
+              }
+            </div>
       </section>
       </div>
     </div>
   `,
 })
 export class TeamPage {
-  teamMembers: TeamMember[] = [
-    { name: 'Oriane Rainero', role: 'Strategic Designer – Product & User Experience', image: 'placeholder.png', profileUrl: '/tech/team/oriane-rainero' },
-    { name: 'Mélisande Cyr-Charron', role: 'Data valorization consultant', image: 'placeholder.png', profileUrl: '/tech/team/melisande-cyr-charron' },
-    { name: 'Jasmine Duplessis', role: 'Data valorization consultant', image: 'placeholder.png', profileUrl: '/tech/team/jasmine-duplessis' },
-    { name: 'Pénelope Gélinas-Lemire', role: 'Data valorization consultant', image: 'placeholder.png', profileUrl: '/tech/team/penelope-gelinas-lemire' },
-    { name: 'Marilène Jacques', role: 'Head of Talent & Culture', image: 'placeholder.png', profileUrl: '/tech/team/marilene-jacques' },
-    { name: 'Mathieu Leblanc', role: 'VP Growth', image: 'placeholder.png', profileUrl: '/tech/team/mathieu-leblanc' },
-  ];
+  private devsResource = httpResource<DevJson[]>(() => '/ourTeam/devs.json');
+
+  teamMembers = computed<TeamMember[]>(() =>
+    (this.devsResource.value() ?? []).map((d) => ({
+      name: d.name,
+      role: d.role,
+      image: d.image,
+      profileUrl: '/tech/team/' + d.slug,
+    }))
+  );
+
+  loading = this.devsResource.isLoading;
 }

@@ -1,0 +1,48 @@
+<section
+  appScrollReveal
+  class="px-5 sm:px-8 lg:px-12 py-20 sm:py-24 lg:py-32 bg-warm-bg overflow-hidden"
+>
+  <div class="max-w-7xl mx-auto">
+    <h2
+      class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-medium text-primary mb-14 sm:mb-16 lg:mb-20 tracking-tight reveal-text delay-1"
+    >
+      We create lasting value
+    </h2>
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-12 lg:gap-20"
+    >
+      <div
+        *ngFor="let item of values; let i = index"
+        class="flex flex-col gap-5 group"
+      >
+        <div
+          class="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-xl bg-primary flex items-center justify-center shadow-lg transition-transform duration-500 group-hover:-translate-y-2 reveal-text"
+          [style.animation-delay]="(0.2 + i*0.1) + 's'"
+        >
+          <span
+            class="material-symbols-outlined text-accent text-lg sm:text-xl lg:text-2xl font-light"
+            >{{item.icon}}</span
+          >
+        </div>
+        <div
+          class="space-y-2 reveal-text"
+          [style.animation-delay]="(0.3 + i*0.1) + 's'"
+        >
+          <h3
+            class="text-lg sm:text-xl lg:text-2xl font-semibold text-primary flex items-center gap-2"
+          >
+            <span
+              class="text-accent/50 font-poppins text-sm sm:text-base lg:text-lg"
+              >{{item.id}}</span
+            >{{item.title}}
+          </h3>
+          <p
+            class="text-text-muted text-base sm:text-lg leading-relaxed font-light"
+          >
+            {{item.desc}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

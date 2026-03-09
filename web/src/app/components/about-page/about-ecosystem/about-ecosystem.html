@@ -1,0 +1,71 @@
+<section appScrollReveal class="py-8 font-poppins bg-accent">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    <div
+      class="flex bg-warm-bg px-6 py-12 sm:px-12 sm:py-20 flex-col md:flex-row md:items-start md:justify-between gap-8 md:gap-10"
+    >
+      <div class="reveal-text delay-1 flex-shrink-0">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-primary">
+          The Lish ecosystem
+        </h2>
+        <div class="w-12 h-1 bg-accent mt-4 sm:mt-6 rounded-full"></div>
+      </div>
+      <p
+        class="text-text-muted max-w-xl text-base sm:text-lg md:text-xl leading-relaxed font-light reveal-text delay-2"
+      >
+        Our infrastructure connects disparate nodes of talent and technology
+        into a singular, cohesive ecosystem for growth and deployment.
+      </p>
+    </div>
+
+    <div
+      class="bg-soft-grey md:rounded-xl my-4 relative overflow-hidden flex items-center justify-center py-16 sm:py-24 md:min-h-[600px]"
+    >
+      <div
+        class="absolute inset-0 flex items-center justify-center pointer-events-none"
+      >
+        <div
+          class="w-[180px] h-[180px] sm:w-[300px] border border-black/5 rounded-full animate-pulse"
+        ></div>
+        <div
+          class="absolute w-[280px] h-[280px] sm:w-[520px] border border-black/[0.03] rounded-full"
+        ></div>
+      </div>
+
+      <div
+        class="relative w-full max-w-4xl px-4 flex flex-col items-center justify-center gap-8 sm:gap-10"
+      >
+        <div
+          class="flex flex-col items-center pointer-events-none order-1 sm:order-2"
+        >
+          <div
+            class="w-14 h-14 sm:w-20 sm:h-20 bg-primary rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4 shadow-xl"
+          >
+            <span class="text-white font-bold text-xl sm:text-2xl">L</span>
+          </div>
+          <p
+            class="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.3em] text-primary/40"
+          >
+            Core Engine
+          </p>
+        </div>
+
+        <div
+          class="relative z-10 flex flex-wrap gap-3 sm:gap-6 justify-center items-center w-full max-w-2xl order-2 sm:order-1"
+        >
+          <div
+            *ngFor="let tag of tags; let i = index"
+            class="bg-white px-4 sm:px-5 py-2 rounded-full shadow-sm border border-black/5 flex items-center gap-2 sm:gap-3 transition-all hover:scale-105"
+          >
+            <div
+              class="w-1.5 h-1.5 rounded-full"
+              [ngClass]="i % 2 === 0 ? 'bg-accent' : 'bg-primary'"
+            ></div>
+            <span class="text-[12px] sm:text-[13px] font-medium tracking-wide"
+              >{{tag}}</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

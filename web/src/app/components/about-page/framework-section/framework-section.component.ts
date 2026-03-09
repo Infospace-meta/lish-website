@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal';
+import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal';
 
 @Component({
   selector: 'app-framework-section',
