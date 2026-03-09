@@ -253,3 +253,26 @@ h4 {
 h5 {
   @apply text-[14px];
 }
+
+
+.heading-tight {
+  line-height: 0.95 !important;
+  letter-spacing: -0.02em !important;
+}
+
+// Fluid rounding for the Ecosystem container
+.rounded-5xl-responsive {
+  @apply rounded-[2rem] sm:rounded-[3.5rem];
+}
+
+// Ensure underline is consistent with screenshot branding
+.underline-lish {
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+  @apply decoration-accent;
+}
+
+// Prevents images from having too much whitespace on mobile
+.mobile-gap-tight {
+  @apply gap-8 sm:gap-16 lg:gap-24;
+}
