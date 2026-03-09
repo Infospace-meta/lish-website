@@ -17,6 +17,7 @@
 
   --font-serif: "Playfair Display", "Times New Roman", serif;
   --font-poppins: "Poppins", "Inter", sans-serif;
+  --animate-mega-in: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @layer base {
@@ -311,4 +312,11 @@ h5 {
 // Prevents images from having too much whitespace on mobile
 .mobile-gap-tight {
   @apply gap-8 sm:gap-16 lg:gap-24;
+}
+
+
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
