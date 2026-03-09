@@ -17,12 +17,6 @@ import { AppLayoutComponent } from './layouts/app.component';
 
 /** Old Pages */
 import { TrainingComponent } from './pages/training/training.component';
-import { AppLayoutComponent } from './layouts/app.component';
-import { TechLayoutComponent } from './layouts/tech-layout.component';
-import { TechLandingPage } from './pages/tech/tech-landing-page/tech-landing-page';
-import { TeamPage } from './pages/tech/team/team-page';
-import { UsersPage } from './pages/tech/users/users-page';
-import { UserProfile } from './components/tech/user-profile/user-profile.component';
 import { AiAndMachineLearningComponent } from './pages/main/ourservices/ai-and-machine-learning/ai-and-machine-learning.component';
 import { DataAnnotationComponent } from './pages/main/ourservices/data-annotation/data-annotation.component';
 import { DesignAndDevelopmentComponent } from './pages/main/ourservices/design-and-development/design-and-development.component';
@@ -33,9 +27,8 @@ import { SkillBuildingProgramsComponent } from './pages/main/ourservices/skill-b
 import { TechLayoutComponent } from './layouts/tech-layout.component';
 import { TechLandingPage } from './pages/tech/tech-landing-page/tech-landing-page';
 import { TeamPage } from './pages/tech/team/team-page';
-import { UsersPage } from './pages/tech/users/users-page';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
-// import { UserProfile } from './components/tech/user-profile/user-profile.component';
+import { DevsPage } from './pages/tech/devs/devs-page';
 
 
 export const routes: Routes = [
@@ -98,14 +91,8 @@ export const routes: Routes = [
     children: [
       { path: '', component: TechLandingPage },
       { path: 'team', component: TeamPage },
-      { path: 'home', component: HomeComponent },
       { path: 'about_us', component: AboutUsComponent },
-      { path: 'contact', component: ContactComponent },
-      { path: 'users', component: UsersPage
-      //   ,children: [
-      //   { path: 'profile', component: UserProfile }
-      // ]
-    },
+      { path: 'team/:slug', component: DevsPage },
     ],
   },
 
