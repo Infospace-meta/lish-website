@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   imports: [RouterModule, CommonModule],
   template: `
     <div
-      class="relative max-w-7xl mx-auto flex w-full xl:py-14 justify-between items-center h-16 bg-transparent text-neutral-700 px-4 top-0 left-0 right-0 z-50 max-md:sticky max-md:bg-white"
+      class="relative max-w-7xl mx-auto flex w-full xl:py-14 justify-between items-center  h-16 bg-transparent text-neutral-700 px-4 top-0 left-0 right-0 z-50 max-md:sticky max-md:bg-white"
     >
       <div>
         <a routerLink="/home" (click)="closeEverything()">
@@ -27,7 +27,7 @@ import { CommonModule } from '@angular/common';
           (click)="toggleMenu('services')"
           [ngClass]="
             activeMenu === 'services'
-              ? 'bg-primary text-white shadow-lg scale-105'
+              ? 'bg-accent text-white shadow-lg scale-105'
               : 'text-neutral-600 hover:text-accent'
           "
           class="px-5 py-2 cursor-pointer rounded-full font-semibold transition-all duration-500 flex items-center gap-1 group"
@@ -44,7 +44,7 @@ import { CommonModule } from '@angular/common';
           (click)="toggleMenu('impact')"
           [ngClass]="
             activeMenu === 'impact'
-              ? 'bg-primary text-white shadow-lg scale-105'
+              ? 'bg-accent text-white shadow-lg scale-105'
               : 'text-neutral-600 hover:text-accent'
           "
           class="px-5 py-2 cursor-pointer rounded-full font-semibold transition-all duration-500 flex items-center gap-1 group"
@@ -61,7 +61,7 @@ import { CommonModule } from '@angular/common';
           (click)="toggleMenu('company')"
           [ngClass]="
             activeMenu === 'company'
-              ? 'bg-primary text-white shadow-lg scale-105'
+              ? 'bg-accent text-white shadow-lg scale-105'
               : 'text-neutral-600 hover:text-accent'
           "
           class="px-5 py-2 cursor-pointer rounded-full font-semibold transition-all duration-500 flex items-center gap-1 group"
@@ -129,12 +129,12 @@ import { CommonModule } from '@angular/common';
               <a
                 routerLink="partner"
                 (click)="closeEverything()"
-                class="p-4 rounded-xl hover:bg-neutral-50 transition-all group"
+                class="p-4 rounded-md hover:bg-neutral-50 transition-all group"
               >
                 <h4 class="font-bold text-lg group-hover:text-accent">
                   Our Partners
                 </h4>
-                <p class="text-sm text-neutral-500 font-light leading-relaxed">
+                <p class="text-sm text-accent font-semibold leading-relaxed">
                   Strategic Partnerships
                 </p>
               </a>
@@ -148,7 +148,7 @@ import { CommonModule } from '@angular/common';
                 >
                   Success & Impact
                 </h4>
-                <p class="text-sm text-neutral-500 font-light leading-relaxed">
+                <p class="text-sm text-accent font-semibold leading-relaxed">
                   Real Results, Real Impact
                 </p>
               </a>
@@ -162,7 +162,7 @@ import { CommonModule } from '@angular/common';
                 >
                   Programs & Initiatives
                 </h4>
-                <p class="text-sm text-neutral-500 font-light leading-relaxed">
+                <p class="text-sm text-accent font-semibold leading-relaxed">
                   Targeted Programs
                 </p>
               </a>
@@ -181,7 +181,7 @@ import { CommonModule } from '@angular/common';
                 >
                   BPO Services
                 </h4>
-                <p class="text-sm text-neutral-500 font-light leading-relaxed">
+                <p class="text-sm text-accent font-semibold leading-relaxed">
                   Precision Data Processing & Data Annotation
                 </p>
               </a>
@@ -195,7 +195,7 @@ import { CommonModule } from '@angular/common';
                 >
                   Software Dev
                 </h4>
-                <p class="text-sm text-neutral-500 font-light leading-relaxed">
+                <p class="text-sm text-accent font-semibold leading-relaxed">
                   Tech & Software Development Solutions
                 </p>
               </a>
@@ -209,7 +209,7 @@ import { CommonModule } from '@angular/common';
                 >
                   Upskilling
                 </h4>
-                <p class="text-sm text-neutral-500 font-light leading-relaxed">
+                <p class="text-sm text-accent font-semibold leading-relaxed">
                   Comprehensive Training & Skill-building
                 </p>
               </a>
@@ -228,9 +228,7 @@ import { CommonModule } from '@angular/common';
                 >
                   About Us
                 </h4>
-                <p class="text-sm text-neutral-500 font-light">
-                  What Drives Us
-                </p>
+                <p class="text-sm text-accent font-semibold">What Drives Us</p>
               </a>
               <a
                 routerLink="about_us"
@@ -242,13 +240,13 @@ import { CommonModule } from '@angular/common';
                 >
                   Our Team
                 </h4>
-                <p class="text-sm text-neutral-500 font-light">
+                <p class="text-sm text-accent font-semibold">
                   Meet The Experts
                 </p>
               </a>
               <div class="p-4 rounded-xl opacity-50">
                 <h4 class="font-bold text-lg">Careers</h4>
-                <p class="text-sm text-neutral-500 font-light">Grow With Us</p>
+                <p class="text-sm text-accent font-semibold">Grow With Us</p>
               </div>
               <a
                 routerLink="contact"
@@ -260,7 +258,7 @@ import { CommonModule } from '@angular/common';
                 >
                   Contact Us
                 </h4>
-                <p class="text-sm text-neutral-500 font-light">Talk To Us</p>
+                <p class="text-sm text-accent font-semibold">Talk To Us</p>
               </a>
             </div>
           }
