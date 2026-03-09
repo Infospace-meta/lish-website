@@ -174,7 +174,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
                     class="font-bold group-hover:text-accent"
                     style="font-size: 0.9375rem;"
                   >
-                    Data Processing & Annotation
+                    BPO Services & Data Annotation
                   </h4>
                   <p
                     class="text-xs text-neutral-500"
@@ -196,7 +196,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
                     class="font-bold group-hover:text-accent"
                     style="font-size: 0.9375rem;"
                   >
-                    Software Development
+                    Tech & Software Development
                   </h4>
                   <p
                     class="text-xs text-neutral-500"
