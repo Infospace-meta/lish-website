@@ -115,42 +115,31 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
     @if (activeMenu) {
     <div class="fixed inset-0 z-30" (click)="closeMenu()"></div>
     <div
-      class="hidden lg:block absolute left-[25%] right-[25%] bg-white border-b border-gray-100  rounded-[1rem] shadow-2xl animate-in slide-in-from-top-2 duration-200 z-40"
+      class="hidden lg:block absolute left-[30%] right-[30%] bg-white border-b border-gray-100  rounded-[1rem] shadow-2xl animate-in slide-in-from-top-2 duration-200 z-40"
     >
       <div class="max-w-screen-xl mx-auto px-10 py-10">
         <!-- Content for Impact -->
         @if (activeMenu === 'impact') {
-        <div class="grid grid-cols-3 gap-10">
-          <div class="col-span-1">
-            <h3 class="text-xl font-bold text-blue-800 mb-2">Our Impact</h3>
-            <p class="text-sm text-neutral-500">
-              Discover how we are changing lives through sustainable development
-              and innovation.
+        <div class="grid grid-cols-2 gap-10">
+          <div class="flex flex-col space-y-3">
+            <a
+              routerLink="partner"
+              class="font-semibold hover:text-accent"
+              >Partnerships</a
+            >
+            <p class="text-xs text-neutral-500">
+              From raw data processing to precision annotation
             </p>
           </div>
           <div class="flex flex-col space-y-3">
             <a
-              routerLink="/impact/education"
+              routerLink="programs"
               class="font-semibold hover:text-accent"
-              >Education Support</a
+              >Programs</a
             >
-            <a
-              routerLink="/impact/health"
-              class="font-semibold hover:text-accent"
-              >Health Initiatives</a
-            >
-          </div>
-          <div class="flex flex-col space-y-3">
-            <a
-              routerLink="/impact/sustainability"
-              class="font-semibold hover:text-accent"
-              >Sustainability</a
-            >
-            <a
-              routerLink="/impact/reports"
-              class="font-semibold hover:text-accent"
-              >Annual Reports</a
-            >
+            <p class="text-xs text-neutral-500">
+              From raw data processing to precision annotation
+            </p>
           </div>
         </div>
         }

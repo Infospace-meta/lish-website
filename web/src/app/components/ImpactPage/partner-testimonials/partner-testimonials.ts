@@ -70,7 +70,7 @@ import { CommonModule } from '@angular/common';
           class="h-2.5 transition-all duration-500 rounded-full"
           [class]="
             activeIndex % testimonials.length === $index
-              ? 'w-10 bg-blue-600'
+              ? 'w-10 bg-accent'
               : 'w-2.5 bg-gray-300 hover:bg-gray-400'
           "
         ></button>
@@ -80,7 +80,7 @@ import { CommonModule } from '@angular/common';
       <!-- Arrow Navigation -->
       <button
         (click)="prev()"
-        class="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 bg-white/90 p-4 rounded-full shadow-2xl hover:bg-blue-600 hover:text-white transition-all z-20 group"
+        class="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 bg-white/90 p-4 rounded-full shadow-2xl hover:bg-accent hover:text-white transition-all z-20 group"
       >
         <svg
           class="w-6 h-6"
@@ -98,7 +98,7 @@ import { CommonModule } from '@angular/common';
       </button>
       <button
         (click)="next()"
-        class="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 bg-white/90 p-4 rounded-full shadow-2xl hover:bg-blue-600 hover:text-white transition-all z-20 group"
+        class="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 bg-white/90 p-4 rounded-full shadow-2xl hover:bg-accent hover:text-white transition-all z-20 group"
       >
         <svg
           class="w-6 h-6"
