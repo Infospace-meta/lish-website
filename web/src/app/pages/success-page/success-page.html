@@ -1,0 +1,220 @@
+<main class="bg-warm-bg font-poppins min-h-screen">
+  <section appScrollReveal class="pt-6 sm:pt-32 pb-12 sm:pb-16 px-6 sm:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+        <div class="reveal-text delay-1 order-1">
+          <span
+            class="inline-block text-[8px] sm:text-[11px] font-bold uppercase tracking-[0.2em] text-accent mb-4 sm:mb-6"
+          >
+            Success
+          </span>
+          <h1
+            class="text-4xl sm:text-6xl lg:text-7xl font-medium leading-[0.95] text-primary mb-6"
+          >
+            Driving
+            <span
+              class="underline decoration-accent underline-offset-4 sm:underline-offset-8"
+              >impact</span
+            >
+            through data and AI.
+          </h1>
+          <p
+            class="max-w-md text-lg sm:text-xl text-text-muted font-light mb-8 leading-relaxed"
+          >
+            Our experts transform processes into AI-driven solutions. By using a
+            structured approach, we deliver meaningful results for global
+            industries.
+          </p>
+          <button
+            class="w-full sm:w-auto bg-primary text-white px-10 py-4 rounded-full text-sm font-medium transition-all hover:scale-105 active:scale-95"
+          >
+            Let's work together
+          </button>
+        </div>
+
+        <div class="relative reveal-text delay-3 order-2 mt-8 lg:mt-0">
+          <div
+            class="bg-soft-grey rounded-3xl sm:rounded-5xl p-6 sm:p-12 aspect-square flex flex-col justify-center items-center overflow-hidden border border-black/5 shadow-inner"
+          >
+            <div
+              class="bg-white p-5 sm:p-6 rounded-2xl shadow-2xl w-full max-w-[280px] sm:max-w-sm mb-4 translate-x-2 sm:translate-x-4 border border-black/5"
+            >
+              <p
+                class="text-[10px] sm:text-xs uppercase tracking-widest text-text-muted mb-1"
+              >
+                Active lab sessions
+              </p>
+              <h3 class="text-2xl sm:text-4xl font-semibold text-primary">
+                1 482
+              </h3>
+              <p
+                class="text-[10px] sm:text-xs text-green-600 mt-1 flex items-center gap-1"
+              >
+                <span class="material-symbols-outlined text-xs sm:text-sm"
+                  >trending_up</span
+                >
+                +8.2% vs last month
+              </p>
+            </div>
+            <div
+              class="bg-white p-5 sm:p-6 rounded-2xl shadow-2xl w-full max-w-[280px] sm:max-w-sm -translate-x-2 sm:-translate-x-4 border-l-4 border-accent"
+            >
+              <p
+                class="text-[10px] sm:text-xs uppercase tracking-widest text-text-muted mb-1"
+              >
+                AI Models Deployed
+              </p>
+              <h3 class="text-2xl sm:text-4xl font-semibold text-primary">
+                24
+              </h3>
+              <p class="text-[10px] sm:text-xs text-text-muted mt-1">
+                Enterprise Grade
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    appScrollReveal
+    class="py-16 sm:py-24 px-6 sm:px-8 border-t border-black/5"
+  >
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-10 sm:mb-16 reveal-text">
+        <h2 class="text-3xl sm:text-4xl font-medium tracking-tight">
+          Promising projects
+        </h2>
+      </div>
+
+      <div class="space-y-0">
+        <div
+          *ngFor="let project of projects; let i = index"
+          class="border-t border-black/10 py-10 sm:py-14 transition-all hover:bg-white/40"
+        >
+          <div class="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
+            <div
+              class="w-full lg:w-1/2 flex gap-4 sm:gap-8 reveal-text delay-2"
+            >
+              <span
+                class="text-[10px] sm:text-xs font-bold text-text-muted opacity-50 mt-1"
+                >{{ project.id }}</span
+              >
+              <div
+                class="rounded-2xl overflow-hidden aspect-video w-full bg-soft-grey shadow-lg"
+              >
+                <img
+                  [src]="project.image"
+                  class="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+                />
+              </div>
+            </div>
+
+            <div class="w-full lg:w-1/2">
+              <div
+                class="flex justify-between items-start sm:items-center mb-6 cursor-pointer group"
+                (click)="toggleProject(i)"
+              >
+                <div>
+                  <h3
+                    class="text-2xl sm:text-3xl font-medium text-primary group-hover:text-accent transition-colors"
+                  >
+                    {{ project.title }}
+                  </h3>
+                  <p
+                    class="text-accent font-medium text-[11px] sm:text-sm mt-1 uppercase tracking-wider"
+                  >
+                    {{ project.subtitle }}
+                  </p>
+                </div>
+                <span
+                  class="material-symbols-outlined transition-transform duration-500 opacity-40 group-hover:opacity-100 pt-1"
+                  [style.transform]="project.isOpen ? 'rotate(180deg)' : 'rotate(0deg)'"
+                >
+                  expand_more
+                </span>
+              </div>
+
+              <div
+                class="overflow-hidden transition-all duration-700 ease-in-out"
+                [style.max-height]="project.isOpen ? '1500px' : '0px'"
+                [style.opacity]="project.isOpen ? '1' : '0'"
+              >
+                <div class="space-y-6 sm:space-y-8 pt-2">
+                  <div class="reveal-text">
+                    <h5
+                      class="font-bold uppercase tracking-[0.2em] text-[10px] sm:text-[11px] text-primary mb-2"
+                    >
+                      Context
+                    </h5>
+                    <p
+                      class="font-light text-base sm:text-lg leading-relaxed text-text-muted"
+                    >
+                      {{ project.description }}
+                    </p>
+                  </div>
+                  <div class="reveal-text delay-1">
+                    <h5
+                      class="font-bold uppercase tracking-[0.2em] text-[10px] sm:text-[11px] text-primary mb-2"
+                    >
+                      Challenges
+                    </h5>
+                    <p
+                      class="font-light text-base sm:text-lg leading-relaxed text-text-muted"
+                    >
+                      {{ project.challenges }}
+                    </p>
+                  </div>
+                  <div class="reveal-text delay-2">
+                    <h5
+                      class="font-bold uppercase tracking-[0.2em] text-[10px] sm:text-[11px] text-primary mb-2"
+                    >
+                      Results
+                    </h5>
+                    <p
+                      class="font-light text-base sm:text-lg leading-relaxed text-text-muted"
+                    >
+                      {{ project.results }}
+                    </p>
+                  </div>
+                  <div class="reveal-text delay-3">
+                    <h5
+                      class="font-bold uppercase tracking-[0.2em] text-[10px] sm:text-[11px] text-primary mb-2"
+                    >
+                      Technology used
+                    </h5>
+                    <div class="flex flex-wrap gap-2 mt-3">
+                      <span
+                        *ngFor="let t of project.tech"
+                        class="px-4 py-1.5 bg-soft-grey rounded-full text-[11px] sm:text-[12px] font-medium text-primary border border-black/5"
+                      >
+                        {{ t }}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    appScrollReveal
+    class="py-24 sm:py-32 px-6 text-center border-t border-black/5"
+  >
+    <div class="reveal-text">
+      <h2 class="text-4xl sm:text-6xl mb-10 leading-tight">
+        Ready to be our next <br class="hidden sm:block" />success story?
+      </h2>
+      <button
+        class="bg-accent text-white px-10 sm:px-12 py-4 sm:py-5 rounded-full font-medium transition-all hover:bg-primary shadow-xl"
+      >
+        Start your transformation
+      </button>
+    </div>
+  </section>
+</main>

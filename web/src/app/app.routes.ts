@@ -7,10 +7,10 @@ import { CareerPage } from './pages/career-page/career-page';
 import { AboutPage } from './pages/about-page/about-page';
 import { SuccessPage } from './pages/success-page/success-page';
 import { TechServicesPage } from './pages/tech-services-page/tech-services-page';
-import { UpskillingSevicesPage } from './pages/upskilling-sevices-page/upskilling-sevices-page';
+import { UpskillingServicesPage } from './pages/upskilling-services-page/upskilling-services-page';
 import { OurFacilityPage } from './pages/our-facility-page/our-facility-page';
 import { ProgramsPage } from './pages/programs-page/programs-page';
-import { BpoSevicesPage } from './pages/bpo-sevices-page/bpo-sevices-page';
+import { BpoServicesPage } from './pages/bpo-services-page/bpo-services-page';
 import { WrapperComponent } from './layouts/wrapper.component';
 import { AppLayoutComponent } from './layouts/app.component';
 
@@ -46,10 +46,10 @@ export const routes: Routes = [
       { path: 'career', component: CareerPage },
       { path: 'success', component: SuccessPage },
       { path: 'tech-services', component: TechServicesPage },
-      { path: 'upskilling-services', component: UpskillingSevicesPage },
+      { path: 'upskilling-services', component: UpskillingServicesPage },
       { path: 'our-facility', component: OurFacilityPage },
       { path: 'programs', component: ProgramsPage },
-      { path: 'bpo-services', component: BpoSevicesPage },
+      { path: 'bpo-services', component: BpoServicesPage },
 
       /** Old Pages */
       { path: 'training', component: TrainingComponent },
