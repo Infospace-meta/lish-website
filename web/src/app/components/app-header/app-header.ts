@@ -134,7 +134,9 @@ import { CommonModule } from '@angular/common';
                 <h4 class="font-bold text-lg group-hover:text-accent">
                   Our Partners
                 </h4>
-                <p class="text-sm text-accent font-semibold leading-relaxed">
+                <p
+                  class="text-sm text-accent group-hover:text-primary font-semibold leading-relaxed"
+                >
                   Strategic Partnerships
                 </p>
               </a>
@@ -148,7 +150,9 @@ import { CommonModule } from '@angular/common';
                 >
                   Success & Impact
                 </h4>
-                <p class="text-sm text-accent font-semibold leading-relaxed">
+                <p
+                  class="text-sm text-accent group-hover:text-primary font-semibold leading-relaxed"
+                >
                   Real Results, Real Impact
                 </p>
               </a>
@@ -162,7 +166,9 @@ import { CommonModule } from '@angular/common';
                 >
                   Programs & Initiatives
                 </h4>
-                <p class="text-sm text-accent font-semibold leading-relaxed">
+                <p
+                  class="text-sm text-accent group-hover:text-primary font-semibold leading-relaxed"
+                >
                   Targeted Programs
                 </p>
               </a>
@@ -177,11 +183,13 @@ import { CommonModule } from '@angular/common';
                 class="p-4 rounded-xl hover:bg-neutral-50 transition-all group"
               >
                 <h4
-                  class="font-bold text-lg group-hover:text-accent transition-colors"
+                  class="font-bold text-lg group-hover:text-accent  transition-colors"
                 >
                   BPO Services
                 </h4>
-                <p class="text-sm text-accent font-semibold leading-relaxed">
+                <p
+                  class="text-sm text-accent group-hover:text-primary font-semibold leading-relaxed"
+                >
                   Precision Data Processing & Data Annotation
                 </p>
               </a>
@@ -195,7 +203,9 @@ import { CommonModule } from '@angular/common';
                 >
                   Software Dev
                 </h4>
-                <p class="text-sm text-accent font-semibold leading-relaxed">
+                <p
+                  class="text-sm text-accent group-hover:text-primary font-semibold leading-relaxed"
+                >
                   Tech & Software Development Solutions
                 </p>
               </a>
@@ -209,7 +219,9 @@ import { CommonModule } from '@angular/common';
                 >
                   Upskilling
                 </h4>
-                <p class="text-sm text-accent font-semibold leading-relaxed">
+                <p
+                  class="text-sm text-accent group-hover:text-primary font-semibold leading-relaxed"
+                >
                   Comprehensive Training & Skill-building
                 </p>
               </a>
@@ -228,7 +240,11 @@ import { CommonModule } from '@angular/common';
                 >
                   About Us
                 </h4>
-                <p class="text-sm text-accent font-semibold">What Drives Us</p>
+                <p
+                  class="text-sm text-accent group-hover:text-primary font-semibold"
+                >
+                  What Drives Us
+                </p>
               </a>
               <a
                 routerLink="about_us"
@@ -240,13 +256,19 @@ import { CommonModule } from '@angular/common';
                 >
                   Our Team
                 </h4>
-                <p class="text-sm text-accent font-semibold">
+                <p
+                  class="text-sm text-accent group-hover:text-primary font-semibold"
+                >
                   Meet The Experts
                 </p>
               </a>
               <div class="p-4 rounded-xl opacity-50">
                 <h4 class="font-bold text-lg">Careers</h4>
-                <p class="text-sm text-accent font-semibold">Grow With Us</p>
+                <p
+                  class="text-sm text-accent group-hover:text-primary font-semibold"
+                >
+                  Grow With Us
+                </p>
               </div>
               <a
                 routerLink="contact"
@@ -258,7 +280,11 @@ import { CommonModule } from '@angular/common';
                 >
                   Contact Us
                 </h4>
-                <p class="text-sm text-accent font-semibold">Talk To Us</p>
+                <p
+                  class="text-sm text-accent group-hover:text-primary font-semibold"
+                >
+                  Talk To Us
+                </p>
               </a>
             </div>
           }
