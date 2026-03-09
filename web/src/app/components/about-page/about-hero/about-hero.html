@@ -43,18 +43,45 @@
           </div>
         </div>
 
-        <div class="pt-6 sm:pt-8 border-t border-black/5 reveal-text delay-6">
+        <div class="pt-8 border-t border-black/5 reveal-text delay-6">
           <p
-            class="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] text-accent mb-4 sm:mb-6"
+            class="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] text-accent mb-5 sm:mb-6"
           >
             Trusted by 80+ partners
           </p>
 
           <div class="partner-scroll-container">
             <div class="partner-scroll-wrapper">
-              <div class="partner-batch" *ngFor="let batch of [0, 4, 8, 0]">
+              <div class="partner-batch">
                 <img
-                  *ngFor="let p of partners.slice(batch, batch + 4)"
+                  *ngFor="let p of partners.slice(0, 4)"
+                  [src]="p.src"
+                  [alt]="p.name"
+                  class="partner-logo-bold"
+                  (error)="handleImageError($event)"
+                />
+              </div>
+              <div class="partner-batch">
+                <img
+                  *ngFor="let p of partners.slice(4, 8)"
+                  [src]="p.src"
+                  [alt]="p.name"
+                  class="partner-logo-bold"
+                  (error)="handleImageError($event)"
+                />
+              </div>
+              <div class="partner-batch">
+                <img
+                  *ngFor="let p of partners.slice(8, 12)"
+                  [src]="p.src"
+                  [alt]="p.name"
+                  class="partner-logo-bold"
+                  (error)="handleImageError($event)"
+                />
+              </div>
+              <div class="partner-batch">
+                <img
+                  *ngFor="let p of partners.slice(0, 4)"
                   [src]="p.src"
                   [alt]="p.name"
                   class="partner-logo-bold"
