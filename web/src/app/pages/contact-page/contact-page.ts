@@ -9,7 +9,7 @@ import { PartnerTestimonials } from "../../components/ImpactPage/partner-testimo
   template: `
     <contact-details />
     <cta-career-card />
-    <partner-testimonials />
+    <!-- <partner-testimonials /> -->
   `,
 })
 export class ContactPage {}

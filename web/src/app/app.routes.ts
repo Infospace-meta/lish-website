@@ -14,7 +14,6 @@ import { BpoServicesPage } from './pages/bpo-services-page/bpo-services-page';
 import { WrapperComponent } from './layouts/wrapper.component';
 import { AppLayoutComponent } from './layouts/app.component';
 
-
 /** Old Pages */
 import { TrainingComponent } from './pages/training/training.component';
 import { AiAndMachineLearningComponent } from './pages/main/ourservices/ai-and-machine-learning/ai-and-machine-learning.component';
@@ -27,10 +26,8 @@ import { SkillBuildingProgramsComponent } from './pages/main/ourservices/skill-b
 import { TechLayoutComponent } from './layouts/tech-layout.component';
 import { TechLandingPage } from './pages/tech/tech-landing-page/tech-landing-page';
 import { TeamPage } from './pages/tech/team/team-page';
-import { UsersPage } from './pages/tech/users/users-page';
-import { AboutUsComponent } from './pages/about-us/about-us.component';
-// import { UserProfile } from './components/tech/user-profile/user-profile.component';
-
+// import { About_Page } from './pages/about-page/about-page';
+import { DevsPage } from './pages/tech/devs/devs-page';
 
 export const routes: Routes = [
   /**1. STANDARD ROUTES (Main Layout) */
@@ -53,7 +50,7 @@ export const routes: Routes = [
 
       /** Old Pages */
       { path: 'training', component: TrainingComponent },
-      { path: 'about_us', component: AboutUsComponent},
+      { path: 'about', component: AboutPage },
       {
         path: 'services',
         component: WrapperComponent,
@@ -92,13 +89,8 @@ export const routes: Routes = [
     children: [
       { path: '', component: TechLandingPage },
       { path: 'team', component: TeamPage },
-      {
-        path: 'users',
-        component: UsersPage,
-        //   ,children: [
-        //   { path: 'profile', component: UserProfile }
-        // ]
-      },
+      { path: 'about', component: AboutPage },
+      { path: 'team/:slug', component: DevsPage },
     ],
   },
 
