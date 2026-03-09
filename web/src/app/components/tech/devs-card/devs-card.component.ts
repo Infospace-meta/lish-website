@@ -31,9 +31,9 @@ import { RouterLink } from '@angular/router';
     </a>
   `,
 })
-export class UserCard {
+export class DevsCard {
   name = input<string>('');
   role = input<string>('');
-  image = input<string>('pic.jpg');
-  profileUrl = input<string>('tech/users');
+  image = input<string>('');
+  profileUrl = input<string>('');
 }
