@@ -121,40 +121,71 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
           <!-- Content for Impact -->
           @if (activeMenu === 'impact') {
             <div class="grid grid-cols-3 gap-10">
-              <div class="col-span-1">
-                <h3 class="text-xl font-bold text-blue-800 mb-2">Our Impact</h3>
-                <p class="text-sm text-neutral-500" style="font-size: 0.85rem;">
-                  Discover how we are changing lives through sustainable
-                  development and innovation.
-                </p>
+              <div
+                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
+              >
+                <a
+                  routerLink="partner"
+                  (click)="closeEverything()"
+                  class="block"
+                >
+                  <h4
+                    class="font-bold group-hover:text-accent"
+                    style="font-size: 0.9375rem;"
+                  >
+                    Our Partners
+                  </h4>
+                  <p
+                    class="text-xs text-neutral-500"
+                    style="font-size: 0.85rem;"
+                  >
+                    Driving Social Change Through Strategic Partnerships
+                  </p>
+                </a>
               </div>
-              <div class="flex flex-col space-y-3">
+              <div
+                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
+              >
                 <a
-                  routerLink="/impact/education"
+                  routerLink="success"
                   (click)="closeEverything()"
-                  class="font-semibold hover:text-accent"
-                  >Education Support</a
+                  class="block"
                 >
-                <a
-                  routerLink="/impact/health"
-                  (click)="closeEverything()"
-                  class="font-semibold hover:text-accent"
-                  >Health Initiatives</a
-                >
+                  <h4
+                    class="font-bold group-hover:text-accent"
+                    style="font-size: 0.9375rem;"
+                  >
+                    Success & Impact
+                  </h4>
+                  <p
+                    class="text-xs text-neutral-500"
+                    style="font-size: 0.85rem;"
+                  >
+                    Real Results, Real Impact: Our Journey of Transformation
+                  </p>
+                </a>
               </div>
-              <div class="flex flex-col space-y-3">
+              <div
+                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
+              >
                 <a
-                  routerLink="/impact/sustainability"
+                  routerLink="programs"
                   (click)="closeEverything()"
-                  class="font-semibold hover:text-accent"
-                  >Sustainability</a
+                  class="block"
                 >
-                <a
-                  routerLink="/impact/reports"
-                  (click)="closeEverything()"
-                  class="font-semibold hover:text-accent"
-                  >Annual Reports</a
-                >
+                  <h4
+                    class="font-bold group-hover:text-accent"
+                    style="font-size: 0.9375rem;"
+                  >
+                    Programs & Initiatives
+                  </h4>
+                  <p
+                    class="text-xs text-neutral-500"
+                    style="font-size: 0.85rem;"
+                  >
+                    Empowering Communities Through Targeted Programs
+                  </p>
+                </a>
               </div>
             </div>
           }
