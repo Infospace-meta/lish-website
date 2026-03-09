@@ -38,7 +38,7 @@ export class SuccessPage {
       results:
         'Centralized automation of supplier accounts now used by 300+ users monthly, allowing for real-time access to key performance indicators.',
       tech: ['Power Apps', 'Custom API Connectors', 'Azure SQL', 'Power BI'],
-      isOpen: false,
+      isOpen: true,
     },
     {
       id: '03',
@@ -53,7 +53,7 @@ export class SuccessPage {
       results:
         'A medallion architecture (Bronze, Silver, Gold) that enables users to explore data and create their own analyses with reliable SCD mechanisms.',
       tech: ['Microsoft Fabric', 'SQL Data Warehouse', 'DAX', 'DevOps'],
-      isOpen: false,
+      isOpen: true,
     },
   ];
 
