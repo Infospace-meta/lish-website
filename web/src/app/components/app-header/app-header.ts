@@ -268,11 +268,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
               <div
                 class="p-2 rounded-sm hover:bg-neutral-50 transition-colors group"
               >
-                <a
-                  routerLink="about_us"
-                  (click)="closeEverything()"
-                  class="block"
-                >
+                <a routerLink="about" (click)="closeEverything()" class="block">
                   <h4
                     class="font-bold group-hover:text-accent"
                     style="font-size: 0.9375rem;"
@@ -288,7 +284,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
                 </a>
               </div>
               <div
-                class="p-4 rounded-sm hover:bg-neutral-50 transition-colors group"
+                class="p-2 rounded-sm hover:bg-neutral-50 transition-colors group"
               >
                 <a
                   routerLink="services/design-and-development"
@@ -310,7 +306,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
                 </a>
               </div>
               <div
-                class="p-4 rounded-sm hover:bg-neutral-50 transition-colors group"
+                class="p-2 rounded-sm hover:bg-neutral-50 transition-colors group"
               >
                 <a
                   routerLink="services/skill-building-programs"
@@ -332,7 +328,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
                 </a>
               </div>
               <div
-                class="p-4 rounded-sm hover:bg-neutral-50 transition-colors group"
+                class="p-2 rounded-sm hover:bg-neutral-50 transition-colors group"
               >
                 <a
                   routerLink="contact"
