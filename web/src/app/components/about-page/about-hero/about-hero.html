@@ -1,24 +1,30 @@
 <section
   appScrollReveal
-  class="font-poppins px-6 sm:px-8 pb-20 sm:pb-32 pt-4 sm:pt-8"
+  class="font-poppins px-6 sm:px-8 pb-16 sm:pb-32 pt-2 sm:pt-12 overflow-hidden"
 >
   <div class="max-w-7xl mx-auto">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-      <div class="order-2 lg:order-1">
+      <div class="order-1 lg:order-1">
         <span
-          class="inline-block text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.25em] text-accent mb-6 sm:mb-8 reveal-text delay-1"
-          >About us</span
+          class="inline-block text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.15em] text-accent mb-2 sm:mb-8 reveal-text delay-1"
         >
+          About us
+        </span>
+
         <h1
-          class="mb-8 sm:mb-12 leading-[1.1] text-primary reveal-text delay-2"
+          class="text-4xl sm:text-5xl lg:text-6xl mb-6 sm:mb-12 leading-[1.1] tracking-tight text-primary reveal-text delay-2"
         >
-          Bridging the edge of <span class="text-accent">AI and humanity</span>
+          Bridging the edge of
+          <span
+            class="text-accent underline decoration-accent underline-offset-8"
+            >AI and humanity</span
+          >
         </h1>
 
-        <div class="space-y-4 sm:space-y-6 mb-8 sm:mb-12">
+        <div class="space-y-2 sm:space-y-6 mb-4 sm:mb-12">
           <div
             *ngFor="let text of ['Empowering youth through AI & Machine Learning', 'Providing sustainable digital employment opportunities', 'Cultivating a solution-oriented mindset for development']; let i = index"
-            class="flex items-start gap-4 reveal-text"
+            class="flex items-start gap-2 reveal-text"
             [style.animation-delay]="(0.3 + i*0.1) + 's'"
           >
             <div
@@ -29,17 +35,22 @@
                 >check</span
               >
             </div>
-            <p class="text-text-muted font-light">{{text}}</p>
+            <p
+              class="text-sm sm:text-xl text-text-muted font-light leading-relaxed"
+            >
+              {{text}}
+            </p>
           </div>
         </div>
 
-        <div class="pt-8 border-t border-black/5 reveal-text delay-6">
+        <div class="pt-6 sm:pt-8 border-t border-black/5 reveal-text delay-6">
           <p
-            class="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-accent mb-6"
+            class="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] text-accent mb-4 sm:mb-6"
           >
             Trusted by 80+ partners
           </p>
-          <div class="partner-scroll-container reveal-text delay-7">
+
+          <div class="partner-scroll-container">
             <div class="partner-scroll-wrapper">
               <div class="partner-batch" *ngFor="let batch of [0, 4, 8, 0]">
                 <img
@@ -56,35 +67,48 @@
       </div>
 
       <div
-        class="order-1 lg:order-2 relative aspect-square w-full max-w-[500px] lg:max-w-none mx-auto flex flex-col items-center justify-center z-0"
+        class="order-2 lg:order-2 relative aspect-square w-full max-w-[450px] sm:max-w-[500px] lg:max-w-none mx-auto flex flex-col items-center justify-center z-0 mt-8 lg:mt-0"
       >
         <div
           class="relative mb-6 w-full h-[75%] sm:h-[80%] flex items-center justify-center"
         >
           <div
             *ngFor="let img of carouselImages; let i = index"
-            class="absolute w-[80%] sm:w-[85%] h-[80%] sm:h-[85%] transition-all duration-700 ease-in-out rounded-2xl sm:rounded-3xl overflow-hidden border border-black/10 shadow-2xl"
-            [ngClass]="{'z-30 opacity-100 scale-100 translate-x-0 translate-y-0': i === currentIndex, 'z-20 opacity-70 scale-95 translate-x-4 translate-y-4 rotate-2': i === (currentIndex + 1) % carouselImages.length, 'z-10 opacity-40 scale-90 translate-x-8 translate-y-8 rotate-6': i === (currentIndex + 2) % carouselImages.length, 'z-0 opacity-0 scale-75': i !== currentIndex && i !== (currentIndex + 1) % carouselImages.length && i !== (currentIndex + 2) % carouselImages.length}"
+            class="absolute w-[85%] h-[85%] transition-all duration-1000 ease-in-out rounded-2xl sm:rounded-[3.5rem] overflow-hidden border border-black/10 shadow-2xl"
+            [ngClass]="{
+                  'z-30 opacity-100 scale-100 translate-x-0 translate-y-0': i === currentIndex, 
+                  'z-20 opacity-70 scale-95 translate-x-4 sm:translate-x-6 translate-y-4 sm:translate-y-6 rotate-2': i === (currentIndex + 1) % carouselImages.length, 
+                  'z-10 opacity-40 scale-90 translate-x-8 sm:translate-x-12 translate-y-8 sm:translate-y-12 rotate-6': i === (currentIndex + 2) % carouselImages.length, 
+                  'z-0 opacity-0 scale-75': i !== currentIndex && i !== (currentIndex + 1) % carouselImages.length && i !== (currentIndex + 2) % carouselImages.length
+               }"
           >
-            <img [src]="img" class="w-full h-full object-cover" />
+            <img
+              [src]="img"
+              alt="Lish AI Hub"
+              class="w-full h-full object-cover"
+            />
           </div>
         </div>
-        <div class="mt-8 sm:mt-16 flex items-center justify-center gap-2">
+
+        <div
+          class="mt-8 sm:mt-16 flex items-center justify-center gap-2 sm:gap-3"
+        >
           <div
             *ngFor="let img of carouselImages; let i = index"
             (click)="goToSlide(i)"
-            class="h-1 sm:h-1.5 transition-all duration-500 rounded-full cursor-pointer"
+            class="h-1 sm:h-1.5 transition-all duration-500 rounded-full cursor-pointer hover:bg-accent/50"
             [ngClass]="i === currentIndex ? 'w-8 sm:w-10 bg-accent' : 'w-1.5 sm:w-2 bg-black/10'"
           ></div>
         </div>
+
         <div
           class="absolute inset-0 -z-10 pointer-events-none flex items-center justify-center"
         >
           <div
-            class="absolute w-[110%] h-[110%] border border-black/[0.04] rounded-full"
+            class="absolute w-[110%] h-[110%] border border-black/[0.03] rounded-full"
           ></div>
           <div
-            class="absolute w-[95%] h-[95%] border border-black/[0.06] rounded-full animate-pulse"
+            class="absolute w-[95%] h-[95%] border border-black/[0.05] rounded-full animate-pulse"
           ></div>
         </div>
       </div>
