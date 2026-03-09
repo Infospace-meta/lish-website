@@ -1,9 +1,17 @@
 import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
-import { TeamSectionComponent } from '../../components/team-section/team-section.component';
-import { RoadmapSectionComponent } from '../../components/roadmap-section/roadmap-section.component';
-import { FrameworkSectionComponent } from '../../components/framework-section/framework-section.component';
+
+// Modular About-Page Components
+import { AboutHeroComponent } from '../../components/about-page/about-hero/about-hero';
+import { AboutEcosystemComponent } from '../../components/about-page/about-ecosystem/about-ecosystem';
+import { AboutValueComponent } from '../../components/about-page/about-value/about-value';
+import { AboutNetworkComponent } from '../../components/about-page/about-network/about-network';
+import { TeamSectionComponent } from '../../components/about-page/team-section/team-section.component';
+import { RoadmapSectionComponent } from '../../components/about-page/roadmap-section/roadmap-section.component';
+import { FrameworkSectionComponent } from '../../components/about-page/framework-section/framework-section.component';
+
+// Shared Layout Components
 import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal';
 
 @Component({
@@ -12,10 +20,14 @@ import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal';
   imports: [
     CommonModule,
     RouterModule,
+    ScrollRevealDirective,
+    AboutHeroComponent,
+    AboutEcosystemComponent,
+    AboutValueComponent,
+    AboutNetworkComponent,
     TeamSectionComponent,
     RoadmapSectionComponent,
     FrameworkSectionComponent,
-    ScrollRevealDirective,
   ],
   templateUrl: './about-us.component.html',
 })
@@ -61,6 +73,7 @@ export class AboutUsComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    // Ensure page starts at top on navigation
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -80,8 +93,10 @@ export class AboutUsComponent implements OnInit, OnDestroy {
     this.cdr.detectChanges();
   }
 
-  goToSlide(index: number) {
+  // Handle slide selection from Hero component
+  onSlideChange(index: number) {
     this.currentIndex = index;
+    this.resetTimer();
   }
 
   resetTimer() {
@@ -89,11 +104,6 @@ export class AboutUsComponent implements OnInit, OnDestroy {
       clearInterval(this.carouselInterval);
       this.startCarousel();
     }
-  }
-
-  handleImageError(event: any) {
-    const img = event.target;
-    img.style.display = 'none';
   }
 
   ngOnDestroy(): void {
