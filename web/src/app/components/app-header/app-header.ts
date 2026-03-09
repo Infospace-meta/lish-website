@@ -117,12 +117,12 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
       <div
         class="hidden lg:block absolute left-[25%] right-[25%] bg-white border-b border-gray-100  rounded-[1rem] shadow-2xl animate-in slide-in-from-top-2 duration-200 z-40"
       >
-        <div class="max-w-screen-xl mx-auto px-10 py-10">
+        <div class="max-w-screen-xl mx-auto px-2 py-4">
           <!-- Content for Impact -->
           @if (activeMenu === 'impact') {
-            <div class="grid grid-cols-3 gap-10">
+            <div class="grid grid-cols-3 gap-2">
               <div
-                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
+                class="p-2  rounded-sm hover:bg-neutral-50 transition-colors group"
               >
                 <a
                   routerLink="partner"
@@ -144,7 +144,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
                 </a>
               </div>
               <div
-                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
+                class="p-2 rounded-xl hover:bg-neutral-50 transition-colors group"
               >
                 <a
                   routerLink="success"
@@ -166,7 +166,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
                 </a>
               </div>
               <div
-                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
+                class="p-2 rounded-xl hover:bg-neutral-50 transition-colors group"
               >
                 <a
                   routerLink="programs"
