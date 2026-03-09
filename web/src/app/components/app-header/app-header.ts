@@ -117,12 +117,12 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
       <div
         class="hidden lg:block absolute left-[25%] right-[25%] bg-white border-b border-gray-100  rounded-[1rem] shadow-2xl animate-in slide-in-from-top-2 duration-200 z-40"
       >
-        <div class="max-w-screen-xl mx-auto px-10 py-10">
+        <div class="max-w-screen-xl mx-auto px-8 py-6">
           <!-- Content for Impact -->
           @if (activeMenu === 'impact') {
-            <div class="grid grid-cols-3 gap-10">
+            <div class="grid grid-cols-3 gap-2">
               <div
-                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
+                class="p-2  rounded-sm hover:bg-neutral-50 transition-colors group"
               >
                 <a
                   routerLink="partner"
@@ -139,12 +139,12 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
                     class="text-xs text-neutral-500"
                     style="font-size: 0.85rem;"
                   >
-                    Driving Social Change Through Strategic Partnerships
+                    Strategic Partnerships
                   </p>
                 </a>
               </div>
               <div
-                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
+                class="p-2 rounded-sm hover:bg-neutral-50 transition-colors group"
               >
                 <a
                   routerLink="success"
@@ -161,12 +161,12 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
                     class="text-xs text-neutral-500"
                     style="font-size: 0.85rem;"
                   >
-                    Real Results, Real Impact: Our Journey of Transformation
+                    Real Results, Real Impact
                   </p>
                 </a>
               </div>
               <div
-                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
+                class="p-2 rounded-sm hover:bg-neutral-50 transition-colors group"
               >
                 <a
                   routerLink="programs"
@@ -183,7 +183,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
                     class="text-xs text-neutral-500"
                     style="font-size: 0.85rem;"
                   >
-                    Empowering Communities Through Targeted Programs
+                    Targeted Programs
                   </p>
                 </a>
               </div>
@@ -192,9 +192,9 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
 
           <!-- Content for Services -->
           @if (activeMenu === 'services') {
-            <div class="grid grid-cols-3 gap-10">
+            <div class="grid grid-cols-3 gap-2">
               <div
-                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
+                class="p-2 rounded-sm hover:bg-neutral-50 transition-colors group"
               >
                 <a
                   routerLink="services/data-annotation"
@@ -203,7 +203,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
                 >
                   <h4
                     class="font-bold group-hover:text-accent"
-                    style="font-size: 0.9375rem;"
+                    style="font-size: text-accent 0.9375rem;"
                   >
                     BPO Services & Data Annotation
                   </h4>
@@ -211,12 +211,12 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
                     class="text-xs text-neutral-500"
                     style="font-size: 0.85rem;"
                   >
-                    From raw data processing to precision annotation
+                    precision annotation
                   </p>
                 </a>
               </div>
               <div
-                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
+                class="p-4 rounded-sm hover:bg-neutral-50 transition-colors group"
               >
                 <a
                   routerLink="services/design-and-development"
@@ -233,12 +233,12 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
                     class="text-xs text-neutral-500"
                     style="font-size: 0.85rem;"
                   >
-                    End-to-end solutions for digital transformation
+                    End-to-end solutions.
                   </p>
                 </a>
               </div>
               <div
-                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
+                class="p-4 rounded-sm hover:bg-neutral-50 transition-colors group"
               >
                 <a
                   routerLink="services/skill-building-programs"
@@ -255,7 +255,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
                     class="text-xs text-neutral-500"
                     style="font-size: 0.85rem;"
                   >
-                    Comprehensive training and development opportunities.
+                    Comprehensive training.
                   </p>
                 </a>
               </div>
@@ -264,15 +264,11 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
 
           <!-- Content for Company -->
           @if (activeMenu === 'company') {
-            <div class="grid grid-cols-4 gap-10">
+            <div class="grid grid-cols-4 gap-2">
               <div
-                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
+                class="p-2 rounded-sm hover:bg-neutral-50 transition-colors group"
               >
-                <a
-                  routerLink="about_us"
-                  (click)="closeEverything()"
-                  class="block"
-                >
+                <a routerLink="about" (click)="closeEverything()" class="block">
                   <h4
                     class="font-bold group-hover:text-accent"
                     style="font-size: 0.9375rem;"
@@ -288,7 +284,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
                 </a>
               </div>
               <div
-                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
+                class="p-2 rounded-sm hover:bg-neutral-50 transition-colors group"
               >
                 <a
                   routerLink="services/design-and-development"
@@ -305,12 +301,12 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
                     class="text-xs text-neutral-500"
                     style="font-size: 0.85rem;"
                   >
-                    Meet The Experts Behind Our Solutions
+                    Meet The Experts
                   </p>
                 </a>
               </div>
               <div
-                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
+                class="p-2 rounded-sm hover:bg-neutral-50 transition-colors group"
               >
                 <a
                   routerLink="services/skill-building-programs"
@@ -332,7 +328,7 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
                 </a>
               </div>
               <div
-                class="p-4 rounded-xl hover:bg-neutral-50 transition-colors group"
+                class="p-2 rounded-sm hover:bg-neutral-50 transition-colors group"
               >
                 <a
                   routerLink="contact"
