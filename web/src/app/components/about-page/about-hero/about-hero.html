@@ -67,14 +67,14 @@
       </div>
 
       <div
-        class="order-2 lg:order-2 relative aspect-square w-full max-w-[450px] sm:max-w-[500px] lg:max-w-none mx-auto flex flex-col items-center justify-center z-0 mt-8 lg:mt-0"
+        class="order-2 lg:order-2 relative aspect-square w-full max-w-[450px] sm:max-w-[500px] lg:max-w-none mx-auto flex flex-col items-center justify-center z-0 mt-4 lg:mt-0"
       >
         <div
           class="relative mb-6 w-full h-[75%] sm:h-[80%] flex items-center justify-center"
         >
           <div
             *ngFor="let img of carouselImages; let i = index"
-            class="absolute w-[85%] h-[85%] transition-all duration-1000 ease-in-out rounded-2xl sm:rounded-[3.5rem] overflow-hidden border border-black/10 shadow-2xl"
+            class="absolute sm:ml-0 ml-[-15px] sm:w-[95%] w-[110%] h-[110%] sm:h-[95%] transition-all duration-1000 ease-in-out rounded-xl sm:rounded-[2.5rem] overflow-hidden border border-black/10 shadow-2xl"
             [ngClass]="{
                   'z-30 opacity-100 scale-100 translate-x-0 translate-y-0': i === currentIndex, 
                   'z-20 opacity-70 scale-95 translate-x-4 sm:translate-x-6 translate-y-4 sm:translate-y-6 rotate-2': i === (currentIndex + 1) % carouselImages.length, 
