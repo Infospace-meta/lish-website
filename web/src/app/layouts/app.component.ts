@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { HeaderComponent } from '../components/header/header.component';
+import { AppHeader } from '../components/app-header/app-header';
 import { RouterOutlet } from '@angular/router';
-import { FooterComponent } from '../components/footer/footer.component';
+import { AppFooter } from '../components/app-footer/app-footer';
 
 @Component({
   selector: 'app-layout',
-  imports: [HeaderComponent, RouterOutlet, FooterComponent],
+  imports: [AppHeader, RouterOutlet, AppFooter],
   template: `
     <app-header></app-header>
     <router-outlet></router-outlet>

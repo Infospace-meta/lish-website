@@ -1,35 +1,83 @@
-<section class="px-8 py-40">
+<section
+  appScrollReveal
+  class="px-5 sm:px-8 lg:px-12 font-poppins py-20 sm:py-28 lg:py-36 bg-white"
+>
   <div class="max-w-7xl mx-auto">
-    <div class="grid md:grid-cols-2 gap-24 items-center">
-      <div
-        class="rounded-5xl overflow-hidden aspect-[4/5] relative bg-[#EFEBE6]"
-      >
-        <img
-          alt="Abstract AI Visualization"
-          class="w-full h-full object-cover opacity-80"
-          src="https://res.cloudinary.com/dpfcle0os/image/upload/v1706975520/samples/Lish-website/aboutlish_mc39qx.jpg"
-        />
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-16 lg:gap-24 items-center"
+    >
+      <!-- IMAGE SIDE -->
+      <div class="relative reveal-text delay-1">
         <div
-          class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
-        ></div>
+          class="rounded-2xl sm:rounded-3xl overflow-hidden aspect-[4/5] relative bg-soft-grey shadow-xl sm:shadow-2xl"
+        >
+          <img
+            alt="Abstract AI Visualization"
+            class="w-full h-full object-cover opacity-90 transition-transform duration-700 hover:scale-105"
+            src="https://res.cloudinary.com/dpfcle0os/image/upload/v1772716046/samples/Lish-website/IMG_4945_mizqkg.jpg"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"
+          ></div>
+        </div>
+
+        <!-- FLOATING CARD -->
+        <div
+          class="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 bg-primary text-white px-6 py-5 sm:p-8 rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl reveal-text delay-3"
+        >
+          <p
+            class="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.25em] opacity-60 mb-1 sm:mb-2"
+          >
+            Methodology
+          </p>
+          <p class="text-base sm:text-lg lg:text-xl font-medium">
+            Lish Labs Sprint
+          </p>
+        </div>
       </div>
+
+      <!-- TEXT SIDE -->
       <div>
         <span
-          class="inline-block text-[11px] font-semibold uppercase tracking-[0.25em] text-accent mb-8"
-          >Our Framework</span
+          class="inline-block text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.25em] text-accent mb-6 sm:mb-8 reveal-text delay-1"
         >
-        <h2 class="text-4xl md:text-5xl font-medium mb-16 leading-tight">
-          Strategic methodology for sustainable innovation.
+          Our Framework
+        </span>
+
+        <h2
+          class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-10 sm:mb-14 lg:mb-16 leading-[1.15] text-primary tracking-tight reveal-text delay-2"
+        >
+          Strategic methodology for
+          <span class="text-accent">sustainable innovation.</span>
         </h2>
-        <div class="space-y-10">
+
+        <div class="space-y-1 sm:space-y-2">
           <div
-            *ngFor="let step of frameworkSteps"
-            class="pb-10 border-b border-black/10"
+            *ngFor="let step of frameworkSteps; let i = index"
+            class="group pb-8 sm:pb-10 border-b border-black/5 reveal-text"
+            [style.animation-delay]="0.3 + i * 0.15 + 's'"
           >
-            <h3 class="font-bold text-xs uppercase tracking-widest mb-4">
-              {{ step.id }}. {{ step.title }}
-            </h3>
-            <p class="text-text-muted leading-relaxed">{{ step.desc }}</p>
+            <div class="flex items-start gap-4 sm:gap-6 pt-6 sm:pt-8">
+              <span
+                class="text-accent font-mono text-base sm:text-lg opacity-40 group-hover:opacity-100 transition-opacity duration-500"
+              >
+                {{ step.id }}
+              </span>
+
+              <div class="space-y-2 sm:space-y-4">
+                <h3
+                  class="font-bold text-xs sm:text-sm uppercase tracking-widest text-primary group-hover:text-accent transition-colors duration-500"
+                >
+                  {{ step.title }}
+                </h3>
+
+                <p
+                  class="text-text-muted text-base sm:text-lg leading-relaxed font-light max-w-md"
+                >
+                  {{ step.desc }}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
