@@ -26,9 +26,8 @@ import { SkillBuildingProgramsComponent } from './pages/main/ourservices/skill-b
 import { TechLayoutComponent } from './layouts/tech-layout.component';
 import { TechLandingPage } from './pages/tech/tech-landing-page/tech-landing-page';
 import { TeamPage } from './pages/tech/team/team-page';
-import { UsersPage } from './pages/tech/users/users-page';
 // import { About_Page } from './pages/about-page/about-page';
-// import { UserProfile } from './components/tech/user-profile/user-profile.component';
+import { DevsPage } from './pages/tech/devs/devs-page';
 
 export const routes: Routes = [
   /**1. STANDARD ROUTES (Main Layout) */
@@ -90,13 +89,8 @@ export const routes: Routes = [
     children: [
       { path: '', component: TechLandingPage },
       { path: 'team', component: TeamPage },
-      {
-        path: 'users',
-        component: UsersPage,
-        //   ,children: [
-        //   { path: 'profile', component: UserProfile }
-        // ]
-      },
+      { path: 'about', component: AboutPage },
+      { path: 'team/:slug', component: DevsPage },
     ],
   },
 
