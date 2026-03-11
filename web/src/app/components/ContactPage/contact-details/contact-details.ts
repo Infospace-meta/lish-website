@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
       class="grid grid-cols-1 md:grid-cols-2 gap-20 mx-auto max-w-7xl px-5 md:py-14 py-8 min-h-[75vh] items-center"
     >
       <div class="flex flex-col space-y-10">
-        <h5 class="text-complement">Contact</h5>
+        <h3 class="text-complement">Contact</h3>
         <h2
           class="md:text-[48px] text-[36px] md:leading-12 leading-9 tracking-tight"
         >
@@ -16,11 +16,15 @@ import { Component } from '@angular/core';
           <span class="text-accent">together</span>
         </h2>
 
-        <h4 class="">Kenyatta Avenue, Nakuru</h4>
         <div>
-          <p class="underline ">(123) 456-7890</p>
-          <p class="underline ">info@example.com</p>
-          <p class="underline ">Linkein</p>
+          <h4 class="">Gibcon House, 4th & 5th floor</h4>
+          <h4 class="">Kenyatta Avenue, Nakuru</h4>
+        </div>
+
+        <div>
+          <p class="underline ">(+254) 710-441-741</p>
+          <p class="underline ">info@lishailabs.com</p>
+          <p class="underline ">Linkedin</p>
         </div>
         <ul class="flex flex-col">
           <li class="flex gap-1">
@@ -33,16 +37,16 @@ import { Component } from '@angular/core';
             <span class="material-symbols-outlined text-complement rounded-full"
               >check</span
             >
-            <p class="">Serving 100+ clients globally</p>
+            <p class="">Serving clients globally</p>
           </li>
           <li class=" flex items-center gap-1">
             <span class="material-symbols-outlined text-complement rounded-full"
               >check</span
             >
-            <p class="">Over 700 skilled professionals</p>
+            <p class="">Over 200 skilled professionals</p>
           </li>
           <li class=" flex items-center gap-1">
-           <span class="material-symbols-outlined text-complement rounded-full"
+            <span class="material-symbols-outlined text-complement rounded-full"
               >check</span
             >
             <p class="">100% client satisfaction rate</p>
