@@ -5,6 +5,8 @@ import { BenefitCardComponent } from '../../components/ourservices/benefit-card/
 import { HorizontalScrollSectionComponent } from '../../components/horizontal-scroll-section/horizontal-scroll-section.component';
 import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal';
 import { TestimonialCarouselComponent } from '../../components/testimonial-carousel/testimonial-carousel.component';
+import { PartnerTestimonials } from '../../components/ImpactPage/partner-testimonials/partner-testimonials';
+import { CtaPartnerCard } from "../../components/cta-partner-card/cta-partner-card";
 
 @Component({
   selector: 'app-partner-page',
