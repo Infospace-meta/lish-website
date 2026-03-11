@@ -1,7 +1,7 @@
 <section class="py-24 bg-warm-bg overflow-hidden">
   <!-- Heading -->
   <div class="max-w-3xl mx-auto px-8 text-center mb-16">
-    <h2 class="text-4xl md:text-5xl font-medium text-primary leading-tight">
+    <h2 class="">
       Our partners' success is our satisfaction
     </h2>
   </div>
@@ -37,8 +37,8 @@
               />
             }
             <div>
-              <p class="text-sm font-semibold text-gray-900">{{ t.name }}</p>
-              <p class="text-sm font-medium text-accent">{{ t.role }}</p>
+              <p class="">{{ t.name }}</p>
+              <h5 class="text-accent">{{ t.role }}</h5>
             </div>
           </div>
         </div>
@@ -47,7 +47,7 @@
   </div>
 
   <!-- Pagination dots -->
-  <div class="flex items-center justify-center gap-3 mt-12">
+  <!-- <div class="flex items-center justify-center gap-3 mt-12">
     @for (t of testimonials; track t.name; let i = $index) {
       <button
         (click)="goTo(i)"
@@ -56,5 +56,5 @@
         [attr.aria-label]="'Go to testimonial ' + (i + 1)"
       ></button>
     }
-  </div>
+  </div> -->
 </section>
