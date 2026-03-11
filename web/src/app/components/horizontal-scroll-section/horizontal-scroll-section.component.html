@@ -6,7 +6,10 @@
       <ng-content select="[slot=heading]"></ng-content>
     </div>
 
-    <div #cardsTrack class="flex gap-6 pl-8 pb-12 will-change-transform">
+    <div
+      #cardsTrack
+      class="flex gap-6 pl-8 pb-12 will-change-transform flex-1 min-h-0 items-stretch"
+    >
       <ng-content select="[slot=cards]"></ng-content>
       <div class="flex-none w-8 shrink-0"></div>
     </div>

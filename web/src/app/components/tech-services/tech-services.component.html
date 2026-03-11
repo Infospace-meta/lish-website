@@ -1,11 +1,11 @@
 <main class="pt-16 bg-warm-bg">
   <!-- Hero -->
-  <section appScrollReveal class="font-poppins px-8 pb-32 pt-8">
+  <section appScrollReveal class="px-8 pb-32 pt-8">
     <div class="max-w-7xl mx-auto">
       <div class="flex flex-col md:flex-row gap-16 items-end">
         <div class="flex-1">
           <span
-            class="inline-block text-[11px] font-semibold uppercase tracking-[0.25em] text-accent mb-8"
+            class="inline-block text-[11px] font-semibold uppercase tracking-[0.25em] text-complement mb-8"
           >
             Design &amp; Development
           </span>
@@ -36,12 +36,12 @@
         <!-- LEFT — Sticky Panel -->
         <div class="md:w-5/12 md:sticky md:top-32 md:self-start">
           <span
-            class="inline-block text-[11px] font-semibold uppercase tracking-[0.25em] text-accent mb-6"
+            class="inline-block text-[11px] font-semibold uppercase tracking-[0.25em] text-complement mb-6"
           >
             Our Capabilities
           </span>
           <h2
-            class="text-4xl md:text-5xl font-medium text-primary leading-tight mb-8"
+            class="text-4xl md:text-5xl text-primary leading-tight mb-8"
           >
             What We Offer
           </h2>
@@ -108,12 +108,12 @@
   <app-horizontal-scroll-section>
     <div slot="heading" class="text-center">
       <span
-        class="inline-block text-[11px] font-semibold uppercase tracking-[0.25em] text-accent mb-6"
+        class="inline-block text-[11px] font-semibold uppercase tracking-[0.25em] text-complement mb-6"
       >
         Who It's For
       </span>
       <h2
-        class="text-4xl md:text-5xl font-medium text-primary leading-tight mb-6"
+        class="text-4xl md:text-5xl text-primary leading-tight mb-6"
       >
         Who We Serve
       </h2>
@@ -127,7 +127,7 @@
 
     <div slot="cards" class="contents">
       <app-benefit-card
-        class="flex-none w-[420px]"
+        class="flex-none w-[700px]"
         index="01"
         icon="rocket_launch"
         title="Startups"
@@ -138,7 +138,7 @@
       >
       </app-benefit-card>
       <app-benefit-card
-        class="flex-none w-[420px]"
+        class="flex-none w-[700px]"
         index="02"
         icon="corporate_fare"
         title="Enterprises"
@@ -149,7 +149,7 @@
       >
       </app-benefit-card>
       <app-benefit-card
-        class="flex-none w-[420px]"
+        class="flex-none w-[700px]"
         index="03"
         icon="volunteer_activism"
         title="Nonprofits"
@@ -160,7 +160,7 @@
       >
       </app-benefit-card>
       <app-benefit-card
-        class="flex-none w-[420px]"
+        class="flex-none w-[700px]"
         index="04"
         icon="storefront"
         title="SMEs"
@@ -172,26 +172,4 @@
       </app-benefit-card>
     </div>
   </app-horizontal-scroll-section>
-
-  <section class="px-8 py-40">
-    <div class="max-w-7xl mx-auto text-center">
-      <h2 class="text-5xl md:text-8xl font-medium mb-16 tracking-tight">
-        Ready to build something great?
-      </h2>
-      <div class="flex flex-col sm:flex-row gap-8 justify-center items-center">
-        <a
-          routerLink="/contact"
-          class="bg-primary text-white px-12 py-5 rounded-full font-medium hover:bg-opacity-90 transition-all text-lg"
-        >
-          Get in Touch
-        </a>
-        <a
-          routerLink="/services/ai-and-machine-learning"
-          class="text-primary px-12 py-5 rounded-full font-medium border border-black/10 hover:bg-black/5 transition-all text-lg"
-        >
-          Explore AI Training
-        </a>
-      </div>
-    </div>
-  </section>
 </main>
