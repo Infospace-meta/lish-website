@@ -119,9 +119,9 @@ import { CommonModule } from '@angular/common';
     </div>
 
     @if (activeMenu) {
-      <div class="fixed inset-0 z-30 bg-black/5" (click)="closeMenu()"></div>
+      <div class="fixed inset-0 z-30 " (click)="closeMenu()"></div>
       <div
-        class="hidden lg:block absolute left-1/2 -translate-x-1/2 w-[90%] max-w-5xl bg-white rounded-[2rem] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] border border-neutral-100 animate-mega-in z-40"
+        class="hidden lg:block absolute xl:left-1/2 xl:-translate-x-1/2 md:left-1/2 md:-translate-x-1/2 xl:w-[45%] w-[70%] bg-white shadow-xl rounded-xl border border-neutral-100 animate-mega-in z-40"
       >
         <div class="p-10">
           @if (activeMenu === 'impact') {
