@@ -123,8 +123,8 @@ export class AppHeader {
       id: 'services',
       label: 'services',
       children: [
-        { label: 'BPO Services', link: 'services/data-annotation', description: 'Precision Data Processing & Data Annotation' },
-        { label: 'Software Dev', link: 'services/design-and-development', description: 'Tech & Software Development Solutions' },
+        { label: 'BPO Services', link: 'services/bpo-services', description: 'Precision Data Processing & Data Annotation' },
+        { label: 'Software Dev', link: 'services/tech-services', description: 'Tech & Software Development Solutions' },
       ]
     },
     {
@@ -168,3 +168,4 @@ export class AppHeader {
     this.mobileSub = null;
   }
 }
+
