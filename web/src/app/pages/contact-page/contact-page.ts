@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ContactDetails } from '../../components/ContactPage/contact-details/contact-details';
+import { ContactDetails } from '../../components/contact-details/contact-details';
 import { CtaPartnerCard } from '../../components/cta-partner-card/cta-partner-card';
 
 @Component({
