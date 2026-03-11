@@ -125,7 +125,7 @@ import { CommonModule } from '@angular/common';
       >
         <div class="p-10">
           @if (activeMenu === 'impact') {
-            <div class="grid grid-cols-3 gap-6">
+            <div class="grid grid-cols-2 gap-6">
               <a
                 routerLink="partner"
                 (click)="closeEverything()"
@@ -156,27 +156,11 @@ import { CommonModule } from '@angular/common';
                   Real Results, Real Impact
                 </p>
               </a>
-              <a
-                routerLink="programs"
-                (click)="closeEverything()"
-                class="p-4 rounded-xl hover:bg-neutral-50 transition-all group"
-              >
-                <h4
-                  class="font-bold text-lg group-hover:text-accent transition-colors"
-                >
-                  Programs & Initiatives
-                </h4>
-                <p
-                  class="text-sm text-accent group-hover:text-primary font-semibold leading-relaxed"
-                >
-                  Targeted Programs
-                </p>
-              </a>
             </div>
           }
 
           @if (activeMenu === 'services') {
-            <div class="grid grid-cols-3 gap-6">
+            <div class="grid grid-cols-2 gap-6">
               <a
                 routerLink="services/data-annotation"
                 (click)="closeEverything()"
@@ -209,27 +193,11 @@ import { CommonModule } from '@angular/common';
                   Tech & Software Development Solutions
                 </p>
               </a>
-              <a
-                routerLink="services/skill-building-programs"
-                (click)="closeEverything()"
-                class="p-4 rounded-xl hover:bg-neutral-50 transition-all group"
-              >
-                <h4
-                  class="font-bold text-lg group-hover:text-accent transition-colors"
-                >
-                  Upskilling
-                </h4>
-                <p
-                  class="text-sm text-accent group-hover:text-primary font-semibold leading-relaxed"
-                >
-                  Comprehensive Training & Skill-building
-                </p>
-              </a>
             </div>
           }
 
           @if (activeMenu === 'company') {
-            <div class="grid grid-cols-4 gap-4">
+            <div class="grid grid-cols-2 gap-4">
               <a
                 routerLink="about"
                 (click)="closeEverything()"
@@ -246,30 +214,6 @@ import { CommonModule } from '@angular/common';
                   What Drives Us
                 </p>
               </a>
-              <a
-                routerLink="about_us"
-                (click)="closeEverything()"
-                class="p-4 rounded-xl hover:bg-neutral-50 transition-all group"
-              >
-                <h4
-                  class="font-bold text-lg group-hover:text-accent transition-colors"
-                >
-                  Our Team
-                </h4>
-                <p
-                  class="text-sm text-accent group-hover:text-primary font-semibold"
-                >
-                  Meet The Experts
-                </p>
-              </a>
-              <div class="p-4 rounded-xl opacity-50">
-                <h4 class="font-bold text-lg">Careers</h4>
-                <p
-                  class="text-sm text-accent group-hover:text-primary font-semibold"
-                >
-                  Grow With Us
-                </p>
-              </div>
               <a
                 routerLink="contact"
                 (click)="closeEverything()"
