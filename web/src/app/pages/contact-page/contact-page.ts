@@ -1,15 +1,13 @@
 import { Component } from '@angular/core';
 import { ContactDetails } from '../../components/ContactPage/contact-details/contact-details';
-import { CtaCareerCard } from '../../components/cta-career-card/cta-career-card';
-import { PartnerTestimonials } from "../../components/ImpactPage/partner-testimonials/partner-testimonials";
+import { CtaPartnerCard } from '../../components/cta-partner-card/cta-partner-card';
 
 @Component({
   selector: 'app-contact-page',
-  imports: [ContactDetails, CtaCareerCard, PartnerTestimonials],
+  imports: [ContactDetails, CtaPartnerCard],
   template: `
     <contact-details />
-    <cta-career-card />
-    <!-- <partner-testimonials /> -->
+    <cta-partner-card />
   `,
 })
 export class ContactPage {}
