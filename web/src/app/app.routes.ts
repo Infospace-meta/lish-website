@@ -12,7 +12,7 @@ import { OurFacilityPage } from './pages/our-facility-page/our-facility-page';
 import { ProgramsPage } from './pages/programs-page/programs-page';
 import { BpoServicesPage } from './pages/bpo-services-page/bpo-services-page';
 import { WrapperComponent } from './layouts/wrapper.component';
-import { AppLayoutComponent } from './layouts/app.component';
+import { AppLayoutComponent } from './layouts/app-layout.component';
 
 /** Old Pages */
 import { TrainingComponent } from './pages/training/training.component';
