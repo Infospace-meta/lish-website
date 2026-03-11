@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
       class="grid grid-cols-1 md:grid-cols-2 gap-20 mx-auto max-w-7xl px-5 md:py-14 py-8 min-h-[75vh] items-center"
     >
       <div class="flex flex-col space-y-10">
-        <h3 class="text-complement">Contact</h3>
+        <h5 class="text-complement">Contact</h5>
         <h2
           class="md:text-[48px] text-[36px] md:leading-12 leading-9 tracking-tight"
         >
