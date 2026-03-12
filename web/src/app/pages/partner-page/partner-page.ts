@@ -13,8 +13,6 @@ import { CtaPartnerCard } from "../../components/cta-partner-card/cta-partner-ca
   imports: [
     RouterLink,
     OfferCardComponent,
-    BenefitCardComponent,
-    HorizontalScrollSectionComponent,
     ScrollRevealDirective,
     TestimonialCarouselComponent,
   ],

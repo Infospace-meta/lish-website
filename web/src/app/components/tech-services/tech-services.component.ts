@@ -7,7 +7,7 @@ import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal';
 
 @Component({
   selector: 'tech-services',
-  imports: [RouterLink, OfferCardComponent, BenefitCardComponent, HorizontalScrollSectionComponent, ScrollRevealDirective],
+  imports: [OfferCardComponent, BenefitCardComponent, HorizontalScrollSectionComponent, ScrollRevealDirective],
   templateUrl: './tech-services.component.html',
   styleUrl: './tech-services.component.scss',
 })
