@@ -1,0 +1,79 @@
+[
+  {
+    "slug": "oriane-rainero",
+    "name": "Oriane Rainero",
+    "role": "Strategic Designer – Product & User Experience",
+    "image": "placeholder.png",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "socials": {
+      "linkedin": "https://linkedin.com/in/oriane-rainero",
+      "github": ""
+    },
+    "qualifications": ["UX/UI Design", "Product Strategy", "User Research"]
+  },
+  {
+    "slug": "melisande-cyr-charron",
+    "name": "Mélisande Cyr-Charron",
+    "role": "Data valorization consultant",
+    "image": "placeholder.png",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "socials": {
+      "linkedin": "https://linkedin.com/in/melisande-cyr-charron",
+      "github": ""
+    },
+    "qualifications": ["Data Analysis", "Business Intelligence", "Data Visualization"]
+  },
+  {
+    "slug": "jasmine-duplessis",
+    "name": "Jasmine Duplessis",
+    "role": "Data valorization consultant",
+    "image": "placeholder.png",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    
+    "socials": {
+      "linkedin": "https://linkedin.com/in/jasmine-duplessis",
+      "github": ""
+    },
+    "qualifications": ["Data Engineering", "Machine Learning"]
+  },
+  {
+    "slug": "penelope-gelinas-lemire",
+    "name": "Pénelope Gélinas-Lemire",
+    "role": "Data valorization consultant",
+    "image": "/ourTeam/teamPics/pic.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "socials": {
+      "linkedin": "https://linkedin.com/in/penelope-gelinas-lemire",
+      "github": "https://github.com/penelope-gelinas-lemire",
+      "X": "https://x.com/penelope-gelinas-lemire",
+      "personalWebsite": "https://penelope-gelinas-lemire.com",
+      "instagram": "https://instagram.com/penelope-gelinas-lemire",
+      "facebook": "https://facebook.com/penelope-gelinas-lemire"
+    },
+    "qualifications": []
+  },
+  {
+    "slug": "marilene-jacques",
+    "name": "Marilène Jacques",
+    "role": "Head of Talent & Culture",
+    "image": "placeholder.png",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "socials": {
+      "linkedin": "https://linkedin.com/in/marilene-jacques",
+      "github": ""
+    },
+    "qualifications": ["Human Resources", "Talent Acquisition"]
+  },
+  {
+    "slug": "mathieu-leblanc",
+    "name": "Mathieu Leblanc",
+    "role": "VP Growth",
+    "image": "placeholder.png",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "socials": {
+      "linkedin": "https://linkedin.com/in/mathieu-leblanc",
+      "github": ""
+    },
+    "qualifications": ["Business Development", "Growth Strategy", "Sales"]
+  }
+]

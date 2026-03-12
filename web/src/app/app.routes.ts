@@ -1,67 +1,77 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { AboutUsComponent } from './pages/about-us/about-us.component';
-import { ContactComponent } from './pages/contact/contact.component';
-import { BlogComponent } from './pages/blog/blog.component';
-import { December2022Component } from './pages/blogpages/december2022/december2022.component';
-import { August2023Component } from './pages/blogpages/august2023/august2023.component';
-import { September2023Component } from './pages/blogpages/september2023/september2023.component';
-import { PartnershipComponent } from './pages/partnership/partnership.component';
+/** New Revamp Pages */
+import { HomePage } from './pages/home-page/home-page';
+import { ContactPage } from './pages/contact-page/contact-page';
+import { PartnerPage } from './pages/partner-page/partner-page';
+import { CareerPage } from './pages/career-page/career-page';
+import { AboutPage } from './pages/about-page/about-page';
+import { SuccessPage } from './pages/success-page/success-page';
+import { TechServicesPage } from './pages/tech-services-page/tech-services-page';
+import { UpskillingServicesPage } from './pages/upskilling-services-page/upskilling-services-page';
+import { OurFacilityPage } from './pages/our-facility-page/our-facility-page';
+import { ProgramsPage } from './pages/programs-page/programs-page';
+import { BpoServicesPage } from './pages/bpo-services-page/bpo-services-page';
+import { WrapperComponent } from './layouts/wrapper.component';
+import { AppLayoutComponent } from './layouts/app-layout.component';
+
+/** Old Pages */
 import { TrainingComponent } from './pages/training/training.component';
+import { AiAndMachineLearningComponent } from './pages/main/ourservices/ai-and-machine-learning/ai-and-machine-learning.component';
+import { DataAnnotationComponent } from './pages/main/ourservices/data-annotation/data-annotation.component';
+import { DesignAndDevelopmentComponent } from './pages/main/ourservices/design-and-development/design-and-development.component';
+import { EmploymentPlacementComponent } from './pages/main/ourservices/employment-placement/employment-placement.component';
+import { SkillBuildingProgramsComponent } from './pages/main/ourservices/skill-building-programs/skill-building-programs.component';
+
+/** Tech Layout Pages */
+import { TechLayoutComponent } from './layouts/tech-layout.component';
+import { TechLandingPage } from './pages/tech/tech-landing-page/tech-landing-page';
+import { TeamPage } from './pages/tech/team/team-page';
+// import { About_Page } from './pages/about-page/about-page';
+import { DevsPage } from './pages/tech/devs/devs-page';
 
 export const routes: Routes = [
+  /**1. STANDARD ROUTES (Main Layout) */
   {
-    path: 'home',
-    component: HomeComponent,
-  },
-  {
-    path: 'about_us',
-    component: AboutUsComponent,
-  },
-  {
-    path: 'contact',
-    component: ContactComponent,
-  },
-  {
-    path: 'blog',
-    component: BlogComponent,
-  },
-  {
-    path: 'blog/december2022',
-    component: December2022Component,
-  },
-  {
-    path: 'blog/august2023',
-    component: August2023Component,
-  },
-  {
-    path: 'blog/september2023',
-    component: September2023Component,
+    path: '',
+    component: AppLayoutComponent,
+    children: [
+      /** New Revamp Pages */
+      { path: 'home', component: HomePage },
+      { path: 'about', component: AboutPage },
+      { path: 'contact', component: ContactPage },
+      { path: 'partner', component: PartnerPage },
+      { path: 'career', component: CareerPage },
+      { path: 'success', component: SuccessPage },
+      { path: 'our-facility', component: OurFacilityPage },
+      { path: 'programs', component: ProgramsPage },
+
+      /** Old Pages */
+      { path: 'training', component: TrainingComponent },
+      {
+        path: 'services',
+        component: WrapperComponent,
+        children: [
+          { path: 'tech-services', component: TechServicesPage },
+          { path: 'upskilling-services', component: UpskillingServicesPage },
+          { path: 'bpo-services', component: BpoServicesPage },
+        ],
+      },
+
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+    ],
   },
 
+  /**2. TECH ROUTES (Tech Layout) */
   {
-    path: 'partnership',
-    component: PartnershipComponent,
+    path: 'tech',
+    component: TechLayoutComponent,
+    children: [
+      { path: '', component: TechLandingPage },
+      { path: 'team', component: TeamPage },
+      { path: 'team/:slug', component: DevsPage },
+    ],
   },
-  {
-    path: 'training',
-    component: TrainingComponent,
-  },
-  {
-    path: 'training',
-    component: TrainingComponent,
-  },
-  // {
-  //   path: 'about_us',
-  //   component: AboutUsComponent,
-  // },
-  {
-    path: 'blog',
-    component: BlogComponent,
-  },
-  {
-    path: 'partnership',
-    component: PartnershipComponent,
-  },
-  { path: '**', redirectTo: 'home' } /**Add 404 page */,
+
+  /**3. WILDCARD (Outside of layouts or inside Main) */
+  { path: '**', redirectTo: 'home' },
 ];

@@ -1,2 +1,321 @@
-/* You can add global styles to this file, and also import other style files */
 @use "tailwindcss";
+
+@theme {
+  --color-primary: #1a1a1a;
+  --color-secondary: #e5e5e5;
+  --color-accent: #002583;
+  --color-complement: #ffa311;
+  --color-background: #f9f8f6;
+  --color-soft-grey: #f2f2f2;
+  --color-warm-bg: #f9f8f6;
+  // --color-accent: #0047AB;
+
+  --color-text-muted: #737373;
+
+  --radius-4xl: 2.5rem;
+  --radius-5xl: 3.5rem;
+
+  --font-serif: "Playfair Display", "Times New Roman", serif;
+  --font-poppins: "Poppins", "Inter", sans-serif;
+  --animate-mega-in: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@layer base {
+  body {
+    @apply bg-warm-bg text-primary antialiased font-poppins;
+  }
+}
+
+/* Material Icons Optimization */
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 20;
+  display: inline-block;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+/* --- Scroll Reveal Trigger Mechanism --- */
+.reveal-text {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: none;
+}
+
+/* Animations trigger via the appScrollReveal Directive */
+.active {
+  .reveal-text {
+    animation: fadeInUp 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered Delay Intervals */
+.delay-1 {
+  animation-delay: 0.1s !important;
+}
+.delay-2 {
+  animation-delay: 0.2s !important;
+}
+.delay-3 {
+  animation-delay: 0.3s !important;
+}
+.delay-4 {
+  animation-delay: 0.4s !important;
+}
+.delay-5 {
+  animation-delay: 0.5s !important;
+}
+.delay-6 {
+  animation-delay: 0.6s !important;
+}
+.delay-7 {
+  animation-delay: 1s !important;
+}
+
+/* --- Continuous Never-Ending Partner Scroll --- */
+@keyframes snappyVerticalScroll {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-60px);
+  }
+  45% {
+    transform: translateY(-60px);
+  }
+  50% {
+    transform: translateY(-120px);
+  }
+  70% {
+    transform: translateY(-120px);
+  }
+  75% {
+    transform: translateY(-180px);
+  }
+  95% {
+    transform: translateY(-180px);
+  }
+  100% {
+    transform: translateY(-240px);
+  }
+}
+
+.partner-scroll-container {
+  position: relative;
+  // Height adjusts: 45px on mobile, 60px on desktop
+  height: 45px; 
+  @screen sm {
+    height: 64px;
+  }
+  
+  overflow: hidden;
+ mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+}
+
+.partner-scroll-wrapper {
+  display: flex;
+  flex-direction: column;
+  animation: continuousVerticalLoop 16s cubic-bezier(0.85, 0, 0.15, 1) infinite;
+}
+
+.partner-batch {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2.5rem;
+  height: 45px;
+  flex-shrink: 0;
+
+  @screen sm {
+    gap: 5rem; 
+    height: 64px;
+  }
+}
+
+.partner-logo-bold {
+  height: 26px;
+  @screen sm {
+    height: 34px;
+  }
+  width: auto;
+  max-width: 120px;
+  @screen lg {
+    max-width: 160px;
+  }
+  object-fit: contain;
+  opacity: 0.8; 
+  transition: opacity 0.3s ease;
+  
+  &:hover {
+    opacity: 1;
+  }
+}
+
+@keyframes continuousVerticalLoop {
+  0%, 20% { transform: translateY(0); }
+  25%, 45% { transform: translateY(-45px); }
+  50%, 70% { transform: translateY(-90px); }
+  75%, 95% { transform: translateY(-135px); }
+  100% { transform: translateY(-180px); }
+}
+
+@media (min-width: 640px) {
+  @keyframes continuousVerticalLoop {
+    0%, 20% { transform: translateY(0); }
+    25%, 45% { transform: translateY(-64px); }
+    50%, 70% { transform: translateY(-128px); }
+    75%, 95% { transform: translateY(-192px); }
+    100% { transform: translateY(-256px); }
+  }
+}
+
+@media (min-width: 640px) {
+  @keyframes responsiveSnappyScroll {
+    0%, 20% { transform: translateY(0); }
+    25%, 45% { transform: translateY(-60px); } 
+    50%, 70% { transform: translateY(-120px); }
+    75%, 95% { transform: translateY(-180px); }
+    100% { transform: translateY(-240px); }
+  }
+}
+
+@keyframes logoPopIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.partner-logo-bold:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.partner-logo-bold:nth-child(2) {
+  animation-delay: 0.25s;
+}
+.partner-logo-bold:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.partner-logo-bold:nth-child(4) {
+  animation-delay: 0.55s;
+}
+
+/* --- Motion & Transitions --- */
+.transition-all {
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* --- Core Engine Pulse Effects --- */
+@keyframes pulseSubtle {
+  0% {
+    transform: scale(1);
+    opacity: 0.03;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.06;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.03;
+  }
+}
+
+.animate-pulse {
+  animation: pulseSubtle 4s ease-in-out infinite;
+}
+
+/* --- Client Grid Design --- */
+.partner-card-grid-item {
+  @apply bg-soft-grey aspect-[4/3] rounded-sm flex items-center justify-center p-8 transition-all duration-500;
+  mix-blend-mode: multiply;
+}
+
+.partner-card-grid-item:hover {
+  @apply bg-white shadow-2xl scale-[1.03] z-10;
+  mix-blend-mode: normal;
+}
+
+.rounded-sm {
+  border-radius: 4px;
+}
+
+.mix-blend-luminosity {
+  mix-blend-mode: luminosity;
+  @apply grayscale hover:grayscale-0 transition-all duration-700;
+}
+
+@layer base {
+  p {
+    @apply md:text-lg text-text-muted leading-relaxed;
+  }
+  h1 {
+    @apply text-3xl md:text-6xl font-medium tracking-tight leading-[1.1];
+  }
+  h2 {
+    @apply text-2xl md:text-4xl lg:text-5xl font-semibold md:leading-[1.2];
+  }
+  h3 {
+    @apply text-xl md:text-[32px] font-semibold md:leading-[1.1];
+  }
+  h4 {
+    @apply text-[16px] tracking-wide text-neutral-700;
+  }
+  h5 {
+    @apply text-[14px];
+  }
+}
+
+.heading-tight {
+  line-height: 0.95 !important;
+  letter-spacing: -0.02em !important;
+}
+
+// Fluid rounding for the Ecosystem container
+.rounded-5xl-responsive {
+  @apply rounded-[2rem] sm:rounded-[3.5rem];
+}
+
+// Ensure underline is consistent with screenshot branding
+.underline-lish {
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+  @apply decoration-accent;
+}
+
+// Prevents images from having too much whitespace on mobile
+.mobile-gap-tight {
+  @apply gap-8 sm:gap-16 lg:gap-24;
+}
+
+
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

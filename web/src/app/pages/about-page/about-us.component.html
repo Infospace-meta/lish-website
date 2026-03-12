@@ -1,0 +1,16 @@
+<main class="pt-6 font-poppins bg-warm-bg">
+  <app-about-hero
+    [partners]="partners"
+    [carouselImages]="carouselImages"
+    [currentIndex]="currentIndex"
+    (slideChanged)="onSlideChange($event)"
+    (timerReset)="resetTimer()"
+  >
+  </app-about-hero>
+  <app-about-ecosystem></app-about-ecosystem>
+  <app-about-value></app-about-value>
+  <app-about-network [partners]="partners"></app-about-network>
+  <app-framework-section></app-framework-section>
+  <app-team-section></app-team-section>
+  <app-roadmap-section></app-roadmap-section>
+</main>

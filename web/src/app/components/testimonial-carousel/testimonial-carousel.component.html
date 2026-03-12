@@ -1,0 +1,60 @@
+<section class="py-24 bg-warm-bg overflow-hidden">
+  <!-- Heading -->
+  <div class="max-w-3xl mx-auto px-8 text-center mb-16">
+    <h2 class="">
+      Our partners' success is our satisfaction
+    </h2>
+  </div>
+
+  <!-- Carousel track -->
+  <div
+    class="relative [mask-image:linear-gradient(to_right,transparent_0,white_140px,white_calc(100%-140px),transparent_100%)]"
+  >
+    <div
+      class="flex gap-6 will-change-transform"
+      [class.transition-transform]="!isResetting"
+      [class.duration-700]="!isResetting"
+      [class.ease-in-out]="!isResetting"
+      [style.transform]="trackTransform"
+    >
+      @for (t of doubledTestimonials; track $index) {
+        <div
+          class="testimonial-card flex-none w-[440px] bg-white rounded-2xl border border-black/5 p-10 flex flex-col justify-between"
+          style="min-height: 300px"
+        >
+          <p class="text-gray-700 text-base leading-relaxed flex-1">
+            {{ t.quote }}
+          </p>
+
+          <div
+            class="flex items-center gap-4 mt-8 pt-7 border-t border-black/6"
+          >
+            @if (t.logoUrl) {
+              <img
+                [src]="t.logoUrl"
+                [alt]="t.logoAlt"
+                class="max-h-10 max-w-[90px] object-contain flex-shrink-0"
+              />
+            }
+            <div>
+              <p class="">{{ t.name }}</p>
+              <h5 class="text-accent">{{ t.role }}</h5>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- Pagination dots -->
+  <!-- <div class="flex items-center justify-center gap-3 mt-12">
+    @for (t of testimonials; track t.name; let i = $index) {
+      <button
+        (click)="goTo(i)"
+        class="h-2 rounded-full transition-all duration-300 focus:outline-none"
+        [class]="i === activeIndex ? 'w-8 bg-accent' : 'w-4 bg-gray-800'"
+        [attr.aria-label]="'Go to testimonial ' + (i + 1)"
+      ></button>
+    }
+  </div> -->
+</section>

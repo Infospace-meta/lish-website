@@ -1,0 +1,162 @@
+<main class="pt-16 bg-warm-bg">
+  <!-- Hero -->
+  <section appScrollReveal class="font-poppins px-8 py-16">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row gap-16 items-end">
+        <div class="flex-1 space-y-5">
+          <h5 class="text-complement">Data Services</h5>
+          <h2 class="">
+            Data Processing &
+            <span class="text-accent">Annotation Services.</span>
+          </h2>
+        </div>
+        <div class="flex-1">
+          <p class="">
+            At Lish AI, we offer comprehensive data processing and annotation
+            services to meet the diverse needs of corporates, parastatals,
+            government agencies, and NGOs — helping organizations leverage the
+            power of data to drive insights and unlock new opportunities.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Offer -->
+  <section class="px-8 py-32 bg-warm-bg">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row gap-20 items-start">
+        <!-- LEFT — Sticky Panel -->
+
+        <div
+          class="md:w-5/12 md:sticky md:top-0 md:self-start md:h-[60vh] flex flex-col justify-center space-y-10"
+        >
+          <h5 class="text-complement">Our services</h5>
+          <h2 class="">What We Offer</h2>
+          <p class="">
+            From raw data processing to precision annotation, our services are
+            designed to power your machine learning pipelines and business
+            intelligence workflows.
+          </p>
+        </div>
+
+        <!-- RIGHT — Scrollable Cards -->
+        <div class="md:w-7/12 flex flex-col gap-6">
+          <app-offer-card
+            index="01"
+            icon="database"
+            title="Data Processing"
+            imageUrl="https://res.cloudinary.com/dpfcle0os/image/upload/v1706975520/samples/Lish-website/aboutlish_mc39qx.jpg"
+            imageAlt="Data Processing"
+            description="Our team specializes in processing large volumes of data efficiently and accurately. Whether structured or unstructured, we handle various data types and formats, ensuring your data is organized, cleaned, and prepared for analysis or ML applications."
+          >
+          </app-offer-card>
+          <app-offer-card
+            index="02"
+            icon="label"
+            title="Data Annotation &amp; Labeling"
+            imageUrl="https://res.cloudinary.com/dpfcle0os/image/upload/v1772716340/samples/Lish-website/IMG_5050_qkexrb.jpg"
+            imageAlt="Data Annotation and Labeling"
+            description="We provide high-quality annotation and labeling services — from image and video annotation to text and speech labeling — using advanced tools for precision, consistency, and reliability."
+          >
+          </app-offer-card>
+          <app-offer-card
+            index="03"
+            icon="tune"
+            title="Custom Solutions"
+            imageUrl="https://res.cloudinary.com/dpfcle0os/image/upload/v1772716374/samples/Lish-website/IMG_5217_jy2b5d.jpg"
+            imageAlt="Custom Solutions"
+            description="We offer customized solutions tailored to your specific needs — whether for training ML models or business analytics — designed to achieve your unique goals."
+          >
+          </app-offer-card>
+          <app-offer-card
+            index="04"
+            icon="verified_user"
+            title="Quality Assurance"
+            imageUrl="https://res.cloudinary.com/dpfcle0os/image/upload/v1772716046/samples/Lish-website/IMG_4945_mizqkg.jpg"
+            imageAlt="Quality Assurance"
+            description="We have stringent QA processes to ensure every piece of data meets your standards. Our rigorous quality control measures guarantee accuracy, consistency, and integrity from start to finish."
+          >
+          </app-offer-card>
+          <app-offer-card
+            index="05"
+            icon="open_in_full"
+            title="Scalability"
+            imageUrl="https://res.cloudinary.com/dpfcle0os/image/upload/v1772716390/samples/Lish-website/IMG_5145_waietl.jpg"
+            imageAlt="Scalability"
+            description="Our flexible approach scales up or down quickly to meet changing demands and deadlines — ensuring you always have the capacity you need, whether for a pilot project or enterprise rollout."
+          >
+          </app-offer-card>
+          <app-offer-card
+            index="06"
+            icon="lock"
+            title="Data Security &amp; Confidentiality"
+            imageUrl="https://res.cloudinary.com/dpfcle0os/image/upload/v1772716374/samples/Lish-website/IMG_5217_jy2b5d.jpg"
+            imageAlt="Data Security"
+            description="We take every precaution to protect your sensitive information and ensure compliance with data protection regulations — handling your data with the utmost care and confidentiality."
+          >
+          </app-offer-card>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who We Serve -->
+  <app-horizontal-scroll-section>
+    <div slot="heading" class="text-center space-y-4">
+      <h5 class="text-complement">Who It's For</h5>
+      <h2 class="">Who We Serve</h2>
+      <p class="">
+        Our data services are designed for organizations of all sizes and
+        sectors that rely on high-quality data.
+      </p>
+    </div>
+
+    <div slot="cards" class="contents">
+      <app-benefit-card
+        class="flex-none w-[700px]"
+        index="01"
+        icon="business"
+        title="Corporates"
+        imageUrl="https://res.cloudinary.com/dpfcle0os/image/upload/v1772716390/samples/Lish-website/IMG_5145_waietl.jpg"
+        imageAlt="Corporates"
+        [delay]="0"
+        description="Enterprises building ML models and analytics platforms that require clean, well-labelled datasets at scale."
+      >
+      </app-benefit-card>
+      <app-benefit-card
+        class="flex-none w-[700px]"
+        index="02"
+        icon="account_balance"
+        title="Government Agencies"
+        imageUrl="https://res.cloudinary.com/dpfcle0os/image/upload/v1772716340/samples/Lish-website/IMG_5050_qkexrb.jpg"
+        imageAlt="Government Agencies"
+        [delay]="0"
+        description="Parastatals and government bodies requiring reliable data processing for policy analysis and public sector initiatives."
+      >
+      </app-benefit-card>
+      <app-benefit-card
+        class="flex-none w-[700px]"
+        index="03"
+        icon="volunteer_activism"
+        title="NGOs"
+        imageUrl="https://res.cloudinary.com/dpfcle0os/image/upload/v1772716046/samples/Lish-website/IMG_4945_mizqkg.jpg"
+        imageAlt="NGOs"
+        [delay]="0"
+        description="Non-governmental organizations needing cost-effective data services to support humanitarian research and community programs."
+      >
+      </app-benefit-card>
+      <app-benefit-card
+        class="flex-none w-[700px]"
+        index="04"
+        icon="rocket_launch"
+        title="AI Startups"
+        imageUrl="https://res.cloudinary.com/dpfcle0os/image/upload/v1706975520/samples/Lish-website/aboutlish_mc39qx.jpg"
+        imageAlt="AI Startups"
+        [delay]="0"
+        description="Innovative startups building AI products who need rapid, accurate data labeling to train and validate models faster without compromising quality."
+      >
+      </app-benefit-card>
+    </div>
+  </app-horizontal-scroll-section>
+</main>
