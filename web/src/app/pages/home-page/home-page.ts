@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { CtaPartnerCard } from '../../components/cta-partner-card/cta-partner-card';
 import { HomeHeroComponent } from '../../components/home-page/home-hero/home-hero';
 
 @Component({
   selector: 'app-home-page',
-  imports: [CtaPartnerCard, HomeHeroComponent],
+  standalone: true,
+  imports: [CommonModule, CtaPartnerCard, HomeHeroComponent],
   template: `
     <app-home-hero [partners]="partners" />
     <cta-partner-card />
