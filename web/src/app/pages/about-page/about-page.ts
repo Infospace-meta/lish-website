@@ -8,6 +8,7 @@ import { AboutEcosystemComponent } from '../../components/about-page/about-ecosy
 import { AboutValueComponent } from '../../components/about-page/about-value/about-value';
 import { AboutNetworkComponent } from '../../components/about-page/about-network/about-network';
 import { FrameworkSectionComponent } from '../../components/about-page/framework-section/framework-section.component';
+import { AboutFoundationsComponent } from '../../components/about-page/about-foundations/about-foundations';
 
 // Shared Layout Components
 import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal';
@@ -20,6 +21,7 @@ import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal';
     RouterModule,
     AboutHeroComponent,
     AboutEcosystemComponent,
+    AboutFoundationsComponent,
     AboutValueComponent,
     AboutNetworkComponent,
     FrameworkSectionComponent,
