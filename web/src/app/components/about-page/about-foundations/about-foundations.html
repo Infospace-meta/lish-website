@@ -1,28 +1,31 @@
 <section
   appScrollReveal
-  class="py-20 sm:py-32 bg-white border-t border-black/5 overflow-hidden"
+  class="py-16 sm:py-24 lg:py-32 bg-white border-t border-black/5 overflow-hidden"
 >
   <div class="max-w-7xl mx-auto px-6 sm:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20 items-end">
+    <div
+      class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 mb-16 sm:mb-20 items-end"
+    >
       <div class="reveal-text delay-1">
         <span
-          class="inline-block text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.25em] text-accent mb-6"
-          >Foundations</span
+          class="inline-block text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.25em] text-accent mb-4 sm:mb-6"
         >
+          Foundations
+        </span>
         <h2
-          class="text-4xl sm:text-5xl lg:text-6xl font-medium leading-[0.95] tracking-tight text-primary"
+          class="text-3xl sm:text-5xl lg:text-6xl font-medium leading-[1.1] lg:leading-[0.95] tracking-tight text-primary"
         >
-          Built on a <br />
+          Built on a <br class="hidden sm:block" />
           <span
-            class="text-accent underline decoration-accent underline-offset-8"
-            >purpose-driven</span
+            class="text-accent underline decoration-accent underline-offset-4 sm:underline-offset-8"
+            >purpose driven</span
           >
           core.
         </h2>
       </div>
       <div class="reveal-text delay-2">
         <p
-          class="text-text-muted text-lg sm:text-xl font-light leading-relaxed max-w-md"
+          class="text-text-muted text-base sm:text-lg lg:text-xl font-light leading-relaxed max-w-md"
         >
           Lish AI Labs isn't just a workspace; it is a movement designed to
           redefine how the global industry interacts with talent.
@@ -30,43 +33,49 @@
       </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
       <div
         *ngFor="let pillar of pillars; let i = index"
-        class="group relative p-8 sm:p-10 bg-warm-bg rounded-3xl border border-black/[0.03] transition-all duration-700 hover:shadow-2xl hover:-translate-y-2 reveal-text"
+        class="group relative p-8 sm:p-10 bg-warm-bg rounded-[2rem] sm:rounded-3xl border border-black/[0.03] transition-all duration-700 hover:shadow-2xl hover:-translate-y-2 reveal-text"
         [style.animation-delay]="(0.3 + (i * 0.15)) + 's'"
       >
-        <div class="mb-10 flex justify-between items-start">
+        <div class="mb-8 sm:mb-10 flex justify-between items-start">
           <div
-            class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm group-hover:bg-primary group-hover:text-white transition-colors duration-500"
+            class="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-xl sm:rounded-2xl flex items-center justify-center shadow-sm group-hover:bg-primary group-hover:text-white transition-colors duration-500"
           >
-            <span class="material-symbols-outlined text-[24px]"
+            <span class="material-symbols-outlined text-[20px] sm:text-[24px]"
               >{{pillar.icon}}</span
             >
           </div>
           <span
-            class="text-[10px] font-bold uppercase tracking-widest text-primary/30 group-hover:text-accent transition-colors"
-            >0{{i+1}}</span
+            class="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-primary/30 group-hover:text-accent transition-colors"
           >
+            0{{i+1}}
+          </span>
         </div>
 
-        <div class="space-y-4">
+        <div class="space-y-3 sm:space-y-4">
           <span
-            class="text-[11px] font-bold uppercase tracking-[0.2em] text-accent"
-            >{{pillar.label}}</span
+            class="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] text-accent"
           >
-          <h3 class="text-2xl font-medium leading-tight text-primary">
+            {{pillar.label}}
+          </span>
+          <h3
+            class="text-xl sm:text-2xl font-medium leading-tight text-primary"
+          >
             {{pillar.title}}
           </h3>
-          <p class="text-text-muted font-light leading-relaxed">
+          <p
+            class="text-text-muted text-sm sm:text-base font-light leading-relaxed"
+          >
             {{pillar.desc}}
           </p>
         </div>
 
         <div
-          class="absolute bottom-0 right-0 p-4 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity"
+          class="absolute bottom-0 right-0 p-4 opacity-[0.02] group-hover:opacity-[0.08] transition-opacity pointer-events-none"
         >
-          <span class="material-symbols-outlined text-8xl rotate-12"
+          <span class="material-symbols-outlined text-6xl sm:text-8xl rotate-12"
             >architecture</span
           >
         </div>
