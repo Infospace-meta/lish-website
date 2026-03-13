@@ -35,7 +35,7 @@ import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal'
                 ></div>
               </span>
               <br />
-              Through AI.
+              <span class="text-accent">Through AI</span>
             </h1>
 
             <p
