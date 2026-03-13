@@ -1,482 +1,111 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not using latest control flow
+import { CommonModule } from '@angular/common';
+
+interface NavChild {
+  label: string;
+  link: string;
+  description: string;
+}
+
+interface NavItem {
+  id: string;
+  label: string;
+  children: NavChild[];
+}
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [RouterModule, CommonModule],
   template: `
-    <!-- Main Header Wrapper -->
-    <div
-      class="relative max-w-7xl mx-auto flex w-full xl:py-14 justify-between items-center h-16 bg-transparent text-neutral-700 px-4 top-0 left-0 right-0 z-50 max-md:sticky max-md:bg-white"
-    >
+    <!-- Header Container -->
+    <div class="relative max-w-7xl mx-auto flex w-full xl:py-14 justify-between items-center h-16 bg-transparent text-neutral-700 px-4 top-0 left-0 right-0 z-50 max-md:sticky max-md:bg-white">
+      
       <!-- Logo -->
       <div>
         <a routerLink="/home" (click)="closeEverything()">
-          <img
-            src="https://res.cloudinary.com/dpfcle0os/image/upload/v1706977858/samples/Lish-website/lish-logo_jhm8ac.png"
-            class="h-auto lg:w-20 w-16 rounded-sm"
-            alt="Lish Logo"
-          />
+          <img src="https://res.cloudinary.com/dpfcle0os/image/upload/v1706977858/samples/Lish-website/lish-logo_jhm8ac.png"
+               class="h-auto lg:w-20 w-16 rounded-sm" alt="Lish Logo" />
         </a>
       </div>
 
-      <!-- DESKTOP NAVIGATION (Hidden on mobile) -->
-      <nav
-        class="hidden lg:flex space-x-6 rounded-full px-4 py-2 bg-neutral-200/60 relative"
-      >
-        <!-- Services Trigger -->
-        <div
-          (click)="toggleMenu('services')"
-          [ngClass]="
-            activeMenu === 'services'
-              ? 'bg-white text-accent shadow-sm'
-              : 'text-neutral-600 hover:text-accent'
-          "
-          class="px-4 py-1 cursor-pointer text-neutral-600 rounded-full hover:text-accent font-semibold transition-colors"
-        >
-          Services
-        </div>
-
-        <!-- Impact Trigger -->
-        <div
-          (click)="toggleMenu('impact')"
-          [ngClass]="
-            activeMenu === 'impact'
-              ? 'bg-white text-accent shadow-sm'
-              : 'text-neutral-600 hover:text-accent'
-          "
-          class="px-4 py-1 cursor-pointer text-neutral-600 rounded-full hover:text-accent font-semibold transition-colors"
-        >
-          Impact
-        </div>
-
-        <!-- Company Trigger -->
-        <div
-          (click)="toggleMenu('company')"
-          [ngClass]="
-            activeMenu === 'company'
-              ? 'bg-white text-accent shadow-sm'
-              : 'text-neutral-600 hover:text-accent'
-          "
-          class="px-4 py-1 cursor-pointer text-neutral-600 rounded-full hover:text-accent font-semibold transition-colors"
-        >
-          Company
-        </div>
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center bg-neutral-200/60 rounded-full px-1 py-1 relative shadow-sm">
+        @for (item of navConfig; track item.id) {
+          <div (click)="toggleMenu(item.id)"
+               [ngClass]="activeMenu === item.id ? 'bg-accent text-white shadow-lg scale-105' : 'text-neutral-600 hover:text-accent'"
+               class="px-5 py-2 cursor-pointer rounded-full font-semibold transition-all duration-500 flex items-center gap-1 group">
+            <span>{{ item.label }}</span>
+            <span class="material-symbols-outlined text-[18px] transition-transform duration-300"
+                  [ngClass]="{ 'rotate-180': activeMenu === item.id }">expand_more</span>
+          </div>
+        }
       </nav>
 
-      <!-- Right Side Actions -->
+      <!-- Right Actions -->
       <div class="flex items-center space-x-4 p-1">
-        <a
-          routerLink="/contact"
-          (click)="closeEverything()"
-          class="hidden md:block px-4 py-2 bg-accent text-neutral-100 rounded-full hover:bg-complement transition-colors font-semibold"
-        >
+        <a routerLink="/contact" (click)="closeEverything()"
+           class="hidden md:block px-6 py-2.5 bg-accent text-neutral-100 rounded-full hover:bg-complement transition-all duration-300 font-semibold shadow-lg hover:shadow-accent/20">
           Contact Us
         </a>
 
-        <!-- Mobile Toggle Button -->
-        <button
-          (click)="toggleMobileMenu()"
-          type="button"
-          class="lg:hidden p-2 text-neutral-700 focus:outline-none"
-        >
+        <!-- Mobile Toggle -->
+        <button (click)="toggleMobileMenu()" type="button" class="lg:hidden p-2 text-neutral-700 focus:outline-none">
           @if (!isMobileMenuOpen) {
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="32"
-              viewBox="0 -960 960 960"
-              width="32"
-              fill="currentColor"
-            >
-              <path
-                d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32" fill="currentColor">
+              <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
             </svg>
           } @else {
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="32"
-              viewBox="0 -960 960 960"
-              width="32"
-              fill="currentColor"
-            >
-              <path
-                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32" fill="currentColor">
+              <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
             </svg>
           }
         </button>
       </div>
     </div>
 
-    <!-- FIXED SUB-NAV PANEL -->
+    <!-- Desktop Mega Menu Dropdown -->
     @if (activeMenu) {
       <div class="fixed inset-0 z-30" (click)="closeMenu()"></div>
-      <div
-        class="hidden lg:block absolute left-[25%] right-[25%] bg-white border-b border-gray-100  rounded-[1rem] shadow-2xl animate-in slide-in-from-top-2 duration-200 z-40"
-      >
-        <div class="max-w-screen-xl mx-auto px-8 py-6">
-          <!-- Content for Impact -->
-          @if (activeMenu === 'impact') {
-            <div class="grid grid-cols-3 gap-2">
-              <div
-                class="p-2  rounded-sm hover:bg-neutral-50 transition-colors group"
-              >
-                <a
-                  routerLink="partner"
-                  (click)="closeEverything()"
-                  class="block"
-                >
-                  <h4
-                    class="font-bold group-hover:text-accent"
-                    style="font-size: 0.9375rem;"
-                  >
-                    Our Partners
-                  </h4>
-                  <p
-                    class="text-xs text-neutral-500"
-                    style="font-size: 0.85rem;"
-                  >
-                    Strategic Partnerships
-                  </p>
-                </a>
+      <div class="hidden lg:block absolute xl:left-1/2 xl:-translate-x-1/2 md:left-1/2 md:-translate-x-1/2 xl:w-[45%] w-[70%] bg-white shadow-xl rounded-xl border border-neutral-100 animate-mega-in z-40">
+        <div class="p-10">
+          @for (item of navConfig; track item.id) {
+            @if (activeMenu === item.id) {
+              <div class="grid grid-cols-2 gap-6">
+                @for (child of item.children; track child.link) {
+                  <a [routerLink]="child.link" (click)="closeEverything()" class="p-4 rounded-lg transition-all group">
+                    <p class="group-hover:text-accent transition-colors">{{ child.label }}</p>
+                    <h5 class="text-sm text-neutral-600 group-hover:text-primary font-semibold leading-relaxed">{{ child.description }}</h5>
+                  </a>
+                }
               </div>
-              <div
-                class="p-2 rounded-sm hover:bg-neutral-50 transition-colors group"
-              >
-                <a
-                  routerLink="success"
-                  (click)="closeEverything()"
-                  class="block"
-                >
-                  <h4
-                    class="font-bold group-hover:text-accent"
-                    style="font-size: 0.9375rem;"
-                  >
-                    Success & Impact
-                  </h4>
-                  <p
-                    class="text-xs text-neutral-500"
-                    style="font-size: 0.85rem;"
-                  >
-                    Real Results, Real Impact
-                  </p>
-                </a>
-              </div>
-              <div
-                class="p-2 rounded-sm hover:bg-neutral-50 transition-colors group"
-              >
-                <a
-                  routerLink="programs"
-                  (click)="closeEverything()"
-                  class="block"
-                >
-                  <h4
-                    class="font-bold group-hover:text-accent"
-                    style="font-size: 0.9375rem;"
-                  >
-                    Programs & Initiatives
-                  </h4>
-                  <p
-                    class="text-xs text-neutral-500"
-                    style="font-size: 0.85rem;"
-                  >
-                    Targeted Programs
-                  </p>
-                </a>
-              </div>
-            </div>
-          }
-
-          <!-- Content for Services -->
-          @if (activeMenu === 'services') {
-            <div class="grid grid-cols-3 gap-2">
-              <div
-                class="p-2 rounded-sm hover:bg-neutral-50 transition-colors group"
-              >
-                <a
-                  routerLink="services/data-annotation"
-                  (click)="closeEverything()"
-                  class="block"
-                >
-                  <h4
-                    class="font-bold group-hover:text-accent"
-                    style="font-size: text-accent 0.9375rem;"
-                  >
-                    BPO Services & Data Annotation
-                  </h4>
-                  <p
-                    class="text-xs text-neutral-500"
-                    style="font-size: 0.85rem;"
-                  >
-                    precision annotation
-                  </p>
-                </a>
-              </div>
-              <div
-                class="p-4 rounded-sm hover:bg-neutral-50 transition-colors group"
-              >
-                <a
-                  routerLink="services/design-and-development"
-                  (click)="closeEverything()"
-                  class="block"
-                >
-                  <h4
-                    class="font-bold group-hover:text-accent"
-                    style="font-size: 0.9375rem;"
-                  >
-                    Tech & Software Development
-                  </h4>
-                  <p
-                    class="text-xs text-neutral-500"
-                    style="font-size: 0.85rem;"
-                  >
-                    End-to-end solutions.
-                  </p>
-                </a>
-              </div>
-              <div
-                class="p-4 rounded-sm hover:bg-neutral-50 transition-colors group"
-              >
-                <a
-                  routerLink="services/skill-building-programs"
-                  (click)="closeEverything()"
-                  class="block"
-                >
-                  <h4
-                    class="font-bold group-hover:text-accent"
-                    style="font-size: 0.9375rem;"
-                  >
-                    Training & Upskilling Services
-                  </h4>
-                  <p
-                    class="text-xs text-neutral-500"
-                    style="font-size: 0.85rem;"
-                  >
-                    Comprehensive training.
-                  </p>
-                </a>
-              </div>
-            </div>
-          }
-
-          <!-- Content for Company -->
-          @if (activeMenu === 'company') {
-            <div class="grid grid-cols-4 gap-2">
-              <div
-                class="p-2 rounded-sm hover:bg-neutral-50 transition-colors group"
-              >
-                <a routerLink="about" (click)="closeEverything()" class="block">
-                  <h4
-                    class="font-bold group-hover:text-accent"
-                    style="font-size: 0.9375rem;"
-                  >
-                    About Us
-                  </h4>
-                  <p
-                    class="text-xs text-neutral-500"
-                    style="font-size: 0.85rem;"
-                  >
-                    What Drives Us
-                  </p>
-                </a>
-              </div>
-              <div
-                class="p-2 rounded-sm hover:bg-neutral-50 transition-colors group"
-              >
-                <a
-                  routerLink="services/design-and-development"
-                  (click)="closeEverything()"
-                  class="block"
-                >
-                  <h4
-                    class="font-bold group-hover:text-accent"
-                    style="font-size: 0.9375rem;"
-                  >
-                    Our Team
-                  </h4>
-                  <p
-                    class="text-xs text-neutral-500"
-                    style="font-size: 0.85rem;"
-                  >
-                    Meet The Experts
-                  </p>
-                </a>
-              </div>
-              <div
-                class="p-2 rounded-sm hover:bg-neutral-50 transition-colors group"
-              >
-                <a
-                  routerLink="services/skill-building-programs"
-                  (click)="closeEverything()"
-                  class="block"
-                >
-                  <h4
-                    class="font-bold group-hover:text-accent"
-                    style="font-size: 0.9375rem;"
-                  >
-                    Careers
-                  </h4>
-                  <p
-                    class="text-xs text-neutral-500"
-                    style="font-size: 0.85rem;"
-                  >
-                    Grow Your Potential With Us
-                  </p>
-                </a>
-              </div>
-              <div
-                class="p-2 rounded-sm hover:bg-neutral-50 transition-colors group"
-              >
-                <a
-                  routerLink="contact"
-                  (click)="closeEverything()"
-                  class="block"
-                >
-                  <h4
-                    class="font-bold group-hover:text-accent"
-                    style="font-size: 0.9375rem;"
-                  >
-                    Contact Us
-                  </h4>
-                  <p
-                    class="text-xs text-neutral-500"
-                    style="font-size: 0.85rem;"
-                  >
-                    Talk To Us
-                  </p>
-                </a>
-              </div>
-            </div>
+            }
           }
         </div>
       </div>
     }
 
-    <!-- MOBILE MENU OVERLAY -->
+    <!-- Mobile Menu Overlay -->
     @if (isMobileMenuOpen) {
-      <div
-        class="lg:hidden  fixed inset-0 top-16 bg-white z-40 p-6 overflow-y-auto animate-in slide-in-from-right duration-300"
-      >
-        <nav class="flex flex-col justify-between h-full">
-          <div class="flex flex-col space-y-4">
-            <!-- Services Accordion -->
+      <div class="lg:hidden fixed inset-0 top-16 bg-white z-40 p-6 overflow-y-auto animate-in slide-in-from-right duration-300">
+        <nav class="flex flex-col space-y-4">
+          @for (item of navConfig; track item.id) {
             <div>
-              <button
-                (click)="toggleMobileSub('services')"
-                class="w-full flex justify-between items-center text-lg font-semibold py-2 border-b border-neutral-100"
-              >
-                Services <span>{{ mobileSub === 'services' ? '−' : '+' }}</span>
+              <button (click)="toggleMobileSub(item.id)" class="w-full flex justify-between items-center text-lg font-semibold py-2 border-b border-neutral-100 capitalize">
+                {{ item.label }} <span>{{ mobileSub === item.id ? '−' : '+' }}</span>
               </button>
-              @if (mobileSub === 'services') {
-                <div
-                  class="pl-4 py-4 flex flex-col space-y-4 animate-in slide-in-from-top-2"
-                >
-                  <a
-                    routerLink="services/data-annotation"
-                    (click)="closeEverything()"
-                    class="text-lg text-neutral-600"
-                    >Data Processing & Annotation</a
-                  >
-                  <a
-                    routerLink="services/design-and-development"
-                    (click)="closeEverything()"
-                    class="text-lg text-neutral-600"
-                    >Software Development</a
-                  >
-                  <a
-                    routerLink="services/skill-building-programs"
-                    (click)="closeEverything()"
-                    class="text-lg text-neutral-600"
-                    >Training & Upskilling Services</a
-                  >
+              @if (mobileSub === item.id) {
+                <div class="pl-4 py-4 flex flex-col space-y-4 animate-in slide-in-from-top-2">
+                  @for (child of item.children; track child.link) {
+                    <a [routerLink]="child.link" (click)="closeEverything()" class="text-lg text-neutral-600">{{ child.label }}</a>
+                  }
                 </div>
               }
             </div>
-
-            <!-- Impact Accordion -->
-            <div>
-              <button
-                (click)="toggleMobileSub('impact')"
-                class="w-full flex justify-between items-center text-lg font-semibold py-2 border-b border-neutral-100"
-              >
-                Impact <span>{{ mobileSub === 'impact' ? '−' : '+' }}</span>
-              </button>
-              @if (mobileSub === 'impact') {
-                <div
-                  class="pl-4 py-4 flex flex-col space-y-4 animate-in slide-in-from-top-2"
-                >
-                  <a
-                    routerLink="/impact/education"
-                    (click)="closeEverything()"
-                    class="text-lg text-neutral-600"
-                    >Education Support</a
-                  >
-                  <a
-                    routerLink="/impact/health"
-                    (click)="closeEverything()"
-                    class="text-lg text-neutral-600"
-                    >Health Initiatives</a
-                  >
-                  <a
-                    routerLink="/impact/sustainability"
-                    (click)="closeEverything()"
-                    class="text-lg text-neutral-600"
-                    >Sustainability</a
-                  >
-                </div>
-              }
-            </div>
-
-            <!-- Company Accordion -->
-            <div>
-              <button
-                (click)="toggleMobileSub('company')"
-                class="w-full flex justify-between items-center text-lg font-semibold py-2 border-b border-neutral-100"
-              >
-                Company <span>{{ mobileSub === 'company' ? '−' : '+' }}</span>
-              </button>
-              @if (mobileSub === 'company') {
-                <div
-                  class="pl-4 py-4 flex flex-col space-y-4 animate-in slide-in-from-top-2"
-                >
-                  <a
-                    routerLink="about_us"
-                    (click)="closeEverything()"
-                    class="text-lg text-neutral-600"
-                    >About Us</a
-                  >
-                  <a
-                    routerLink=""
-                    (click)="closeEverything()"
-                    class="text-lg text-neutral-600"
-                    >Our Team</a
-                  >
-                  <a
-                    routerLink=""
-                    (click)="closeEverything()"
-                    class="text-lg text-neutral-600"
-                    >Careers</a
-                  >
-                  <a
-                    routerLink="contact"
-                    (click)="closeEverything()"
-                    class="text-lg text-neutral-600"
-                    >Contact Us</a
-                  >
-                </div>
-              }
-            </div>
-          </div>
-          <div class="flex flex-end justify-end mt-6">
-            <a
-              routerLink="/contact"
-              (click)="closeEverything()"
-              class=" bg-accent w-full text-center text-neutral-100 rounded-full font-semibold py-2 border-b border-neutral-100 text-accent"
-              >Contact Us</a
-            >
+          }
+          <div class="pt-6">
+            <a routerLink="/contact" (click)="closeEverything()" class="bg-accent block w-full text-center text-neutral-100 rounded-full font-semibold py-3">Contact Us</a>
           </div>
         </nav>
       </div>
@@ -485,22 +114,46 @@ import { CommonModule } from '@angular/common'; // Required for @if/ngIf if not 
 })
 export class AppHeader {
   activeMenu: string | null = null;
-  isMobileMenuOpen = false; // Mobile Overlay
-  mobileSub: string | null = null; // Mobile Accordion
+  isMobileMenuOpen = false;
+  mobileSub: string | null = null;
 
-  /**Toggle dropdown menus */
+  // Single source of truth for navigation
+  readonly navConfig: NavItem[] = [
+    {
+      id: 'services',
+      label: 'services',
+      children: [
+        { label: 'BPO Services', link: 'services/bpo-services', description: 'Precision Data Processing & Data Annotation' },
+        { label: 'Software Dev', link: 'services/tech-services', description: 'Tech & Software Development Solutions' },
+      ]
+    },
+    {
+      id: 'impact',
+      label: 'impact',
+      children: [
+        { label: 'Our Partners', link: 'partner', description: 'Strategic Partnerships' },
+        { label: 'Success & Impact', link: 'success', description: 'Real Results, Real Impact' },
+      ]
+    },
+    {
+      id: 'company',
+      label: 'company',
+      children: [
+        { label: 'About Us', link: 'about', description: 'What Drives Us' },
+        { label: 'Contact Us', link: 'contact', description: 'Talk To Us' }
+      ]
+    }
+  ];
+
   toggleMenu(menuName: string) {
-    /**If the clicked menu is already open, close it. Otherwise, open the new one. */
     this.activeMenu = this.activeMenu === menuName ? null : menuName;
   }
 
-  /**Toggle mobile menu */
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
     if (!this.isMobileMenuOpen) this.mobileSub = null;
   }
 
-  /**Toggle mobile submenu */
   toggleMobileSub(name: string) {
     this.mobileSub = this.mobileSub === name ? null : name;
   }
@@ -515,3 +168,4 @@ export class AppHeader {
     this.mobileSub = null;
   }
 }
+

@@ -1,4 +1,4 @@
-<div class=" bg-neutral-800 m-2 rounded-lg">
+<div class="bg-neutral-800 m-2 rounded-lg">
   <div class="m-2 bg-neutral-100 rounded-lg max-w-7xl mx-auto">
     <div
       class="xl:hidden rounded-t-lg px-5 py-10 lg:px-14 lg:grid grid-cols-7 flex flex-col gap-5"
@@ -22,102 +22,45 @@
     <div class="bg-neutral-800 rounded-lg p-5 lg:px-14 lg:py-10">
       <div class="xl:grid grid-cols-5 gap-5 max-xl:hidden">
         <div class="col-span-1 flex flex-col justify-start">
-          <p class="text-neutral-300 mt-3 text-[18px]">About</p>
-          <a
-            routerLink="/blog/december2022"
-            class="text-neutral-400 mt-3 group-open:animate-fadeIn"
-          >
-            Company
+          <p class="text-neutral-300 mt-3 text-[18px]">Services</p>
+          <a routerLink="services/bpo-services" class="hover:cursor-pointer">
+            <h5 class="text-neutral-400 mt-3 group-open:animate-fadeIn">
+              BPO Services
+            </h5>
+            <p class="text-sm">Precision Data Processing & Data Annotation</p>
           </a>
           <a
-            routerLink="/team"
-            class="text-neutral-400 mt-3 group-open:animate-fadeIn"
+            routerLink="services/tech-services"
+            class="hover:cursor-pointer"
           >
-            Team
-          </a>
-          <a
-            routerLink="/careers"
-            class="text-neutral-400 mt-3 group-open:animate-fadeIn"
-          >
-            Careers
-          </a>
-          <a
-            routerLink="/blog"
-            class="text-neutral-400 mt-3 group-open:animate-fadeIn"
-          >
-            Blog
-          </a>
-          <a
-            routerLink="/contact"
-            class="text-neutral-400 mt-3 group-open:animate-fadeIn"
-          >
-            contact
+            <h5 class="text-neutral-400 mt-3 group-open:animate-fadeIn">
+              Software Dev
+            </h5>
+            <p class="text-sm">Tech & Software Development Solutions</p>
           </a>
         </div>
         <div class="col-span-1 flex flex-col justify-start">
-          <p class="text-neutral-300 mt-3 text-[18px]">About</p>
-          <a
-            routerLink="/blog/december2022"
-            class="text-neutral-400 mt-3 group-open:animate-fadeIn"
-          >
-            Company
+          <p class="text-neutral-300 mt-3 text-[18px]">Impact</p>
+          <a routerLink="partner" class="hover:cursor-pointer">
+            <h5 class="text-neutral-400 mt-3 group-open:animate-fadeIn">
+              Our Partners
+            </h5>
+            <p class="text-sm">Strategic Partnerships</p>
           </a>
-          <a
-            routerLink="/team"
-            class="text-neutral-400 mt-3 group-open:animate-fadeIn"
-          >
-            Team
-          </a>
-          <a
-            routerLink="/careers"
-            class="text-neutral-400 mt-3 group-open:animate-fadeIn"
-          >
-            Careers
-          </a>
-          <a
-            routerLink="/blog"
-            class="text-neutral-400 mt-3 group-open:animate-fadeIn"
-          >
-            Blog
-          </a>
-          <a
-            routerLink="/contact"
-            class="text-neutral-400 mt-3 group-open:animate-fadeIn"
-          >
-            contact
+          <a routerLink="success" class="hover:cursor-pointer">
+            <h5 class="text-neutral-400 mt-3 group-open:animate-fadeIn">
+              Success & Impact
+            </h5>
+            <p class="text-sm">Real Results, Real Impact</p>
           </a>
         </div>
         <div class="col-span-1 flex flex-col justify-start">
-          <p class="text-neutral-300 mt-3 text-[18px]">About</p>
-          <a
-            routerLink="/blog/december2022"
-            class="text-neutral-400 mt-3 group-open:animate-fadeIn"
-          >
-            Company
-          </a>
-          <a
-            routerLink="/team"
-            class="text-neutral-400 mt-3 group-open:animate-fadeIn"
-          >
-            Team
-          </a>
-          <a
-            routerLink="/careers"
-            class="text-neutral-400 mt-3 group-open:animate-fadeIn"
-          >
-            Careers
-          </a>
-          <a
-            routerLink="/blog"
-            class="text-neutral-400 mt-3 group-open:animate-fadeIn"
-          >
-            Blog
-          </a>
-          <a
-            routerLink="/contact"
-            class="text-neutral-400 mt-3 group-open:animate-fadeIn"
-          >
-            contact
+          <p class="text-neutral-300 mt-3 text-[18px]">Company</p>
+          <a routerLink="about" class="hover:cursor-pointer">
+            <h5 class="text-neutral-400 mt-3 group-open:animate-fadeIn">
+              About Us
+            </h5>
+            <p class="text-sm">What Drives Us</p>
           </a>
         </div>
         <div class="col-span-1 flex flex-col justify-start"></div>
@@ -140,7 +83,7 @@
               <summary
                 class="flex justify-between items-center font-medium cursor-pointer list-none"
               >
-                <span>About</span>
+                <span>Services</span>
                 <span class="transition group-open:rotate-180">
                   <svg
                     fill="none"
@@ -157,36 +100,26 @@
                   </svg>
                 </span>
               </summary>
-              <div class="grid md:grid-cols-3">
+              <div class="grid md:grid-cols-2">
                 <a
-                  routerLink="/blog/december2022"
-                  class="text-neutral-400 mt-3 group-open:animate-fadeIn"
+                  routerLink="services/data-annotation"
+                  class="hover:cursor-pointer"
                 >
-                  Company
+                  <h5 class="text-neutral-400 mt-3 group-open:animate-fadeIn">
+                    BPO Services
+                  </h5>
+                  <p class="text-sm">
+                    Precision Data Processing & Data Annotation
+                  </p>
                 </a>
                 <a
-                  routerLink="/team"
-                  class="text-neutral-400 mt-3 group-open:animate-fadeIn"
+                  routerLink="services/design-and-development"
+                  class="hover:cursor-pointer"
                 >
-                  Team
-                </a>
-                <a
-                  routerLink="/careers"
-                  class="text-neutral-400 mt-3 group-open:animate-fadeIn"
-                >
-                  Careers
-                </a>
-                <a
-                  routerLink="/blog"
-                  class="text-neutral-400 mt-3 group-open:animate-fadeIn"
-                >
-                  Blog
-                </a>
-                <a
-                  routerLink="/contact"
-                  class="text-neutral-400 mt-3 group-open:animate-fadeIn"
-                >
-                  contact
+                  <h5 class="text-neutral-400 mt-3 group-open:animate-fadeIn">
+                    Software Dev
+                  </h5>
+                  <p class="text-sm">Tech & Software Development Solutions</p>
                 </a>
               </div>
             </details>
@@ -196,7 +129,7 @@
               <summary
                 class="flex justify-between items-center font-medium cursor-pointer list-none"
               >
-                <span>About</span>
+                <span>Impact</span>
                 <span class="transition group-open:rotate-180">
                   <svg
                     fill="none"
@@ -213,36 +146,18 @@
                   </svg>
                 </span>
               </summary>
-              <div class="grid md:grid-cols-3">
-                <a
-                  routerLink="/blog/december2022"
-                  class="text-neutral-400 mt-3 group-open:animate-fadeIn"
-                >
-                  Company
+              <div class="grid md:grid-cols-2">
+                <a routerLink="partner" class="hover:cursor-pointer">
+                  <h5 class="text-neutral-400 mt-3 group-open:animate-fadeIn">
+                    Our Partners
+                  </h5>
+                  <p class="text-sm">Strategic Partnerships</p>
                 </a>
-                <a
-                  routerLink="/team"
-                  class="text-neutral-400 mt-3 group-open:animate-fadeIn"
-                >
-                  Team
-                </a>
-                <a
-                  routerLink="/careers"
-                  class="text-neutral-400 mt-3 group-open:animate-fadeIn"
-                >
-                  Careers
-                </a>
-                <a
-                  routerLink="/blog"
-                  class="text-neutral-400 mt-3 group-open:animate-fadeIn"
-                >
-                  Blog
-                </a>
-                <a
-                  routerLink="/contact"
-                  class="text-neutral-400 mt-3 group-open:animate-fadeIn"
-                >
-                  contact
+                <a routerLink="success" class="hover:cursor-pointer">
+                  <h5 class="text-neutral-400 mt-3 group-open:animate-fadeIn">
+                    Success & Impact
+                  </h5>
+                  <p class="text-sm">Real Results, Real Impact</p>
                 </a>
               </div>
             </details>
@@ -252,7 +167,7 @@
               <summary
                 class="flex justify-between items-center font-medium cursor-pointer list-none"
               >
-                <span>About</span>
+                <span>Company</span>
                 <span class="transition group-open:rotate-180">
                   <svg
                     fill="none"
@@ -269,92 +184,12 @@
                   </svg>
                 </span>
               </summary>
-              <div class="grid md:grid-cols-3">
-                <a
-                  routerLink="/blog/december2022"
-                  class="text-neutral-400 mt-3 group-open:animate-fadeIn"
-                >
-                  Company
-                </a>
-                <a
-                  routerLink="/team"
-                  class="text-neutral-400 mt-3 group-open:animate-fadeIn"
-                >
-                  Team
-                </a>
-                <a
-                  routerLink="/careers"
-                  class="text-neutral-400 mt-3 group-open:animate-fadeIn"
-                >
-                  Careers
-                </a>
-                <a
-                  routerLink="/blog"
-                  class="text-neutral-400 mt-3 group-open:animate-fadeIn"
-                >
-                  Blog
-                </a>
-                <a
-                  routerLink="/contact"
-                  class="text-neutral-400 mt-3 group-open:animate-fadeIn"
-                >
-                  contact
-                </a>
-              </div>
-            </details>
-          </div>
-          <div class="py-3">
-            <details class="group">
-              <summary
-                class="flex justify-between items-center font-medium cursor-pointer list-none"
-              >
-                <span>About</span>
-                <span class="transition group-open:rotate-180">
-                  <svg
-                    fill="none"
-                    height="16"
-                    shape-rendering="geometricPrecision"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.5"
-                    viewBox="0 0 24 24"
-                    width="16"
-                  >
-                    <path d="M6 9l6 6 6-6"></path>
-                  </svg>
-                </span>
-              </summary>
-              <div class="grid md:grid-cols-3">
-                <a
-                  routerLink="/blog/december2022"
-                  class="text-neutral-400 mt-3 group-open:animate-fadeIn"
-                >
-                  Company
-                </a>
-                <a
-                  routerLink="/team"
-                  class="text-neutral-400 mt-3 group-open:animate-fadeIn"
-                >
-                  Team
-                </a>
-                <a
-                  routerLink="/careers"
-                  class="text-neutral-400 mt-3 group-open:animate-fadeIn"
-                >
-                  Careers
-                </a>
-                <a
-                  routerLink="/blog"
-                  class="text-neutral-400 mt-3 group-open:animate-fadeIn"
-                >
-                  Blog
-                </a>
-                <a
-                  routerLink="/contact"
-                  class="text-neutral-400 mt-3 group-open:animate-fadeIn"
-                >
-                  contact
+              <div class="grid md:grid-cols-2">
+                <a routerLink="about" class="hover:cursor-pointer">
+                  <h5 class="text-neutral-400 mt-3 group-open:animate-fadeIn">
+                    About Us
+                  </h5>
+                  <p class="text-sm">What Drives Us</p>
                 </a>
               </div>
             </details>

@@ -20,7 +20,6 @@ import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal';
   imports: [
     CommonModule,
     RouterModule,
-    ScrollRevealDirective,
     AboutHeroComponent,
     AboutEcosystemComponent,
     AboutValueComponent,

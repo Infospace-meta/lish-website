@@ -1,14 +1,9 @@
 import { Component } from '@angular/core';
+import { CtaPartnerCard } from '../../components/cta-partner-card/cta-partner-card';
 
 @Component({
   selector: 'app-home-page',
-  imports: [],
-  template: `
-    <p>
-      home-page works!
-    </p>
-  `,
+  imports: [CtaPartnerCard],
+  template: ` <cta-partner-card /> `,
 })
-export class HomePage {
-
-}
+export class HomePage {}

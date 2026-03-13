@@ -16,11 +16,15 @@ import { Component } from '@angular/core';
           <span class="text-accent">together</span>
         </h2>
 
-        <h4 class="">Kenyatta Avenue, Nakuru</h4>
         <div>
-          <p class="underline ">(123) 456-7890</p>
-          <p class="underline ">info@example.com</p>
-          <p class="underline ">Linkein</p>
+          <h4 class="">Gibcon House, 4th & 5th floor</h4>
+          <h4 class="">Kenyatta Avenue, Nakuru</h4>
+        </div>
+
+        <div>
+          <p class="underline ">(+254) 710-441-741</p>
+          <p class="underline ">info@lishailabs.com</p>
+          <p class="underline ">Linkedin</p>
         </div>
         <ul class="flex flex-col">
           <li class="flex gap-1">
@@ -33,16 +37,16 @@ import { Component } from '@angular/core';
             <span class="material-symbols-outlined text-complement rounded-full"
               >check</span
             >
-            <p class="">Serving 100+ clients globally</p>
+            <p class="">Serving clients globally</p>
           </li>
           <li class=" flex items-center gap-1">
             <span class="material-symbols-outlined text-complement rounded-full"
               >check</span
             >
-            <p class="">Over 700 skilled professionals</p>
+            <p class="">Over 200 skilled professionals</p>
           </li>
           <li class=" flex items-center gap-1">
-           <span class="material-symbols-outlined text-complement rounded-full"
+            <span class="material-symbols-outlined text-complement rounded-full"
               >check</span
             >
             <p class="">100% client satisfaction rate</p>

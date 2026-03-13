@@ -12,7 +12,7 @@ import { OurFacilityPage } from './pages/our-facility-page/our-facility-page';
 import { ProgramsPage } from './pages/programs-page/programs-page';
 import { BpoServicesPage } from './pages/bpo-services-page/bpo-services-page';
 import { WrapperComponent } from './layouts/wrapper.component';
-import { AppLayoutComponent } from './layouts/app.component';
+import { AppLayoutComponent } from './layouts/app-layout.component';
 
 /** Old Pages */
 import { TrainingComponent } from './pages/training/training.component';
@@ -42,39 +42,18 @@ export const routes: Routes = [
       { path: 'partner', component: PartnerPage },
       { path: 'career', component: CareerPage },
       { path: 'success', component: SuccessPage },
-      { path: 'tech-services', component: TechServicesPage },
-      { path: 'upskilling-services', component: UpskillingServicesPage },
       { path: 'our-facility', component: OurFacilityPage },
       { path: 'programs', component: ProgramsPage },
-      { path: 'bpo-services', component: BpoServicesPage },
 
       /** Old Pages */
       { path: 'training', component: TrainingComponent },
-      { path: 'about', component: AboutPage },
       {
         path: 'services',
         component: WrapperComponent,
         children: [
-          {
-            path: 'ai-and-machine-learning',
-            component: AiAndMachineLearningComponent,
-          },
-          {
-            path: 'data-annotation',
-            component: DataAnnotationComponent,
-          },
-          {
-            path: 'design-and-development',
-            component: DesignAndDevelopmentComponent,
-          },
-          {
-            path: 'employment-placement',
-            component: EmploymentPlacementComponent,
-          },
-          {
-            path: 'skill-building-programs',
-            component: SkillBuildingProgramsComponent,
-          },
+          { path: 'tech-services', component: TechServicesPage },
+          { path: 'upskilling-services', component: UpskillingServicesPage },
+          { path: 'bpo-services', component: BpoServicesPage },
         ],
       },
 
@@ -89,7 +68,6 @@ export const routes: Routes = [
     children: [
       { path: '', component: TechLandingPage },
       { path: 'team', component: TeamPage },
-      { path: 'about', component: AboutPage },
       { path: 'team/:slug', component: DevsPage },
     ],
   },
