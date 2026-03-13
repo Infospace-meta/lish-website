@@ -22,6 +22,7 @@ import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal'
         <div
           class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16 sm:mb-24 lg:mb-32"
         >
+          <!-- left hero section -->
           <div class="reveal-text delay-1 order-1 text-left">
             <h1
               class="text-5xl sm:text-7xl lg:text-8xl font-medium leading-[1.1] lg:leading-[0.9] tracking-tight text-primary mb-6 sm:mb-8"
@@ -63,17 +64,16 @@ import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal'
             </div>
           </div>
 
-          <!-- scrolling carousel logo section -->
-
+          <!-- scrolling carousel section -->
           <div
-            class="order-2 lg:order-2 relative aspect-square w-full max-w-[400px] sm:max-w-[500px] lg:max-w-none mx-auto flex flex-col items-center justify-center z-0 mt-4 lg:mt-0"
+            class="order-2  lg:order-2 relative aspect-square w-full max-w-[400px] sm:max-w-[500px] lg:max-w-none mx-auto flex flex-col items-center justify-center z-0 mt-4 lg:mt-0"
           >
             <div
-              class="relative mb-4 sm:mb-6 w-full h-[80%] sm:h-[85%] flex items-center justify-center"
+              class="relative mb-4 sm:mb-6  w-full h-[80%] sm:h-[85%] flex items-center justify-center"
             >
               <div
                 *ngFor="let img of carouselImages; let i = index"
-                class="absolute w-[85%] h-[95%] sm:h-[90%] transition-all duration-1000 ease-in-out rounded-2xl sm:rounded-[3rem] overflow-hidden border border-black/10 shadow-2xl"
+                class="absolute  w-[105%] h-[105%] sm:h-[100%] transition-all duration-1000 ease-in-out rounded-xl sm:rounded-[1.5rem] overflow-hidden border border-black/10 shadow-2xl"
                 [ngClass]="{
                   'z-30 opacity-100 scale-100 translate-x-0 translate-y-0':
                     i === currentIndex,
