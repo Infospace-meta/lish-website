@@ -73,7 +73,7 @@ import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal'
             >
               <div
                 *ngFor="let img of carouselImages; let i = index"
-                class="absolute  w-[105%] h-[105%] sm:h-[100%] transition-all duration-1000 ease-in-out rounded-xl sm:rounded-[1.5rem] overflow-hidden border border-black/10 shadow-2xl"
+                class="absolute  w-[97%] h-[97%] sm:h-[100%] transition-all duration-1000 ease-in-out rounded-xl sm:rounded-[1.5rem] overflow-hidden border border-black/10 shadow-2xl"
                 [ngClass]="{
                   'z-30 opacity-100 scale-100 translate-x-0 translate-y-0':
                     i === currentIndex,
