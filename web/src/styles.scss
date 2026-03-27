@@ -8,7 +8,6 @@
   --color-background: #f9f8f6;
   --color-soft-grey: #f2f2f2;
   --color-warm-bg: #f9f8f6;
-  // --color-accent: #0047AB;
 
   --color-text-muted: #737373;
 
@@ -17,7 +16,14 @@
 
   --font-serif: "Playfair Display", "Times New Roman", serif;
   --font-poppins: "Poppins", "Inter", sans-serif;
+
+  /* --- Shared Animations --- */
   --animate-mega-in: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+  /* --- Home Hero Architectural Animations --- */
+  --animate-float: floatCard 6s ease-in-out infinite;
+  --animate-float-delayed: floatCard 6s ease-in-out 1.5s infinite;
+  --animate-logo-track: scrollLogoLeft 40s linear infinite;
 }
 
 @layer base {
@@ -28,7 +34,11 @@
 
 /* Material Icons Optimization */
 .material-symbols-outlined {
-  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 20;
+  font-variation-settings:
+    "FILL" 1,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 20;
   display: inline-block;
   line-height: 1;
   vertical-align: middle;
@@ -41,7 +51,6 @@
   transition: none;
 }
 
-/* Animations trigger via the appScrollReveal Directive */
 .active {
   .reveal-text {
     animation: fadeInUp 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
@@ -82,7 +91,7 @@
   animation-delay: 1s !important;
 }
 
-/* --- Continuous Never-Ending Partner Scroll --- */
+/* --- Continuous Never-Ending Partner Scroll (Vertical) --- */
 @keyframes snappyVerticalScroll {
   0% {
     transform: translateY(0);
@@ -115,15 +124,25 @@
 
 .partner-scroll-container {
   position: relative;
-  // Height adjusts: 45px on mobile, 60px on desktop
-  height: 45px; 
+  height: 45px;
   @screen sm {
     height: 64px;
   }
-  
   overflow: hidden;
- mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
-  -webkit-mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent
+  );
 }
 
 .partner-scroll-wrapper {
@@ -139,9 +158,8 @@
   gap: 2.5rem;
   height: 45px;
   flex-shrink: 0;
-
   @screen sm {
-    gap: 5rem; 
+    gap: 5rem;
     height: 64px;
   }
 }
@@ -157,67 +175,86 @@
     max-width: 160px;
   }
   object-fit: contain;
-  opacity: 0.8; 
+  opacity: 0.8;
   transition: opacity 0.3s ease;
-  
   &:hover {
     opacity: 1;
   }
 }
 
 @keyframes continuousVerticalLoop {
-  0%, 20% { transform: translateY(0); }
-  25%, 45% { transform: translateY(-45px); }
-  50%, 70% { transform: translateY(-90px); }
-  75%, 95% { transform: translateY(-135px); }
-  100% { transform: translateY(-180px); }
+  0%,
+  20% {
+    transform: translateY(0);
+  }
+  25%,
+  45% {
+    transform: translateY(-45px);
+  }
+  50%,
+  70% {
+    transform: translateY(-90px);
+  }
+  75%,
+  95% {
+    transform: translateY(-135px);
+  }
+  100% {
+    transform: translateY(-180px);
+  }
 }
 
 @media (min-width: 640px) {
   @keyframes continuousVerticalLoop {
-    0%, 20% { transform: translateY(0); }
-    25%, 45% { transform: translateY(-64px); }
-    50%, 70% { transform: translateY(-128px); }
-    75%, 95% { transform: translateY(-192px); }
-    100% { transform: translateY(-256px); }
+    0%,
+    20% {
+      transform: translateY(0);
+    }
+    25%,
+    45% {
+      transform: translateY(-64px);
+    }
+    50%,
+    70% {
+      transform: translateY(-128px);
+    }
+    75%,
+    95% {
+      transform: translateY(-192px);
+    }
+    100% {
+      transform: translateY(-256px);
+    }
   }
 }
 
-@media (min-width: 640px) {
-  @keyframes responsiveSnappyScroll {
-    0%, 20% { transform: translateY(0); }
-    25%, 45% { transform: translateY(-60px); } 
-    50%, 70% { transform: translateY(-120px); }
-    75%, 95% { transform: translateY(-180px); }
-    100% { transform: translateY(-240px); }
-  }
-}
-
-@keyframes logoPopIn {
+/* --- NEW: Home Hero Keyframes (Horizontal & Floating) --- */
+@keyframes scrollLogoLeft {
   from {
-    opacity: 0;
-    transform: scale(0.9) translateY(10px);
+    transform: translateX(0);
   }
   to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
+    transform: translateX(-50%);
   }
 }
 
-.partner-logo-bold:nth-child(1) {
-  animation-delay: 0.1s;
-}
-.partner-logo-bold:nth-child(2) {
-  animation-delay: 0.25s;
-}
-.partner-logo-bold:nth-child(3) {
-  animation-delay: 0.4s;
-}
-.partner-logo-bold:nth-child(4) {
-  animation-delay: 0.55s;
+@keyframes floatCard {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  } /* Reduced for better mobile control */
 }
 
-/* --- Motion & Transitions --- */
+.logo-track {
+  width: max-content;
+  display: flex;
+  animation: var(--animate-logo-track);
+}
+
+/* --- Global Utilities --- */
 .transition-all {
   transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -230,7 +267,6 @@
   scrollbar-width: none;
 }
 
-/* --- Core Engine Pulse Effects --- */
 @keyframes pulseSubtle {
   0% {
     transform: scale(1);
@@ -250,7 +286,6 @@
   animation: pulseSubtle 4s ease-in-out infinite;
 }
 
-/* --- Client Grid Design --- */
 .partner-card-grid-item {
   @apply bg-soft-grey aspect-[4/3] rounded-sm flex items-center justify-center p-8 transition-all duration-500;
   mix-blend-mode: multiply;
@@ -296,26 +331,32 @@
   letter-spacing: -0.02em !important;
 }
 
-// Fluid rounding for the Ecosystem container
 .rounded-5xl-responsive {
   @apply rounded-[2rem] sm:rounded-[3.5rem];
 }
 
-// Ensure underline is consistent with screenshot branding
 .underline-lish {
   text-decoration-thickness: 2px;
   text-underline-offset: 8px;
   @apply decoration-accent;
 }
 
-// Prevents images from having too much whitespace on mobile
 .mobile-gap-tight {
   @apply gap-8 sm:gap-16 lg:gap-24;
 }
 
-
-
 @keyframes slideIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.backdrop-blur-xl {
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
 }

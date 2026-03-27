@@ -7,9 +7,8 @@ import { AboutHeroComponent } from '../../components/about-page/about-hero/about
 import { AboutEcosystemComponent } from '../../components/about-page/about-ecosystem/about-ecosystem';
 import { AboutValueComponent } from '../../components/about-page/about-value/about-value';
 import { AboutNetworkComponent } from '../../components/about-page/about-network/about-network';
-import { TeamSectionComponent } from '../../components/about-page/team-section/team-section.component';
-import { RoadmapSectionComponent } from '../../components/about-page/roadmap-section/roadmap-section.component';
 import { FrameworkSectionComponent } from '../../components/about-page/framework-section/framework-section.component';
+import { AboutFoundationsComponent } from '../../components/about-page/about-foundations/about-foundations';
 
 // Shared Layout Components
 import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal';
@@ -22,10 +21,9 @@ import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal';
     RouterModule,
     AboutHeroComponent,
     AboutEcosystemComponent,
+    AboutFoundationsComponent,
     AboutValueComponent,
     AboutNetworkComponent,
-    TeamSectionComponent,
-    RoadmapSectionComponent,
     FrameworkSectionComponent,
   ],
   templateUrl: './about-us.component.html',
